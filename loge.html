@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-03 Sat 22:40 -->
+<!-- 2021-07-03 Sat 23:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Log</title>
@@ -275,7 +275,7 @@
 <p>
 &lt;example&gt;
 tmpfs 			/tmp 		tmpfs 		defaults,nosuid,size=4000M,mode=1777 0 0
-none 			/var/tmp/portage	tmpfs 		size=4000M,nr<sub>inodes</sub>=1M 0 0
+none 			/var/tmp/portage	tmpfs 		size=4000M,nr_inodes=1M 0 0
 &lt;/example&gt;
 </p>
 
@@ -375,15 +375,15 @@ dd fi=/dev/sda4 fo=/dev/sda9
 </p>
 
 <p>
-原来 emacs<sub>lib</sub> 的备份文件 *.tar 无法打开, 今天看了一下生成备份文件的 bash script, 发现其实生成的
+原来 emacs_lib 的备份文件 *.tar 无法打开, 今天看了一下生成备份文件的 bash script, 发现其实生成的
 应该时 *.tar.gz, 加上了扩展 .gz, 问题就解决了. 我顺便比较了一下 tar 和 tar.gz 的差别.
 </p>
 
 <p>
 &lt;example&gt;
-emacs<sub>lib</sub><sub>org</sub>: 109.5 MB
-emacs<sub>lib.tar</sub>: 110.8 MB
-emacs<sub>lib.tar.gz</sub>: 56.9 MB
+emacs_lib_org: 109.5 MB
+emacs_lib.tar: 110.8 MB
+emacs_lib.tar.gz: 56.9 MB
 &lt;/example&gt;
 </p>
 
@@ -438,7 +438,7 @@ mouse. 重新编译以后, 问题就解决了, 而且现在 windows 键又被映
 </p>
 
 <p>
-今天进了 rc.conf, 把 rc<sub>parallel</sub> 设置为 Yes, 这样各个 Service 就可以并行启动, 发现速度快了好多啊!
+今天进了 rc.conf, 把 rc_parallel 设置为 Yes, 这样各个 Service 就可以并行启动, 发现速度快了好多啊!
 关键是不用再等待 net.eth0 了.
 </p>
 
@@ -479,7 +479,7 @@ file or directory, 查看了 bugs.gentoo.org 后发现, 解决方法可以是:
 </p>
 
 <p>
-you re-emerge with `EXTRA<sub>ECONF</sub>="&#x2013;enable-sendmail" emerge mailutils`
+you re-emerge with `EXTRA_ECONF="&#x2013;enable-sendmail" emerge mailutils`
 </p>
 
 <p>
@@ -539,8 +539,8 @@ emacs + fcron + conky + sawfish.
 
 <p>
 Emacs 中使用 calendary + diary 写下约会的时间, Emacs 会提前 30 分钟 (在 Emacs 状态栏) 自动提醒.
-python 脚本分析 diary 的文件, 将即将到来的约会输出到 .c<sub>info</sub> 文件中. sawfihs 的 "rich-title" 插
-件查看 .c<sub>info</sub> 是否已有内容, 如果是的话, 在窗口上显示 '&#x2013;&gt; New Appt &lt;&#x2013;', 另外 conky 将 .c<sub>info</sub>
+python 脚本分析 diary 的文件, 将即将到来的约会输出到 .c_info 文件中. sawfihs 的 "rich-title" 插
+件查看 .c_info 是否已有内容, 如果是的话, 在窗口上显示 '&#x2013;&gt; New Appt &lt;&#x2013;', 另外 conky 将 .c_info
 中的内容输出到屏幕上. 所以现在我的特殊闹钟和邮件一样, 三管齐下: 窗口, emacs, conky.
 </p>
 
@@ -576,8 +576,8 @@ im Frame werden gezwungen, min-height zu erreichen"
   (interactive)
   ;; delete vertically splitted windows
   (let* ((w0 (selected-window)) (buf0 (window-buffer w0)) (wl (window-list))
-         (n (length wl)) (wmin window-min-height) (w0<sub>deleted</sub><sub>p</sub> nil)
-         (closed<sub>bufs</sub> nil) (buttom 0) tmp win<sub>at</sub><sub>buttom</sub> elem buf n1)
+         (n (length wl)) (wmin window-min-height) (w0_deleted_p nil)
+         (closed_bufs nil) (buttom 0) tmp win_at_buttom elem buf n1)
     (while (&gt; n 0)
       ;; get an element
       (setq elem (nth (- n 1) wl))
@@ -586,22 +586,22 @@ im Frame werden gezwungen, min-height zu erreichen"
           (progn
             ;; save these buffer, they will be opened at the end
             (when (equal elem w0)
-              (setq w0<sub>deleted</sub><sub>p</sub> t))
-            (push (window-buffer elem) closed<sub>bufs</sub>)
+              (setq w0_deleted_p t))
+            (push (window-buffer elem) closed_bufs)
             (delete-window elem))
         ;; I want to know the window at the buttom
         (setq tmp (second (window-edges elem)))
-        ;; tmp = 0 is for the initialization of win<sub>at</sub><sub>buttom</sub>
+        ;; tmp = 0 is for the initialization of win_at_buttom
         (when (&gt;= tmp buttom)
           (setq buttom tmp)
-          (setq win<sub>at</sub><sub>buttom</sub> elem)))
+          (setq win_at_buttom elem)))
       (setq n (- n 1)))
 </p>
 
 <p>
-(setq n (length closed<sub>bufs</sub>))
+(setq n (length closed_bufs))
 (when (&gt; n 0)
-  (select-window win<sub>at</sub><sub>buttom</sub>)
+  (select-window win_at_buttom)
   ;; get enough space for the closed buffers
   (setq n1 (length (window-list)))
   (enlarge-window (- (frame-height) (window-height) (* (- n1 1) wmin) 1)))
@@ -609,14 +609,14 @@ im Frame werden gezwungen, min-height zu erreichen"
 
 <p>
     ;; I am going to use function 'pop', so the orientation will be changed
-    (setq closed<sub>bufs</sub> (reverse closed<sub>bufs</sub>))
+    (setq closed_bufs (reverse closed_bufs))
     ;; open the closed buffers
-    (while (&gt; (length closed<sub>bufs</sub>) 0)
+    (while (&gt; (length closed_bufs) 0)
       (setq tmp (split-window nil wmin))
       (select-window tmp)
-      (setq buf (pop closed<sub>bufs</sub>))
+      (setq buf (pop closed_bufs))
       (set-window-buffer tmp buf)
-      (when (and w0<sub>deleted</sub><sub>p</sub> (equal buf buf0))
+      (when (and w0_deleted_p (equal buf buf0))
         (setq w0 tmp)))
     (select-window w0)
     (let ((n1 (length (window-list))))
@@ -963,7 +963,7 @@ mount -t tmpfs var/tmp/portage
 
 <p>
 &lt;example&gt;
-none /var/tmp/portage tmpfs size=1512M,nr<sub>inodes</sub>=1M 0 0
+none /var/tmp/portage tmpfs size=1512M,nr_inodes=1M 0 0
 &lt;/example&gt;
 </p>
 
@@ -1101,7 +1101,7 @@ Seite 9
 </p>
 
 <p>
-E<sub>2</sub> ist eine Darstellung der gekrümmten Kante. Die Darstellungsmethode kann z.B. B-Spline-Kurve
+E_2 ist eine Darstellung der gekrümmten Kante. Die Darstellungsmethode kann z.B. B-Spline-Kurve
 sein.
 </p>
 
@@ -1110,7 +1110,7 @@ Dieser Term beschreibt die gerade linie zwischen beiden Endepunkten.
 </p>
 
 <p>
-Also e<sub>2</sub>* bezeichnet die Differenz &#x2026;
+Also e_2* bezeichnet die Differenz &#x2026;
 </p>
 
 <p>
@@ -1123,7 +1123,7 @@ Ebenso ist es bei den anderen gekrümmten Kanten.
 </p>
 
 <p>
-Um die E<sub>2</sub> bwz. die gekrümmten Kannten darzustellen, wird in dieser Arbeit die Nurbs-Darstellung
+Um die E_2 bwz. die gekrümmten Kannten darzustellen, wird in dieser Arbeit die Nurbs-Darstellung
 verwendet.
 </p>
 
@@ -1138,7 +1138,7 @@ NURBS steht für non-uniform rational B-Spline. Es ist eine Erweiterung der B-Sp
 <p>
 In der Definition der Nurbs-Kurve sollte beachtet werden, dass in der Funktion der Parameter t
 eindimensional ist. Die Anzahl der Dimensionen des Ergebnisses wird von den globalen Koordinaten
-des Kontrollpunktes d<sub>i</sub> festgelegt.
+des Kontrollpunktes d_i festgelegt.
 </p>
 
 <p>
@@ -1238,7 +1238,7 @@ Freiheitsgrade für die Berechnungen dar.
 </p>
 
 <p>
-Der relative Fehler des Volumens bei p-FEM ist schon ziemlich klein, ca. 10<sup>-14</sup>. Er ist
+Der relative Fehler des Volumens bei p-FEM ist schon ziemlich klein, ca. 10^-14. Er ist
 unabhängig von dem Polynomensgrad p.
 </p>
 
@@ -1263,7 +1263,7 @@ Verbesserungsmöglichkeiten.
 
 <p>
 In folgenden Untersuchungen wurde das Netz B verwendet. Beim Netz B wurde die Geometrie durch
-eine Kurve in Umfangsrichtung manuell untergeteilt, damit man die Abbildungsfunktion Q<sub>e</sub> und die
+eine Kurve in Umfangsrichtung manuell untergeteilt, damit man die Abbildungsfunktion Q_e und die
 Jacobi-Matrix J trigonometrisch darstellen kann. Danach kann man die trigonometrische
 Darstellungen in CFS++ einsetzt und die neuen Ergenisse mit vorherigen Ergebnissen vergleichen.
 </p>
@@ -1274,8 +1274,8 @@ Die Table liefert die relativen Fehler der Energie unter verschienden Bedingunge
 
 <p>
 Schauen wir zuersten die ersten beiden Simulationen an. In den beiden Simulationen wurde nur
-verschiednen Netzen verwendet, aber der relativer Fehler der Energie hat sich vom ca. 10<sup>-10</sup> auf
-ca. 10<sup>-13</sup> reduziert.
+verschiednen Netzen verwendet, aber der relativer Fehler der Energie hat sich vom ca. 10^-10 auf
+ca. 10^-13 reduziert.
 </p>
 
 <p>
@@ -1308,7 +1308,7 @@ trigonometrische Darstellung für die Kurve bei der letzten Simulation verwendet
 </p>
 
 <p>
-Der realtive Fehler der Energie wurde weiter reduziert und zwar von 5 mal 10<sup>-13</sup> auf 10<sup>-13</sup>.
+Der realtive Fehler der Energie wurde weiter reduziert und zwar von 5 mal 10^-13 auf 10^-13.
 </p>
 
 <p>
@@ -1340,7 +1340,7 @@ verhält.
 
 <p>
 Unter der Anwendung von dem Newton-Verfahren und der Romberg-Itegration wurde diese Idee in
-CFS++ implementiert. Der maximale relative Unterschied hat sich von 0.016 auf 8.7 mal 10<sup>-16</sup>
+CFS++ implementiert. Der maximale relative Unterschied hat sich von 0.016 auf 8.7 mal 10^-16
 reduziert.
 </p>
 
@@ -1537,7 +1537,7 @@ fcitx-3.6.2 还是很不错的.
 </p>
 
 
-<div id="org3f57a40" class="figure">
+<div id="org43bc090" class="figure">
 <p><img src="./pic/damas_simulation.png" alt="damas_simulation.png" />
 </p>
 </div>
@@ -1727,7 +1727,7 @@ Dieser Prozess kann durch die beiden Terme dargestellt werden. In diesem Vortrag
 </p>
 
 <p>
-Der Term p<sub>m</sub> ist kontinuierlich aber die Signale der Mikrofonen wurden vor der Speicherung vom AD-Wandler diskretisiert. Deswegen wird eine lineare Interpolation von DAS-T benötigt. Ab und zu ist ein Bandpassfilter auch nötig. Die beide können zusätzliche Fehler hervorrufen.
+Der Term p_m ist kontinuierlich aber die Signale der Mikrofonen wurden vor der Speicherung vom AD-Wandler diskretisiert. Deswegen wird eine lineare Interpolation von DAS-T benötigt. Ab und zu ist ein Bandpassfilter auch nötig. Die beide können zusätzliche Fehler hervorrufen.
 </p>
 
 <p>
@@ -1747,7 +1747,7 @@ CSM ist unabhängig von Fokuspunkten und muss daher nur einmal berechnet werden.
 </p>
 
 <p>
-Hier werden zwei Schallbilder von DAS-F gezeigt. Der Kreisring zeigt die Position und den Umfang der Quelle und der Kreis zeigt die Mitte des Mikrofonarrays. In den Schallbildern werden alle Quellen außer S<sub>2</sub> aufgefunden. Aber ohne Kreisringe ist es schwer zu sagen, ob z.B.~hier noch eine Quelle gibt. Die Schallbilder, die man wirklich gewünscht sind, sollen z.B. so aussehen. Sie liefern eindeutige Informationen über die Pegel und Positionen der Quellen. Deswegen brauchen wir noch einige verbesserte Algorithmen.
+Hier werden zwei Schallbilder von DAS-F gezeigt. Der Kreisring zeigt die Position und den Umfang der Quelle und der Kreis zeigt die Mitte des Mikrofonarrays. In den Schallbildern werden alle Quellen außer S_2 aufgefunden. Aber ohne Kreisringe ist es schwer zu sagen, ob z.B.~hier noch eine Quelle gibt. Die Schallbilder, die man wirklich gewünscht sind, sollen z.B. so aussehen. Sie liefern eindeutige Informationen über die Pegel und Positionen der Quellen. Deswegen brauchen wir noch einige verbesserte Algorithmen.
 </p>
 
 <p>
@@ -1759,7 +1759,7 @@ Die Basis von OB ist die Darstellung von CSM der einzelnen Quellen durch den Eig
 </p>
 
 <p>
-Deswegen kann man ein Schallbild aus C<sub>m</sub> konstruieren. In diesem Schallbild gibt es nur eine Quelle und die Quellposition stimmt definitiv mit der Spitze überein. Einfach gesagt wird eine Quelle lokalisiert aus jenem Eigenwert. Nach der Zusammensetzung aller gefundenden Quellen erhält man das gesuchte Ergebnis.
+Deswegen kann man ein Schallbild aus C_m konstruieren. In diesem Schallbild gibt es nur eine Quelle und die Quellposition stimmt definitiv mit der Spitze überein. Einfach gesagt wird eine Quelle lokalisiert aus jenem Eigenwert. Nach der Zusammensetzung aller gefundenden Quellen erhält man das gesuchte Ergebnis.
 </p>
 
 <p>
@@ -1785,15 +1785,15 @@ Nun schauen wir die Experimente an. Gezeigt wird die Anordnung der Lautsprecher.
 </p>
 
 <p>
-Zuerst lassen sich die Lautsprecher A, B, C, und S<sub>1</sub> monofrequente Signale abstrahlen. Der Lautsprecher S<sub>2</sub> strahlt weißes gaußsches Rauschen ab. S<sub>1</sub> und S<sub>2</sub> werden als Störquellen betrachtet und ihre Informationen sind nicht von Interesse. Bei der Auswertung wird ein Gebiet von 1 Meter mal 1 Meter abgetastet und die Störquellen sind außerhalb des Abtastgebietes. Die Lautsprecher A B C werden in beiden Schallbilder richtig lokalisiert. Im Schallbild von DAS-F sieht man noch einige konzentrische Kreisringe, die die Nebenkeulen der Quelle S<sub>1</sub> sind.
+Zuerst lassen sich die Lautsprecher A, B, C, und S_1 monofrequente Signale abstrahlen. Der Lautsprecher S_2 strahlt weißes gaußsches Rauschen ab. S_1 und S_2 werden als Störquellen betrachtet und ihre Informationen sind nicht von Interesse. Bei der Auswertung wird ein Gebiet von 1 Meter mal 1 Meter abgetastet und die Störquellen sind außerhalb des Abtastgebietes. Die Lautsprecher A B C werden in beiden Schallbilder richtig lokalisiert. Im Schallbild von DAS-F sieht man noch einige konzentrische Kreisringe, die die Nebenkeulen der Quelle S_1 sind.
 </p>
 
 <p>
-Bei der Anwendung von OB wird ein Schallbild der Quelle S<sub>1</sub> erzeugt und das Maximum im Schallbild als die Quelle betrachtet. Aber wenn die Quelle außerhalb dem Abtastgebiet ist, stimmt das Maximum im Schallbild natürlich nicht mehr mit der Quellposition überein. Demzufolge wird eine Scheinquelle gebildet.
+Bei der Anwendung von OB wird ein Schallbild der Quelle S_1 erzeugt und das Maximum im Schallbild als die Quelle betrachtet. Aber wenn die Quelle außerhalb dem Abtastgebiet ist, stimmt das Maximum im Schallbild natürlich nicht mehr mit der Quellposition überein. Demzufolge wird eine Scheinquelle gebildet.
 </p>
 
 <p>
-Die Auswertung wird noch mal ausgeführt mit einem vergrößerten Abtastgebiet. Im Schallbild von DAS-F wird die Hauptkeule der Quelle S<sub>2</sub> von den Nebenkeulen anderer Quellen überdeckt. Im Gegensatz dazu wird S<sub>2</sub> im Schallbild von Ob aufgefunden und richtig lokalisiert.
+Die Auswertung wird noch mal ausgeführt mit einem vergrößerten Abtastgebiet. Im Schallbild von DAS-F wird die Hauptkeule der Quelle S_2 von den Nebenkeulen anderer Quellen überdeckt. Im Gegensatz dazu wird S_2 im Schallbild von Ob aufgefunden und richtig lokalisiert.
 </p>
 
 <p>
@@ -2037,7 +2037,7 @@ scrapbook 的信息被保留, 而其他配置得以重置. kaixin 又没有问�
 
 <p>
 &lt;example&gt;
-eval: 1: libtool<sub>args</sub>+=: not found
+eval: 1: libtool_args+=: not found
 &lt;/example&gt;
 </p>
 
@@ -2508,7 +2508,7 @@ $ grep alt /usr/share/X11/xkb/rules/evdev.lst | grep win
   altwin               Alt/Win key behavior
   altwin:menu          Add the standard behavior to Menu key
   &#x2026;
-  altwin:swap<sub>lalt</sub><sub>lwin</sub> Left Alt is swapped with Left Win
+  altwin:swap_lalt_lwin Left Alt is swapped with Left Win
 &lt;/src&gt;
 </p>
 
@@ -2518,7 +2518,7 @@ $ grep alt /usr/share/X11/xkb/rules/evdev.lst | grep win
 
 <p>
 &lt;src lang="shell-script"&gt;
-     Option "XkbOptions"     "altwin:swap<sub>lalt</sub><sub>lwin</sub>"
+     Option "XkbOptions"     "altwin:swap_lalt_lwin"
 &lt;/src&gt;
 </p>
 
@@ -2646,7 +2646,7 @@ matlab 无压缩方式制作的 avi 文件可以在 powerpoint 2003 中添加以
 
 <p>
 &lt;example&gt;
-mencoder measurement<sub>video2.avi</sub> -of avi -ovc lavc -o output2.avi
+mencoder measurement_video2.avi -of avi -ovc lavc -o output2.avi
 &lt;/example&gt;
 </p>
 
@@ -2775,7 +2775,7 @@ windows 7 支持不好. 几次尝试都失败了. 今天采用了 windows 下的
 </p>
 
 <p>
-在旅馆, 机场临时上网, 使用 wpa<sub>supplicant</sub> 需要确切知道各种信息, 感觉非常麻烦.  Networkmanager 不
+在旅馆, 机场临时上网, 使用 wpa_supplicant 需要确切知道各种信息, 感觉非常麻烦.  Networkmanager 不
 知道现在怎么样了, 不过网上推荐了轻量的 wicd . 用了一下, 感觉非常顺手. 注意应该首先启动
 /etc/init.d/wicd 服务, 其实就是 wicd 的一个 daemon. 然后启动 wicd-gtk 便不需要管理员权限.
 </p>
@@ -2869,7 +2869,7 @@ Supporting materials:
 
 <p>
 &lt;example&gt;
-mencoder measurement<sub>video2.avi</sub> -of avi -ovc lavc -o output2.avi
+mencoder measurement_video2.avi -of avi -ovc lavc -o output2.avi
 &lt;/example&gt;
 </p>
 
@@ -2891,7 +2891,7 @@ windows xp 以后的版本都自带了影片制作工具, 用那个转换出来�
 
 <p>
 &lt;src lang="emacs-lisp"&gt;
- (add-to-list 'load-path "~/emacs<sub>lib</sub>/elisps/evil")
+ (add-to-list 'load-path "~/emacs_lib/elisps/evil")
  ;; the cursor does not move backwards when exiting Insert state
  (setq evil-move-cursor-back nil)
  (require 'evil)
@@ -2922,7 +2922,7 @@ evil 让我很难受的还是用 v 选择区域以后, 光标所在的字符也�
 <li>run: gconf-editor</li>
 <li>Drill down to desktop/gnome/applications/terminal/ and alter the values to:</li>
 <li>exec urxvt</li>
-<li>exec<sub>arg</sub> -e</li>
+<li>exec_arg -e</li>
 </ul>
 
 <p>
@@ -3012,11 +3012,11 @@ monaco 的字体在 10 以下觉得挺好, 但是 11 以上感觉字符之间间
 </p>
 
 <p>
-setxkbmap -option lv3:rwin<sub>switch</sub>
+setxkbmap -option lv3:rwin_switch
 </p>
 
 <p>
-Option "XkbOptions" "lv3:rwin<sub>switch</sub>"
+Option "XkbOptions" "lv3:rwin_switch"
 </p>
 
 <p>
@@ -3068,7 +3068,7 @@ click on "right win"
 &lt;example&gt;
 Use of the opts variable is deprecated and will be
 removed in the future.
-Please use extra<sub>commands</sub> or extra<sub>started</sub><sub>commands</sub>.
+Please use extra_commands or extra_started_commands.
 &lt;/example&gt;
 </p>
 
@@ -3380,7 +3380,7 @@ you will get kind of error :
 </p>
 
 <p>
-&lt;example&gt; Gtk-WARNING **: Unable to locate theme engine in module<sub>path</sub>: "pixmap", &lt;/example&gt;
+&lt;example&gt; Gtk-WARNING **: Unable to locate theme engine in module_path: "pixmap", &lt;/example&gt;
 </p>
 
 <p>
@@ -3437,14 +3437,14 @@ alias duu='du -h &#x2013;max-depth=1 | sort -h'
 
 <p>
 &lt;example&gt;
-sym<sub>water</sub><sub>harm</sub><sub>20</sub><sub>06</sub><sub>1MHz</sub>/             sym<sub>water</sub><sub>harm</sub><sub>28</sub><sub>06</sub><sub>1Mhz</sub><sub>fine</sub>/
-sym<sub>water</sub><sub>harm</sub><sub>20</sub><sub>06</sub><sub>1MHz</sub><sub>plexiglass</sub>/  sym<sub>water</sub><sub>harm</sub><sub>28</sub><sub>06</sub><sub>1MHz</sub><sub>piezo</sub>/
-sym<sub>water</sub><sub>harm</sub><sub>03</sub><sub>09</sub><sub>5MHz</sub>/  sym<sub>water</sub><sub>harm</sub><sub>22</sub><sub>03</sub>/
+sym_water_harm_20_06_1MHz/             sym_water_harm_28_06_1Mhz_fine/
+sym_water_harm_20_06_1MHz_plexiglass/  sym_water_harm_28_06_1MHz_piezo/
+sym_water_harm_03_09_5MHz/  sym_water_harm_22_03/
 &lt;/example&gt;
 </p>
 
 <p>
-我要进入 sym<sub>water</sub><sub>harm</sub><sub>20</sub><sub>06</sub><sub>1MHz</sub><sub>plexiglass</sub> 文件夹, tab 键当然能帮忙输入不少字符, 但是还是比较
+我要进入 sym_water_harm_20_06_1MHz_plexiglass 文件夹, tab 键当然能帮忙输入不少字符, 但是还是比较
 麻烦, 但是 plexiglass 具有唯一性, 所以我这样做:
 </p>
 
@@ -4009,7 +4009,7 @@ sawfish 和 gnome nautilus 兼容性一般. 有时候我开启 iswitch 以后, �
 </p>
 
 <p>
-我之前将 IUS2012 文件夹删去. 现在文件修改结束以后, 把 IUS2012<sub>PlanB</sub> 转正. 但是不能再建立 IUS2012
+我之前将 IUS2012 文件夹删去. 现在文件修改结束以后, 把 IUS2012_PlanB 转正. 但是不能再建立 IUS2012
 文件夹. svn 报错说在数据库里存在 IUS2012 的条目. 原因当时删除文件夹的时候, 没有彻底删除, 我怀疑
 是我使用 svn cleanup 导致的. 虽然 svn st 看不到有 IUS2012 的条目, 但是使用
 </p>
@@ -4765,7 +4765,7 @@ usb 启动, 而非 UEFI.
 </p>
 
 <p>
-现在我平时将 [] 和 -= 调换, 因为我写matlab代码基本不需要[], 而-=<sub>+却是不断使用的</sub>. 但是我的键盘按
+现在我平时将 [] 和 -= 调换, 因为我写matlab代码基本不需要[], 而-=_+却是不断使用的. 但是我的键盘按
 键是带键盘符号的, 所以设置了一个 layer2, 和本来的按钮一样. 其他同事要使用我的键盘的话, 进入layer2,
 别人就感觉不到任何区别. ''''
 </p>
@@ -4785,7 +4785,7 @@ Fn+Q就不能回到layer0了.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Lizhuo Chen</p>
-<p class="date">Created: 2021-07-03 Sat 22:40</p>
+<p class="date">Created: 2021-07-03 Sat 23:01</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

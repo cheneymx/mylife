@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-03 Sat 22:39 -->
+<!-- 2021-07-03 Sat 23:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>C++</title>
@@ -232,7 +232,7 @@
 <li><a href="#org69808cc">6. Functions</a></li>
 <li><a href="#org6a36cd4">7. The IO Library</a></li>
 <li><a href="#org456a700">8. Sequential Containers</a></li>
-<li><a href="#org580a135">9. Associative Containers</a></li>
+<li><a href="#orgcf29a7f">9. Associative Containers</a></li>
 <li><a href="#org338a30b">10. Classes</a></li>
 <li><a href="#org37cbad4">11. Copy Control</a></li>
 <li><a href="#org9d445e4">12. Object-Oriented Programming</a></li>
@@ -313,7 +313,7 @@ allow programmers to avoid inadvertent collisions with the same names defined by
 </tr>
 
 <tr>
-<td class="org-left">wchar<sub>t</sub></td>
+<td class="org-left">wchar_t</td>
 <td class="org-left">wide character(eg. Chinese)</td>
 <td class="org-left">16 bits</td>
 </tr>
@@ -426,7 +426,7 @@ the digit '1'.
 <div class="outline-text-4" id="text-2-1-4">
 <ul class="org-ul">
 <li>char:  'a' , '2', ' '</li>
-<li>wchar<sub>t</sub>:  L'a'</li>
+<li>wchar_t:  L'a'</li>
 </ul>
 </div>
 </div>
@@ -800,7 +800,7 @@ the public section so that any code in the program may execute these operations.
 
 <p>
 Code that is not part of the class does not have access to the private members. By making the
-Sales<sub>item</sub> data members private, <b><b>objects</b></b> of type Sales<sub>item</sub> <b><b>may execute the operations</b></b> but <b><b>not</b></b>
+Sales_item data members private, <b><b>objects</b></b> of type Sales_item <b><b>may execute the operations</b></b> but <b><b>not</b></b>
 <b><b>change the data directly</b></b>.
 </p>
 </div>
@@ -885,7 +885,7 @@ Headers should have guards, even if they are not included by another header.
 <div class="outline-text-3" id="text-3-1">
 <p>
 A <b><b>using declaration</b></b> allows us to access a name from a namespace without the prefix
-<b><b>namespace<sub>name</sub>::</b></b>.
+<b><b>namespace_name::</b></b>.
 </p>
 
 <div class="org-src-container">
@@ -955,7 +955,7 @@ cout &lt;&lt; s &lt; endl;
 </div>
 
 <p>
-The string input operator '&gt;&gt;' (e.g., cin &gt;&gt; a<sub>string</sub>):
+The string input operator '&gt;&gt;' (e.g., cin &gt;&gt; a_string):
 </p>
 <ul class="org-ul">
 <li>Reads and discards any leading whitespace (e.g., spaces, newlines, tabs)</li>
@@ -1005,12 +1005,12 @@ string type.
 </div>
 
 <div id="outline-container-orgf688218" class="outline-4">
-<h4 id="orgf688218"><span class="section-number-4">3.2.4</span> string::size<sub>type</sub></h4>
+<h4 id="orgf688218"><span class="section-number-4">3.2.4</span> string::size_type</h4>
 <div class="outline-text-4" id="text-3-2-4">
 <p>
-The <b><b>size</b></b> operation returns a value of type <b><b>string::size<sub>type</sub></b></b> instead of an int. The string
+The <b><b>size</b></b> operation returns a value of type <b><b>string::size_type</b></b> instead of an int. The string
 class&#x2013;and many other library types&#x2013;defines several <b><b>companion types</b></b>. These companion types make
-it possible to <b><b>use the library types in a</b></b> <b>machine-independent</b> <b><b>manner</b></b>. The type size<sub>type</sub> is
+it possible to <b><b>use the library types in a</b></b> <b>machine-independent</b> <b><b>manner</b></b>. The type size_type is
 defined as a synonym for an <b><b>unsigned type</b></b> &#x2013; either unsigned int or unsigned long &#x2013; that is
 <b><b>guaranteed to be big enough</b></b> to hold the size of any string.
 </p>
@@ -1146,8 +1146,8 @@ v1 = v2
 </div>
 
 <p>
-The size member returns a value of the size<sub>type</sub> defined by the corresponding vector type. To
-use size<sub>type</sub>, we must name the type in which it is defined. A vector type always includes the
+The size member returns a value of the size_type defined by the corresponding vector type. To
+use size_type, we must name the type in which it is defined. A vector type always includes the
 elements type of the vector:
 </p>
 
@@ -1177,7 +1177,7 @@ ivec[ix] = ix;    <span style="color: #add8e6;">// </span><span style="color: #a
 </div>
 
 <p>
-一定要注意: subscript 只能修改已经存在的 Elements. 而 push<sub>back</sub> 才能增加新的 Elements. 这个和 C
+一定要注意: subscript 只能修改已经存在的 Elements. 而 push_back 才能增加新的 Elements. 这个和 C
 不同.
 </p>
 
@@ -1310,8 +1310,8 @@ support other arithmetic operations:
 </ol>
 
 <p>
-The operation returns a value of a signed integral type named <b><b>difference<sub>type</sub></b></b>, which, like
-size<sub>type</sub>, is defined by vector. Both iter1 and iter2 must refer to elements in the same vector
+The operation returns a value of a signed integral type named <b><b>difference_type</b></b>, which, like
+size_type, is defined by vector. Both iter1 and iter2 must refer to elements in the same vector
 or the element one past the end of that vector.
 </p>
 
@@ -1323,17 +1323,17 @@ or the element one past the end of that vector.
 Doing so yields a new iterator position n elements ahead of or behind the element to which iter
 refers. The result of the addition or subtraction must refer to an element in the vector to
 which iter refers or to one past the end of that vector. The type of the value added or
-subtracted ought ordinarily to be the vector's size<sub>type</sub> or difference<sub>type</sub>.
+subtracted ought ordinarily to be the vector's size_type or difference_type.
 </p>
 
 <p>
 <b>Beware</b>: Any operation that changes the size of a vector makes existing iterators invalid. For
-example, after calling push<sub>back</sub>, you should not rely on the value of an iterator into the
+example, after calling push_back, you should not rely on the value of an iterator into the
 vector.
 </p>
 
 <p>
-测试后发现, 使用 push<sub>back</sub> 增加一个元素以后, 旧的元素依然可以浏览, 但是新的元素必须使用 begin()或
+测试后发现, 使用 push_back 增加一个元素以后, 旧的元素依然可以浏览, 但是新的元素必须使用 begin()或
 者 end() 重新索引以后才能被访问, 否则在原来最后一个元素后使用 *(iter++) 指向的并非是新添加的元素.
 </p>
 </div>
@@ -1350,7 +1350,7 @@ vector.
 <h3 id="org224d5f2"><span class="section-number-3">4.1</span> The sizeof Operator</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
-The <b><b>sizeof</b></b> operator returns a value of type <b><b>size<sub>t</sub></b></b> that is the size, <b>in bytes</b>, of an object or
+The <b><b>sizeof</b></b> operator returns a value of type <b><b>size_t</b></b> that is the size, <b>in bytes</b>, of an object or
 type name. The sizeof operator takes one of the following forms:
 </p>
 <ul class="org-ul">
@@ -1418,7 +1418,7 @@ We can also value-initialize a dynamically allocated object:
 </p>
 
 <p>
-If a new expression cannot acquire the requested memory, it throws an exception named <b><b>bad<sub>alloc</sub></b></b>.
+If a new expression cannot acquire the requested memory, it throws an exception named <b><b>bad_alloc</b></b>.
 </p>
 </div>
 </div>
@@ -1532,8 +1532,8 @@ delete the second pointer, then the free store may be corrupted.</li>
 
 <p>
 <b><b>Each of the library exception classes</b></b> defines a member function named <b>what</b>. This function takes
-no arguments and returns a C-style character string. In the case of runtime<sub>error</sub>, the C-style
-string is a copy of the string that was used to initialize the runtime<sub>error</sub>.
+no arguments and returns a C-style character string. In the case of runtime_error, the C-style
+string is a copy of the string that was used to initialize the runtime_error.
 </p>
 </div>
 
@@ -1547,13 +1547,13 @@ Library exception classes are defined in four headers:
 <li>The <b><b>exception header</b></b> defines the most general kind of exception class named exception.It
 communicates only that an exception occurs but provides no additional information.</li>
 <li>The <b><b>stdexcept header</b></b> defines several general purpose exception classes.</li>
-<li>The <b><b>new header</b></b> defines the <b><b>bad<sub>alloc</sub> exceptions type</b></b>, which is the exception <b><b>thrown by new</b></b>
+<li>The <b><b>new header</b></b> defines the <b><b>bad_alloc exceptions type</b></b>, which is the exception <b><b>thrown by new</b></b>
 if it cannot allocate memory.</li>
-<li>The <b><b>type<sub>info</sub> header</b></b> defines the <b><b>bad<sub>cast</sub> exception type</b></b>.</li>
+<li>The <b><b>type_info header</b></b> defines the <b><b>bad_cast exception type</b></b>.</li>
 </ol>
 
 <p>
-The exception, bad<sub>alloc</sub>, and bad<sub>cast</sub> types define only a default constructor; it is not
+The exception, bad_alloc, and bad_cast types define only a default constructor; it is not
 possible to provide an initializer for objects of these types. The other exception types define
 only a single constructor that takes a string initializer. That string initializer is used to
 provide additional information about the error that occurred. The exception types define only a
@@ -1561,8 +1561,8 @@ provide additional information about the error that occurred. The exception type
 </p>
 
 <p>
-<b><b>Standard Exception Classes</b></b> Defined in &lt;stdexcept&gt; :: runtime<sub>error</sub>, range<sub>error</sub>, overflow<sub>error</sub>,
-underflow<sub>error</sub>, logic<sub>error</sub>, domain<sub>error</sub>, invalid<sub>argument</sub>, length<sub>error</sub>, out<sub>of</sub><sub>range</sub>
+<b><b>Standard Exception Classes</b></b> Defined in &lt;stdexcept&gt; :: runtime_error, range_error, overflow_error,
+underflow_error, logic_error, domain_error, invalid_argument, length_error, out_of_range
 </p>
 </div>
 </div>
@@ -1592,10 +1592,10 @@ has the same effect as writing #define NDEBUG at the beginning of main.c.
 The preprocessor defines four other constants that can be useful in debugging:
 </p>
 <ul class="org-ul">
-<li>_<sub>FILE</sub>__   name of the file</li>
-<li>_<sub>Line</sub>__   current line number</li>
-<li>_<sub>TIME</sub>__   time the file was compiled</li>
-<li>_<sub>DATE</sub>__   date the file was compiled</li>
+<li>__FILE__   name of the file</li>
+<li>__Line__   current line number</li>
+<li>__TIME__   time the file was compiled</li>
+<li>__DATE__   date the file was compiled</li>
 </ul>
 
 <p>
@@ -2206,10 +2206,10 @@ it is as if the compiler rewrites the call as
 </div>
 
 <p>
-<b><b>const</b></b> that follows the parameter lists in the declarations of the Sales<sub>item</sub> member functions
-<b><b>modifies the</b></b> <b><b>type of the implicit this parameter</b></b>. When we call total.same<sub>isbn</sub>(trans), the
-implicit <b><b>this</b></b> parameter will be a <b><b>const</b></b> Sales<sub>Item</sub>* that points to total. It is as if the body
-of same<sub>isbn</sub> were written as
+<b><b>const</b></b> that follows the parameter lists in the declarations of the Sales_item member functions
+<b><b>modifies the</b></b> <b><b>type of the implicit this parameter</b></b>. When we call total.same_isbn(trans), the
+implicit <b><b>this</b></b> parameter will be a <b><b>const</b></b> Sales_Item* that points to total. It is as if the body
+of same_isbn were written as
 </p>
 
 <div class="org-src-container">
@@ -2258,8 +2258,8 @@ refer to the this pointer explicitly:
 </div>
 
 <p>
-Sales<sub>item</sub>::avg<sub>price</sub> uses the scope operator to say that we are defining the function named
-avg<sub>price</sub> that is defined in the scope of the Sales<sub>item</sub> class.
+Sales_item::avg_price uses the scope operator to say that we are defining the function named
+avg_price that is defined in the scope of the Sales_item class.
 </p>
 
 <p>
@@ -2270,7 +2270,7 @@ parameter list must be included in the definition as well.
 </div>
 
 <div id="outline-container-org9a630bd" class="outline-4">
-<h4 id="org9a630bd"><span class="section-number-4">6.5.6</span> Writing the Sales<sub>item</sub> Constructor</h4>
+<h4 id="org9a630bd"><span class="section-number-4">6.5.6</span> Writing the Sales_item Constructor</h4>
 <div class="outline-text-4" id="text-6-5-6">
 <p>
 A <b><b>constructor</b></b> is a <b><b>special member function</b></b> that <b><b>has</b></b> the <b><b>same names as its class</b></b>. Unlike other
@@ -2292,7 +2292,7 @@ A constructor is declared inside the class and may be defined there or outside t
 </div>
 
 <p>
-This constructor says We are Defining a constructor for the Sales<sub>item</sub> class that has an empty
+This constructor says We are Defining a constructor for the Sales_item class that has an empty
 parameter list and an empty function body.
 </p>
 
@@ -2543,7 +2543,7 @@ The IO types are defined in three separate headers:
 </ul>
 
 
-<div id="org418a9ca" class="figure">
+<div id="org4a338cf" class="figure">
 <p><img src="./pic/iostream_inheritance_hierarchy.png" alt="iostream_inheritance_hierarchy.png" />
 </p>
 </div>
@@ -2568,9 +2568,9 @@ ifstream or istringstream object.
 <div class="outline-text-4" id="text-7-0-1">
 <p>
 The stream classes described thus far read and write streams composed of type <b><b>char</b></b>. The library
-defines a corresponding set of types supporting the <b><b>wchar<sub>t</sub></b></b> type. Each class is distinguished
+defines a corresponding set of types supporting the <b><b>wchar_t</b></b> type. Each class is distinguished
 from its char counterpart by a "w" prefix. Thus, the types wostream, wistream, and wiostream
-read and write wchar<sub>t</sub> data to or from a console window&#x2026; The wchar<sub>t</sub> standard input object is
+read and write wchar_t data to or from a console window&#x2026; The wchar_t standard input object is
 named wcin; standard output is wcout; and standard error is wcerr.
 </p>
 </div>
@@ -2775,7 +2775,7 @@ outfile.open(ofile.c_str());
 For historical reasons, the IO library uses <b><b>C-style character string</b></b> rather than C++ strings
 to <b><b>refer to file names</b></b>. Often our programs obtain file names by reading the standard
 input. As usual, it is a good idea to read into a string, not a C-style character
-array. Assuming that the name of the file we wish to use is in a string, we can use the <b><b>c<sub>str</sub></b></b>
+array. Assuming that the name of the file we wish to use is in a string, we can use the <b><b>c_str</b></b>
 <b><b>member</b></b> to obtain a C-style string.
 </p>
 </div>
@@ -2950,8 +2950,8 @@ cout &lt;&lt; val1 &lt;&lt; <span style="color: #ffa07a;">" "</span> &lt;&lt; va
 <h2 id="org456a700"><span class="section-number-2">8</span> Sequential Containers</h2>
 </div>
 
-<div id="outline-container-org580a135" class="outline-2">
-<h2 id="org580a135"><span class="section-number-2">9</span> Associative Containers</h2>
+<div id="outline-container-orgcf29a7f" class="outline-2">
+<h2 id="orgcf29a7f"><span class="section-number-2">9</span> Associative Containers</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 Associative containers support efficient lookup and retrieval by a key. The two primary
@@ -3004,8 +3004,8 @@ p1 == p2
 </div>
 </div>
 
-<div id="outline-container-org17361da" class="outline-3">
-<h3 id="org17361da"><span class="section-number-3">9.1</span> Associative Containers</h3>
+<div id="outline-container-org553529a" class="outline-3">
+<h3 id="org553529a"><span class="section-number-3">9.1</span> Associative Containers</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 <b><b>Elements are ordered by key!</b></b> When we <b><b>iterate across</b></b> an associative container, we are guaranteed
@@ -3050,7 +3050,7 @@ requirement that it support the other relational or equality operators.
 </div>
 
 <p>
-Remember that the <b><b>value<sub>type</sub></b></b> is a <b><b>pair</b></b> and we <b><b>can not change</b></b> the <b><b>key</b></b> member of the pair.
+Remember that the <b><b>value_type</b></b> is a <b><b>pair</b></b> and we <b><b>can not change</b></b> the <b><b>key</b></b> member of the pair.
 </p>
 </div>
 </div>
@@ -3068,10 +3068,10 @@ word_count[<span style="color: #ffa07a;">"Anna"</span>] = 1;
 The following steps take place:
 </p>
 <ol class="org-ol">
-<li>word<sub>count</sub> is searched for the element whose key is Anna. The element is not found.</li>
-<li>A new key-value pair is inserted into word<sub>count</sub>. The key is a const string holding
+<li>word_count is searched for the element whose key is Anna. The element is not found.</li>
+<li>A new key-value pair is inserted into word_count. The key is a const string holding
 Anna. The value is initialized, meaning in this case that the value is 0.</li>
-<li>The new key-value pair is inserted into word<sub>count</sub>.</li>
+<li>The new key-value pair is inserted into word_count.</li>
 <li>The newly inserted element is fetched and is given that value 1.</li>
 </ol>
 
@@ -3090,7 +3090,7 @@ The fact that subscript adds an element if it is not already in the map allows u
 </div>
 
 <p>
-注意: 代码 word<sub>count</sub>["Anna"] 有副作用, 如果 word<sub>count</sub> 不存在 "Anna" 这个条目, 便会自动加上此条
+注意: 代码 word_count["Anna"] 有副作用, 如果 word_count 不存在 "Anna" 这个条目, 便会自动加上此条
 目, 并且使用默认值初始化此条目的 value. 如果要获取 map 里某条目的值, 或者判断是否存在某个条目, 应
 该使用后面讲述的 count 和 find 命令.
 </p>
@@ -3107,7 +3107,7 @@ m.insert(e)
 </div>
 
 <p>
-e is a value of the value<sub>type</sub> for m. It the key(e.first) is not in m, insert a new element with
+e is a value of the value_type for m. It the key(e.first) is not in m, insert a new element with
 value e.second. <b><b>If the key is in m, then m is unchanged</b></b>.
 </p>
 
@@ -3202,7 +3202,7 @@ Like any other container, map provides begin and end operations.
 </div>
 
 <p>
-这里的 const<sub>iterator</sub> 和 iterator 的区别在于, 使用 const<sub>iterator</sub> 得到的指针只能读取, 不能修改
+这里的 const_iterator 和 iterator 的区别在于, 使用 const_iterator 得到的指针只能读取, 不能修改
 container.
 </p>
 </div>
@@ -3224,19 +3224,19 @@ clear           removes all elements from the set
 count           returns the number of elements matching a certain key
 empty           true if the set has no elements
 end             returns an iterator just past the last element of a set
-equal<sub>range</sub>     returns iterators to the first and just past the last elements matching a specific key
+equal_range     returns iterators to the first and just past the last elements matching a specific key
 erase           removes elements from a set
 find            returns an iterator to specific elements
 insert          insert items into a set
-key<sub>comp</sub>        returns the function that compares keys
-lower<sub>bound</sub>     returns an iterator to the first element greater than or equal to a certain value
-max<sub>size</sub>        returns the maximum number of elements that the set can hold
-rbegin          returns a reverse<sub>iterator</sub> to the end of the set
-rend            returns a reverse<sub>iterator</sub> to the beginning of the set
+key_comp        returns the function that compares keys
+lower_bound     returns an iterator to the first element greater than or equal to a certain value
+max_size        returns the maximum number of elements that the set can hold
+rbegin          returns a reverse_iterator to the end of the set
+rend            returns a reverse_iterator to the beginning of the set
 size            returns the number of items in the set
 swap            swap the contents of this set with another
-upper<sub>bound</sub>     returns an iterator to the first element greater than a certain value
-value<sub>comp</sub>      returns the function that compares values
+upper_bound     returns an iterator to the first element greater than a certain value
+value_comp      returns the function that compares values
 &lt;/example&gt;
 </p>
 </div>
@@ -3369,18 +3369,18 @@ iterator that refers to the first instance of the key we are looking for.
 </ul>
 
 <p>
-Another, more elegant strategy uses two associative container operations: <b><b>lower<sub>bound</sub></b></b> and
-<b><b>upper<sub>bound</sub></b></b>.
+Another, more elegant strategy uses two associative container operations: <b><b>lower_bound</b></b> and
+<b><b>upper_bound</b></b>.
 </p>
 
 <p>
-If the key <b><b>is in the container</b></b>, the iterators will differ: the one returned from lower<sub>bound</sub>
-will refer to the first instance of the key, whereas upper<sub>bound</sub> will return an iterator
+If the key <b><b>is in the container</b></b>, the iterators will differ: the one returned from lower_bound
+will refer to the first instance of the key, whereas upper_bound will return an iterator
 referring just after the last instance.
 </p>
 
 <p>
-If the key is not in the container, then lower<sub>bound</sub> and upper<sub>bound</sub> will return equal
+If the key is not in the container, then lower_bound and upper_bound will return equal
 iterators. Both will refer to the point at which the key could be inserted without disrupting
 the order.
 </p>
@@ -3402,12 +3402,12 @@ return values act like an iterator range.
 </p>
 
 <ul class="org-ul">
-<li>The equal<sub>range</sub> Function</li>
+<li>The equal_range Function</li>
 </ul>
 
 <p>
-Function <b><b>equal<sub>range</sub></b></b> returns a <b><b>pair of iterators</b></b>. The first member is equivalent to
-m.lower<sub>bound</sub>(search<sub>item</sub>), and second is equivalent to m.upper<sub>bound</sub>(search<sub>item</sub>).
+Function <b><b>equal_range</b></b> returns a <b><b>pair of iterators</b></b>. The first member is equivalent to
+m.lower_bound(search_item), and second is equivalent to m.upper_bound(search_item).
 </p>
 
 <div class="org-src-container">
@@ -3529,10 +3529,10 @@ member appears.
 </div>
 
 <p>
-Here we use the fully qualified name 'Sales<sub>item</sub>:.avg<sub>price</sub>' to indicate that the definition is
-for the 'avg<sub>price</sub>' member in the scope of the 'Sales<sub>item</sub>' class. <b><b>Once the fully qualified name</b></b>
+Here we use the fully qualified name 'Sales_item:.avg_price' to indicate that the definition is
+for the 'avg_price' member in the scope of the 'Sales_item' class. <b><b>Once the fully qualified name</b></b>
 <b><b>of the member is seen, the definition is known to be in class scope</b></b>. Then we can refer to
-'revenue' and 'units<sub>sold</sub>' directly.
+'revenue' and 'units_sold' directly.
 </p>
 </div>
 </div>
@@ -3719,8 +3719,8 @@ item.same_isbn(null_book);
 </div>
 
 <p>
-The compiler uses the Sales<sub>item</sub> constructor that takes a string to generate a new Sales<sub>item</sub>
-object from null<sub>book</sub>, und passes the newly generated object to same<sub>isbn</sub>.
+The compiler uses the Sales_item constructor that takes a string to generate a new Sales_item
+object from null_book, und passes the newly generated object to same_isbn.
 </p>
 
 <p>
@@ -3771,7 +3771,7 @@ definition.
 </div>
 
 <p>
-Instead of making the entire Window<sub>Mgr</sub> class a friend, Screen could have specified that only
+Instead of making the entire Window_Mgr class a friend, Screen could have specified that only
 the relocate member was allowed access:
 </p>
 
@@ -4149,17 +4149,17 @@ derived classes.
 </div>
 
 <p>
-The class Disc<sub>item</sub> inherits the net<sub>price</sub> function from Item<sub>base</sub> but does not redefine
+The class Disc_item inherits the net_price function from Item_base but does not redefine
 it. This class exists solely for other classes to inherit from it.
 </p>
 
 <p>
-We do not intend for users to define Disc<sub>item</sub> objects. Instead, Disc<sub>item</sub> objects should exist
-<b><b>only as part of an object of a type derived</b></b> from Disc<sub>item</sub>.
+We do not intend for users to define Disc_item objects. Instead, Disc_item objects should exist
+<b><b>only as part of an object of a type derived</b></b> from Disc_item.
 </p>
 
 <p>
-We can enforce this design intent by making ent<sub>price</sub> a <b><b>pure</b></b> <b><b>virtual</b></b> <b><b>function</b></b>:
+We can enforce this design intent by making ent_price a <b><b>pure</b></b> <b><b>virtual</b></b> <b><b>function</b></b>:
 </p>
 
 <div class="org-src-container">
@@ -4212,8 +4212,8 @@ code to call the function directly.</li>
 <h3 id="org9a2f7f1"><span class="section-number-3">13.1</span> Function Template</h3>
 <div class="outline-text-3" id="text-13-1">
 </div>
-<div id="outline-container-org9eab547" class="outline-4">
-<h4 id="org9eab547"><span class="section-number-4">13.1.1</span> Defining</h4>
+<div id="outline-container-org83e27c5" class="outline-4">
+<h4 id="org83e27c5"><span class="section-number-4">13.1.1</span> Defining</h4>
 <div class="outline-text-4" id="text-13-1-1">
 <p>
 A function template is a type-independent function that is used as formula for generating a
@@ -4232,8 +4232,8 @@ type-specific version of the function.
 </div>
 </div>
 
-<div id="outline-container-orgd50389d" class="outline-4">
-<h4 id="orgd50389d"><span class="section-number-4">13.1.2</span> Using</h4>
+<div id="outline-container-org0d797e4" class="outline-4">
+<h4 id="org0d797e4"><span class="section-number-4">13.1.2</span> Using</h4>
 <div class="outline-text-4" id="text-13-1-2">
 <p>
 int main() {
@@ -4255,7 +4255,7 @@ return 0;
 template &lt;typename T&gt; inline T min(const T&amp;, const T&amp;);
 // error: incorrect placement of inline specifier
 inline template &lt;typename T&gt; T min(const T&amp;, const T&amp;);
-#+end<sub>src</sub>
+#+end_src
 </p>
 </div>
 </div>
@@ -4265,8 +4265,8 @@ inline template &lt;typename T&gt; T min(const T&amp;, const T&amp;);
 <h3 id="org9ea3e5c"><span class="section-number-3">13.2</span> Class Template</h3>
 <div class="outline-text-3" id="text-13-2">
 </div>
-<div id="outline-container-orgdb3df9e" class="outline-4">
-<h4 id="orgdb3df9e"><span class="section-number-4">13.2.1</span> Defining</h4>
+<div id="outline-container-org0131055" class="outline-4">
+<h4 id="org0131055"><span class="section-number-4">13.2.1</span> Defining</h4>
 <div class="outline-text-4" id="text-13-2-1">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #fa8072;">template</span> &lt;<span style="color: #fa8072;">class</span> <span style="color: #9acd32; font-weight: bold;">Type</span>&gt; <span style="color: #fa8072;">class</span> <span style="color: #9acd32; font-weight: bold;">Queue</span> {
@@ -4288,8 +4288,8 @@ any other class.
 </div>
 </div>
 
-<div id="outline-container-org8dafd64" class="outline-4">
-<h4 id="org8dafd64"><span class="section-number-4">13.2.2</span> Using</h4>
+<div id="outline-container-org72a1333" class="outline-4">
+<h4 id="org72a1333"><span class="section-number-4">13.2.2</span> Using</h4>
 <div class="outline-text-4" id="text-13-2-2">
 <p>
 When we use a class template, we must explicitly specify arguments for the template
@@ -4492,7 +4492,7 @@ sondern <b><b>erst zur Laufzeit entschieden</b></b>.
 <p>
 Wenn figur[i] auf einen Kreis zeigt, wird Kreis::verschiebenUm ausgeführt; zeigt er auf ein
 Dreieck, statt dessen Dreieck::verschiebenUm. Ohne dass Sie irgendeine Bedingung abprüfen oder
-einen dynamic<sub>cast</sub> probieren müssten! Ebenso einfach wie durchschlagskräftig.
+einen dynamic_cast probieren müssten! Ebenso einfach wie durchschlagskräftig.
 </p>
 
 <p>
@@ -4535,12 +4535,12 @@ Parameters
 <li>pos: The new position in the stream buffer. This parameter is an integral value of type streampos.</li>
 <li>off: Integral value of type streamoff representing the offset to be applied relative to an
 absolute position specified in the dir parameter.</li>
-<li>dir: Seeking direction. It is an object of type ios<sub>base</sub>::seekdir that specifies an absolute
+<li>dir: Seeking direction. It is an object of type ios_base::seekdir that specifies an absolute
 position from where the offset parameter off is applied. It can take any of the following
 member constant values:</li>
-<li>ios<sub>base</sub>::beg beginning of the stream buffer</li>
-<li>ios<sub>base</sub>::cur current position in the stream buffer</li>
-<li>ios<sub>base</sub>::end end of the stream buffer</li>
+<li>ios_base::beg beginning of the stream buffer</li>
+<li>ios_base::cur current position in the stream buffer</li>
+<li>ios_base::end end of the stream buffer</li>
 </ul>
 
 <p>
@@ -4641,7 +4641,7 @@ possible occurrences in previous locations.
 </p>
 
 <p>
-Notice that unlike member find<sub>first</sub><sub>of</sub>, whenever more than one character is being searched for,
+Notice that unlike member find_first_of, whenever more than one character is being searched for,
 it is not enough that only one of these characters match, but the entire sequence of characters
 to find must be matched.
 </p>
@@ -4677,7 +4677,7 @@ not found, the member value <b><b>npos</b></b> is returned.
 </div>
 
 <p>
-Maximum value for size<sub>t</sub>
+Maximum value for size_t
 </p>
 
 <p>
@@ -4685,7 +4685,7 @@ As a return value it is usually used to <b><b>indicate failure</b></b>.
 </p>
 
 <p>
-This constant is actually defined with a value of <b><b>-1</b></b>, which because size<sub>t</sub> is an
+This constant is actually defined with a value of <b><b>-1</b></b>, which because size_t is an
 <b><b>unsigned integral type</b></b>, becomes the largest possible representable value for this type.
 </p>
 </div>
@@ -4713,7 +4713,7 @@ cout.precision();
 <div id="postamble" class="status">
 <p class="date">Date: Time-stamp: &lt;03/07/2021 edited by Lizhuo Chen&gt;</p>
 <p class="author">Author: Lizhuo Chen</p>
-<p class="date">Created: 2021-07-03 Sat 22:39</p>
+<p class="date">Created: 2021-07-03 Sat 23:01</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

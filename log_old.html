@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-03 Sat 22:40 -->
+<!-- 2021-07-03 Sat 23:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Old Log</title>
@@ -673,7 +673,7 @@ emacs-wiki的表格中如果有的项目为空, 那么就在相应的地方填�
 <p>
 全面投入muse的怀抱&#x2026;
 反正没有那么多时间再仔细研究muse了,就用一下网上的现成品了.照样画葫芦也感觉不错.
-网页生成的head和foot部分, 主要修改muse-header-footer.el文件, 其余部分, 比如项目之类,修改muse<sub>init.el</sub>.
+网页生成的head和foot部分, 主要修改muse-header-footer.el文件, 其余部分, 比如项目之类,修改muse_init.el.
 css文件我也稍微修改了一下.免得前几天的努力都白费了&#x2013;敝帚自珍.
 我发现这个muse好像不支持 &lt;br&gt; 这个标签了.另外&#x2026;anchor的功能还需要再次研究.
 几个好使的快捷键:
@@ -686,7 +686,7 @@ M-RET:  换行,回车,并自动在下一行加上列表标记 "-" .
 </p>
 
 <p>
-我在muse<sub>init.el中添加了自动进入abbrev</sub>-mode,outline-minor-mode的代码.非常好使!
+我在muse_init.el中添加了自动进入abbrev-mode,outline-minor-mode的代码.非常好使!
 了解并学会使用auto-fill-mode. 关键是设置换行的字数:
 </p>
 
@@ -729,7 +729,7 @@ muse中使用anchor的时候,注意引用的文件要加上扩展名. 否则, �
 </p>
 
 <p>
-把原来的muse<sub>init.el文件又修改了一下</sub>, 去掉了一些不需要的功能.速度感觉已经有所加快了. 但
+把原来的muse_init.el文件又修改了一下, 去掉了一些不需要的功能.速度感觉已经有所加快了. 但
 是我一把.el文件编译,就会出现问题. 那就算了,反正关系不大.
 </p>
 
@@ -1155,13 +1155,13 @@ BMW的一个广告: 两辆宝马车在沙漠上飞驰, 他们共同控制着一�
 </p>
 
 <p>
-今天成功修改了swbuff<sub>init.el和tabbar</sub><sub>init.el两个文件</sub>, 让MATLAB和ESHELL也在default组里
+今天成功修改了swbuff_init.el和tabbar_init.el两个文件, 让MATLAB和ESHELL也在default组里
 面显示, 而且swbuff也不会忽略他们的存在. 而其他如scratch之类的, 然后被排除在外. 以后如
 果再次遇到该排除而没有排除的, 修改上述两个文件相关地方.
 </p>
 
 <p>
-后来又对swbuff<sub>init修改了一下</sub>, 现在使用了正则表达式, 凡是以*开头,但不以l*或B*结尾的buffer都被忽
+后来又对swbuff_init修改了一下, 现在使用了正则表达式, 凡是以*开头,但不以l*或B*结尾的buffer都被忽
 略.
 </p>
 
@@ -1442,7 +1442,7 @@ kdocker在打开emacs的时候都会显示一些警告, 不过看着很是不舒
 今天终于在linux编程的书中得到提示, 将其错误报告都umleiten到/dev/null(传说中的黑洞文件)
 文件中.
 &lt;example&gt;
-alias ee='kdocker -i /home/c/emacs<sub>lib</sub>/lib/emacs<sub>init</sub>/emacs-logo.png -qm emacs
+alias ee='kdocker -i /home/c/emacs_lib/lib/emacs_init/emacs-logo.png -qm emacs
 2&gt;/dev/null &amp;
 &lt;/example&gt;
 </p>
@@ -1455,23 +1455,23 @@ alias ee='kdocker -i /home/c/emacs<sub>lib</sub>/lib/emacs<sub>init</sub>/emacs-
 &lt;src lang="c"&gt;
 <i>/c程序:
 /</i>---&#x2013;&#x2014;Hostget.c-----------&#x2013;&#x2014;
-  char h<sub>name</sub>[50];
+  char h_name[50];
 &#x2026;
-  if(gethostname(h<sub>name</sub>, 50)==-1)
+  if(gethostname(h_name, 50)==-1)
 &#x2026;
 </p>
 
 <p>
 //这里为何不能这样写:
- char *h<sub>name</sub>;
+ char *h_name;
  &#x2026;..
- if(gethostname(h<sub>name</sub>, 50)==-1)
+ if(gethostname(h_name, 50)==-1)
  &#x2026;..
 </p>
 
 <p>
-//因为h<sub>name在建立的时候是一空指针</sub>, 所以不能往里面写东西.
-//我们应该在其定义以后给它分配内存空间:  h<sub>name</sub>= (char *)malloc(50);
+//因为h_name在建立的时候是一空指针, 所以不能往里面写东西.
+//我们应该在其定义以后给它分配内存空间:  h_name= (char *)malloc(50);
 <i>/继续看下面一例子:
 /</i>-----------------&#x2013;&#x2014;fwrite.c
 &#x2026;
@@ -1500,7 +1500,7 @@ alias ee='kdocker -i /home/c/emacs<sub>lib</sub>/lib/emacs<sub>init</sub>/emacs-
 &lt;src lang="c"&gt;
 for(i=0, i&lt;100, i++)
  {
-   a<sub>str</sub>="Das ist der i. Mal.";
+   a_str="Das ist der i. Mal.";
  }
 &lt;/src&gt;
 希望其中的i能随着循环的变化而变化. 还有想要知道i变量的值的长度&#x2026;
@@ -1556,9 +1556,9 @@ Regexp"搜索muse, 找到了修改muse-color的菜单, 修改后, 系统自动�
 <p>
 今天捣腾了很久如何把Caps变成另外一个Ctrl键. 后来发现, 在
 system/Einstellungen/Tastatureinstellungen/Belegungseinstellungen里面直接就有相应的选
-项&#x2026; 不过多知道xmodmap命令还是很有好处的. 另外, 在同一个地方, 还可以选择让Alt<sub>L也具备</sub>
+项&#x2026; 不过多知道xmodmap命令还是很有好处的. 另外, 在同一个地方, 还可以选择让Alt_L也具备
 AltGr的功能. 这样,输入括号之类的符号就简单很多了. 但是实践后发现, 问题比较严重, 因为
-Alt<sub>L在Emacs中不再具备它原有的功能了</sub>&#x2026;
+Alt_L在Emacs中不再具备它原有的功能了&#x2026;
 </p>
 
 <p>
@@ -1620,7 +1620,7 @@ C-c C-t发布, 即使是保存了, 使用C-c C-v得到的结果还是上次发�
 </p>
 
 <p>
-半夜居然还搞定一个小东东: 自动备份emacs<sub>lib的</sub> .sh文件有时候不能很好地执行, 研究了一下,原来当时间
+半夜居然还搞定一个小东东: 自动备份emacs_lib的 .sh文件有时候不能很好地执行, 研究了一下,原来当时间
 为个位数时, 生成的文件就把小时后面部分删除了. 查看了一下date的manual发现当时我写时间格式为
 zeit=`date +%d_%m_%y_%k_%M_%S`, 其中%k取值 0..12, 更改为 %H就行了, 因为%H取值 00&#x2026;12, 也就是什么
 时候都是两位数, 就不会出现空格了.
@@ -1654,7 +1654,7 @@ print "Ich habe", string, "Kinder."
 </p>
 
 
-<div id="orga73626f" class="figure">
+<div id="orgdce7ee5" class="figure">
 <p><img src="./pic/tag_src.png" alt="tag_src.png" />
 </p>
 </div>
@@ -1803,7 +1803,7 @@ M-x describe-key
 M-x describe-key, 然后输入你感兴趣的按键序列, 那么被绑定的命令就会被显示出来. 以后就再也不用愁知
 道某个快捷键而不知道其命令名称的尴尬了. 比如今天我查看了在vi的edit模式下按下ESC键所指向的命令:
 viper-intercept-ESC-key. 那么, 我就可以再把其他快捷键绑定到这个命令上了, 比如 (global-set-key
-(kbd "&lt;dead-circumflex&gt;") 'viper-intercept-ESC-key), 其中 dead-circumflex就是德语键盘的<sup>符号</sup>. 不
+(kbd "&lt;dead-circumflex&gt;") 'viper-intercept-ESC-key), 其中 dead-circumflex就是德语键盘的^符号. 不
 知何故, 这个按键在gnome的德文键盘下面无法输出, 那就干脆把它当成一个快捷键. 这样修改模式就不用老
 大远去按ESC了.
 </p>
@@ -1864,7 +1864,7 @@ emacsclient可以如此定义:
 </p>
 
 <p>
-终于决心到德文论坛上问一下我的<sup>和</sup>~为何不能输入了. 结果问题瞬间就被解决了, 而且好几个人回答. 这方
+终于决心到德文论坛上问一下我的^和~为何不能输入了. 结果问题瞬间就被解决了, 而且好几个人回答. 这方
 面好像德国人厉害很多啊. 原因很简单, 需要选择的键盘布局不仅仅是 德国, 而且应该是 Eliminate dead
 keys. Wiki中有写:
 </p>
@@ -1921,12 +1921,12 @@ M-x ansi-term   打开bash.
 </p>
 
 <p>
-今天把.emacs文档修改了一下, 主要配置文件放在emacs<sub>lib下面</sub>, 在.emacs中现在唯一的一句话就是load
-emacs<sub>lib下面相应的配置文件</sub>. 我对Linux-GUI, Shell, Windows 分别进行了配置, 这样理论上无论是什么
-系统, 我的配置文件都能运行了. 现在.emacs下面默认为load linux的配置文件, 另外写了.emacs<sub>shell文件</sub>,
-里面设定加载shell<sub>emacs的配置文件</sub>. 要使用.emacs<sub>shell而不使用.emacs的配置文件可以如下操作</sub>:
-&lt;example&gt; emacs -nw -Q -l .emacs<sub>shell</sub>  &lt;/example&gt;
--nw表明不使用GUI, -Q表明不加载配置文件, 接着 -l .emacs<sub>shell要求emacs加载指定的配置文件</sub>. 如果不
+今天把.emacs文档修改了一下, 主要配置文件放在emacs_lib下面, 在.emacs中现在唯一的一句话就是load
+emacs_lib下面相应的配置文件. 我对Linux-GUI, Shell, Windows 分别进行了配置, 这样理论上无论是什么
+系统, 我的配置文件都能运行了. 现在.emacs下面默认为load linux的配置文件, 另外写了.emacs_shell文件,
+里面设定加载shell_emacs的配置文件. 要使用.emacs_shell而不使用.emacs的配置文件可以如下操作:
+&lt;example&gt; emacs -nw -Q -l .emacs_shell  &lt;/example&gt;
+-nw表明不使用GUI, -Q表明不加载配置文件, 接着 -l .emacs_shell要求emacs加载指定的配置文件. 如果不
 加 -Q, 那么.emacs也会加载一遍.
 </p>
 
@@ -2089,13 +2089,13 @@ tetex已经不再开发了, 都转为 texlive 中. 连安装 tetex-extra 也被�
 &lt;src lang="emacs-lisp"&gt;
 (cond ((eq window-system nil)
 	   ;; ohne X-windows
-	   (load-file "~/emacs<sub>lib</sub>/lib/kleine/.shell.emacs.el"))
+	   (load-file "~/emacs_lib/lib/kleine/.shell.emacs.el"))
 	  ((eq system-type 'windows-nt)
 	   ;; Windows
-	   (load-file "~/emacs<sub>lib</sub>/lib/kleine/.win.emacs.el"))
+	   (load-file "~/emacs_lib/lib/kleine/.win.emacs.el"))
 	  ((eq system-type 'gnu/linux)
 	   ;; Linux
-	   (load-file "~/emacs<sub>lib</sub>/lib/kleine/.linux.emacs.el")))
+	   (load-file "~/emacs_lib/lib/kleine/.linux.emacs.el")))
 &lt;/src&gt;
 </p>
 
@@ -2565,7 +2565,7 @@ edit()的函数. 忽然来了灵感, 就像是在.emacs里面定义函数一样.
 <p>
 接下去有倒腾了一天的Multi-TTY, 现在已经对Emacs-Client和Emacs Multi-TTY有了比较好的理解. 另外还学
 会了一个强大的工具: Dtach. Screen是更加强大的, 不过我暂时还没有时间去学习. 详细的记录在
-emacs<sub>client</sub><sub>multi</sub><sub>tty</sub> 一文.
+emacs_client_multi_tty 一文.
 </p>
 
 <p>
@@ -2622,7 +2622,7 @@ If the package you want to compile is in the repositories, I would just run:
 </p>
 
 <p>
-&lt;example&gt; sudo apt-get build-dep package<sub>name</sub> &lt;/example&gt;
+&lt;example&gt; sudo apt-get build-dep package_name &lt;/example&gt;
 </p>
 
 <p>
@@ -2784,7 +2784,7 @@ eexpress 给了一个有趣的实现, 事实上是有点点 dirty, 不过很好�
 
 <p>
 &lt;src lang="emacs-lisp"&gt;
-(defun convert-event (re event<sub>old</sub> event<sub>new</sub>)
+(defun convert-event (re event_old event_new)
 "convert the old event to a new event, and send it to a window.
 make sure, that re is a list"
   (catch 'return
@@ -2795,11 +2795,11 @@ make sure, that re is a list"
         ;; an element
         (setq elem (nth (- n 1) re))
         (when (string-match elem (window-name curwin))
-             (synthesize-event event<sub>new</sub> curwin)
+             (synthesize-event event_new curwin)
              (throw 'return))
         (setq n (- n 1)))
       ;; if no matched, send old event to window
-      (synthesize-event event<sub>old</sub> curwin))
+      (synthesize-event event_old curwin))
       (kid-display-message "Error: re must be a list")))))
 </p>
 
@@ -2812,7 +2812,7 @@ make sure, that re is a list"
 <p>
 这个程序接收一个名为 re 的 list. 后面参数分别为输入的按键, 输入到当前窗口的按键. 用途可以如此阐
 述: 如果此命令被激活, 那么系统查看当前窗口名称是否符合 re 里面的任何一个正则表达式, 如果符合, 那
-么将 event<sub>new</sub> 的按键组合输入到当前窗口, 如果不符合, 输入 event<sub>old</sub> 的按键组合到当前窗口. 比如
+么将 event_new 的按键组合输入到当前窗口, 如果不符合, 输入 event_old 的按键组合到当前窗口. 比如
 Emacser 习惯于C-s为搜索, 我们设定 Adobe Reader 的窗口下面, 键盘输入 C-s 后, 系统将其转换为 C-f 输入
 给窗口. 这个用法只需在 .sawfish 中如下定义:
 </p>
@@ -3007,8 +3007,8 @@ import re
 </p>
 
 <p>
-bbdb<sub>fd</sub> = open('<i>home/c/emacs<sub>lib</sub>/lib/kleine</i>.bbdb')
-alias<sub>fd</sub> = open('/home/c/alias<sub>c</sub>', 'w')
+bbdb_fd = open('<i>home/c/emacs_lib/lib/kleine</i>.bbdb')
+alias_fd = open('/home/c/alias_c', 'w')
 </p>
 
 <p>
@@ -3016,17 +3016,17 @@ pattern = re.compile("\[\"([a-zA-Z]*?)\".\"([a-zA-Z]*?)\".{16}.*?\(\"(.*?)\"\).*
 </p>
 
 <p>
-for line in bbdb<sub>fd</sub>:
+for line in bbdb_fd:
     result = pattern.match(line)
     if result != None:
-        alias<sub>fd.write</sub>('alias ' + result.group(2).lower() + result.group(1).lower() + ' '
+        alias_fd.write('alias ' + result.group(2).lower() + result.group(1).lower() + ' '
 </p>
 <ul class="org-ul">
 <li>result.group(1).capitalize() + ' ' + result.group(2).capitalize() +</li>
 </ul>
 <p>
                        ' &lt;' + result.group(3) + '&gt;\n')
-        alias<sub>fd.flush</sub>()
+        alias_fd.flush()
 &lt;/src&gt;
 </p>
 
@@ -3055,7 +3055,7 @@ def gotourl( self, wg=None):
 </p>
 
 <p>
-根据 gmail-notify 的源代码, 我写好了 spool<sub>notify</sub> 文件. 它会分析给出的 MAILBOX 是 dir 还是
+根据 gmail-notify 的源代码, 我写好了 spool_notify 文件. 它会分析给出的 MAILBOX 是 dir 还是
 file. 如果是 file, 继续分析里面的内容, 从而得到新邮件的个数. 如果是 dir, 则没空文件个数就是新邮
 件个数. 关键是有新邮件以后, 它会自动弹出一个 PopUp. 点击这个 PopUp 还可以直接进入 Emacs - gnus
 下直接浏览新邮件.
@@ -3063,7 +3063,7 @@ file. 如果是 file, 继续分析里面的内容, 从而得到新邮件的个�
 
 <p>
 update: 另外, 在弹出 PopUp 的时候, 我使用 aplay 命令播放一音乐片断, 当做提示音. 将文件加到
-c<sub>autostart</sub> 里面, 开机自动运行. 基本感觉非常满意了.
+c_autostart 里面, 开机自动运行. 基本感觉非常满意了.
 </p>
 
 <p>
@@ -3131,7 +3131,7 @@ elisp-form 会在末尾执行, 也就是在执行完 .emacs 以后.
 </p>
 
 <p>
-&lt;example&gt; rxvt-unicode -T my<sub>urxvt</sub> -e screen -D -R c-session-1983 &lt;/example&gt;
+&lt;example&gt; rxvt-unicode -T my_urxvt -e screen -D -R c-session-1983 &lt;/example&gt;
 </p>
 
 <p>
@@ -3141,7 +3141,7 @@ session, session 的名称就是 c-session-1983. 我将其作为 urxvt 的默认
 
 <p>
 &lt;example&gt;
-(wy-run "rxvt-unicode -T my<sub>urxvt</sub> -e screen -D -R c-session-1983 &amp;"))
+(wy-run "rxvt-unicode -T my_urxvt -e screen -D -R c-session-1983 &amp;"))
 &lt;/example&gt;
 </p>
 
@@ -3292,7 +3292,7 @@ W-f 启动 firefox, 居然没有自动转到前端. 更糟糕的是, 连移动�
 
 <p>
 好不容易, 终于让我找到了 sawfish 启动时加载的脚本了. 在 ~/.sawfish 下面新建一可执行的 startup 文
-件, sawfish 在启动的时候就会自动加载之. 如果使用纯的 sawfish, .bash<sub>profil</sub> 是不会被自动加载的.
+件, sawfish 在启动的时候就会自动加载之. 如果使用纯的 sawfish, .bash_profil 是不会被自动加载的.
 </p>
 
 <p>
@@ -3438,8 +3438,8 @@ CygWin. 我对编译比较感冒, 便终止了继续尝试. 后来发现 Xrefaco
 </p>
 
 <p>
-终于将 c<sub>mail</sub><sub>notify</sub> 修改成了一个比较通用的接口. 以后任何想要定时检查, 并希望通过 Popup 窗口来显
-示提示的任务, 都可以通过修改 c<sub>check</sub><sub>all</sub> 来实现了. 接口相当简单, 而且已经写了足够详细的使用说明.
+终于将 c_mail_notify 修改成了一个比较通用的接口. 以后任何想要定时检查, 并希望通过 Popup 窗口来显
+示提示的任务, 都可以通过修改 c_check_all 来实现了. 接口相当简单, 而且已经写了足够详细的使用说明.
 </p>
 
 <p>
@@ -3508,7 +3508,7 @@ gmplayer) 设置编码为简体中文, 然后选择能显示中文的字体即�
 发送邮件, 但是 fetchmail 就无法工作了. 另外, 又是原来的问题, 现在要把 邮箱的密码写在 gnus 的配置
 文件中, 关系到保密的问题. 虽然我现在的邮箱根本没有入侵的价值, 但是安全意识要从小培养好. 我最后想
 到了一个好办法: 我添加了 ~/.gnus.el 文件, 这个文件会在我启动 gnus 的时候才加载, 而这个文件里面只
-有一行: (load-file "~/emacs<sub>lib</sub>/lib/emacs<sub>init</sub>/gnus.el.gpg")  这样我就将密码大胆地放在加密了的配
+有一行: (load-file "~/emacs_lib/lib/emacs_init/gnus.el.gpg")  这样我就将密码大胆地放在加密了的配
 置文件中, 而这个文件又只有启动 gnus 才会被调用, 也不需要每次启动 Emacs 就输入密码. 而且有时候启
 动 Emacs 的时候输密码会导致无响应的尴尬局面.
 </p>
@@ -3564,7 +3564,7 @@ sawfish 写的.
       (catch 'quit
         (let ((oldbuf (current-buffer))
             (buf-name "Remember.muse")
-            (file-path "~/emacs<sub>lib</sub>/muse/src/mylife/remember.muse")
+            (file-path "~/emacs_lib/muse/src/mylife/remember.muse")
             append-to)
         (if (y-or-n-p "Save the String in Remember.muse? ")
             (progn
@@ -3800,9 +3800,9 @@ Emacs 确实是用会的, 只有使用的时间不断增长, 加上自己的不�
 
 <p>
 &lt;src lang="shell-script"&gt;
-$ dumpkeys &gt; my<sub>keymap</sub>
-$ vim my<sub>keymap</sub>  # eg. change Caps<sub>Lock</sub> to Control
-$ loadkeys my<sub>keymap</sub>
+$ dumpkeys &gt; my_keymap
+$ vim my_keymap  # eg. change Caps_Lock to Control
+$ loadkeys my_keymap
 &lt;/src&gt;
 </p>
 
@@ -3886,8 +3886,8 @@ vim 一文.
 的配置文件, 按下 y 确认. 接着感觉有点不大对劲, 不知道是时间久了还是因为想起刚才确认删除的文件名有
 问题, 猛然想到当前目录是 Home! 我战战兢兢地看了看提示符, 果然是 '~\)' !! 我有看了看 刚才的命令, 非
 常希望看到的是 rm -r .* 这样我的重要资料还能得以保存. 结果当然是 negative, 当时一阵晕眩, 赶紧按下
-C-c 终止任务&#x2026; 打开 Nautilus, 发现主要的资料都还在, 就是少了不少照片. 估计my<sub>document</sub> 下面的照片
-比较巨大, 他们用自己的生命保护了我的 emacs<sub>lib</sub> 等重要信息!! 感动啊!
+C-c 终止任务&#x2026; 打开 Nautilus, 发现主要的资料都还在, 就是少了不少照片. 估计my_document 下面的照片
+比较巨大, 他们用自己的生命保护了我的 emacs_lib 等重要信息!! 感动啊!
 </p>
 
 <p>
@@ -3910,7 +3910,7 @@ C-c 终止任务&#x2026; 打开 Nautilus, 发现主要的资料都还在, 就是
  (let* ((w0 (selected-window)) (wlist (window-list))
         (w1 (first (window-list)))
         (w2 (second (window-list)))
-        w2del w2keep buf vertical<sub>flag</sub>)
+        w2del w2keep buf vertical_flag)
    ;; which window should be deleted ?
    (if (equal (first (window-edges w1))
               (second (window-edges w1)))
@@ -3920,8 +3920,8 @@ C-c 终止任务&#x2026; 打开 Nautilus, 发现主要的资料都还在, 就是
      (setq w2del w1 w2keep w2))
    (if (equal (first (window-edges w2del)) 0)
        ;; should be vertical splited
-       (setq vertical<sub>flag</sub> t)
-     (setq vertical<sub>flag</sub> nil))
+       (setq vertical_flag t)
+     (setq vertical_flag nil))
 </p>
 
 <p>
@@ -3929,7 +3929,7 @@ C-c 终止任务&#x2026; 打开 Nautilus, 发现主要的资料都还在, 就是
    (setq buf (window-buffer w2del))
    (delete-window w2del)
    ;; The upper or leftmost window is the original one, and remains selected
-   (split-window nil nil vertical<sub>flag</sub>)
+   (split-window nil nil vertical_flag)
    (set-window-buffer (next-window) buf)
    (unless (equal w0 w2keep)
        (select-window (next-window)))))))
@@ -4347,7 +4347,7 @@ Lehrstul für Sensorik 的&#x2026; 这个可是我的专业方向啊! 事实上,
 </p>
 
 <p>
-gnome2.el 里面原来定义的背景色不能在虚拟终端下显示, 而替代色实在难看, 所以我将 color<sub>gnome2.el</sub> 中
+gnome2.el 里面原来定义的背景色不能在虚拟终端下显示, 而替代色实在难看, 所以我将 color_gnome2.el 中
 设置背景色那几句命令注释掉了. 另外发现, 我使用 set-background-color 设置的背景色, 不会影响到终端.
 这样, 在 x-window 下的 emacs 使用 darkslategery 背景色, 而利用Multi-TTY 特性在虚拟终端下的 emacs
 依然使用终端默认的背景色. 如果是物理终端比较麻烦, 因为 gnome2 中基本的颜色都不能正确显示, 这种情
@@ -4367,10 +4367,10 @@ gnome2.el 里面原来定义的背景色不能在虚拟终端下显示, 而替�
 (require 'windata)
 ;; 让 desktop 插件保存所有命名了的窗口设置
 (add-to-list 'desktop-globals-to-save 'windata-named-winconf)
-;; 在关闭 emacs 之前, 以 last<sub>win</sub><sub>situation</sub> 为名保存窗口设置.
+;; 在关闭 emacs 之前, 以 last_win_situation 为名保存窗口设置.
 (add-hook 'kill-emacs-hook
           '(lambda ()
-             (windata-name-winconf "last<sub>win</sub><sub>situation</sub>")))
+             (windata-name-winconf "last_win_situation")))
 ;; 回复保存了的上次的窗口设置
 ;; desktop 插件实在 after-init-hook 中, 将上次保存的信息重新释放
 ;; 所以, 为了使用上次保存的窗口信息, 我们调用下面这个函数要保证
@@ -4378,7 +4378,7 @@ gnome2.el 里面原来定义的背景色不能在虚拟终端下显示, 而替�
 ;; 这使得新增加的函数在 hook 列表的最后.
 (add-hook 'after-init-hook
           '(lambda ()
-             (windata-restore-named-winconf "last<sub>win</sub><sub>situation</sub>")) t)
+             (windata-restore-named-winconf "last_win_situation")) t)
 &lt;/src&gt;
 </p>
 
@@ -4437,13 +4437,13 @@ nil. 接下去我们利用 <b><b>featurep</b></b> 来判断现在系统中是否
 
 <p>
 &lt;src lang="emacs-lisp"&gt;
-(autoload 'w3m "~/emacs<sub>lib</sub>/lib/emacs<sub>init</sub>/w3m<sub>init.el</sub>" "internet browser" t)
+(autoload 'w3m "~/emacs_lib/lib/emacs_init/w3m_init.el" "internet browser" t)
 &lt;/src&gt;
 </p>
 
 <p>
 这个 w3m 我很少使用, 所以我就使用 autoload 的特性, 只有我调用这里指明的 w3m 函数的时候, 系统才会
-去加载在 emacs<sub>init</sub> 里的 w3m<sub>init.el</sub> 文件.
+去加载在 emacs_init 里的 w3m_init.el 文件.
 </p>
 
 <p>
@@ -4599,24 +4599,24 @@ Debian系统下, 我将 emacs 安装在 $HOME 目录中, 然后在 /usr/bin 下�
 &lt;src lang="emacs-lisp"&gt;
 ;;- - - - - - - - - - - Main Version Number - - - - - - - - - - - - - - - - - -
 ;; get the MAIN VERSION NUMBER of the running Emacs
-(defvar the<sub>emacs</sub><sub>main</sub><sub>version</sub> nil)
-(if (not the<sub>emacs</sub><sub>main</sub><sub>version</sub>)
+(defvar the_emacs_main_version nil)
+(if (not the_emacs_main_version)
     (progn
       (string-match "GNU Emacs \\(2[0-3]\\)\\.[0-9]+" (emacs-version))
       (if (and (match-beginning 1) (match-end 1))
-          (setq the<sub>emacs</sub><sub>main</sub><sub>version</sub> (string-to-number
+          (setq the_emacs_main_version (string-to-number
                                         (substring (emacs-version) (match-beginning 1) (match-end 1))))
         (error "Are you using Emacs with version 24 or higher? "
                "Or has the syntax of emacs-version changed?"
                "\n\tIf you know the Version of this Emacs, "
-               "set the variable 'the<sub>emacs</sub><sub>main</sub><sub>version</sub>' at the beginning of .emacs")))
-  (message "The variable 'the<sub>emacs</sub><sub>main</sub><sub>version</sub>' has been set by user"))
+               "set the variable 'the_emacs_main_version' at the beginning of .emacs")))
+  (message "The variable 'the_emacs_main_version' has been set by user"))
 &lt;/src&gt;
 </p>
 
 <p>
 无非就是利用正则表达式获取 (emacs-version) 返回回来的信息中的 有用部分. 然后将其赋值给
-the<sub>emacs</sub><sub>main</sub><sub>version</sub>. 在后面的大量配置文件中, 都可以直接通过查看这个变量的值获取版本信息, 然后
+the_emacs_main_version. 在后面的大量配置文件中, 都可以直接通过查看这个变量的值获取版本信息, 然后
 决定执行哪些代码.
 </p>
 
@@ -4653,7 +4653,7 @@ the<sub>emacs</sub><sub>main</sub><sub>version</sub>. 在后面的大量配置�
 C-s 保存即可. 不过发现还是不爽, 主要是因为最近常常干这种无聊的替代工作. 看着还有几十个 Krum 留给
 我的脚本需要修改, 决定忙里偷闲, 写一个脚本, 帮忙处理这种无聊的替代工作. 这个脚本关键是要将某个目
 录下所有符合条件的文件进行扫描, 将其中符合某一正则表达式的字符串中新的字符串替代. 最好还能扫描子
-目录. 经过大约 1.5 小时的编程, 最后写好了我的 c<sub>replace.py</sub>. 运行脚本, 瞬间将几十个脚本中的 TAB
+目录. 经过大约 1.5 小时的编程, 最后写好了我的 c_replace.py. 运行脚本, 瞬间将几十个脚本中的 TAB
 全部转换成 空格. 感觉相当不错, 而且主要是以后类似的事情都不需要再自己处理了. 代码有 100+ 行, 所
 以就不在黏贴到这里了.
 </p>
@@ -4664,7 +4664,7 @@ C-s 保存即可. 不过发现还是不爽, 主要是因为最近常常干这种
 
 <p>
 今天在西门子碰到一个正则表达式的问题, 倒腾了很久也没有解决, 最后决定放弃. 结果晚上回家, 修改以前
-写的 c<sub>ip</sub><sub>notify.py</sub> 的时候, 居然又碰到了同样的问题.
+写的 c_ip_notify.py 的时候, 居然又碰到了同样的问题.
 </p>
 
 <p>
@@ -4682,10 +4682,10 @@ list =
 
 <p>
 &lt;src lang="python"&gt;
-IP<sub>PATTERN</sub> = re.compile(".*inet addr:([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+) +.*")
-m = IP<sub>PATTERN.match</sub>(list[0])
+IP_PATTERN = re.compile(".*inet addr:([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+) +.*")
+m = IP_PATTERN.match(list[0])
 if m != None:
-   ip<sub>add</sub> = m.group(1)
+   ip_add = m.group(1)
 else:
    print "error"
 &lt;/src&gt;
@@ -4703,7 +4703,7 @@ else:
 <p>
 &lt;src lang="python"&gt;
 for msg in list[0].split('\n'):
-    m = IP<sub>PATTERN.match</sub>(msg)
+    m = IP_PATTERN.match(msg)
     if m:
         print m.group(1)
 print "no IP address can be found"
@@ -4726,10 +4726,10 @@ print "no IP address can be found"
 
 <p>
 &lt;src lang="python"&gt;
-IP<sub>PATTERN</sub> = re.compile("[^^]*inet addr:([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+) +.*")
-m = IP<sub>PATTERN.match</sub>(list[0])
+IP_PATTERN = re.compile("[^^]*inet addr:([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+) +.*")
+m = IP_PATTERN.match(list[0])
 if m != None:
-   ip<sub>add</sub> = m.group(1)
+   ip_add = m.group(1)
 else:
    print "error"
 &lt;/src&gt;
@@ -4741,7 +4741,7 @@ else:
 
 <p>
 另外一点, 我使用 p = subprocess.Popen(cmd, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-开启子进程, 然后想用 err<sub>msg</sub> = p.stderr.read() 读取并分析错误输出, 然后再用 msg =
+开启子进程, 然后想用 err_msg = p.stderr.read() 读取并分析错误输出, 然后再用 msg =
 p.stdout.read() 读取标准输出. 后来发现, msg 为空. 估计在第一次使用 read() 以后, 缓存就被清空了.
 改用了 message = p.communicate(), 就没有问题了.
 </p>
@@ -4793,7 +4793,7 @@ publish 完毕以后的 hook 上, 将这些字符删除. 临时的解决之道.
 </p>
 
 <p>
-每次在 gnus 中想将附件保存的时候, 提示的存储路径总是 ~/emacs<sub>lib</sub>/muse/src/mylife/xx.rar, 所以得删
+每次在 gnus 中想将附件保存的时候, 提示的存储路径总是 ~/emacs_lib/muse/src/mylife/xx.rar, 所以得删
 除至 ~ 然后再重写文件名. 非常麻烦. 后来发现这个路径就是我启动 gnus 时 当前窗口所显示文件的路径.
 我想起以前看别人在 windows 下面的 emacs 配置中使用了一个变量叫 'default-directory', 当时没明白干
 什么, 不过我现在觉得可能就是在我这种情况下使用. 看了一下说明, 发现它就是用于设定当前 Buffer 的默
@@ -4959,7 +4959,7 @@ Novell 资助, 还是自己也要想方设法获取利润.
 </p>
 
 
-<div id="org546a001" class="figure">
+<div id="org7a54c92" class="figure">
 <p><img src="./pic/open_suse_test.jpg" alt="open_suse_test.jpg" />
 </p>
 </div>
@@ -5301,16 +5301,16 @@ stardict 有个 stardict-plugin-espeak 的东东, 电脑用很恶心的音调, �
 in den englischen Zeichensetzungen konvertieren"
   (interactive)
     (save-excursion
-      (let* (( conv<sub>pairs</sub> '( (". " ". ") (", " ", ") ("; " "; ") (": " ": ") ("  " "  ")
-                           ("! " "! ") ("? " "? ") ("&lt;&lt;" "<a id="org8b95a38"></a>" "&gt;&gt;")
+      (let* (( conv_pairs '( (". " ". ") (", " ", ") ("; " "; ") (": " ": ") ("  " "  ")
+                           ("! " "! ") ("? " "? ") ("&lt;&lt;" "<a id="org2bbda75"></a>" "&gt;&gt;")
                            (", " ", ") (" &lt;" "&lt;") ("&gt; " "&gt;") ("&#x2013;" "&#x2013;")
                            (" (" "(") (") " ")") ("" " "\"") ("'" "'")
-                           ("&lt;&lt;" "<a id="org69e416c"></a>" "&gt;&gt;") (" &lt;" "&lt;") ("&gt; " "&gt;")))
-             (n (length conv<sub>pairs</sub>)) pair org goal)
+                           ("&lt;&lt;" "<a id="org441e908"></a>" "&gt;&gt;") (" &lt;" "&lt;") ("&gt; " "&gt;")))
+             (n (length conv_pairs)) pair org goal)
         (while (&gt; n 0)
           (goto-char (point-min))
           ;; select a pair
-          (setq pair (nth (- n 1) conv<sub>pairs</sub>))
+          (setq pair (nth (- n 1) conv_pairs))
           (setq org (nth 0 pair))
           (setq goal (nth 1 pair))
           (while (re-search-forward org nil t)
@@ -5334,12 +5334,12 @@ in den englischen Zeichensetzungen konvertieren"
 
 <p>
 &lt;example&gt;
-Failed to create dvi file /tmp/latex2png-wikimath_<sub>116840504</sub>
+Failed to create dvi file /tmp/latex2png-wikimath__116840504
 &lt;/example&gt;
 </p>
 
 <p>
-解决办法非常简单. 到 /tmp 下找到 latex2png-wikimath_<sub>116840504.tex</sub> 文件, 然后看看这个临时的, 完
+解决办法非常简单. 到 /tmp 下找到 latex2png-wikimath__116840504.tex 文件, 然后看看这个临时的, 完
 整的 latex 文件哪里出问题, 然后修改 muse 的源代码即可.
 </p>
 
@@ -5673,7 +5673,7 @@ TCL 太白痴了!!!! 今天花了几个小时, 有怪怪的问题, 就是不知�
 </p>
 
 <p>
-于是在其他地方就可以通过 c@IP<sub>OF</sub><sub>ROUTER</sub> -p 2345 访问我的电脑了. 不过恶心的问题就是我好像暂时还没
+于是在其他地方就可以通过 c@IP_OF_ROUTER -p 2345 访问我的电脑了. 不过恶心的问题就是我好像暂时还没
 有很好地办法得到路由器的 IP 地址.
 </p>
 
@@ -5824,7 +5824,7 @@ mega-city 的办法. 不过现在发现有个 gnome-panel, 让其完全隐藏还
 <p>
 不过这次最大的不同在于, 我在 上个月的时候 鬼使神差地对 studium 和 pic 两个重要文件夹备份了, 我当
 时都还不知道, 后来看到的时候, 感觉如在梦中: 我多年积累的照片和电子书籍居然还留有备份, 实在是大喜
-事. 而基本上的系统配置都在 emacs<sub>lib</sub> 之中. svn 的 repository 也在 一个星期以前备份过. 虽然有些损
+事. 而基本上的系统配置都在 emacs_lib 之中. svn 的 repository 也在 一个星期以前备份过. 虽然有些损
 失, 不过幸好今天已经把恶心的 vortrag 和 ausarbeitung 交上去了, 不然这几天的活真是白干了, 我非哭
 死了不可. 以后看来还是要多注意备份啊.
 </p>
@@ -5871,7 +5871,7 @@ ssmpt, 以及非常强大的 mpd + sonata 播放器. 回头看看这几天努力
 </p>
 
 
-<div id="org9030bad" class="figure">
+<div id="org27363a4" class="figure">
 <p><img src="./pic/1_wrong.png" alt="1_wrong.png" />
 </p>
 </div>
@@ -5896,7 +5896,7 @@ ssmpt, 以及非常强大的 mpd + sonata 播放器. 回头看看这几天努力
 </p>
 
 
-<div id="org39358d5" class="figure">
+<div id="org5adac2b" class="figure">
 <p><img src="./pic/2_wrong.png" alt="2_wrong.png" />
 </p>
 </div>
@@ -5991,28 +5991,28 @@ wwwkey.de.pgp.net 就可以下载了. 另外我将我的密钥的密码修改了
 &lt;src lang="emacs-lisp"&gt;
 ;; shell-command: 如果输出能够在 mini-buffer 显示, 则不将 "<b>Shell Command Output</b>" 提前.
 ;; 我使用 smart-compile 进行编译, 而 smart-compile 会新建一个窗口反馈编译结果, 如果成功, 那么使
-;; 用 run<sub>exe</sub><sub>file</sub> 运行可执行文件. 既然存在没什么用处的窗口, 不如将其利用起来, 在那个窗口上显示
+;; 用 run_exe_file 运行可执行文件. 既然存在没什么用处的窗口, 不如将其利用起来, 在那个窗口上显示
 ;; 执行结果. 所以当判断当前只有一个窗口的时候, 则不新建窗口显示 执行结果.
 ;; 被执行的文件路径就是 源文件截取扩展名
 </p>
 
 <p>
-(defun run<sub>exe</sub><sub>file</sub> ()
+(defun run_exe_file ()
   "run the exectue file in shell, which has the same name as the buffer name without suffix"
   (interactive)
     (let ((org-window (selected-window)))
       (if (= (count-windows) 1)
         (shell-command (file-name-sans-extension (buffer-file-name)))
       (select-window (next-window))
-      (setq buf<sub>obj</sub> (get-buffer-create "<b>Shell Command Output</b>"))
-      (set-window-buffer (selected-window) buf<sub>obj</sub>)
+      (setq buf_obj (get-buffer-create "<b>Shell Command Output</b>"))
+      (set-window-buffer (selected-window) buf_obj)
       (select-window org-window)
-      (shell-command (file-name-sans-extension (buffer-file-name)) buf<sub>obj</sub>))))
+      (shell-command (file-name-sans-extension (buffer-file-name)) buf_obj))))
 &lt;/src&gt;
 </p>
 
 <p>
-现在 smart-compile 加上 run<sub>exe</sub><sub>file</sub>, 编译完毕, 接着自动执行, 确实方便极了, 完全不需要另切出终端.
+现在 smart-compile 加上 run_exe_file, 编译完毕, 接着自动执行, 确实方便极了, 完全不需要另切出终端.
 </p>
 
 <p>
@@ -6028,14 +6028,14 @@ Gentoo 我觉得最强大的不是 USE-flag, 因为现在硬件系统对于运�
 </p>
 
 <p>
-修改了昨天写的 run<sub>exe</sub><sub>file</sub> 函数, 使其更加智能:
+修改了昨天写的 run_exe_file 函数, 使其更加智能:
 </p>
 
 <p>
 &lt;src lang="emacs-lisp"&gt;
 ;; shell-command: 如果输出能够在 mini-buffer 显示, 则不将 "<b>Shell Command Output</b>" 提前.
 ;; 我使用 smart-compile 进行编译, 而 smart-compile 会新建一个窗口反馈编译结果, 如果成功, 那么使
-;; 用 run<sub>exe</sub><sub>file</sub> 运行可执行文件. 既然存在没什么用处的窗口, 不如将其利用起来, 在那个窗口上显示
+;; 用 run_exe_file 运行可执行文件. 既然存在没什么用处的窗口, 不如将其利用起来, 在那个窗口上显示
 ;; 执行结果.
 ;; 如果已经在某个窗口打开了 "<b>Shell Command Output</b>", 那么在那个窗口继续输出运行结果. 如果某窗口
 ;; 打开了 "<b>compilation</b>", 那么就在那个窗口打开 "<b>Shell Command Output</b>", 并输出运行结果.
@@ -6044,51 +6044,51 @@ Gentoo 我觉得最强大的不是 USE-flag, 因为现在硬件系统对于运�
 </p>
 
 <p>
-(defun c<sub>select</sub><sub>window</sub><sub>of</sub><sub>certain</sub><sub>buffer</sub> (buf<sub>obj</sub>)
-  "This function is used by 'run<sub>exe</sub><sub>file</sub>'"
-  (let ((window<sub>obj</sub> nil))
-  ;; Is buf<sub>obj</sub> nil? It means, that the buffer does not exist.
-  (when buf<sub>obj</sub>
+(defun c_select_window_of_certain_buffer (buf_obj)
+  "This function is used by 'run_exe_file'"
+  (let ((window_obj nil))
+  ;; Is buf_obj nil? It means, that the buffer does not exist.
+  (when buf_obj
     ;; opened in a window ?
-    (setq window<sub>obj</sub> (get-buffer-window buf<sub>obj</sub>))
+    (setq window_obj (get-buffer-window buf_obj))
     ;; opened in a window ?
-    (when window<sub>obj</sub>
+    (when window_obj
       ;; select that window
-      (select-window window<sub>obj</sub>)))
+      (select-window window_obj)))
   ;; return nil, if no window is satisfied
-  window<sub>obj</sub>))
+  window_obj))
 </p>
 
 <p>
-(defun run<sub>exe</sub><sub>file</sub> ()
+(defun run_exe_file ()
   "run the exectue file in shell, which has the same name as the buffer name without suffix"
   (interactive)
   (save-selected-window
     (let ((cmd (file-name-sans-extension (buffer-file-name)))
-          (buf<sub>obj</sub> nil))
+          (buf_obj nil))
       (unless (= (count-windows) 1)
         ;; if there are more than one window, then &#x2026;
 </p>
 
 <p>
 ;; Does buffer "<b>Shell Command Output</b>" exist ?
-(setq buf<sub>obj</sub> (get-buffer "<b>Shell Command Output</b>"))
-(unless (c<sub>select</sub><sub>window</sub><sub>of</sub><sub>certain</sub><sub>buffer</sub> buf<sub>obj</sub>)
+(setq buf_obj (get-buffer "<b>Shell Command Output</b>"))
+(unless (c_select_window_of_certain_buffer buf_obj)
   ;; if no satisfied window was found, then &#x2026;
 </p>
 
 <p>
 ;; try another buffer name
-(setq buf<sub>obj</sub> (get-buffer "<b>compilation</b>"))
-(unless (c<sub>select</sub><sub>window</sub><sub>of</sub><sub>certain</sub><sub>buffer</sub> buf<sub>obj</sub>)
-  (setq buf<sub>obj</sub> nil))))
+(setq buf_obj (get-buffer "<b>compilation</b>"))
+(unless (c_select_window_of_certain_buffer buf_obj)
+  (setq buf_obj nil))))
 </p>
 
 <p>
-      (when buf<sub>obj</sub>
+      (when buf_obj
         ;; 将 "<b>Shell Command Output</b>" 调到前台来, 那么执行信息就会在此窗口中显示
-        (setq buf<sub>obj</sub> (get-buffer-create "<b>Shell Command Output</b>"))
-        (set-window-buffer (selected-window) buf<sub>obj</sub>))
+        (setq buf_obj (get-buffer-create "<b>Shell Command Output</b>"))
+        (set-window-buffer (selected-window) buf_obj))
       (shell-command cmd))))
 &lt;/src&gt;
 </p>
@@ -6099,20 +6099,20 @@ Gentoo 我觉得最强大的不是 USE-flag, 因为现在硬件系统对于运�
 
 <p>
 使用 nomachine 登录 lse 服务器之后, 发现 AltGr 称了回车键. 上网看了一个发现这个现象很常见, 但是
-好像没看到有什么较好的解决办法. 我在当前电脑上看到 108 号键, 即 AltGr, 是 ISO<sub>Level3</sub><sub>Shift</sub> 的功
+好像没看到有什么较好的解决办法. 我在当前电脑上看到 108 号键, 即 AltGr, 是 ISO_Level3_Shift 的功
 能, 而且列在 Mod5 中. 于是我到服务器的电脑上, 使用如下命令将 108 号键赋予 AltGr 应有的功能.
 </p>
 
 <p>
 &lt;example&gt;
-keycode 108 = ISO<sub>Level3</sub><sub>Shift</sub>
-add Mod5 = ISO<sub>Level3</sub><sub>Shift</sub>
+keycode 108 = ISO_Level3_Shift
+add Mod5 = ISO_Level3_Shift
 &lt;/example&gt;
 </p>
 
 <p>
 事实上 xmodmap 只要在登录的时候运行一次即可, 不过 学校服务器的 kde 系统好像既不自动运行.profile,
-也不自动运行 .bash<sub>profile</sub>, 只好将需要运行的 xmodmap 放在了 .bashrc 里面, 反正电脑快,多让它干些无
+也不自动运行 .bash_profile, 只好将需要运行的 xmodmap 放在了 .bashrc 里面, 反正电脑快,多让它干些无
 用功也无所谓.
 </p>
 
@@ -6136,13 +6136,13 @@ add Mod5 = ISO<sub>Level3</sub><sub>Shift</sub>
 在安装 rep-gtk 的时候, 系统偏说没有找到 librep. 上网搜索发现如果 librep 的 &#x2013;prefix 不设置为
 /usr 便会比较麻烦&#x2026; 反正完全让人感觉不到这是一个强健的系统. 到最后我崩溃了, 决定重新使用老的
 sawfish. 结果尴尬的是, 老的 sawfish 也不能用了. 将 librep 安装在 /usr 下, rep 就说找不到某些文
-件&#x2026; 事实上那些文件一直存在. 在网上到处找, 找到一个变量叫做  REP<sub>LOAD</sub><sub>PATH</sub>, 我看这个可能有用,
+件&#x2026; 事实上那些文件一直存在. 在网上到处找, 找到一个变量叫做  REP_LOAD_PATH, 我看这个可能有用,
 于是将那些文件的地址放在这个变量中. 到编译 sawfish 的时候, sawfish 的 makefile 居然自己修改
-REP<sub>LOAD</sub><sub>PATH</sub>, 导致 rep 又报错说找不到文件&#x2026; 真的很崩溃.
+REP_LOAD_PATH, 导致 rep 又报错说找不到文件&#x2026; 真的很崩溃.
 </p>
 
 <p>
-我后来直接将 deb 包解压缩, 放到相应的目录中, 然后将 REP<sub>LOAD</sub><sub>PATH</sub> 在 .xprofile 中设置一下.
+我后来直接将 deb 包解压缩, 放到相应的目录中, 然后将 REP_LOAD_PATH 在 .xprofile 中设置一下.
 sawfish 暂时可以使用了, sawfish-client 还报错说找不到某些文件, 不能运行, 已经没有心情去理会了. 比
 如我的 halt 和 reboot 脚本无效了, 也随便了. 起码能继续干活了. 这两天在 metacity 下面, 难受死了.
 </p>
@@ -6175,14 +6175,14 @@ emerge ibus-pinyin
 
 <p>
 &lt;example&gt;
-LC<sub>CTYPE</sub>=zh<sub>CN.UTF</sub>-8
+LC_CTYPE=zh_CN.UTF-8
 XMODIFIERS="@im=ibus"
-GTK<sub>IM</sub><sub>MODULE</sub>="ibus
+GTK_IM_MODULE="ibus
 &lt;/example&gt;
 </p>
 
 <p>
-第一个 LC<sub>CTYPE</sub> 不是 ibus 所要求的, 但是如果没有的话, 结果是在 urxvt 等终端 及 emacs 中, 能调出
+第一个 LC_CTYPE 不是 ibus 所要求的, 但是如果没有的话, 结果是在 urxvt 等终端 及 emacs 中, 能调出
 ibus-pinyin, 但是软件并不读入中文. 而且 urxvt 和 conky 的字体也变得极其可怖.
 </p>
 
@@ -6246,7 +6246,7 @@ strace -f -o log rep
 
 <p>
 &lt;example&gt;
-access("/usr/local/share/rep/0.90.0/lisp/rep/lang/interpreter.jlc", R<sub>OK</sub>) = -1 ENOENT (No such file or directory)
+access("/usr/local/share/rep/0.90.0/lisp/rep/lang/interpreter.jlc", R_OK) = -1 ENOENT (No such file or directory)
 &lt;/example&gt;
 </p>
 
@@ -6408,7 +6408,7 @@ C-pagedown, 上翻: C-pageup. 打开某个 Tab: M-num.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Lizhuo Chen</p>
-<p class="date">Created: 2021-07-03 Sat 22:40</p>
+<p class="date">Created: 2021-07-03 Sat 23:01</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
