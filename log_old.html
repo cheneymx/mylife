@@ -1,0 +1,6415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-07-03 Sat 22:40 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Old Log</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Lizhuo Chen" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Old Log</h1>
+<p>
+#top Time-stamp: &lt;03/07/2021 edited by Lizhuo Chen&gt;
+</p>
+
+<div id="outline-container-orgfd8460a" class="outline-2">
+<h2 id="orgfd8460a"><span class="section-number-2">1</span> Mein Fortschritt bei Linux</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgf92a40f" class="outline-3">
+<h3 id="orgf92a40f"><span class="section-number-3">1.1</span> 被逼无奈</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+2007年3月, 参加了'嵌入式芯片设计'的实习. 实习在位于Führt的LIKE教研室. 岂知整个实验室里的电脑都使
+用linux操作系统, 我到最后也没有找到linux下面进行c语言编程的工具. Tutor过来帮我进入c语言编辑界面,
+我看着他在shell里输入各种命令, 感觉似曾相识, 却又不大一样, 毕竟我当年玩的是 dir, delete &#x2026;
+</p>
+
+<p>
+第二天再次来到实验室, 发现电脑关机了! 傻眼了, 还是不知道如何进入c语言编辑模式啊! 又把Tutor叫来.
+我估计Tutor当时的感觉是, 这两个中国人真是笨得够可以的了. 曾经还觉得自己计算机水平不错的我, 当时感
+觉到在linux面前简直就是一头猪&#x2026;
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3b95047" class="outline-3">
+<h3 id="org3b95047"><span class="section-number-3">1.2</span> 开始ubuntu之旅</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+实习尚未结束, 我已经下定决心学习linux. 邹帆同学向我推荐了ubuntu发行版. 这个发行版的最大特点就是易
+用, 而且已经有大量的中文资料.
+</p>
+
+<p>
+第一次安装的是 ubuntu 6.10. 然后就开始捣腾吧, 反正是在假期. 虽然当时"电磁场"和"传感器"的考试就在
+眼前, 我也依然每天埋头于ubuntu的世界.
+</p>
+
+<p>
+最先便是认真地看完了"Ubuntu GUI-LINUX"这本大部头, 对linux有了比较全面的了解. 正所谓理论指导实际嘛,
+首先就得有这些基本的理论基础才好继续发展.
+</p>
+
+<p>
+接着当然就是开始ubuntu的各种配置: 软件源, 中文化, 字体, 网络, 还有寻找ubuntu下面应手的家伙. 当年
+决定离开windows的时候, 我的感叹是: 这么多年, 找到了这么多应手的软件, 真是舍不得离开. 现在回想,只
+能感慨自己当年的年少无知. 果然是旧的不去, 新的不来.
+</p>
+
+<p>
+这时候去的最多的地方当然就 ubuntu中文论坛, 还有德国的ubuntuusers论坛(创办人也就是我的Ubuntu入门书
+的作者.)
+</p>
+
+<p>
+google搜索关键字: ubuntu配置
+</p>
+</div>
+</div>
+
+<div id="outline-container-org98b1312" class="outline-3">
+<h3 id="org98b1312"><span class="section-number-3">1.3</span> 进入Emacs</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+和当年开始学习photoshop的理由差不多.
+</p>
+
+<p>
+大学时代, 闲着无聊, 想学点什么软件. 在学校图书馆闲逛, 发现photoshop的书籍最多, 于是便开始学习
+photoshop&#x2026;
+</p>
+
+<p>
+德国生活极度无聊, linux配置差不多了, 看网上整天有人喊vim和emacs. 我不喜欢vim的模式切换,又有人曰
+emacs是编程高手用的. 恩, 我从来喜欢一步到位, 那就直接来emacs吧!
+</p>
+
+<p>
+别人开始认真学习新学期的课程, 我则开始了我的emacs之旅. 第一本入门书&lt;Learning GNU Emacs2004&gt;, 可能
+也是我第一次将一本如此长篇的电子书籍认真看完. 阅读, 试验, 记录&#x2013;用一个叫basket的笔记软件. 这个软
+件真的感觉好烂, 虽然很多人都不断夸它. 我也是曾经不顾一切的将它装到我的ubuntu系统里(它和我的系统很
+不相配).
+</p>
+
+<p>
+这段时间, 我在王垠等前辈的主页里面转悠, 抄袭他们的.emacs文件配置&#x2026; 无非也是字体配置,插件配置等等.
+</p>
+
+<p>
+google搜索关键字: Emacs配置
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge54572b" class="outline-3">
+<h3 id="orge54572b"><span class="section-number-3">1.4</span> 加入WIKI</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+从windows的Cyberarticle开始, 转到linux的tomboy, 接着scrapbook, 然后basket,&#x2026; 我觉得资料的收集,
+笔记存档是极为重要的学习手段&#x2013;毕竟我不是冯.诺伊曼, 我不能过目不忘.
+</p>
+
+<p>
+Cyberarticle, 正版的, 让我在windows下面极为方便地收集各种网页信息. 到了linux下面, 虽然scrapbook能
+够简单地进行网页存档, 管理, 但是笔记, 注释非常欠缺. Basket软件, 不说了, 或许是我自己没使好, 感觉
+就是挺烦人的一个东西, 虽然看着界面很漂亮.
+</p>
+
+<p>
+"使用WIKI!" 邹帆强烈建议. 邹帆同学的思想和眼光总是比我前卫5年左右. 现在我每次想要干点什么与潮流有
+关的事情&#x2013;大到买笔记本, 小到换个网络电话&#x2013;邹帆同学总是能给我最佳建议, 而且完全免费.
+</p>
+
+<p>
+可惜简单的WIKI需要网络, 或者单机版的WIKI需要架设PHP服务器. 首先我不喜欢将我的生命和网络联系起来.
+我觉得人应该有更多的自主, 不要依赖太多东西. 所以我喜欢单机游戏, 单机笔记, 单机电影&#x2026; 对于PHP, 服
+务器这些术语我也没有兴趣, 确切地说是非常头疼. 大学时代给班级编主页的时候, 我是不参与数据库部分
+的&#x2026; 所以这方面我完全没有认识. 过了那个点, 也就不在有那份激情了.
+</p>
+
+<p>
+在王垠学长的个人主页里面看到emacs-wiki, 并看到他将其狠狠地, 从头到尾地夸了一通. 我当时还不知道这
+个wiki到底要不要服务器什么的, 反正至少它在emacs上面工作, 这点我就很喜欢. 要知道, 此时我的emacs还
+是光有空壳子&#x2013;用emacs打开一个source文件还真的挺慢.
+</p>
+
+<p>
+装上Emacs-WIKI插件, 然后仔细阅读wiki语法. 几天以后, 按下C-c C-h, 出来一个丑不啦叽的网页,我兴奋地
+又跑又跳: 我终于明白这个emacs-wiki是什么东西了! 它其实就是将文本格式化为网页,所以也不需要架设服务
+器.
+</p>
+
+<p>
+在薛瑞尼的主页里面发现了css这个东西的作用. 当年做主页的时候没有用到css语言, 只知道是个格式化网页
+的东东. 既然是linux, 那就是开源. 既然是开源, 那我们就可以拿来用, 也不属于抄袭. 于是我在没有经过作
+者的同意便将其css文件稍加修改, 拿来使用. 瞬间发现我的网页漂亮了很多. 同时发现, 这个css文件是网上
+最流行的, 是个菜鸟就用这个css文件. 原来大家想的都一样: 既然是抄, 就要抄最好的!
+</p>
+
+<p>
+这段时间, 薛瑞尼等学长的个人主页是我的流连忘返之地.
+</p>
+
+<p>
+google搜索关键字: Emacs-Wiki
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbc78c26" class="outline-3">
+<h3 id="orgbc78c26"><span class="section-number-3">1.5</span> 转战MUSE</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+后来发现, Emacs-Wiki已是上个世纪的东西了. 它的原维护者Michael Olson已经不维护Emacs-Wiki这个项目了,
+而是开始了一个类似的但功能更强大的项目Muse. 本来很舍不得好不容易搞定的WIKI, 后来发现越来越多的插
+件仅仅支持Muse, 而且从长远的观点来看, 转战MUSE还是非常有必要的.
+</p>
+
+<p>
+幸好MUSE的基本语法和WIKI的相一致, 毕竟都说muse是wiki3.0嘛. 配置文件主要参考了清华大学的larisq的
+MUSE-Config一文. 花了不长的时间, 便把所有的wiki文件修修改改转为muse.
+</p>
+
+<p>
+这时候, 我基本在emacs@newsmth上面瞎转.
+</p>
+
+<p>
+google搜索关键字: Emacs-Muse
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2d7ffe1" class="outline-3">
+<h3 id="org2d7ffe1"><span class="section-number-3">1.6</span> Latex小试</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+一切以学习为重, 即使是像我这样我不爱学习的人, 玩久了, 也还是要回到学业上来.
+</p>
+
+<p>
+Muse已经用得比较顺手了. 大量的网页, 资料, 图片开始让Muse渐渐丰满起来, 而且相应的EMACS也成了我最重
+要的学习平台了. 我开始将各种学习资料整理成muse文件, 这样可以很好地利用muse的检索功能, 时常复习.
+和普通资料不同的是, 我的专业文献充斥着大量的复杂公式.
+</p>
+
+<p>
+我开始使用Word的公式编辑器: 输入, 截屏, 修改, 插入文档. 这个方法, 过程复杂, 结果差劲. 而且需要开
+启虚拟机运行MS word, photoshop, 简直让人痛苦万分.
+</p>
+
+<p>
+在openoffice下面, 虽然不在需要windows的支持, 不过结果依然很差劲.
+</p>
+
+<p>
+当然, 我便想到了曾经在王垠主页里看到过的Latex. Latex是美国的Knuth所著的计算机排版语言. 其简单的数
+学输入方式对整个印刷界产生了巨大的影响.
+</p>
+
+<p>
+Linux + TeTex + Auctex + Emacs: Tetex是为给linux使用的latex版本, 而Auctex将Emacs在对Latex操作上的
+功能发挥到极致.
+</p>
+
+<p>
+这次的入门书籍是中文版&lt;一份不太简短的LATEX2e介绍&gt;. 看了一个下午, 我开始骂王垠骗人: 这么复杂的代码,
+怎么说非常简单? 晚上开始上机实习, 瞬间搞定了复杂公式的输入. 果然, latex不是学会的, 而应该是被用会
+的. 虽然里面的代码多而复杂, 但是主要用到的无非那么十来个命令,而且都很容易记忆.
+</p>
+
+<p>
+不小心又发现了latex2png这个muse的插件, 它能将在muse中输入的latex程序在发布的时候直接转为png文件,
+从而在网页中显示. 有了这个插件以后, 我输入复杂的数学公式根本不需要离开我的当前窗口, 使用Latex这个
+Tag开头, 然后直接输入latex程序, 最后以/latex收尾, 中间的程序便为生成png.
+</p>
+
+<p>
+我更发现, 在Wikipedia上的所有数学公式都是用这种方法输入, 在其网页中选择并复制某个公式图片的时候,
+得到的并不是一个png文件, 而且一段latex的程序. 这对我来说就最方便了, 我将整个网页,连着这些公式图片
+一起复制, 然后在我的muse文档里面粘贴. 该是文本的, 生成网页以后还是文本;该是公式的, 生成网页后便是
+公式图片.
+</p>
+
+<p>
+这其间我主要在 水木社区 闲逛.
+</p>
+
+<p>
+google搜索关键字: Latex, latex2png
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaa2413c" class="outline-3">
+<h3 id="orgaa2413c"><span class="section-number-3">1.7</span> Emacs-Matlab</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+浪子回头? 可惜我还算不上是浪子. 不过我确实开始慢慢回归正道了.
+</p>
+
+<p>
+在无关学业, 无关收入的linux上面浪迹了这么久, 开始思考如何让这些工具也为我的学业服务. 于是便开始了
+我的Matlab之旅.
+</p>
+
+<p>
+Matlab, 我曾经尝试了很多次, 皆以半途而废告终. 何为Matlab? Mat: Matrix. 中文就是矩阵. 这个软件的中
+文名称乃为 矩阵实验室. 整天吹它多牛, 无非就是一个处理矩阵的软件. 当年在国内的时候, 基本没有感觉到
+矩阵有什么用处. 所以看中文的matlab书籍, 来了就是各种矩阵计算,有啥用啊? 看看觉得莫名其妙, 自然半途
+而废了.
+</p>
+
+<p>
+矢量, 矩阵是到了德国以后才感受到的. 也不能怪中国教育. 就那么短短的4年, 还包括那么多吃饭喝酒的应酬.
+学校需要给我们上那么多课程, 除了基础课, 专业课, 还有思想课, 政治课, 经济课,体育课. 德国一个学期考
+5门已经感觉很不错了&#x2026; 我大学修了76门课程. 要照德国这么学, 国内大学的课程估计得要个8,9年. 所以国
+内只好让大家先有个感性认识, 知道有那么个东西. 而德国从头到尾充斥着定量计算. 也就是到了德国, 才发
+现自己的高等数学远远不够&#x2013;谁说德国人数学差来着?扯远了.
+</p>
+
+<p>
+这次Matlab学习就非常有效率, 原因很简单: 有目的! 带着问题去学习, 这样就能把理论和实践结合起来, 不
+断解决问题, 思考新问题, 也就不无聊了. 一个曾经思考了好几个月的自动控制的误差问题, 在matlab上面得
+到了非常直观的解答, 也大大加强了我对matlab学习的兴趣.
+</p>
+
+<p>
+最让我高兴的还是把Matlab和emacs成功地结合在一起. 事实上, Matlab自己就已经带了让emacs调用Matlab的
+插件. 配置完毕以后, 我可以在emacs上面编辑matlab文件, 或者直接使用matlab-shell. 根本不需要离开
+emacs界面. Matlab作为后台运行程序, 前台利用emacs的强大文本编辑能力, 以及大量的快捷键能让用户极为
+方便地操作matlab.
+</p>
+
+<p>
+这几天水木社区的人都沉默着, 我自己看代码, 研究问题, 寻找出路.
+</p>
+
+<p>
+google搜索关键字: Matlab-Mode, Matlab-Shell
+</p>
+
+<p>
+01.05.2007
+</p>
+
+<p>
+不小心,一碰emacs就到了凌晨4点了. shit!
+</p>
+
+<p>
+今天这个正则表达式不知道怎么回事. 一开始用得好像挺好,利用 \n 来将回车用竖线代替,以达到表格的效果.
+后来怎么莫名其妙不能用了.
+</p>
+
+<p>
+&lt;example&gt;
+输入C-M-%后进入正则查找替换模式
+输入\n 回显区显示:
+Note: `\n' here doesn't match a newline; to do that, type C-q C-j instead
+&lt;/example&gt;
+</p>
+
+<p>
+而且我发现我得连按两次才能调出此替换模式&#x2026;
+然后我就按照提示使用 C-q C-j来进行查找, 结果还是不行. 莫名其妙.
+最后我用C-x ESC ESC调出历史记录,发现输入的\n后来怎么都成了\\n了, 删去一个\, 结果就行了&#x2026;不知道怎么回事&#x2026;
+上网问问去.
+</p>
+
+<p>
+-&#x2014;
+继续扯:
+</p>
+
+<p>
+在英文资料中查到了相关的说明:
+</p>
+
+<p>
+You can't use \n or \t when entering a regexp interactively (when using C-M-%
+query-replace-regexp for instance). Simply type &lt;TAB&gt; or C-i to enter a tab (instead of \t) or
+<b><b>C-q C-j to enter a newline</b></b> (C-q quote C-j newline, instead of \n)
+</p>
+
+<p>
+注意, 这个C-q C-j不是让你输入这几个字母,而是按着crtl然后按下q和j&#x2026;
+查找\n是用这个查找, 那么同样,要把其他字符替换为\n,也是输入C-q C-j.
+至于我那个调出历史记录的方法&#x2026;程序员打死没想到有这样的天才能用这样巧妙的方法解决&#x2026;
+到底一开始为什么能用\n&#x2026;上帝保佑呗.
+</p>
+
+<p>
+Recursive Editing: query-replace 的时候按下C-r 进入 recursive 模式,可以干任何事, 再按下C-M-c回到
+原来的状态.
+</p>
+
+<p>
+书上说的任何时候按下M-x recursive-edit 就可以进入&#x2026; 好像没效果.
+</p>
+
+<p>
+02.05.2007
+</p>
+
+<p>
+在命令行中使用C-r对以前输入的命令进行搜索,方法和在emacs完全相同, 非常好使. 可以免去重复输入长串的
+参数. 同样,在emacs中使用C-x ESC ESC 调用以前的复杂指令也是非常不错的方法.
+</p>
+
+<p>
+~/.fcitx下面的config文件, 每次一重启电脑, 怎么就又回到原来的设置,又不是最原始的. 但是模糊拼音依然
+能使.查询了电脑上的说有fcitx文件夹,发现在/usr/share里面有一样的文件,但是和复原后的那个config文件
+又有所不同. 很奇怪.
+</p>
+
+<p>
+今天使用了一个比较复杂的find命令, 感觉不错. 存档, 以示纪念:
+&lt;example&gt;
+搜索在/usr /etc /home目录下面含有fcitx字样的文件夹:
+sudo find /usr /etc /home -type d -iname <b>fcitx</b>
+&lt;/example&gt;
+</p>
+
+<p>
+我今天还发现了一个好方法, 就是使用#的方式定义关键字,这样不会在网页中显示, 但是在查阅的时候却非常
+方便.当然要注意,关键字之间不要有空格,否则, 空格后的字符会显示在网页上.
+</p>
+
+<p>
+emacs-wiki的表格中如果有的项目为空, 那么就在相应的地方填上空格的code: &amp;#l60; (使用时请注意把这里
+的l改回1)
+</p>
+
+<p>
+04.05.2007
+</p>
+
+<p>
+今天从网上找了一篇关于无线电通讯的资料, 因为昨天Diboa问我关于一个空间里面各种信号之间的干扰问题.不
+过那篇文章夹杂着大量的网页标记,比如&lt; b &gt;, &lt; font size=.. &gt;之类. 当然需要删去.因为数量之大,手动删
+除, 其工程相当浩大.有一次想到了神奇的正则表达式.需要删去的部分特点很明显,以 &lt; 开头,以 &gt; 结尾. 中
+间字符则是完全任意.下面是我的正则表达式:
+</p>
+
+<p>
+&lt;example&gt;
+&lt;.*?&gt;
+&lt;/example&gt;
+</p>
+
+<p>
+.代表任意字符, * 表示前面的任意字符重复任意多次. 后面紧跟?, 其意义为:非贪婪的&#x2026;这个翻译好别扭阿.意
+思是在查找的时候, 选定范围越小越好.这里的效果是圈定从 &lt; 到接着的第一个 &gt;. 如果没有?, 则会圈定从
+&lt; 到本段落的最后一个 &gt;.
+</p>
+
+<p>
+效果非常明显, 瞬间把说有符合条件的部分选定, 然后用(nichts)代替,即删去.总共删去200+个这样的网页标记.
+我只想说: Regular Expressions sind wunderbar!
+</p>
+
+<p>
+今天使用的另外一个超帅的搜索语句:
+&lt;example&gt;ls -R|grep emacs-wiki &lt;/example&gt;
+-R是指将说有的子目录递归显示.
+我又一次使用了管道符和grep,把说有带有emacs-wiki的文件都显示出来,和find的效果差不多.
+</p>
+
+<p>
+我说用了王垠介绍的那个desktop-save插件, 每次都要手动存取一下列表,才会有效果,感觉很不实用.今天
+把.emacs中一些较为完整的部分编译为.elc文件,这样在加载的时候会迅速不少. 结果发现里面的一条语句已经
+不再实用了,而换成了另外一条.
+</p>
+
+<p>
+&lt;example&gt;(desktop-load-default) &#x2013;&gt;   (desktop-save-mode)&lt;/example&gt;
+我根据提示修改了一下.结果发现desktop-save插件就非常正常了.每次打开的时候都和关闭的时候别无二致.
+</p>
+
+<p>
+另外,关于那个menu,以前死活搞不定. 文中说要把注释去了,我就把相关语句前后的 &lt; lisp &gt; &lt; /lisp &gt; 删
+去,今天反复端详,猛然发现他所指的注释是指 &lt; !&#x2013; &#x2013; &gt; &#x2026;于是, 搞定了.
+</p>
+
+<p>
+05.05.2007
+</p>
+
+<p>
+全面投入muse的怀抱&#x2026;
+反正没有那么多时间再仔细研究muse了,就用一下网上的现成品了.照样画葫芦也感觉不错.
+网页生成的head和foot部分, 主要修改muse-header-footer.el文件, 其余部分, 比如项目之类,修改muse<sub>init.el</sub>.
+css文件我也稍微修改了一下.免得前几天的努力都白费了&#x2013;敝帚自珍.
+我发现这个muse好像不支持 &lt;br&gt; 这个标签了.另外&#x2026;anchor的功能还需要再次研究.
+几个好使的快捷键:
+C-u C-c C-p:  加上C-u的用处是强行重新发布所有的网页,不管源文件是否有修改.特别好使的地方在于只修改了头文件之类的时候
+C-c C-h:  在www浏览器中预览.
+C-c C-v:  这个命令不再是Project的转换了,而是显示现在已经发布的网页.
+C-c TAB u/t/l  分别插入url,tag,link.其中插入link非常智能.写出来的都是相对路径, wunderbar!
+C-c t: 这是一个超棒的快捷键, 输入tag文字后,自动生成相应的前后标签,而且光标定位在前后标签之间. Probiere einfach.
+M-RET:  换行,回车,并自动在下一行加上列表标记 "-" .
+</p>
+
+<p>
+我在muse<sub>init.el中添加了自动进入abbrev</sub>-mode,outline-minor-mode的代码.非常好使!
+了解并学会使用auto-fill-mode. 关键是设置换行的字数:
+</p>
+
+<p>
+&lt;example&gt;C-u 85 C-x f &lt;/example&gt;
+</p>
+
+<p>
+我已经重新整理了.emacs文件, 把快捷键都定义在最后, 而把函数等比较固定的模块编译称.elc
+文件.
+</p>
+
+<p>
+06.05.2007
+</p>
+
+<p>
+终于找到了设置折行字数的永久设定:
+在.emacs中插入:
+(setq-default fill-column 88)
+关键是这个default.不然不好使.
+</p>
+
+<p>
+muse中使用anchor的时候,注意引用的文件要加上扩展名. 否则, 虽然在emacs上面能正确链接,但是
+转为html的时候便会报错.
+</p>
+
+<p>
+引入了planner.el, 具体研究更待时日. 不过估计&#x2026;计划总是赶不上变化.
+什么时候把那个blog再搞定了.
+</p>
+
+<p>
+07.05.2007
+</p>
+
+<p>
+顺便说, &lt; literal &gt; &lt; /literal &gt; 非常好使. 用处有待进一步研究.结果可以看Mylife::muse
+</p>
+
+<p>
+把原来的muse<sub>init.el文件又修改了一下</sub>, 去掉了一些不需要的功能.速度感觉已经有所加快了. 但
+是我一把.el文件编译,就会出现问题. 那就算了,反正关系不大.
+</p>
+
+<p>
+再添加一个grep的例子,
+&lt;example&gt;more *.el |grep flyspell&lt;/example&gt;
+</p>
+
+<p>
+今天我的文档突然出现了flyspell,把所有的英文单词都定为错别字用红色强调,所以我要找找到底是
+哪里设置了这个flyspell. 尝试了一下这个命令,结果瞬间得到.非常不错. 另外的, more这个命令也
+是非常不错的,尤其是查看没多少内容的文本.非常智能.
+</p>
+
+<p>
+下午自己推算除了电子楼服务器的名称, 恩, 以后有两个支持ssh的网络硬盘了.
+</p>
+
+<p>
+今天和王臻颖默叽了一个下午.恩. 不大好. 不过当时是一边重装系统, 一边抄synthese的笔记, 一
+边flierten&#x2026;
+</p>
+
+<p>
+最后喊一声: gftp就是一大垃圾!!
+</p>
+
+<p>
+28.05.2007
+</p>
+
+<p>
+2001年2月14日到2007年5月28 :  一个历程的结束. 记住这一天!
+</p>
+
+<p>
+16.06.2007 致在德国学习中的自己书
+</p>
+
+<p>
+为了防止自己目标的迷失, 决定写几句, 勉励自己.
+</p>
+
+<p>
+从2003年秋在北京理工大学学习德语开始, 进入了留德学习的准备期.
+</p>
+
+<p>
+从北京理工, 歌德学院, 斯图语言班, 终在2005年2月份于hannover得到了DSH证书, 取得了入学资
+格.
+</p>
+
+<p>
+北京理工时期, 就是因为从一开始就没有明确自己的目标, 导致了一个学期, 痛苦不已, 而又基本无所建树.
+从一开始的认真上课, 发展到后来的常常旷课, 直到最后重抄旧业, 躲在小屋里玩&lt;博得之门&gt;&#x2026; 我现在甚至
+不愿意在别人面前承认, 我曾经有过这么一段经历. 可怜而又可恨.
+</p>
+
+<p>
+想在歌德期间, 印象最深的是, 除去某位女生相伴之日, 每天都得在成都小吃之类饭馆一日两次填饱肚子, 虽
+觉极度腻味, 但却没有太多的抱怨. 因为目标简单而又明确&#x2013;APS, DSH. 总得来说, 虽然不尽刻苦, 但却相对
+比较满意. 毕竟在歌德的一年之内, 给我的德语打下了坚实的基础. 而且也非常顺利地通过了APS.
+</p>
+
+<p>
+2005年10月, 我带着两大箱子的家当, 乘坐芬航来到了德国斯图家特. 庆幸通过刘宇认识的邹帆同学提前在德
+国帮我找到了一个临时的zwischenmeite, 并到机场将无助的我接到了家中. 记得那天晚饭是单荣同学给我做的
+意大利面. 当时的一切都是那么新奇, 就连到邹帆家路上的停车场都觉得特别的有趣. "我将在这里学习3年,
+并会在这里走向成功"&#x2013;当时思想单纯的我是这么想的.
+</p>
+
+<p>
+斯图家特语言班的日子, 那真是充满干劲的日子. 那真是没有任何可以挑剔的. 凭着自己当时相对过硬的口语,
+给自己争取到了一个好老师&#x2013;Frua Lachenmeyer. 每天早上是7点30左右起床, 在8点30以前赶到学校&#x2026; 从8点
+半到12点半. 虽然饿的叽哩咕噜, 不过基本很少在食堂吃饭. 新到德国的孩子总是会用人民币来计算价钱. 买
+菜, 做饭, 等到吃完的时候基本已经到了3点来钟了. 接着基本上就是一觉睡到6,7点钟. 午睡的充足是为了晚
+上更好的学习. 那时候我开始每天写德语日记. 一开始真的很慢很慢, 因为几乎每用到一个动词都要查阅它是
+否反身以及它需要介词. 有时候为了写一篇日记, 便干到凌晨. 尽管如此, 老师布置的作业还是必定完成. 之
+所以把老师的作业放在最后, 就是为了防止自己懈怠. 当时晚上一般是凌晨3点上床, 有时甚至4点. 但是第二
+天几乎从来没有旷课的. 确实是有付出就有收获, 那段时间的努力, 让我的作文水平到了一个比较高的档次,
+每次作文都能拿到很高的分数. 在DSH考试中, 也真是因为90分的作文, 愣是在听力只有28分的情况下, 通过了
+DSH-2.
+</p>
+
+<p>
+斯图家特电子系对我的学历不承认, 我必须从第一学期开始. 我忍了. 但是在我去注册的时候, 却被告之, 他
+们不接受夏季入学, 因为所有的课程都是在冬季开始的. 所以外办的人建议我先修一个urlaubsemester. 这时
+候我就再也忍不住了. 本来斯图家特电子就非常难学, 我以为能把vorstudium免去, 学三年毕业, 后来发现不
+行, 得要五年以上. 现在还没上课就又要推迟半年. 天直到下次是不是又因为什么时候要推一年. 刚好当时有
+uni-erlangen的入学通知书&#x2013;申请的原因完全是想多一次DSH的考试机会.
+</p>
+
+<p>
+听了王铮的介绍后, 我决定了从斯图家特转到了Erlangen&#x2026;
+</p>
+
+<p>
+我把斯图家特别墅般的寝室退了, 退得好伤心. 但是我坚信自己的选择是正确的. 战战兢兢去外办办理退学手
+续&#x2013;结果发现不到瞬间就得到了退学证明&#x2026;想起当年盼望斯图家特入学通知书的情景,不禁感觉到某种莫名的
+凄凉.
+</p>
+
+<p>
+3月, 3个大箱子, 装着我所有的家当. 一张周末票, 两个男生(邹帆和张汉东)还有一位啦啦队的护送下, 我的
+家从斯图家特转到了Erlangen. 从前有草地湖泊, 后临大学校园, 左居德国mm, 右住中同系师兄的学生宿舍到
+了一个10平米大小, 公用卫浴, 没有厨房的小破房子里. 邹帆说, 还好, 还好. 我当时感觉是, 还能住人.
+</p>
+
+<p>
+当天去了纽伦堡之后, 张汉东将我送回到Erlangen火车站, 最后说了一句, 我要回去了, 你一个人要好好保
+重&#x2026; 当时我的感觉比和父亲在上海分手的时候更加的沉重. 出国留学, 那对我来说可以激动人心的事情, 多
+少期待, 多少汗水, 终于实现. 那岂是第一次去北方上大学所能比拟的. 而且德国这边已经有邹帆同学帮我安
+排妥当了. 而此刻, Erlangen真是人生地不熟, 王铮也不在这里. 还有那个小破屋.
+</p>
+
+<p>
+刚来Erlangen时候感觉的那个无聊. 没有朋友, 没有沟通, 我每天的真人对话也就是在Kaufland结算的时候.
+漫长的假期终于过去了. 我兴奋地和王铮在大学里相遇了. 我满怀激情投入到新的学习当中. 正如师哥胡兵说
+的那样: 一开始, 觉得学习真是一件极其开心的事情. 我每天有语言班时代,早起上课, 中午回家吃饭, 然后午
+睡, 因为楼底下那个土耳其店的超重低音, 每晚必然在学校的自习室学到12点之后. 那段时间很充实啊. 虽然
+房子很糟糕, 但是确实过得比较开心.
+</p>
+
+<p>
+到了第二个学期, 我搬到了Brucke Weg 27. 那是一个可怕的回忆. 我自己基本试图将其忘去, 别人的故意提起,
+往往带着更多的不怀好意, 也会让我相当生气.
+</p>
+
+<p>
+那是一个半地下室, 墙壁满是霉菌, 惨不忍睹. 我将能用报纸遮住的地方, 全都放了报纸. 房子里充满了发霉
+的味道, 即使使用了空气清新剂也是杯水车薪. 当时我的窗户必须一直开着, 一台电风扇一直将外面的空气吹
+入房间, 这样还稍微好一点点. 对面是个老人, 也忘了是哪国人了. 房间的门从来是关着的. 但是只要一开启,
+便从里面散发出让人窒息的味道&#x2013;感觉是极度的臭味伴随着过浓的花的味道. 那段日子, 我真的没有心思学习.
+时不时去Wohnservice催一催房子&#x2013;回答也是一日既往的 absolut keines Zimmer. 除此, 我便在家里玩&lt;泰坦
+之旅&gt;. 生活之艰苦, 之龌龊, 之无奈. 我不想对这段时间说些什么, 过去的就让它过去吧. &lt;泰坦之旅&gt;能让它
+过去地稍微快一些, 也是好的.
+</p>
+
+<p>
+后来被迫去找一些公司经营的学生宿舍&#x2013;没有结果. 私房也找了, 甚至我告诉他们, 如果租给我,我愿意多给钱,
+谁让我是外国人呢? 即使这样, 还是一下子没找到房子. 象涂娟所说的, 你在北京会愿意和一个突尼斯黑人一
+起住么?
+</p>
+
+<p>
+在绝望的时候, 忽然Wohnservice给了我一个学生宿舍. 我甚至不敢相信这个事实. 我甚至好几次半夜还在琢磨
+这个是不是真的.
+</p>
+
+<p>
+2007年1月, 我搬进了新家. 一个小公寓, 18平米, 有自己独立的厨房和卫生间, 还有一个步入式衣柜. 有爱揭
+短者说我从来只能住半地下室. 确实这个房子应该算是半地下室, 不过没有潮湿的感觉. 我想主要是因为楼房
+在设计的时候, 这本来就是为住人设计的. 窗外是灌木丛, 有些树, 郁郁葱葱. 鸟儿每天4点就开始唱歌, 一直
+到晚上. 用打工的钱买了些家具, 把房间布置了一下. 于是, 我最头疼的住宿问题暂时应该不复存在了. 我为
+此特地让曾兴从国内带了糖果回来, 送给Wohnservice的员工, 毕竟他们帮我解决的, 虽然是比较晚.
+</p>
+
+<p>
+生活从此比较惬意.
+</p>
+
+<p>
+我觉得以前这段历程, 总得来说还是基本令人满意的.
+</p>
+
+<p>
+接着讲讲现状. 当住宿问题解决之后, 又没有经济问题. 现在剩下的, 也是来德国的主要目的, 也就是学习了.
+</p>
+
+<p>
+现状不容乐观. 这也是我要写这篇文章的目的.
+</p>
+
+<p>
+当年在Brucke Weg遗留下来的逃课的恶习, 到了现在, 越发严重. 当年是因为条件艰苦, 甚至身体健康都受到
+了影响, 故此, 学习有所耽搁也算是可以原谅的. 结果现在常常无理由地旷课, 甚至很多时候和王铮做比较,
+感觉旷课是正常行为. 其实我心里很明白, 王铮同学是否智商很高, 这个我不得而知, 但是王铮同学确实很能
+考试, 他能够迅速抓住重点, 利用已有的知识, 在考试中得到尽可能多的分数. 他很能翻书, 在基本不懂的情
+况下, 依然能从十几中可能性中挑出, 或者蒙中需要那个推倒过程. 我不行, 外加我在一般小考中运气一般不
+太好. 所以每每考前我笑话王铮同学问的问题太没水平, 次次考完以后, 我都自愧不如.
+</p>
+
+<p>
+我还是应该更加努力学习, 或者必须更加努力学习. 走过来, 3年有余, 一路艰辛. 而现在在德国日子不多. 如
+果不继续在德国工作, 那么我想最多3年便能毕业. 刨去实习, 学业设计, 毕业设计的一年; 除去选修课之类默
+叽之事一年. 其实真正需要好好学习的, 大约也就还有一年了. 一路走来, 其实就是主要为了这一年. 这一年
+的成绩, 直接关系到自己学业的成败. 不说成败, 起码是档次上的差距.
+</p>
+
+<p>
+我已经把家里的网络退订了, 在家里尽量营造一个简单的环境, 不要把太多的时间花在上网之类的无聊之事.
+另外, 我发现一个比较严重的问题: 效率!
+</p>
+
+<p>
+现在常常从中午自习到傍晚6点来钟, 本来每天学习的时间就不多, 而且感觉学习的时候也有'耗'的感觉, 耗到
+6点, 然后回家. 这个很可怕. 耗的结果就是上面提到的北理工的结局: 可怜&#x2013;呆在自习室, 没有自由; 可恨&#x2013;毫
+无建树, 浪费时间, 浪费金钱.
+</p>
+
+<p>
+我应该把任务规划一下. 提高效率, 不然平时不好好学习, 暑假又能学到什么东西.
+</p>
+
+<p>
+计划书我想回头补上, 需要自习思考. 不现在凌晨4:38的大脑能思考出来的.
+</p>
+
+<p>
+我想说两点:
+</p>
+
+<ol class="org-ol">
+<li>交际: 以直抱怨, 以德报德. 记住帮助过我的人.</li>
+<li>学习: 好好计划, 不可虚度. 注意知识的整理.</li>
+</ol>
+
+<p>
+让一路的艰辛变得更有价值!!
+</p>
+
+<p>
+2007年6月16日  Erlangen
+</p>
+
+<p>
+14.07.2007
+</p>
+
+<p>
+今天编辑muse的时候, 发现其中一个三级标题没有生成应该有的形式, 而是紧接上一段之后, 显示
+&lt;example&gt;
+&#x2026;ihnen. <b>*</b> &lt;a name"sec27" id="sec27"&gt;Adaptive Differential Pulscodemodulation(ADPCM)
+&lt;/example&gt;
+无论如何修改都不行. 而且甚至在上段末尾加多个空行, 显示依然如此. 最后仔细研究了上段的文
+字后发现了等于号属于特殊字符. 在等于号之后加了一个空格(不在等于号紧跟其他文字), 问题马
+上解决了.
+</p>
+
+<p>
+15.07.2007
+</p>
+
+<p>
+今天忽然想起&lt;仙剑奇侠&gt;里面酒醉仙所说的: 我自从三十六岁艺成下山以来,立誓尝遍人间美酒、杀尽天下妖魔.
+唉…孰知～孰知～如今…酒喝多了,只是成瘾乱性. 妖怪杀光了,也无法渡化人心…酒剑仙枉称驱魔大师,可我又凭
+什么认定,何为妖、谁为魔? 我大半辈子的所作所为,究竟是对是错? 我也迷糊了…
+</p>
+
+<p>
+我现在对&lt;西游记&gt;里面所说的唐僧取经又有了更深的认识. 为什么要唐僧取经? 孙悟空一个筋斗十万八千里,
+白龙马原为神龙, 自然也能腾云驾雾, 何必要一个马蹄一个马蹄走到西天? 唐僧, 从头到位扮演了一个默叽之
+人, 什么也不明白, 就知道念紧箍咒, 不让孙悟空能自由的惩恶扬善. 所以说, 如果没有唐僧, 那么西天取经
+的时候不就简单10000倍了么? 何必要经历那么九九八十一劫呢? 甚至于有人借此抨击官僚主义, 人才压制&#x2026;
+</p>
+
+<p>
+我觉得这个和干什么事情有关系. 比方说战争. 战争的最终目的便是取得胜利, 只要能胜利, 无论什么手段都
+是无关紧要的. 比方说欺骗, 甚至于屠杀. 战争的筹码太大了, 大到了能够压倒一切的法律,道德,伦理. 一切
+都已经无关紧要了. 但是如果是在和平年代, 比如发展物质文明. 如广州某人所说的: 牺牲这一代的妇女. 我
+相信这个手段能够让河南人民早10年致富. 但是我们不能这样做. 为什么呢? 物质文明的发展, 并没有民族存
+亡那么紧要. 物质文明是需要长久发展的. 一些激进的方法能够短期促使物质文明的迅速发展, 但是久之则必
+然危害到社会的稳定. 正如我们可以为了某们考试多日通宵学习, 但是绝不能为了学业每日通宵学习. 物质文
+明的发展, 无非是为了社会能够长治久安, 巩固统治阶级的社会地位. 一旦精神文明失落, 社会道德低下, 接
+着引起的社会动荡,物质文明也便没有意义了.
+</p>
+
+<p>
+回到西游记. 孙悟空能够七十二变, 能够转眼取回真经. 但是这有什么用? 他毕竟是只猴子, 他的悟性不能度
+化人心. 虽然唐僧在行程的效率上面大大耽误了时间, 但是只有他才能明白真经的理念,只有他才能通过真经度
+化人心. 说白了, 如果不懂, 跑的快有啥用? 不然为什么大家都围着那个只有三个手指能动的霍金团团转干什
+么? 至于唐僧在途中, 不断阻止孙悟空惩恶扬善, 这个是和佛家的慈悲有关. 既然唐僧能够明白真经, 他也就
+是一位慈悲之人. 如果他放手让孙悟空惩恶扬善, 鬼知道孙悟空是不是真的都是杀妖魔, 救善人? 在他未真正
+了解对方是否为妖魔之前, 唐僧都是将其划入善人的范畴之内, 宁可用自己的生命做赌注, 也不愿让孙悟空直
+接结果了对方的性命, 我觉得这也体现了佛家的'我不入地狱谁入地狱'的思想.
+</p>
+
+<p>
+为什么唐僧是师傅, 孙悟空是徒弟? 或许正是印证了中国的古话:"劳心者制人, 劳力者至于人."
+</p>
+
+<p>
+所以这种情况, 应该来说不属于人才压制的范畴, 或者说, 很多人才必须被压制, 而不能放任其施展&#x2026; 如果
+理解为后者的话, 估计很多研究生, 以后都是被压制的一类&#x2026;
+</p>
+
+<p>
+28.07.2007
+</p>
+
+<p>
+今天刚考完synthse, 有点点时间稍微捣腾一下电脑.
+我现在对于在emacs中调用matlab很感兴趣, 试想一下, 使用emacs来编写matlab程序, 而且在同一
+窗口下面能够直接看到运行的结果, 一切的一切都是快捷键. 为了能够在emacs里面也能使用
+Matlab-shell功能, 我才不顾一切的寻找matlab for linux的版本. 废话多了.
+</p>
+
+<p>
+以前输入matlab-shell之后, 系统都提示no process. 当然我认为这是我配置不对的缘故. 后来在
+网上找寻很久, 一无所获, 而且水木社区一年前别人提出的这个问题, 居然没人回答&#x2026;可能大家
+都觉得太简答了. 我今天就捣腾阿, 瞎捣鼓. 当然也看原代码(matlab.el), 不懂装懂, 有点知道.
+最后注意力终于所在了matlab模式下,选择菜单`start matlab`系统显示`无法找到matlab`这个提
+示上. 我估计根本就是系统无法正确找到matlab, 导致了matlab-shell无法启用. 也就是我以前认
+为的用matlab调用emacs根本就不对. 应该反过来: emacs调用matlab! 关键就是我安装路径并非默
+认, 导致了系统无法找到.
+</p>
+
+<p>
+直接把$path$/bin/matlab文件拷贝到/sbin下面是不行的, 因为matlab进行的都是相对路径的调用.
+然后当然就是使用ln建立软链接了(硬链接是不可能, 因为不在同一盘下).
+</p>
+
+<p>
+最后我又在Emacs/Matlab/Customlize下面发现了启动matlab的命令, 将其由原来的matlab改为
+~/green/Matlab7/bin/matlab 之后, 原来在/sbin下面建立的快捷方式便不再需要了. Emacs自动
+将这个设置写入了.emacs文件中.
+</p>
+
+<p>
+另: 在当记录杂乱的情况下, 应该加上标注"乱".如果记录下来的东西未读,也应该加上标注"未读",
+这样以后可以利用muse的搜索功能非常方便地重整.
+</p>
+
+<p>
+07.08.2007
+</p>
+
+<p>
+不知道为何不能在simulink的界面下打开一个.mdl文件. 每次在file/open的窗口下双击需要的文
+件, 系统都提示说"File does not exist". 非常komisch.
+</p>
+
+<p>
+最后我都愤怒得重装matlab了&#x2026;.结果重装以后的matlab连启动都有问题, 系统说没有java&#x2026; 让
+我更加郁闷了.
+</p>
+
+<p>
+在崩溃的边缘又想起了编码问题, 可能是那个中文-UTF8的问题吧. 但是路径上面以直没有出现特殊
+字符, 其实也估计到没什么作用了. 开始找帮助文件&#x2026; 后来发现帮助文档里面打开某个.mdl文件
+不是先进入simulink界面, 然后再打开. 而是直接在命令行中键入文件名(省略扩展名)得到的&#x2026;豁
+然开朗! 原来本来就是这么简单的一件事情.
+</p>
+
+<p>
+后来试验发现, 如果一个文件夹里面同时有比如beisp.m和 beisp.mdl文件, 这是允许出现的, 在命
+令行中输入beisp后, 系统会提示其中一个文件被另一个遮盖了.
+</p>
+
+<p>
+另外, 今天重装matlab的时候, 使用matlab的第一个安装盘, 键入 sudo /media/cdrom/install,
+结果系统不断没有足够权限. 我都快哭了, 都系统管理员了还要什么更高权限啊? 后查看此文件的
+属性, 发现是有x, 也就是是可执行文件. 重启电脑也还是如此. 后来崩溃了, 把第一个光盘里的所
+有文件都拷贝到硬盘里, 然后死马当活马医, 又给install文件加一个可执行的属性. 然后就ok了&#x2013;莫
+名其妙.
+</p>
+
+<p>
+08.08.2007
+</p>
+
+<p>
+我觉得那些大公司, 有如adidas, BMW, 他们的广告总是那么的有创意, 耐人寻味. 创意这种东西
+不应该是资深的广告制作者才具备的啊? 既然这样, 那么那些掏不起钱请资深广告制作者的公司应
+该也有很多很不错的广告啊? 但是事实好像并不是这样. 有钱的公司, 广告个个经典, 小公司的广
+告层出不穷, 却又难有新意.
+</p>
+
+<p>
+看了Galileo XXL 之后我才明白有些东西不光是需要创意.
+</p>
+
+<p>
+BMW的一个广告: 两辆宝马车在沙漠上飞驰, 他们共同控制着一只风筝. 只见风筝在他们的控制下
+时而爬升, 时而俯冲, 时而翻滚, 非常动感. 这种风筝和中国的风筝有所区别, 它由两根线控制,
+不在于飞得有多高, 而在于各种漂亮的翻滚动作.
+</p>
+
+<p>
+实验中, 即使是两个人各拉一根线, 也很难使风筝平稳飞行. 后来改用自行车控制就更加没有可能
+性了.
+</p>
+
+<p>
+这个广告是电脑制作的罗?
+</p>
+
+<p>
+非也!
+</p>
+
+<p>
+下面是这个广告的一些数据:
+</p>
+
+<p>
+一个广告, 30秒. 代价是70个工作人员, 两辆BMW汽车, 加上一个世界冠军, 共同在沙漠里工作了4个月&#x2026;
+</p>
+
+<p>
+风筝的世界冠军在一辆宝马车的后座上看着牵引的风筝, 手中的控制器可以控制两辆宝马车的行进
+速度, 路线. 到了后来, 这两辆宝马车就好像是他的左右手一般灵活, 因此才能让风筝做出各种漂
+亮的动作.
+</p>
+
+<p>
+或许太多得把希望寄托于智慧, 寄托于创意的话, 就会变成了小聪明. 或者我们很多人都走了这条
+错误的路线. 我个人觉得, 中国是一个相信奇迹, 创造奇迹的国度. 问题是为什么这么多震惊世界
+的奇迹被我们所创造, 我们还是走在世界的后面呢? 奇迹缺乏连续性, 这是我的理解.
+</p>
+
+<p>
+08.08.2007
+</p>
+
+<p>
+很多的文件在gnome下面都显示无法打开, 但是这也仅仅说明没有相应的图形化软件, 比如gedit不
+能打开的文件, 在命令行中使用less或者nano都可以搞定. 有些压缩包也得在命令行中解压.
+</p>
+
+<p>
+09.08.2007
+</p>
+
+<p>
+今天成功修改了swbuff<sub>init.el和tabbar</sub><sub>init.el两个文件</sub>, 让MATLAB和ESHELL也在default组里
+面显示, 而且swbuff也不会忽略他们的存在. 而其他如scratch之类的, 然后被排除在外. 以后如
+果再次遇到该排除而没有排除的, 修改上述两个文件相关地方.
+</p>
+
+<p>
+后来又对swbuff<sub>init修改了一下</sub>, 现在使用了正则表达式, 凡是以*开头,但不以l*或B*结尾的buffer都被忽
+略.
+</p>
+
+<p>
+在latex模式下面进行预览, 遇到语法问题的部分,系统并不报错, 而是直接忽略. 所以能够预览的
+程序不一定就没有错误. 当错误很难看清的时候, 可以到/tmp下面看相应的log文件.
+</p>
+
+<p>
+14.08.2007
+</p>
+
+<p>
+今天终于醒悟了, 感觉到系统提醒找不到mlint程序并不是指找不到那个mlint.el文件, 而是另外
+有叫mlint的程序&#x2013;这个问题和以前解决的matlab-shell无法启动问题一样. 很快就搜索到了
+mlint, 在matlab/bin下面. 添加到.emacs文件相应的地方就ok了. 结果发现这个mlint程序好弱智
+啊, 用了半天发现就能检查个for循环有没有end之类的东西, 连拼写错误都不检查, 最后又把这个
+功能屏蔽了, 等需要的时候再说吧.
+</p>
+
+<p>
+28.08.2007
+</p>
+
+<p>
+人的眼睛能看到的可见光按波长从长到短排列,依次为红、橙、黄、绿、青、蓝、紫.其中红光的
+波长范围为 0.62～0.76μm; 紫光的波长范围为0.38～0.46μm.
+</p>
+
+<p>
+11.09.2007
+</p>
+
+<p>
+德文的Untertitel只要在播放器中选择相应的编码就可以搞定. 中文的尚未尝试.
+另外, rmvb格式的文件不会加载字幕文件, 如有需要, 可以直接将其扩展名改为avi, 然后放上同
+名的字幕文件就OK.
+</p>
+
+<p>
+13.09.2007
+</p>
+
+<p>
+在Ubuntu中, 要建立一个dot开头的文件, 即隐藏文件, 一般第二次才能建立. 当然可以利用touch
+一次性生成. 另外对于文件(不包括文件夹)的剪切, 需要连续按两次C-x才能生效.
+</p>
+
+<p>
+18.09.2007
+</p>
+
+<p>
+安装fcitx, 一开始报错中都含有缺少某个.h文件, 这个使用apt-file便能轻松解决. 后来碰到的
+居然是某个函数变量未声明. 搞不定了. 忽然想到了安装emacs中一条语句:
+&lt;example&gt;  sudo apt-get build-dep emacs21 &lt;/example&gt;
+其中 apt-get bulid-dep 的作用就在于安装好emacs21需要的编译环境. 刚好源里有fcitx.deb,
+虽然我不希望安装这个版本的fcitx, 但是利用 sudo apt-get build-dep fcitx 便轻松解决了
+安装fcitx所有需要的必要条件. 最好显示是没有安装x-dev导致先前的安装不成功的. 看来这个经
+验还是非常重要的.
+</p>
+
+<p>
+今天使用了checkinstall, 结果感觉很不好. 首先是emacs使用这个命令安装以后不能使用. 卸载
+了重新使用make install就ok了. 另外安装的fcitx, 可以使用, 但是系统不断提示源里有更新的
+fcitx. 最后我也决定卸载了重新使用make install安装. 这样新得利就不会再提示有fcitx的更新了.
+</p>
+
+<p>
+19.09.2007
+</p>
+
+<p>
+如果知道了快捷键, 而不知道其调用的命令名称的话, 方法很简单. 比如想知道 C-x # 这个快捷
+键对应的命令名, 只要输入 C-x C-h , 这样系统就会将说有以C-x开头的快捷键名称及其对应的命
+令一一列出, 这样在再搜索 # 便能马上知道 C-x # 对应的命令为 server-edit.
+</p>
+
+<p>
+今天的emacs终于开始出现乱码了: Friends的字幕文件居然不能正确解码, 这个让人很诧异. 借机
+搜索了emacs编码相关信息.
+</p>
+
+<p>
+-&#x2014;
+用Emacs编辑中文文件(von wensong)
+</p>
+
+<p>
+有些时候,emacs打开文件时不能正确判断中文的编码,将gb2312编码的文件误认为是big5编码的,
+会显示乱码.大部分时候,emacs会判断正确.
+</p>
+
+<p>
+为避免误判的情形,可以在打开文件时告诉emacs用什么编码,先输入"C-x Enter c"选择语言,然
+后用"C-x C-f"打开文件.例如,打开gb2312编码的文件,输入"C-x Enter c",再选"cn-gb-2312"
+或"chinese-iso-8bit-unix",接着用"C-x C-f"打开文件.
+-&#x2014;
+</p>
+
+<p>
+事实上, C-x RET c 的作用是将这个编码方式作用于紧接着的命令. 比如"C-x C-f"效果就是使用
+指定的编码打开一个文件. 如果跟着"C-x C-w"就是使用指定编码将文件另存&#x2026; 这样便能利用
+emacs进行编码转换, 当然前提是emacs能正确识别当前的编码方式.
+</p>
+
+<p>
+如果是想对已打开的文件指定另外的编码方式, 使用"C-x RET r".
+</p>
+
+<p>
+21.10.2007
+</p>
+
+<p>
+Freizeit
+</p>
+
+<p>
+刚刚参加完一个Freizeit回来, 感觉非常不错, 所以再这里随便写点.
+</p>
+
+<p>
+Freizeit有两个意思, 普通意思不用说了, 另一个意思是: [mehrtägige] Zusammenkunft für
+Gruppen mit bestimmten gemeinsamen Interessen (aus dem Duden). 我今天和别人谈话时候用
+Ausflug来指代这次活动的时候, 我的朋友马上就指出: Ausflug一般指一天往返的小旅行. 而这种
+在外面过夜的是不能用Ausflug来指代的.
+</p>
+
+<p>
+这次活动是由SMD(Studentenmission in Deutschland) Erlangen组织的. SMD是德国学生基督教组
+织,在各个大学都有相应的分会. SMD Erlangen当然就是我们这里的了. m同学参加的, 和基督教有
+关的语言班应该就是SMD下面的一个小Group, 这个在我们Erlangen也有, 我也时不时参加. (我曾经
+用Gemeinde指代这个小分支, 结果我的朋友说它太小了, 不算是Gemeinde)
+</p>
+
+<p>
+这次别人邀请我去参加这个Freizeit, 我很爽快就答应了. 朋友帮我anmelden, 并将我暂时先托付
+给另外一个朋友, 因为他周五晚上还有乒乓球比赛&#x2026; 我们坐同行者的私人汽车到了Bamberg边上一
+个森林里面, 在森林的只种我居然发现了一些很别致的Haus, 傍山而建. 房间布局和
+Jugendherberge的四人间一致无二, 也是上下铺加个洗漱池. 它有个名字 Pfadfinderhaus. 关于这
+个房子的原始用途, 我问了德国朋友: 有时候学校会组织孩子们到森林里面去, 他们要联系野外的
+生存能力, 比如如何在森林里面找到回家的小路(Pfade finden), 如何在森林里就地取材搭建小房
+等等. 这些房子的所有者一般是 Pfadfinderverein. 但是当这次房子空闲的时候,其他一些组织也
+可以租用, 费用相当便宜, 但是所有全部自理: 这里没有服务员, 没有厨师, 没有监督者. 人们来
+了, 在这里过夜, 开Party, 传道等等, 走了以后要将所有东西恢复原状, 包括所有的纸篓都必须清
+空. 事实上, 这一点我们这批人就做得非常好, 临走全部打扫完毕以后, 组织者又派了几个人重新
+检查所有房间. (唯一不知的就是堆在墙角的脏的Bettwäschen由谁来处理, 应该是
+Pfadfinderverein的人吧)
+</p>
+
+<p>
+既然是基督教的活动, 自然少不了讲解圣经, 唱赞美诗之类的. 这个我估计大家不是很感兴趣, 我
+就不说了.
+</p>
+
+<p>
+参加这个Freizeit的30余人之中就我是外国人, 其他人至少都是在德国长大的. 来之前我认识其中
+的4, 5个人, 我有点担心会落单, 而且也不知道和德国人一起生活是什么感觉. 不过很幸运, 那里
+的人都很友善.  刚到Pfadfinderhaus, 我把东西放下, 回头一看: 带我的德国佬跑没影了. 把我气
+得不行了.  也有点害羞, 不敢未经别人介绍就跑出去找陌生人玩. 于是惨兮兮地一个人在房间里面
+玩XDA. 看了十几分钟, 开始鄙视自己的胆怯, 于是硬着头皮去大厅找熟人. 只找到一群陌生人在大
+厅里面玩KICKER, 我远远地看着. 一盘结束, 马上有人邀请我一起玩. 对于邀请, 我是从来不拒绝
+的, 因为如果这时候连邀请都拒绝的话, 那肯定是注定要落单了. 半小时后, 我已经就认识了十来
+个男生了.
+</p>
+
+<p>
+有一点比较有意思, 就是无论是看电影, 传道, 吃饭所有人都是一个挨着一个坐着. 也就是说, 所
+有的空位都是在一起, 而不是象Vorlesung一样, 非友人之间一般都有空位隔着. 我觉得这样非常好,
+一开始我认识不多几个, 但是本来不认识我的人也会挨着我坐, 然后相互问候, 互通姓名. 到了后
+来, 我吃饭就常往不认识的人中间坐, 因为大家都很友好, 而且通过开始一天的尝试, 我对于我自
+己的德语水平还是比较有信心了. 这里我插一句说: 我确实感觉到这个暑假在家里花大量时间反复
+看德语版的Friends成果非常显著, 主要是听力方面, 已经很少让别人再说一遍了. 至于口语嘛, 我
+对于时态感觉还是很不好, 不过反正他们都能听懂, 我也就大胆说了.
+</p>
+
+<p>
+今天中午活动结束的时候, 我把大部分的参与者都认识了, 而且聊得基本都不错. 我的口语水平肯
+定不能在这两天有迅速的提高, 但是和他们交流感觉比两天前轻松很多. 其实主要是比一开始自信
+多了.
+</p>
+
+<p>
+我还认识了好几个Mechatronik和Elektrotechnik的学长学弟, 以后估计在食堂都会常常遇见.
+</p>
+
+<p>
+我现在想想, 其实认识德国人还是比较简单的, 只不过一开始找到一个切入点比较难. 我在
+erlangen的前一年基本没有认识的德国人, 有那么个把, 关系也就是停留在见面说 Wie geht's的程
+度. 后来认识了一两个相当不错的朋友, 交往多了以后, 他们就愿意带我出去玩. 比如上个周日,
+我的朋友带我感受一下Gottdienst, 我也很乐意, 于是一个早上就结识了两个朋友, 我指的是朋友,
+而非知道仅仅知道名字的那种. 这个周末又认识了一群. 而这些新朋友在食堂之类场所遇见以后,
+往往又会很快认识他们的朋友.
+</p>
+
+<p>
+另外, 这次出游, 两天半时间, 所有费用只要27欧. 一天三顿, 顿顿吃得相当开心, 还有住宿费用,
+交通费用, 我还真不知道他们如何搞定的. 但是我知道这个活动上面确实没有经费提供. Freizeit
+每学期两次. 学期伊始和学期结束, m同学或许也可以去问问斯图家特没有这样的Freizeit.  个人
+感觉, 非常不错! 就单单说和一群德国人一起住上下铺一点就是非常难得的经历.
+</p>
+
+<p>
+回到Erlangen的时候, 我的朋友问我感觉这个Freizeit如何, 我说非常不错. 他说一开始他很担心
+我不能很好得融入这个团体&#x2026;
+</p>
+
+<p>
+Gottesdienst
+</p>
+
+<p>
+刚写的Freizeit里面提到了我上周日参加的Gottesdienst, 既然今天没什么任务, 也再把那天的有
+趣经历稍微提一下.
+</p>
+
+<p>
+其实Gottesdienst倒是没什么大意思, 无非就是大家祈祷, 唱赞美诗, 然后为两个小孩祈祷, 然后
+几个15岁的小女孩上台表达她们对上帝的虔诚之意. 从10点晃到12点, 居然没有免费的午餐, 这个
+有点出乎我的意料. 当然咱不是为了这个而来的.
+</p>
+
+<p>
+结束以后, 带我去的德国朋友Erik给我介绍了几位德国大学生. 其中三位和Erik关系是相当不错的一漂亮女孩
+Diborah, 一个大个男孩Markus, 还有一位忘了. 我们一行五人去意大利餐厅吃饭. 德国人等饭的时候也是一顿
+胡扯. 扯到Erik戴的变色眼睛的时候, 大家都不说话了&#x2013;都说好神奇啊!  Erik还特地给我描述了一遍它的神奇
+变色眼镜. 我轻轻的说: Ich weiss, wie es funktioniert. 他们都有点傻了. 于是我给他们上了一节"变色玻
+璃为什么遇光会变色"的科普讲座&#x2013;其实当时我讲不对, 这个周日再一次给Erik和Dibora讲解了一遍.
+</p>
+
+<p>
+那天阳光明媚, 大家吃饭饭都说这样的天气呆在家里真是太可惜了. 于是我们决定去Kanal溜达. 这条人工运河
+连结莱茵河和多瑙河, 不过建成以后并没有多少船只从这里通过, 结果成了大家运动休闲的好去处.
+</p>
+
+<p>
+我们一路走, 一路quatschen. 道路尽头是一个小湖, 八成是自来水厂所有的人工湖. Markus好兴奋了, 怂恿大
+家下去游泳: 我们可以穿着裤衩下去游泳, 然后我们在这里晒太阳, 裤衩一会就干了,然后我们再回家&#x2026;  虽
+然阳光明媚, 但是估计气温不会高于15度. 我以为他开玩笑, Erik也不表态.  Markus等不及了, 呼呼拉拉脱了
+衣服裤子就跑冲到湖里游泳了&#x2026; 德国人果然放得开!
+</p>
+
+<p>
+后来在铁闸栏的另一边(应该是自来水厂的工人)来了一个中年男子. Diborah说: 可能不让游泳.  Erik马上说:
+这里没有牌子说禁止游泳,所以绝对没事. 后来那个中年男子在十米远处站了一会, 转身回去了.  周四的时候
+我和Erik聊天的时候提到了他上周日说的这句话: 这里没有牌子说禁止游泳,所以绝对没事.  他说德国就是这
+样的, 无论什么禁令都要在显眼出标出, 你看那个柱子上的牌子. 我沿着他手指的方向看过去: 一个小小的柱
+子上居然横七竖八钉着8块的牌子. 我再看看前面, 发现到处都是各种警示牌.  我当时就想起m同学在去
+Ulm(richtig?)的火车上说的话: 如果法律的健全不是以细致程度为指标的话, 那法律里面只要一句话就行了:
+一切为了民主.  想想中国的水域能否游泳的先决条件是: 管理员是否在场.  恩, 有食人鱼也不能游泳.
+</p>
+
+<p>
+回来的是候, 大家都很渴了. 路旁边有Biergarten, Markus想去解解渴, 不过Dibora说太贵了, 她不想花这个
+钱. 我以为外国人对这些小钱都是从来不在乎的呢.
+</p>
+
+<p>
+01.11.2007
+</p>
+
+<p>
+关于vimper, 第一次运行的时候会让用户选择自己的水平. 这个选择的水平越高, vimper化就越小,
+很多自己定义在emacs模式下面运行的命令也都能在vimper模式下运行. 今天重装系统, 原来在c模
+式下面写程序, 按;后便会自动换行, 结果现在不行了. 一直很奇怪. 后来想到这次重装, 唯一不
+同的就是一开始的vimper选择, 原来选了3, 这次比较谦虚, 选了2. 后来我把水平改为5, 哈哈.
+结果发现一切都没问题了. 昨天看了vimper的帮助文档(emacs自带), 知道C-z能被修改为其他快捷
+键, 不过具体如何修改, 还有待深入了解.
+</p>
+
+<p>
+02.11.2007
+</p>
+
+<p>
+kdocker在打开emacs的时候都会显示一些警告, 不过看着很是不舒服.
+今天终于在linux编程的书中得到提示, 将其错误报告都umleiten到/dev/null(传说中的黑洞文件)
+文件中.
+&lt;example&gt;
+alias ee='kdocker -i /home/c/emacs<sub>lib</sub>/lib/emacs<sub>init</sub>/emacs-logo.png -qm emacs
+2&gt;/dev/null &amp;
+&lt;/example&gt;
+</p>
+
+<p>
+06.11.2007
+</p>
+
+<p>
+&lt;src lang="c"&gt;
+<i>/c程序:
+/</i>---&#x2013;&#x2014;Hostget.c-----------&#x2013;&#x2014;
+  char h<sub>name</sub>[50];
+&#x2026;
+  if(gethostname(h<sub>name</sub>, 50)==-1)
+&#x2026;
+</p>
+
+<p>
+//这里为何不能这样写:
+ char *h<sub>name</sub>;
+ &#x2026;..
+ if(gethostname(h<sub>name</sub>, 50)==-1)
+ &#x2026;..
+</p>
+
+<p>
+//因为h<sub>name在建立的时候是一空指针</sub>, 所以不能往里面写东西.
+//我们应该在其定义以后给它分配内存空间:  h<sub>name</sub>= (char *)malloc(50);
+<i>/继续看下面一例子:
+/</i>-----------------&#x2013;&#x2014;fwrite.c
+&#x2026;
+  char *p, *q;       //p 不是空指针么?
+&#x2026;
+      sprintf(p, "haha, das ist %d. mal\n", i);
+&#x2026;
+&lt;/src&gt;
+</p>
+
+<p>
+在没有分配内存空间的情况下, 依然能执行sprintf. 为什么? 因为 字符串"haha&#x2026;"在内存中占
+据着一定的空间, 这个命令就是把字符串常量的地址赋给了p指针.
+</p>
+
+<p>
+10.11.2007
+</p>
+
+<p>
+终于找到如何往字符串里面加变量了.
+</p>
+
+<p>
+比如一个循环:
+&lt;src lang="c"&gt;
+for(i=0, i&lt;100, i++)
+ {
+   a<sub>str</sub>="Das ist der i. Mal.";
+ }
+&lt;/src&gt;
+希望其中的i能随着循环的变化而变化. 还有想要知道i变量的值的长度&#x2026;
+本来都已经计划自己写代码解决. 后来忽然想到了sprintf().
+</p>
+
+<p>
+&lt;src lang="c"&gt;
+    char *mal;
+    mal=(char *)malloc(10);
+</p>
+
+<p>
+    while(i++ &lt; 10) {
+          sprintf(mal, "Das ist der %d. Mal.", i);
+          write(1,mal,19);
+	}
+&lt;/src&gt;
+</p>
+
+<p>
+如果i有可能超过一位数, 那么还得要判断一下i的位数. 想到了sprintf以后, 类似的问题都很好
+解决了.
+</p>
+
+<p>
+10.11.2007
+</p>
+
+<p>
+感觉在emacs中仅仅用斜体来显示一级强调有点不够显眼, 所以想修改muse-color使被强调单词变
+为绿色, 结果发现毫无用处, 觉得很奇怪. 最后在"options/customize Emacs/Groups Matching
+Regexp"搜索muse, 找到了修改muse-color的菜单, 修改后, 系统自动在.emacs中生成了
+&lt;example&gt; '(muse-emphasis-1 ((t (:foreground "green" :slant italic)))) &lt;/example&gt;
+结果重启emacs, 居然还是无效, 感觉不可思议.
+</p>
+
+<p>
+15.11.2007
+</p>
+
+<p>
+11月15日是值得纪念的一天, 我经过两周有余的认真准备(主要学习了LINUX Programmierung)之后,
+在西门子Component, Common Hardware Solution, Computer System部门面试成功. 感谢曾兴同学
+的推荐. 我终于如愿地跨入了德国公司的大门, 并开始我所喜欢的C语言编程. 另外我在IST宣布了
+某些重要的决定.
+</p>
+
+<p>
+27.01.2008
+</p>
+
+<p>
+今天捣腾了很久如何把Caps变成另外一个Ctrl键. 后来发现, 在
+system/Einstellungen/Tastatureinstellungen/Belegungseinstellungen里面直接就有相应的选
+项&#x2026; 不过多知道xmodmap命令还是很有好处的. 另外, 在同一个地方, 还可以选择让Alt<sub>L也具备</sub>
+AltGr的功能. 这样,输入括号之类的符号就简单很多了. 但是实践后发现, 问题比较严重, 因为
+Alt<sub>L在Emacs中不再具备它原有的功能了</sub>&#x2026;
+</p>
+
+<p>
+文泉驿0.99很糟糕, 把系统的字体都弄得乱七八糟, 完全不如0.81好使.
+</p>
+
+<p>
+28.01.2008
+</p>
+
+<p>
+在西门子编程, 要被运行的一个文件在g:\benchmarking下, 结果发现总是出问题. 后来把它拷贝
+到g:根目录下面就可以了. 仔细思考以后发现, \b被Python解释为退格. 将路径改为
+g:\\benchmarking就没有问题了. 以后在操作windows下面的文件时候后确实要注意这个反斜线的
+转义问题. 事实上, C语言中的\b也是特殊意义. 还有很多类似的转意字符, 都得注意了.
+</p>
+
+<p>
+07.03.2008
+</p>
+
+<p>
+昨天把微软雅黑弄到了ubuntu里面使用, 感觉非常不错. 有时候是要感谢微软帝国为我们作出的贡献. 在
+Emacs中, 一直都提示说我的Systemscrollbar的颜色无法加载. 看到Error字样我就心烦. 干脆打开相关的.el
+文件, 将定义Systemscrollbar颜色的代码注释. 然后世界清静了.
+</p>
+
+<p>
+08.03.2008
+</p>
+
+<p>
+使用启动光盘进入ubuntu之后, 并不能在/home 或者/media下面找到硬盘分区, 因为他们没有被挂载. 很简单
+的办法就是使用 mount /dev/sda5 /home/ubuntu 将sda5挂载到 ubuntu文件夹下面,然后就可以使用各种
+linux命令进行文件的修改删除了.
+</p>
+
+<p>
+09.03.2008
+</p>
+
+<p>
+Emacs确实需要不断花时间捣腾, 虽然对于Elisp的语法迟迟没有决心好好学习, 不过感谢上帝, 最近还是有些
+进展的. 今天最大的收获莫过于重新使Muse生成网页的功能生效了. 其实我也不明白原来到底怎么了. 想来很
+久以前, 我升级Muse发现ywb的配置文件在新的Muse下面不能生成网页, 感觉当时日子过得不错, 就决计从此用
+那个版本, 等到Elisp学会了再考虑研究他的代码. 现在忽然发现没有升级任何组件的情况下, 居然网页也不能
+生成了, 老说我没有Parameter. 反正我也不是很明白. 死马当成活马医了. 既然都不能生成网页, 就干脆升级
+Muse到最新版本, 然后再自己看看Readme写个简单的Init文件. 反正也没别人看我的网页. 结果很神奇地发现,
+Muse3.12居然能很好得使用ywb的配置文件. 不过一个新问题出现了: 在Muse下, 链接点单击回车不能打开相关
+页面. 这个可是大问题! 我后来将ywb的大部分代码注释, 发现回车能够使用了. 也就是说ywb的某些代码导致
+了这个问题. 早想处理他的代码了. 对于一个程序员来说, 有大片莫名其妙的代码存在, 而且这些代码老是出
+现各种问题, 这简直不能忍受. 另外, 偶然间还在Muse的说明文档里面发现了 C-c C-v: Show the published
+result of this page. 就是预览结果, 和ywb的 C-c C-h的区别在于, 居然只是修改了muse的源代码而没有用
+C-c C-t发布, 即使是保存了, 使用C-c C-v得到的结果还是上次发布的内容. 于是ywb当年写的大部分代码都已
+经不再需要. 比如使用src标签之类的功能, 我从来就没有学会用过, 现在干脆都注释了. 结果很成功, 就留下
+他的一些 编码设置, 还有 contens 的显示等函数. 另外,更让人振奋的是: 现在的Muse已经能自动出来相对路
+径了. 再不用去改什么文件夹的名字来达到欺骗Muse的效果. 另外, 例如&lt;b r&gt;等标签现在又能使用了. 看来半
+年没动, 作者确实作了不少让人兴奋的改进啊.
+</p>
+
+<p>
+半夜居然还搞定一个小东东: 自动备份emacs<sub>lib的</sub> .sh文件有时候不能很好地执行, 研究了一下,原来当时间
+为个位数时, 生成的文件就把小时后面部分删除了. 查看了一下date的manual发现当时我写时间格式为
+zeit=`date +%d_%m_%y_%k_%M_%S`, 其中%k取值 0..12, 更改为 %H就行了, 因为%H取值 00&#x2026;12, 也就是什么
+时候都是两位数, 就不会出现空格了.
+</p>
+
+<p>
+09.03.2008
+</p>
+
+<p>
+最新的Emacs的vimper好像很有问题, 如果我加载vimper, C-x C-f , C-x C-w 以及 M-x dired都不能使用. 其
+他的冲突暂时还不知道. 不过实在是难以放弃vi的导航键啊. 冲突就冲突吧, 只要对我的源代码开启, 浏览,
+搜索不产生重大影响就行了. 另外很高兴地发现, 虽然在退出Emacs后, footnote依然会重新还是计数, 但是利
+用s-r重新扫描文档, 接着再插入新的footnote的时候, 哪怕是插入点在其他footnote前面, Emacs也会自动让
+原有的footonte往后移, 比如原来的条目1变成了2.
+</p>
+
+<p>
+另外, 最让人兴奋地是: 我终于搞定了src标记了! 例如:
+&lt;example&gt;
+&lt;src lang="python"&gt;
+#import subprocess
+</p>
+
+<p>
+string = str(34)
+print "Ich habe", string, "Kinder."
+&lt;/src&gt;
+&lt;/example&gt;
+输出到html中的效果如下:
+</p>
+
+
+<div id="orga73626f" class="figure">
+<p><img src="./pic/tag_src.png" alt="tag_src.png" />
+</p>
+</div>
+
+<p>
+不得不承认: 很让人满意!
+</p>
+
+<p>
+有几点经验: 首先是格式, lang="python" 要连着写, 不要在等号前后加空格, 否则htmlize不干. 另外这个
+扩展的并不是自带了各种语言的样式, 而是要启用Emacs下面相应的组件进行格式化. 比如,我在.emacs中设定,
+打开c语言代码后, 只显示各个函数名称, 具体的代码会被折叠. 结果c语言代码输出到网上上也是带着省略号
+的. matlab格式化后的显示效果和我在matlab.el定义的显示是基本一致的. 暂时知道的支持的语言有: c,
+c++, csharp, python, matlab. 我估计这个和emacs支持哪些代码有关.
+</p>
+
+<p>
+最新发现: htmlize.el就是根据Emacs各种模式下代码的显示效果来格式化文件的. 那么要格式化
+一个bash文件, lang=?, 这个很简单, 就是用emacs打开这个文件, 看下面显示是什么模式, 那么
+lang后面就更什么字符串. 注意字符串开头不要大写. 比如bash文件被打开后, emacs进入
+shell-script模式, 那么lang=shell-script就能得到想要的效果了.  感谢神的指引!
+</p>
+
+<p>
+恩, 有个小例外, makefile被打开以后显示为GNUmakefile, 但是lang=makefile才行. 这个也是可
+以理解的, 因为makefile毕竟不光光是GNUmakefile.
+</p>
+
+<p>
+10.03.2008
+</p>
+
+<p>
+今天把恶心的Firefox字体问题解决了. 方法很简单, Firefox字体的设置和编码还有关系. 在Advanced栏目的
+最上方, 有Font for &#x2026; 的选项. 当我将Font for Western字体设置为22以后, Font for Simple chinese依
+然没有变化.
+</p>
+
+<p>
+17.03.2008
+</p>
+
+<p>
+今天将恶心了许久的muse下划线和mono标签取消, 并将强调标记从一个星号增加为两个星号, 两个星号的强调
+则增加为三个星号, 三个的增为四个.
+</p>
+
+<p>
+首先说明下划线和mono标签: 在原来的muse中 <code>hallo</code> 会被解释成 mono. 也就是每个字母占据同样的宽度.
+而 <span class="underline">hallo</span> 则会变成hallo加下划线. 问题就在 = 会不断被用到, 有时候后文中的一个等号和前文中的等号一
+起, 被解释成了mono. 这样本来需要的等号就看不见了. 下划线倒还是稍微好一些.
+</p>
+
+<p>
+星号: 引用代码的时候, 比如c语言, 星号是最常用的指针标记, 两个星号加上一段代码就变成了强调, 这个就
+常常会产生不需要的解释, 导致我以前写 *p 都得写成 * p, 加上空格以后就不会被解释成强调了. 很麻烦.
+现在将之改为两个以上星号, 那出现频率就少了很多了.
+</p>
+
+<p>
+修改了两个文件, 一个是 muse-color.el, 这个主要是改变了这些标签在emacs下面的显示效果. _ 和 = 标签
+被我直接注释掉了. * 标签的改动可以看muse-color.el, 我都详细注释了改动的地方.
+</p>
+
+<p>
+另外一个是muse-publish.el, 这个主要是生成html文件的时候, 哪些标签会被转意.  _ 和 = 标签就不在定则
+表达式搜索项里面了. 而 * 标签把原来的 1 2 3 个星号改为 2 3 4个星号.
+</p>
+
+<p>
+另外, 我还将三个星号和四个星号的强调在emacs中的显示效果修改了一下, 加上了其他颜色, 而不仅仅是粗体.
+比如 <b>I</b>, <b><b>hey</b></b>, <b><b><b>hallo</b></b></b> , <b><b><b><b>guten Tag</b></b></b></b>. 分别为一个星号, 两个星号, 三个星号, 四个星号的显示效果. 暂时很
+满意. 以后就是要将以前写的关键是一个星号的强调部分改为两个星号.
+</p>
+
+<p>
+居然还神奇地将src标签在emacs中特殊显示的功能增加了, 其实很简单, 东西都已经有muse自己定义好了, 我
+就是照样画葫芦在如下代码中尝试性地插入了 ("src"   t nil nil muse-colors-example-tag), 结果就行了.
+我就是利用example的color定义对src标签进行同样的定义.   就像第三行那个code标签一样.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(defcustom muse-colors-tags
+  '(("example"  t nil nil muse-colors-example-tag)
+    ("code"     t nil nil muse-colors-example-tag)
+;; added by li on 17.03.2008
+	("src"      t nil nil muse-colors-example-tag)
+;; -----------&#x2013;&#x2014;bis hier
+    ("verbatim" t nil nil muse-colors-literal-tag)
+    ("lisp"     t t   nil muse-colors-lisp-tag)
+    ("literal"  t nil nil muse-colors-literal-tag))
+&lt;/src&gt;
+</p>
+
+<p>
+上帝保佑啊!!
+</p>
+
+<p>
+29.03.2008
+</p>
+
+<p>
+今天使用Emacs的远程登录功能, 使用ssh和ftp两种方式访问了faui08和freehostia. 代码如下:
+&lt;src lang="emacs-lisp"&gt;
+C-x f:
+/silochen@faui08.informatik.uni-erlangen.de:
+/<a href="ftp:lizche@cheneymx.freehostia.com">ftp:lizche@cheneymx.freehostia.com</a>:
+&lt;/src&gt;
+</p>
+
+<p>
+关键是最前面的'/'和最后的':'不要忘记.
+</p>
+
+<p>
+另外:
+&lt;example&gt;
+emacs 参数:
+-q 不加载.emacs文件.
+-Q 快速启动, 相当于  emacs -q &#x2013;no-site-file &#x2013;no-splash
+-nw: 命令行模式
+&lt;/example&gt;
+</p>
+
+<p>
+不知道为什么, 使用C-l将当前行切换到屏幕中央的时候, 整个屏幕都会重新刷新一下, 晃眼. 在vi模式下面,
+使用zz可以达到同样的功效, 而且不晃眼.
+</p>
+
+<p>
+30.03.2008
+</p>
+
+<p>
+今天最大的收获莫过于找到了如下两个有用的命令:
+&lt;example&gt;
+M-x describe-bindings
+M-x describe-key
+&lt;/example&gt;
+</p>
+
+<p>
+利用 describe-bindings 可以显示此模式下按键及被绑定命令的列表. 而 describe-key 则更为有用. 使用
+M-x describe-key, 然后输入你感兴趣的按键序列, 那么被绑定的命令就会被显示出来. 以后就再也不用愁知
+道某个快捷键而不知道其命令名称的尴尬了. 比如今天我查看了在vi的edit模式下按下ESC键所指向的命令:
+viper-intercept-ESC-key. 那么, 我就可以再把其他快捷键绑定到这个命令上了, 比如 (global-set-key
+(kbd "&lt;dead-circumflex&gt;") 'viper-intercept-ESC-key), 其中 dead-circumflex就是德语键盘的<sup>符号</sup>. 不
+知何故, 这个按键在gnome的德文键盘下面无法输出, 那就干脆把它当成一个快捷键. 这样修改模式就不用老
+大远去按ESC了.
+</p>
+
+<p>
+31.03.2008
+</p>
+
+<p>
+今天的主要收获是 ibuffer 的深入了解. 已经在 emacs 的 ibuffer 段落中作了较为详细的描述. 在命令行
+中, 执行vim -o *.c 就会将所有扩展名为c的文件并列打开, 然后利用 vim 中的窗口最大化等方式, 逐个参
+看各个窗口中的文件. Emacs中是不能那样子了, 不过在emacs中用 gf *.c 打开多次文件, 然后用 ibuffer
+加 C-o 逐个参看文件, 效果是差不多的. 很酷!
+</p>
+
+<p>
+03.04.2008
+</p>
+
+<p>
+搞定了在Emacs中利用Gnus自带的pop和smtp工具接收和发送gmail邮件, 还有通讯录bbdb的资料导入工作.
+newstricker 查看rss也被搞定, 只不过没觉得在emacs上面浏览rss优势.
+</p>
+
+<p>
+Emacs 确实是需要不断复习的. 今天又看了看dired的快捷方式, 发现dired也有和ibuffer三个相同的快捷键:
+= , C-o, o. 其中 = 是查看两个文件之间的差别. C-o 是在新窗口中查看光标所在的文件, 但是光标不移动
+到新窗口中. 而 o 则是打开文件并将光标移动到新窗口中. 另外, g 在ibuffer, gnus, dired中都是更新的
+意思. 看来以后不能随便乱定义快捷键了. 另外还有个好玩的东西, 按 i 可以将光标所在文件夹的子文件插
+入到当前buffer中. 我定义的 s-&lt;dead-circumflex&gt; 也能在dired中使用, 就是 进入上级目录中. 另外的,
+M-o我习惯于切换到另个窗口, 所以就把dired绑定的命令取消了.
+</p>
+
+<p>
+最近照样画葫芦尝试在.emacs中使用 hook, map 的定义. 感觉很不错, 基本都达到效果了. 看来前段时间的
+ELISP入门还是有效果的.
+</p>
+
+<p>
+04.04.2008
+</p>
+
+<p>
+发现dired可以直接如下打开目录文件:  M-x dired RET <i>home/c</i>.*   这样所有.开头的文件才会被列举出来.
+另外最酷的新发现莫过于dired下面的F命令: 同时打开标记的多个文件, 文件数最大可以为9. 这样的效果和
+Oli那很酷的vim效果就相似了. 当然标记可以用m, 或者%m使用正则表达式标记.
+</p>
+
+<p>
+05.04.2008
+</p>
+
+<p>
+不知为什么, xmodmap在KDE里面无效, 也就是我定义的Caplock为左Ctrl无效. 看来我是和KDE无缘. 另外
+emacsclient可以如此定义:
+&lt;example&gt; emacsclient -a emacs &lt;/example&gt;
+这样如果Emacs server开启了, 就将此文件用client模式打开, 不然就开启一个Eamcs.
+</p>
+
+<p>
+终于决心到德文论坛上问一下我的<sup>和</sup>~为何不能输入了. 结果问题瞬间就被解决了, 而且好几个人回答. 这方
+面好像德国人厉害很多啊. 原因很简单, 需要选择的键盘布局不仅仅是 德国, 而且应该是 Eliminate dead
+keys. Wiki中有写:
+</p>
+
+<p>
+Man wählt das Tastaturmodell "Generic 105-key (Intl) PC" aus und ergänzt als Belegung "Germany
+Eliminate dead keys" für das deutsche Tastaturlayout.
+</p>
+
+<p>
+找到一个好使的插件: wdired 提供修改文件名的一种非常方便方法.在dired-mode下按 <b><b><b>r</b></b></b> , 接着就可以把
+dired-mode 当作一般的文本处理,这样无论是修改一个文件,还是批量修改文件都不是一般的爽.
+</p>
+
+<p>
+&lt;example&gt;
+(require 'wdired nil t)
+(when (featurep 'wdired)
+  (autoload 'wdired-change-to-wdired-mode "wdired")
+  (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode))
+&lt;/example&gt;
+</p>
+
+<p>
+06.08.2008
+</p>
+
+<p>
+上水木的方法:
+&lt;example&gt;
+M-x ansi-term   打开bash.
+输入 luit -encoding gb2312 telnet -8 smth.org
+&lt;/example&gt;
+</p>
+
+<p>
+不过感觉速度超慢, 不知道是怎么回事.
+</p>
+
+<p>
+07.04.2008
+</p>
+
+<p>
+我今天想把原来定义的umcn修改一样, 因为双字节的中文标点改为英文标点以后, 最好在后面加上一个空格.
+当然也不是所有都加, 关键是句号, 逗号, 问号等表示句子分割的符号. 不过我修改后的Macro始终不能存盘,
+或者用 insert-kbd-macro 插入我的macro代码文件中就是一段充满问号的代码, 这代码emacs无法读取. 最后
+我开始研究umcn原来的代码, 后来发现他是通过ascii来插入字符的. 比如要插入SPC, 那就是加上32就行了.
+所以我找到33(!的ascii码), 然后在后面加上32. 如此把问题解决了&#x2026;
+</p>
+
+<p>
+08.04.2008
+</p>
+
+<p>
+今天把.emacs文档修改了一下, 主要配置文件放在emacs<sub>lib下面</sub>, 在.emacs中现在唯一的一句话就是load
+emacs<sub>lib下面相应的配置文件</sub>. 我对Linux-GUI, Shell, Windows 分别进行了配置, 这样理论上无论是什么
+系统, 我的配置文件都能运行了. 现在.emacs下面默认为load linux的配置文件, 另外写了.emacs<sub>shell文件</sub>,
+里面设定加载shell<sub>emacs的配置文件</sub>. 要使用.emacs<sub>shell而不使用.emacs的配置文件可以如下操作</sub>:
+&lt;example&gt; emacs -nw -Q -l .emacs<sub>shell</sub>  &lt;/example&gt;
+-nw表明不使用GUI, -Q表明不加载配置文件, 接着 -l .emacs<sub>shell要求emacs加载指定的配置文件</sub>. 如果不
+加 -Q, 那么.emacs也会加载一遍.
+</p>
+
+<p>
+09.04.2008
+</p>
+
+<p>
+仔细查看了一下viper的文档. 只要将viper的等级设置为5, 那么在vi和insert模式下, Emacs的快捷键基本都
+有效, 不需要修改 viper-keym.el文件了. 暂时知道在vi模式下被改变的按键只有C-f: page-down, C-b:
+page-up. 反正vi模式的导航功能如此强大, 这俩个快捷键本来都不用了.
+</p>
+
+<p>
+13.04.2008
+</p>
+
+<p>
+今天把原来定义的 C-x C-m 替代 M-x 的功能取消了. 因为 C-m 和 RET 有同样的功效, 所以当我输入 C-x
+RET 准备进行指定打开文件的编码的时候, 直接被解释成了 M-x. 注: C-x RET c 是将下个命令用指定的编码
+方式执行.
+</p>
+
+<p>
+20.04.2008
+</p>
+
+<p>
+晚上在家里看水木社区的emacs精华区, 找到两个不错的插件: hide-ifdef-mode, msf-abbrev
+</p>
+
+<p>
+hide-ifdef-mode 可以将c模式下被#if, #ifdef 等屏蔽掉的代码(在预编译中被删去的部分) 不予以显示. 这
+样代码看起来就整洁很多.
+</p>
+
+<p>
+msf-abbrev 则是abbrev模式的延伸. 我暂时会用的一点就是可以定义在缩写词被取代以后光标的位置. 这个
+确实是非常方便, 尤其是各种括号的扩展, 将光标定位在括号中间等待输入确实好办法. 还可以进行交互输入,
+应该也非常好使.
+</p>
+
+<p>
+此外还看到 hhl-mode, 这个比较有趣, 就是将光标所在行高亮. 作者说在给别人讲解的时候很方便, 就是圈
+重点了. 此外还有快捷键迅速转到已经被高亮的行.
+</p>
+
+<p>
+尝试了n多个配色方案, 不过发现还是我的gnome2最好看了.
+</p>
+
+<p>
+注: muse和color-thema有冲突, 启动了muse以后, color-thema-select就会出错. 所以需要使用
+color-thema-select时候可以暂时将muse的相关文件的调用注释. 而且yasnippet好像也和color-theme有冲突.
+</p>
+
+<p>
+21.04.2008
+</p>
+
+<p>
+在siemens编程, program stil 是非常重要的. 其中注释应该使用如下形式:
+</p>
+
+<p>
+&lt;src lang="c"&gt;
+/*
+</p>
+<ul class="org-ul">
+<li>This is some comments.</li>
+</ul>
+<p>
+ */
+&lt;/src&gt;
+</p>
+
+<p>
+今天在cc-mode的帮助文档里面找到了需要的命令:
+</p>
+
+<p>
+<b><b><b>`M-j' (`c-indent-new-comment-line')</b></b></b>
+</p>
+
+<p>
+This breaks the current line at point and indents the new line.  If point was in a comment, the
+new line <b><b>gets the proper comment line prefix</b></b>.  If point was inside a macro, a backslash is
+inserted before the line break.  It is the replacement for `indent-new-comment-line'.
+</p>
+
+<p>
+我将M-RET在cc-mode下定义为 c-indent-new-comment-line.
+</p>
+
+<p>
+首先使用 M-; 可以得到 <i><b>&#x2026;</b></i>, 然后输入一些注释, 换行的时候输入 M-RET, Emacs会自动在行首加上符合
+要求的空格数还有*, 书写完毕, 最后回车便得到了siemens需要的 program stil.
+</p>
+
+<p>
+22.04.2008
+</p>
+
+<p>
+今天找到了为什么在muse-mode下面, yassnippet总是怪怪的, 原来在其他模式下, Tab键都被重定义为
+yas/expand 及 yas/next-field-group. 不过muse下面我已经将Tab分配给 indent-relative 了. 以后 muse
+模式下面可以使用 msf-abbrev, 而在编程的环境中使用 yassnippet.
+</p>
+
+<p>
+23.04.2008
+</p>
+
+<p>
+今天找到了一个非常神奇的命令: M-x <b><b><b>rgrep</b></b></b>. 不但是在emacs中使用grep, 而且是递归的. 如果在前面加上
+C-u, 那么系统在执行前会将执行的命令输出给用户看. 不过这个一般是没有必要的.  另外的 M-x <b><b><b>lgrep</b></b></b> 是
+local的grep查询, 也就是不深入到子文件夹去搜索. 以后在西门子搜索某个function的声明就非常简单了,
+只要在整个Project的根目录下面进行递归grep就马上得到结果. 说明: 此命令执行输入非常快.
+</p>
+
+<p>
+rgrep和lgrep还有个变量:grep-files-aliases. 它在 grep.el 中已经被赋值了, 当然我们还可以修改.
+初始化后的值如下:
+</p>
+
+<p>
+&lt;example&gt;
+Value:
+(("asm" . "<b>.[sS]")
+ ("c" . "</b>.c")
+ ("cc" . "<b>.cc")
+ ("ch" . "</b>.[ch]")
+ ("el" . "<b>.el")
+ ("h" . "</b>.h")
+ ("l" . "[Cc]hange[Ll]og*")
+ ("m" . "[Mm]akefile*")
+ ("tex" . "<b>.tex")
+ ("texi" . "</b>.texi"))
+&lt;/example&gt;
+</p>
+
+<p>
+也就是说, 如果我们在要搜索的文件扩展名处写上 ch, 那么扩展名为c, h 的所有文件在搜索范围以内. 不过
+我发现好像写 ch m 这样不能扩展为 *.c *.h Makefile makefile. 如果都那么完美了, 程序员就无聊了.
+</p>
+
+<p>
+另外一个挺有用的命令也和grep有关: <b><b><b>M-x occur</b></b></b>   grep当前buffer, 并在另一窗口中列出.
+</p>
+
+<p>
+tetex已经不再开发了, 都转为 texlive 中. 连安装 tetex-extra 也被迫要求安装 500 M 的 texlive 文件.
+我安装tetex-extra是为了latex2png. 去了作者网站看到安装tetex-extra主要是里面的fullpage.sty有用.
+使用apt-file搜索软件包, 发现texlive-latex-extra里面有此文件. 安装之! 虽然也得安装 100 多M的文件,
+不过好歹不用再安装一些乱七八糟的语言包.
+</p>
+
+<p>
+最后一个成果是写好了神奇的能自动判断环境的.emacs引导文件:
+&lt;src lang="emacs-lisp"&gt;
+(cond ((eq window-system nil)
+	   ;; ohne X-windows
+	   (load-file "~/emacs<sub>lib</sub>/lib/kleine/.shell.emacs.el"))
+	  ((eq system-type 'windows-nt)
+	   ;; Windows
+	   (load-file "~/emacs<sub>lib</sub>/lib/kleine/.win.emacs.el"))
+	  ((eq system-type 'gnu/linux)
+	   ;; Linux
+	   (load-file "~/emacs<sub>lib</sub>/lib/kleine/.linux.emacs.el")))
+&lt;/src&gt;
+</p>
+
+<p>
+具体就不多说了. 很方便啊!
+</p>
+
+<p>
+24.04.2008
+</p>
+
+<p>
+原来将lib底下的一些诸如tabbar.el文件都编译成.elc文件, 结果在Siemens运行的时候报错. 将之删去就好
+了, 不知道为什么, 可能是因为在emacs23上面编译的时候调用了很多新的函数, 这些函数在Siemens的
+Emacs21上面没有, 所以就有问题了. 现在将这些自己编译的.elc文件都删去, 反正对启动时间不会有什么影
+响.
+</p>
+
+<p>
+psvn.el是个emacs支持svn的插件, 不过感觉其太过方便, 不小心就会出问题, 还是弃之不用了, 简简单单使
+用命令行check in, commit 之类吧, 反正也没什么重要的事情要处理.  Emacs23好像已经支持svn了.
+</p>
+
+<p>
+03.05.2008
+</p>
+
+<p>
+今天对 query-replace-regexp 深入了解了一下, 细节可以参见 emacs 相关部分.
+</p>
+
+<p>
+比如将下面字符串的数字加2, 其他不变.
+</p>
+
+<p>
+&lt;example&gt;
+xyz5xx
+xyz6xx
+</p>
+
+<p>
+Befehl: C-M-% \([a-z]+\)\([0-9]\)\([a-z]+\) RET \1\,(+ \#2 2)\3 RET
+&lt;/example&gt;
+</p>
+
+<p>
+'\1'代表第一个括号里面的内容, \#2 为第二个括号的内容, 而且将其转为数值型. 如果觉得\#2 不好明白,那
+么也可以规规矩矩写: (string-to-number \2).  \,(+ \#2 2) 就是将第二括号里面的内容转为数值型加上2替
+换第二个括号里的内容.
+</p>
+
+<p>
+这种高级用法终于学会了, 其实和python里面的正则表达式还是很像的. 都是正则表达式嘛~
+</p>
+
+<p>
+04.05.2008
+</p>
+
+<p>
+写一个好玩的命令:  M-x emacs-init-time   顾名思义, 就是查看emacs启动的时间. 和别人拼配置的时候可
+能有用.
+</p>
+
+<p>
+另外, 在字符型界面下面, 要打开菜单栏:   M-`
+</p>
+
+<p>
+06.05.2008
+</p>
+
+<p>
+又玩了玩ibuffer, 还是很有趣的. 另外发现一个命令: C-x s (save-some-buffers). 它会依次提示保存尚未未保存的
+buffer.
+</p>
+
+<p>
+总结下buffer切换的各种方式:
+</p>
+
+<p>
+&lt;example&gt;
+C-x C-b :   ibuffer                        ;;  我觉得要玩好Emacs, 这个ibuffer一定要用好. 因为它不怕打开的Buffer过多.
+C-x b   :   ido                            ;;  这个是ido的附加功能. 在minibuffer里面列出所有Buffer. 用C-s轮转.
+s-d s-f :   tabbar and swbuff              ;;  tabbar在Emacs最顶上增加标签栏, 很直观, 不过在tty中不好使.
+                                           ;;  swbuffer开一个小Window来显示所有的Buffer. 比
+                                           ;;  ido的有更多的选择项.
+&lt;/example&gt;
+</p>
+
+<p>
+07.05.2008
+</p>
+
+<p>
+今天得到两点经验值:
+</p>
+<ol class="org-ol">
+<li>gmail不允许发送扩展名为 .exe 和 .chm 的附件. 而且甚至打包以后也不允许发送. 还是得要把扩展名
+删去. 关键是使用gnus发送的时候, 就得到smtp error的信息.</li>
+<li>Emacs非常智能. 如果打开一个python文件, 其offset为3个空格的时候, 那么emacs会将offset暂时调整
+为3个空格, 不然在那个文件下继续编辑就会出现问题. 但是如果是重新开始另外一个python文件的编辑,
+那么emacs会重新使用设置的offset. 非常神奇!</li>
+<li>lgrep 等功能在windows下面运行不正常的原因是windows根本没有grep命令. 所以要先安装grep命令. 到
+<a href="http://gnuwin32.sourceforge.net/">http://gnuwin32.sourceforge.net/</a> 下载find 和 grep的包. 安装好以后别忘了将命令所在的路径添加到
+PATH中. 而且要将这个路径放在system32前面, 因为windows也提供了find命令, 不然使用rgrep的时候,
+系统就调用了windows的find命令, 自然不能成功.</li>
+</ol>
+
+<p>
+另外 :  diff 是完全用字符表示两个文件之间哪些行有差异. 但是比较不直观.   终于发现了 <b><b><b>ediff</b></b></b>, 这个
+才是我一直想要的直观的比较命令. 他会用颜色标出哪些地方缺少了, 哪些地方不同, 而且可以用 n, p 等快
+捷键导航. 非常不错. 在windows中要使用ediff, 需要在上面所说的网站下载 diff 包. M-x diff 是本来就
+支持的.
+</p>
+
+<p>
+虽然在Siemens不允许使用空格代替TAB, 不过我在写muse文档的时候, 使用TAB会把整个文档弄乱. 有些在
+Emacs看起来对其的注释, 生成了HTML以后就参差不齐. 所以还是改为使用4个空格代替一个TAB. 在c和python
+模式下, 我暂时继续使用TAB.
+</p>
+
+<p>
+09.05.2008
+</p>
+
+<p>
+今天如愿解决了窗口大小的问题. 具体的说, 就是很多命令, 比如 M-x occur 会开启另外一个窗口, 而那个
+窗口占据一半的屏幕, 感觉非常影响心情. 事实上, 开启的一个小小的框口就够了. 那么我们可以通过今
+天找到的 sticky-repl.el 插件, 对 special-display-buffer-names 进行设置, 这个变量包含的所有buffer
+都会开启小窗口(即使默认是在原窗口显示, 比如 M-x shell), 而且大小也可以随意设置. 不过这个好像不是
+特别健壮. 有时候会失效. 不过要求不能太高, 这个毕竟连 Emacswiki 都进不去.
+</p>
+
+<p>
+update: (暂时发现的小Bug) 它好像认定了某个窗口, 只要它打开的窗口不关闭, 它就永远在那个窗口显示. 比如它新
+增了窗口1. 结果我切换到那个窗口, 并将其他窗口删去, 那么再使用M-x Shell 等命令, 就都在本窗口(也就
+是窗口1)上面显示了.
+</p>
+
+<p>
+在C-mode下面使用outline的时候, 千万别使用 hide-body (&lt;f1&gt; t), 它整理过的程序就剩下满屏幕的小括号
+和省略号, 毫无层次感. 要用 hide-subtree (&lt;f1&gt;&lt;f1&gt;). 光标在那个枝干下, 就会将这个枝干折叠. 比如
+放在 while 下面, 则仅仅将 while 的代码折叠. 如果放在main函数下, while之外, 则会将整个main函数折
+叠. 而且它能很好地解决括号的匹配问题.
+</p>
+
+<p>
+再重复一下: 现在我的Emacs包含vi, 在普通模式下, 输入q再输入的下一串命令会在Emacs模式下进行解释.
+那么如果只想输入一个字母, 完全不用切换到编辑模式下, 输入字母, 再切换回来. 直接输入比如 qx 就行了.
+</p>
+
+<p>
+10.05.2008
+</p>
+
+<p>
+M-g g 和 M-g M-g 都是 goto-line 的快捷键.
+</p>
+
+<p>
+很多命令需要前缀, 比如 C-x TAB, 现在想让选区向左缩进20格. 那么我们有下面几种办法:
+</p>
+
+<p>
+&lt;example&gt;
+C-u -20 C-x TAB
+ESC -20 C-x TAB
+M&#x2013; M-2 M-0 C-x TAB
+&lt;/example&gt;
+</p>
+
+<p>
+第二种方法有个问题: 因为我是在vi模式下面, ESC有了特殊的用途. 所以要先用C-z切换到Emacs模式下才行,
+比较麻烦. 第三种方法是刚刚学会的.
+</p>
+
+<p>
+最终还是没能搞定Gnus浏览Emacs的新闻组. 不过找到一个能够查找Newsserver的网站, 先记录下来:
+<a href="http://nn.ip-service.com/">http://nn.ip-service.com/</a>
+</p>
+
+<p>
+今天稍微尝试着让 shell 在收到exit命令退出的时候, 不但关闭buffer, 而且将window也删除. 结果比较满
+意. 渐渐开始能够修改别人的代码了.
+</p>
+
+<p>
+更大的收获在于找到几个高手的blog, 从中或许了不少好用的命令. 尤其是 recentf-open-files, 我把它绑
+定到 &lt;f11&gt;. 有了它, 就可以马上看到最近浏览的所有文件, 和ibuffer的最大区别是, 即使buffer被关闭了,
+它也会被记录下来. 所以即使不小心关闭了某个buffer, 还是很容易找到的. C-x b (ido-switch-buffer) 也
+是让人振奋的命令. 它列出所有打开的buffer, 和ido的一贯特色一样, 选择buffer不需要键入完整的, 甚至
+都不用连续的, 只要顺序不要乱了就行. 非常迅速.
+</p>
+
+<p>
+11.05.2008
+</p>
+
+<p>
+搞定Gnus了! 早上忽然想起好像先按什么键才能看到服务器Group列表. 查看以前的笔记以后发现, 确实是要
+这样, 不然什么都看不见. 接下去就很简单了. 笔记真的很重要. 尤其是要条理清楚.
+</p>
+
+<p>
+12.05.2008
+</p>
+
+<p>
+终于在最早看到的Emacs的文章里找到了一直想要的插件: hide-region &#x2026; 今天翻出了n久以前保存的王垠写
+的, 介绍Emacs常用插件一文, 居然&#x2026;  唉, 看来很多东西可能当时一扫而过, 也没有觉得什么价值, 等有了
+一定水平以后再回来看, 又能发现很多东西. 同时找到的 hide-lines 也很好使, 可以隐藏符合某个 REGEXP
+的行. 而且如果加上前缀 C-u, 那么隐藏所有不符合 REGEXP 的行.
+</p>
+
+<p>
+另外, 在Emacswiki上smart-compile的'官方版', 现在就更好使了. 甚至还能编译muse, 根据模式执行不同命
+令, 估计会很爽!!! 如果让smart-compile找根目录的Makefile也随之解决了.
+</p>
+
+<p>
+14.05.2008
+</p>
+
+<p>
+今天搞明白了 MinGW 和 CygWin 了. 其实这两个东西, 还有我上面说的 GnuW32 都是让一些Unix下
+面的命令转到Windows下面来. 如果按功能上来说, GnuW32 应该是最简单的, 需要那个命令安装哪个命令, 当
+然支持的也很有限. 但是比如就想要个 find 和 grep, 安装完毕只有 5 M. MinGW 会安装挺多的库文件, 有
+了这些库文件的支持, 更多的命令就能在Windows下面运行了. 为了能使用gcc编译, 安装结果是 50+ M 文件.
+最后是CygWin, 这个确实很强大, 它感觉有Unix的全套服务. 能运行的命令当然也是非常非常多. 初步安装,
+使用了 200 M空间. 比如 OpenSSH 就只有CygWin支持了. 为了能在Windows的命令行运行这些Unix的命令, 方
+法非常简单, 只要将他们安装了的bin的文件夹加到环境变量PATH里面, 注意放在最前面, 这样调用的时候就
+不会调用同名的Windows的命令了.
+</p>
+
+<p>
+CygWin 还有自己的文件结构, 有文章说要加上 cygwin-mount.el 这个插件, Emacs才能识别 CygWin 的文件结
+构, 比如 /cygdriver/c. 但是我没有这样的感觉. 看了一下, 这个插件是2001年写的, 估计已经不需要了. 先
+记录一下.
+</p>
+
+<p>
+对了, 要用SSH, 安装CygWin的时候需要自己选上OpenSSH.
+</p>
+
+<p>
+17.05.2008
+</p>
+
+<p>
+LaTeX在调用外部pdf阅读器的时候, 默认为xpdf, 如果能将之改为acroread的话, 会方便很多. 但是我在水木
+清华上面提问一个, 他们直接说: 看看过去的帖子吧! 但是我查遍了也没发现有将这个问题回答了的帖子, 相
+反, 提问者倒是很多. 后来一想, 也罢! 多大点事! 半年过去了, 又开始使用LaTex, 又碰到了同样的问题.
+但是这次我马上就想到这些设置应该都是在customize里面, 输入M-x customize-group RET latex, 很快就找
+到了修改默认的pdf阅读器的地方.
+</p>
+
+<p>
+看来很多东西, 用得多了也就明白了. 刚入门的时候当然什么都得别人弄得好好的才行. 花了这么多时间在
+Emacs上面以后, 越来越觉得, 要将一门技术真正地掌握, 没有很多年的经验积累, 无论看多好的教材也是不
+可能的. 永远不要看7天成为编程高手之类的书.
+</p>
+
+<p>
+19.05.2008
+</p>
+
+<p>
+今天想查找Erik给我的一封信件, 但是gnus是按照时间顺序排列的, 当然我可以修改排列方式, 但是我想到了
+前几天添加的函数, 在C-s模式下C-o具备occur的功能, 于是搜索Erik, 然后C-o, 所有Erik给我的信件都整整
+齐齐罗列在小窗口中, 很感动!
+</p>
+
+<p>
+20.05.2008
+</p>
+
+<p>
+水木有人提问:
+</p>
+
+<p>
+&lt;example&gt;
+发信人: momozilla (风), 信区: Emacs
+标  题: 大家有没有遇到过这种问题
+发信站: 水木社区 (Mon May 19 18:12:35 2008), 转信
+</p>
+
+<p>
+起动后, 一切正常, 但是不知道按错了什么键, 有时就是一阵copy ＋ paste的命令后, 再按C-n 或 C-p时, 光
+标会就自动跳到行首, 而不是与本行对应的列的位置. 得把emacs关了, 重起又一切正常了, 真的好烦啊
+</p>
+
+<p>
+是不是有什么设置是管这个的?
+&lt;/example&gt;
+</p>
+
+<p>
+以下是我的回答:
+</p>
+
+<p>
+&lt;example&gt;
+发信人: cheneymx (cheneymx), 信区: Emacs
+标  题: Re: 大家有没有遇到过这种问题
+发信站: 水木社区 (Tue May 20 05:24:27 2008), 转信
+</p>
+
+<p>
+set-goal-column (C-x C-n)可以实现你所讲的这个功能, 你试试C-u C-x C-n(这个是取消set-goal-column),
+看能不能消除这个问题. 如果是的话, 可能是你在行首处按下了C-x C-n
+&lt;/example&gt;
+</p>
+
+<p>
+然后是两个跟帖:
+</p>
+
+<p>
+&lt;example&gt;
+发信人: momozilla (风), 信区: Emacs
+标  题: Re: 大家有没有遇到过这种问题
+发信站: 水木社区 (Tue May 20 06:53:19 2008), 转信
+</p>
+
+<p>
+正是这个问题
+真是不知道还有这个goal-column的设置, 把我郁闷坏了. . .
+</p>
+
+<p>
+太感谢了  :)
+</p>
+
+<hr />
+<p>
+发信人: analyz (UNIX), 信区: Emacs
+标  题: Re: 大家有没有遇到过这种问题
+发信站: 水木社区 (Tue May 20 09:15:49 2008), 转信
+</p>
+
+<p>
+汗, 第一次听说, 长见识了.
+&lt;/example&gt;
+</p>
+
+<p>
+这个也算是我在水木Emacs版块的第一个有价值的帖子了. 菜鸟起飞确实不易, 这种goal-column的设置都是需
+要很长时间的积累才会涉及到这些细节.
+</p>
+
+<p>
+21.05.2008
+</p>
+
+<p>
+今天昨晚了Praktikum的第一个Versuch. 到家以后对代码的浏览工具又重新温习了一下, 在emacs中定义了
+xref 的快捷键. 另外重要的是开始尝试再次配置cedet 和 ecb 两个功能强大的语法分析插件. ecb是 Emacs
+Code Browser 的简称. Xref 感觉很不错, 不过可惜只支持 C 和 Java. Cedet 有些功能很好使, 不过我头疼
+它整天扫描我的电脑, 而且一退出Emacs, 好像又要重新扫描&#x2026; 看来Emacs设计起来就是象服务器一样, 一次
+开启, 永不关闭&#x2026;
+</p>
+
+<p>
+26.05.2008
+</p>
+
+<p>
+最近忙于实习和seminar的准备, 虽然抽空不断学习Emacs, 不错没能及时做笔记.
+</p>
+
+<p>
+一个比较重要的收获是学会了使用epa. epa是加密软件gpg的Emacs接口. 利用epa可以简单地将各种文件进行
+加密, 密钥长达2048位, 估计已经没有什么人能够将其还原. 这样我终于有可以放心地写我的机密数据的地方
+了.
+</p>
+
+<ul class="org-ul">
+<li>gpg 直接加密: user$ gpg -c DATEINAME</li>
+<li>gpg 解密:     user$ gpg  &#x2013;decrypt DATEINAME.gpg &gt; Datei</li>
+<li>gpg 生成密钥: user$ gpg &#x2013;gen-key</li>
+
+<li>epa 浏览keyring: `M-x epa-list-keys'</li>
+<li>epa 加密:        `M-x epa-encrypt-file'</li>
+<li>epa 生成签名:    `M-x epa-sign-region'</li>
+<li>epa 加密(dired):  [mark some files in dired] then  M-x epa-dired-do-encrypt</li>
+</ul>
+
+<p>
+使用了密钥加密以后, 密钥一定要保存好. 另外密钥也是通过gpg加密过的, 所以启动密钥的密码也不能忘记.
+当然, 这么重要的密码我当然是使用了非常长的, 非常复杂的密码了. 私人密钥我也在服务器上保留了一份.
+</p>
+
+<p>
+其次是在网上找到某网友自己制作的YaHeiMono, 其实就是将Consolas和MS YaHei统一了一下, 达到英文字体永
+远是中文字体宽度1/2的效果. 使用了这个字体以后, Muse里面的对齐就一下子简单了很多. 我一激动, 就将原
+来的配置文件修改了一下:
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(setq usemono t nomono nil)
+(if (frame-parameter nil 'font-backend)
+    ;; choose! usemono or nomono ?
+    (if usemono
+        (progn
+          (set-default-font "YaHeiMono-12")
+          ;; 设置所有窗口字体
+          (add-to-list 'default-frame-alist '(font . "YaHeiMono-12")))
+      (progn
+        (set-default-font "Bitstream Vera Sans-12")
+        (set-fontset-font (frame-parameter nil 'font)
+                          'han '("Microsoft YaHei" . "unicode-bmp"))
+        (set-fontset-font (frame-parameter nil 'font)
+                          'symbol '("Microsoft YaHei" . "unicode-bmp"))
+        (set-fontset-font (frame-parameter nil 'font)
+                          'cjk-misc '("Microsoft YaHei" . "unicode-bmp"))
+        (set-fontset-font (frame-parameter nil 'font)
+                          'gb18030 '("Microsoft Yahei". "unicode-bmp"))
+        (set-fontset-font (frame-parameter nil 'font)
+                          'bopomofo '("Microsoft YaHei" . "unicode-bmp")))))
+&lt;/src&gt;
+</p>
+
+<p>
+这样我就可以通过在 choose 那行通过选择 usemono 或 nomono 达到快速选择字体的效果.
+</p>
+
+<p>
+我将 imenu-tree 放入了 not-in-use 文件夹中, 因为ecb提供了相应的功能.
+</p>
+
+<p>
+发现我使用 epa-encrypt-file 的时候, 是使用 pubring 进行加密的, 所以不需要输入密码.
+我使用 gpg &#x2013;import revoke.asc 将用 &#x2013;gen-revoke 生成 widerrufurkunde 导入, 接着我的私人密钥便不
+能再进行签名, 加密. 但是原来使用公钥加密了的文件还能使用那个私人密钥打开.
+</p>
+
+<p>
+31.05.2008
+</p>
+
+<p>
+对 wcy-shell-mode-hook-func 再次进行修改, 现在的函数会探测当前windows的个数, 如果是一个, 那么就
+单单关闭buffer, 如果大于一个, 关闭buffer的同时, 关闭此窗口.
+</p>
+
+<p>
+昨天看到emacswiki里面提到使用emacs.bash处理Emacs-client. 但是没明白到底是怎么回事. 那个
+emacs.bash并不是一个可执行文件. 今天早上后看了看emacs.bash前面的说明, 里面提到此script定义了一个
+edit()的函数. 忽然来了灵感, 就像是在.emacs里面定义函数一样. 在.bashrc里面加上
+</p>
+
+<p>
+&lt;src lang="shell-script"&gt; source /path/to/emacs.bash &lt;/src&gt;
+</p>
+
+<p>
+这样就在命令窗口启动的时候, 将此文件的内容读入. 接着便可以使用里面的 edit 命令了. 此 edit 命令执
+行的功能大约和 emacsclient &#x2013;alternate emacs 差不多. 不过更加稳定了. Emacwiki上说这个是在*nuixes
+下面的 best solution.
+</p>
+
+<p>
+接下去有倒腾了一天的Multi-TTY, 现在已经对Emacs-Client和Emacs Multi-TTY有了比较好的理解. 另外还学
+会了一个强大的工具: Dtach. Screen是更加强大的, 不过我暂时还没有时间去学习. 详细的记录在
+emacs<sub>client</sub><sub>multi</sub><sub>tty</sub> 一文.
+</p>
+
+<p>
+01.06.2008
+</p>
+
+<p>
+因为命令行下面的et实在是太让人振奋了, 以后简单的修改一些配置应该都可以在命令行下面进行. 当然, 找
+到一个满意的虚拟终端自然也是件重要的事情了. 结果比较出乎意料, 我终于还是停留在yakuake上面, 只不
+过稍微对其配置深入了解了一点点. 设置 S-F12 为全屏. 默认配置: S-right 为切换到下一个Tab. C-S-n 为
+增加一个Tab (new session). 其实, 这样就满足了我的小小要求: 招之即来, 挥之即去. 较大显示面积. 多
+Tab模式. 快捷键快速切换. 至于看到王垠主页上面那强大的Sawfish窗口管理器, 我还是等有时间了再去倒腾
+吧, 毕竟我还不怎么会Elisp.
+</p>
+
+<p>
+我发现, 使用了kdocker的Emacs虽然能够隐藏到系统栏里, 但是却常常异常退出. 我发现了只要将
+带Gui的emacs-server启动, 然后扔到其他虚拟桌面下面. 以后都用 em 开启新的Multi-TTY, 效果一样, 而且
+不会异常退出. 应该是个好的解决办法.
+</p>
+
+<p>
+02.06.2008
+</p>
+
+<p>
+今天执行编译 sawfish, 结果configure的时候系统报错, 说找不到 esound. 但是我发现 esound明明已经安
+装完毕. 根据经验, 应该是没有安装 esound-dev. 结果发现并没有这个包. 相关的lib也找了没有, 上网查找,
+发现相似的问题.
+</p>
+
+<p>
+有人找到了 libesd0-dev. 别人问及如何迅速找到这个需要的软件包是, 以下是他的回答:
+</p>
+
+<p>
+Well, there's probably a better way, but normally I do this:
+</p>
+
+<p>
+Search in synaptic for the package I want and then see if it has a <b><b>-dev</b></b> version, if not, look at
+its immediate dependencies which start with "<b><b>lib</b></b>", these will most likely be the libraries that
+the package needs to run (normally named similar to the original package, sometimes an
+abbreviation). These lib* packages normally have -dev versions which will contain the files your
+after.
+</p>
+
+<p>
+还有提到了 build-dep:
+</p>
+
+<p>
+If the package you want to compile is in the repositories, I would just run:
+</p>
+
+<p>
+&lt;example&gt; sudo apt-get build-dep package<sub>name</sub> &lt;/example&gt;
+</p>
+
+<p>
+for that package (e.g., nautilus). That should install everything you need to compile&#x2026; it
+works well for my fluxbox SVN builds anyway.
+</p>
+
+<p>
+03.06.2008
+</p>
+
+<p>
+最近不知是gpg还是epa不怎么肯干活, 抑或是我的新窗口管理器 sawfish ? 反正有时候启动emacs的时候, 默
+认调用 gnus.el.gpg, 中途要求输入密码. 但是输入密码的窗口没有出现, Emacs就被挂起. 加上每次启动输
+入密码也太麻烦了. 我现在干脆将 gnus.el.gpg 的调用注释掉. 需要用的时候在去.linux下面加载之. 应该
+也不麻烦. 一切等我把seminar搞定了再重装吧.
+</p>
+
+<p>
+update: 想到一个更好的主意. 启动gnus的时候系统会自动查找 ~/.gnus.el 文件, 我在那个文件里面写上一
+load-file 命令, 让它去调用我的 gnus.el.gpg 文件. 也就是说, 只要我不进入 gnus 模式, gpg文件就不会
+被访问, 我也就不用输入密码, 如果被调用了, 也只要简单输入一次, 不用发送每封邮件有输入复杂的邮箱密
+码. 感觉很不错. 有点要注意一下, 在启动gnus的之前使用C-x m写邮件的话, 是不会发送出去的, 虽然系统
+有回复说已经发送.
+</p>
+
+<p>
+前天切换到了纯的sawfish下面 &#x2026; 等了半天, 什么也没有, 没有提示符, 没有标签, 没有菜单, 没有系统栏.
+我等啊等, 以为系统出问题了. 于是 Ctrl-Alt-Backspace 重启Gdm. 如今配置了这么多了, 我又想进去
+sawfish看看, 结果居然还是什么没有. 我忽然明白了: 我gnome下面那么多东西, 都是gnome的, 和窗口管理器
+没有关系. 我一按中键, sawfish 的菜单马上显示了. 呵呵, 果然, 不是系统被挂起了. Gnome是桌面环境,包
+含了大量的应用程序. 而sawfish仅仅是一个窗口管理器, 怪不得它没几M大小. 纯的sawfish下面, 我到现在,
+如何设置随系统启动的软件都还不知道. 恩, 背景桌面据说还得找专门的script. 看来以后在gnome下面使用
+sawfish才是最明智的. 不然实在没有那么多时间整那么多东西.
+</p>
+
+<p>
+前段时间在水木社区, 我提到我使用viper模式. 并自嘲到: 真正的Emacs高手当然是不屑于用这么插件了. 后
+来有人回复说: 只有半吊子的人才会不齿这个, 不屑那个.
+</p>
+
+<p>
+想想确实是这样. 或许只有半吊子的人才会整天追求什么血统纯正. 高手, 关键是要好使. 星黎殿的作者也说,
+他也喜欢用X-Window, 好看, 方便. 没有必要, 何必一定要把什么东西都弄到终端下. 那东西都是唬人的. 当
+然, 很多东西终端有很大优势, 这时候自然另当别论了. 再想想, 计算机教授都是用apple, 呵呵. 既不是
+Windows, 也不是Linux. 在他们眼里, 操作系统什么的都已经一样了. 工程师也可以追求潮流, 追求艺术.
+</p>
+
+<p>
+4.06.2008
+</p>
+
+<p>
+删去窗口的边框. 具体的说是使用了一个没有窗口主题的主题. :) 在firefox中特别设定使用边框, 因为
+firefox还是更多地需要用到鼠标, 而且可能会有其他人用我的浏览器. 除此以外, 估计也没什么人会动了,
+最好也不要动.
+</p>
+
+<p>
+将Emacs下面和super键绑定的快捷方式基本都删去了, 就留下 F3 + .. 版本. 慢慢的, 应该将这个也淡忘掉.
+super键现在基本是 sawfish 的专属了.
+</p>
+
+<p>
+因为没有了窗口边框, 所以用鼠标放大缩小, 移动都不是很方便. 我将这些功能都绑定了舒适的位置上. 并强
+迫自己不去动鼠标. 人总是有惰性的.
+</p>
+
+<p>
+今天做实现时候学到的:
+</p>
+
+<p>
+计算器可以将某些数值保存到某个变量里. 我的计算器支持9个变量, A, B &#x2026; 将想存储的数值输入到计算器
+中 (或者是通过计算得到) 然后按 SHIFT + RCL (得到 STO, 即 STORE) 再按 A, B 这些字母对应的按键, 注
+意这里不要按 ALPHA 键, 本来应该是 ALPHA + (-) 得到 A, 加了 ALPHA 就是将A调出来了. 计算器以为你要
+使用这个 A 变量.
+</p>
+
+<p>
+存储完毕以后, 即使关闭计算器也不会将这些变量清零. 要清零, 最简单方法便是 将 0 存到比如A变量中. 或
+者是按 CLR 全部清零.
+</p>
+
+<p>
+使用就非常方便了, 将 12 存为A,以后直接用A放在算式里面计算就可以了. 尤其是在做实验是, 就一两个参数
+在变化, 而式子又是尤其长, 那么可以将不变的那部份结果存为 A, 以后直接用A代替那部分式子的结果. 在以
+前, 我都是用笔抄出这些中间值.
+</p>
+
+<p>
+今天还发现, 居然在Emacs里面也有Sawfish的Manuaul, 看来emacs和Sawfish果然有千丝万缕的关系.
+</p>
+
+<p>
+7.06.2008
+</p>
+
+<p>
+花了很多时间查找如何让conky软件在Desktop完全启动以后运行, 后来终于看到一个让人郁闷的脚本. 有人写
+了一个bash-script运行conky, 不过在前面加了sleep 20&#x2026;
+</p>
+
+<p>
+&lt;src lang="shell-script"&gt;
+#!/bin/bash
+sleep 20 &amp;&amp; conky
+&lt;/src&gt;
+</p>
+
+<p>
+有时候事情就是这么简单!
+</p>
+
+<p>
+我现在把所有希望Autostart的程序到写到一个 bash-script 里, 以后只要将这个文件加到 session 里面,
+就不用一项一项添加了.
+</p>
+
+<p>
+很多的虚拟终端都有透明, 或者准透明的效果. 事实上, 我发现一般都是实现准透明效果. 所谓准透明, 就是
+它将桌面作为自己的背景图案, 当然它们会根据自己窗口所在位置调整所取桌面的哪一部分为自己的背景图案
+了. 在准透明效果之下, 如果将这个虚拟终端放在其他的窗口之上, 那么就马上被打出原型了. 这种透明的效
+果可以通过加参数 -tr 实现. 起码在 xterm 和 urxvt 都可以.
+</p>
+
+<p>
+很尴尬! 今天晚上花了几个小时的时间, 想把不能运行的 iconify-all.jl 里面的函数改正一下. 结果死活搞
+不定. 最后, 在查阅文档的时候, 忽然发现事实上Sawfish本来就带了该功能. 很是郁闷了一下.
+</p>
+
+<p>
+09.06.2008
+</p>
+
+<p>
+把sawfish的menu修改了一下, 不过遇到点小麻烦, 就是不知道如何实现不输入密码的关机方式. 网上有人提
+到用 gnome-session-save &#x2013;kill. 我后来看到在 sawfish 里面的 gnome-logout 函数中, 它也是调用这个
+命令实现的. 不过输入这个命令以后, 出现 logout, reboot, shutdown &#x2026; 等让用户选择. 感觉还不是很好.
+eexpress 给了一个有趣的实现, 事实上是有点点 dirty, 不过很好使:
+&lt;example&gt;  echo "pwd" | sudo -S halt &lt;/example&gt;
+这样就不需要用户输入密码了.
+</p>
+
+<p>
+或者可以出现对话框, 让用户输入密码:
+&lt;example&gt; gksu -g halt &lt;/example&gt;
+一般使用 gksu 的时候, 系统会lock其他的程序, 并将屏幕设为半黑屏状态, 单单密码输入框为正常显示. 我
+很不喜欢这样, 加上 -g 就可以去除这个效果.
+</p>
+
+<p>
+11.06.2008
+</p>
+
+<p>
+今天读完Happierbee的Elisp入门, 并写出了第一个完整的有使用价值的sawfish程序.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(defun convert-event (re event<sub>old</sub> event<sub>new</sub>)
+"convert the old event to a new event, and send it to a window.
+make sure, that re is a list"
+  (catch 'return
+    (let ((curwin (input-focus)) (n (length re)))
+      ;; is re a list?
+      (if (listp re)
+        ((while (&gt; n 0)
+        ;; an element
+        (setq elem (nth (- n 1) re))
+        (when (string-match elem (window-name curwin))
+             (synthesize-event event<sub>new</sub> curwin)
+             (throw 'return))
+        (setq n (- n 1)))
+      ;; if no matched, send old event to window
+      (synthesize-event event<sub>old</sub> curwin))
+      (kid-display-message "Error: re must be a list")))))
+</p>
+
+<p>
+(provide 'convert-event)
+;;; convert-event.jl ends here
+&lt;/src&gt;
+</p>
+
+<p>
+这个程序接收一个名为 re 的 list. 后面参数分别为输入的按键, 输入到当前窗口的按键. 用途可以如此阐
+述: 如果此命令被激活, 那么系统查看当前窗口名称是否符合 re 里面的任何一个正则表达式, 如果符合, 那
+么将 event<sub>new</sub> 的按键组合输入到当前窗口, 如果不符合, 输入 event<sub>old</sub> 的按键组合到当前窗口. 比如
+Emacser 习惯于C-s为搜索, 我们设定 Adobe Reader 的窗口下面, 键盘输入 C-s 后, 系统将其转换为 C-f 输入
+给窗口. 这个用法只需在 .sawfish 中如下定义:
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(defun convert-event-c-s ()
+  (interactive)
+  (convert-event '("StarDict" "Adobe.Reader") "C-s" "C-f"))
+</p>
+
+<p>
+(bind-keys window-keymap "C-s" 'convert-event-c-s)
+&lt;/src&gt;
+</p>
+
+<p>
+15.06.2008
+</p>
+
+<p>
+修改了Emacs中src标签中的代码色彩. 原来用灰色太沉闷了, 而且和底色也比较接近. 另外修改了 muse 下面
+的css文件, 增加了对第四层目录的支持.
+</p>
+
+<p>
+16.06.2008
+</p>
+
+<p>
+将 vim 模式下的 h l 修改为 backward-char 和 forward-char. 因为原来的vim命令, 使用 h l 不会换行,而
+且关键是使用 l 移动光标的时候, 顶多只能移动到最后一个字符之上, 而使用 C-x C-e 的时候, 往往又是要
+是在最后一个字符之后才行, 所以很不方便.
+</p>
+
+<p>
+22.06.2008
+</p>
+
+<p>
+今天主要解决了 fetchmail 的配置. 配置比较简单,
+</p>
+
+<p>
+&lt;example&gt;
+set daemon 60
+</p>
+
+<p>
+poll pop.gmail.com
+proto POP3
+port 995
+user 'username@gmail.com'
+pass 'password'
+ssl
+&lt;/example&gt;
+</p>
+
+<p>
+然后在相关的启动文件里添加上:
+</p>
+
+<p>
+&lt;example&gt;
+! pgrep -x fetchmail &amp;&amp; fetchmail &amp;
+&lt;/example&gt;
+</p>
+
+<p>
+如果 fetchmail 已经运行了, 则什么也不做, 否则运行 fetchmail.
+</p>
+
+<p>
+之所以用 pgrep 而不用  ps + grep 完全是因为论坛上有人说 pgrep 更可靠.
+</p>
+
+<p>
+使用 fetchmail 取回邮件, 当然 gnus 获利最多, 毕竟这取邮件事情是原来是它的任务, 现在它只要去看看,
+在 /var/mail 下面是否有新信息就行了.
+</p>
+
+<p>
+将原来的 gmail pop3 配置注释掉, 换为如下代码(取自 gnus FAQ):
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(eval-after-load "mail-source"
+  '(add-to-list 'mail-sources '(file :path "/var/mail/c")))
+&lt;/src&gt;
+</p>
+
+<p>
+另外 conky 和 sawfish 的 rich-title 也都有了新的功能, 它们每过一段时间去查看一下 mail pool, 看有
+没有新的邮件, 如果有的话, 将信息显示在桌面 及 窗口的标题栏上. 对了, Emacs 的 Mode-line 也能显示
+是否有新邮件. 还是很神奇的.
+</p>
+
+<p>
+update: conky 和 rich-title 居然不是特别一样. conky 对于服务器退回来的邮件不加以理睬, 我以为
+conky 的这个模块有问题了, 差点将其删去.
+</p>
+
+<p>
+23.07.2008
+</p>
+
+<p>
+发现一个问题, 现在的Emacs居然不备份文件了! 仔细参看后发现, 它对于在版本控制下的文件不备份. 原因
+我觉得是因为的在设置备份方式的时候使用了版本控制, 这个和 svn 的版本控制有冲突. 暂时没有考虑如何
+解决, 可能会将本来就很多于的 个人svn 删除. 玩玩即可&#x2026;
+</p>
+
+<p>
+发现 verse 的标签确实不错, 只不过最近一直没用. 如果不是暂时代码的时候, VERSE 可以保证格式, 而且
+其间可以使用各种强调语法.
+</p>
+
+<p>
+发现一个很酷的 sawfish 插件: smart-tile. 它能将所有窗口平铺在桌面上. 而且还给最小化了的窗口也留出空位.
+对于它的第二个特性我不是很喜欢, 修改一下以后变成两个命令:
+</p>
+
+<p>
+c-tile-windows-ign-min:  不再考虑已最小化的窗口
+</p>
+
+<p>
+c-tile-windows-restore-min:  取消最小化了的窗口
+</p>
+
+<p>
+我对于 第二个 函数尤为满意. 这样就能马上浏览所有打开了的窗口. 和 fusion 等很多很华丽的立体窗口切
+换模式具备同样的功能, 但是消耗的资源不知道要少多少.
+</p>
+
+<p>
+而另外一个也是蛮有用的. 比如现在就想同时看两个窗口, 以前都得手动调节大小, 现在好了, 一个快捷键,
+立马搞定. 也是非常爽的.
+</p>
+
+<p>
+有点点不方便的地方: 本来计划让所有已经最大化和全屏的窗口, 都取消最大化, 这样在选中它们以后, 按下
+F11 就马上能够进入最大化模式. 但是判断是否最大化的命令好像有问题, 判断是否全屏的命令又找不到. 暂
+时搁置一下.
+</p>
+
+<p>
+update: 查看了源文件, 确定我写的代码没有问题, 后来想到, 可能是判断最大化的函数没有在标准库里, 所
+以加上一句: (require 'sawfish.wm.state.maximize), 问题马上解决.
+</p>
+
+<p>
+24.06.2008
+</p>
+
+<p>
+今天找到了查看系统中各进程对磁盘I/O操作速度的软件: iotop. 是用python写的. 代码不长,  值得研究.
+</p>
+
+<p>
+往 smart-tile 增加了一个 list. 只要窗口符合list中的任一 regexp 表达式, 这个窗口在执行 tile 系列
+函数的时候就会被忽略, 事实上, 还会将其最小化, 防止它在桌面上影响布局.
+</p>
+
+<p>
+25.06.2008
+</p>
+
+<p>
+曾经把exim4卸载了, 因为我觉得不我不须要这个邮件服务软件. 后来发现 fetchmail 取回来的邮件都丢失了.
+重新安装了 exim4, 问题就解决了&#x2026; 看来很多东西是在默默工作着, 只不过大家都没有发现它的存在. 一旦
+失去了, 才发现问题很严重.
+</p>
+
+<p>
+26.06.2008
+</p>
+
+<p>
+.conkyrc 中, /home/c 不能用 ~ 代替. 但是 $HOME 是可以的.
+</p>
+
+<p>
+为了将 .bbdb 的信息转为 mutt 能识别的 alias 文件, 我写了第一个给自己使的 python 脚本, 感觉很不错.
+程序非常简单, 就使用了 几个正则表达式.
+</p>
+
+<p>
+&lt;src lang="python"&gt;
+import re
+</p>
+
+<p>
+bbdb<sub>fd</sub> = open('<i>home/c/emacs<sub>lib</sub>/lib/kleine</i>.bbdb')
+alias<sub>fd</sub> = open('/home/c/alias<sub>c</sub>', 'w')
+</p>
+
+<p>
+pattern = re.compile("\[\"([a-zA-Z]*?)\".\"([a-zA-Z]*?)\".{16}.*?\(\"(.*?)\"\).*")
+</p>
+
+<p>
+for line in bbdb<sub>fd</sub>:
+    result = pattern.match(line)
+    if result != None:
+        alias<sub>fd.write</sub>('alias ' + result.group(2).lower() + result.group(1).lower() + ' '
+</p>
+<ul class="org-ul">
+<li>result.group(1).capitalize() + ' ' + result.group(2).capitalize() +</li>
+</ul>
+<p>
+                       ' &lt;' + result.group(3) + '&gt;\n')
+        alias<sub>fd.flush</sub>()
+&lt;/src&gt;
+</p>
+
+<p>
+28.06.2008
+</p>
+
+<p>
+今天看 man 发现 emacsclient 不但可以 将某个文件 用 emacs-server 打开. 而且可以通过加参数 -e 去运
+行某个 elisp 命令. 比如:
+</p>
+
+<p>
+&lt;src lang="python"&gt;
+def gotourl( self, wg=None):
+    os.system("emacsclient -a emacs -e \(gnus\) &amp;")
+</p>
+
+<p>
+    os.system("wmctrl -a emacs@")
+&lt;/src&gt;
+</p>
+
+<p>
+这里就使用 emacsclient 启动 gnus. 而且接下去使用 wmctrl 将焦点转向 emacs. 感觉真是太强悍了.
+</p>
+
+<p>
+根据 gmail-notify 的源代码, 我写好了 spool<sub>notify</sub> 文件. 它会分析给出的 MAILBOX 是 dir 还是
+file. 如果是 file, 继续分析里面的内容, 从而得到新邮件的个数. 如果是 dir, 则没空文件个数就是新邮
+件个数. 关键是有新邮件以后, 它会自动弹出一个 PopUp. 点击这个 PopUp 还可以直接进入 Emacs - gnus
+下直接浏览新邮件.
+</p>
+
+<p>
+update: 另外, 在弹出 PopUp 的时候, 我使用 aplay 命令播放一音乐片断, 当做提示音. 将文件加到
+c<sub>autostart</sub> 里面, 开机自动运行. 基本感觉非常满意了.
+</p>
+
+<p>
+29.06.2008
+</p>
+
+<p>
+今天看了 gmail-notify 的 deb 安装包. 发现它将 主要的 python 文件都放在 <i>usr/lib/gmail-notify, 然
+后将图片文件放置在 /usr/share/apps/gmail-notify</i>. 而在 /usr/bin 下面的执行文件 gmail-notify 这是
+异常简单:
+</p>
+
+<p>
+&lt;src lang="shell-script"&gt;
+#!/bin/sh
+cd /usr/lib/gmail-notify
+./notifier.py
+&lt;/src&gt;
+</p>
+
+<p>
+看来以后我也是可以写出和他们差不多的程序的.
+</p>
+
+<p>
+01.07.2008
+</p>
+
+<p>
+今天看到在命令行中, 使用
+</p>
+
+<p>
+&lt;example&gt; sawfish-client -c jump-or-exec-emacs  &lt;/example&gt;
+</p>
+
+<p>
+即可执行 sawfish 的各种窗口命令.
+</p>
+
+<p>
+02.07.2008
+</p>
+
+<p>
+看到了 eshell 的优势: 在 eshell 里面可以使用各种 Emacs 的命令, 比如 viel-file, find-file,
+byte-compile-file 等等. 而使用 man 命令的时候, emacs 会使用另外一个 buffer 打开相关的页面. 另外
+ansi-term 则可以完全模拟 /usr/bash. 在上面连 screen 都可以执行.
+</p>
+
+<p>
+在 server-start 前面使用 (setq server-name "c-emacs") 对 socket 进行命名. 以后 emacsclient 要连接
+到这个 server 上的话, 必须加上参数: -s c-emacs. 虽然这样感觉麻烦了一点点, 但是经过命令后的server
+变得可靠多了, 无论是虚拟终端还是物理终端, 通过这个参数都能找到真正的 server. 不象以前那样动不动就
+说找不到 server 了. 我将设定 server-name 的 elisp 语句放在 .sawfishrc 中, 只有通过 S-e 开启的
+emacs 才开启 c-emacs 的服务. 这样确保能够连接到正确的服务器上. 如果是 emacsclient 后面加上 -t 或
+者是 -c, emacs 将使用Muilty-TTY. 有点要注意, 在使用 emacs 后面加上 -eval (elisp-form) 这个
+elisp-form 会在末尾执行, 也就是在执行完 .emacs 以后.
+</p>
+
+<p>
+另外, screen -S sessionname 可以指定开启的 screen 的 sessionname, 以后再要 attach 到这个 session
+上, 只要在 -r 后面加上 sessionname 就可以了. 否则, 如果通过存在两个以上 detached 的 sessions 的话,
+仅仅 screen -r 会得到报错. 另外, 我发现如此也行:
+</p>
+
+<p>
+&lt;example&gt; rxvt-unicode -T my<sub>urxvt</sub> -e screen -D -R c-session-1983 &lt;/example&gt;
+</p>
+
+<p>
+如果有 c-session-1983, 便会将其 detach (如果尚未 detach), 然后重新连接. 如果不存在, 则创建一个
+session, session 的名称就是 c-session-1983. 我将其作为 urxvt 的默认启动设置.
+</p>
+
+<p>
+&lt;example&gt;
+(wy-run "rxvt-unicode -T my<sub>urxvt</sub> -e screen -D -R c-session-1983 &amp;"))
+&lt;/example&gt;
+</p>
+
+<p>
+取这么复杂的session名字就防止重名. 有了 screen 以后的 urxvt 就有了强大的标签功能了. 然后大量方便
+的快捷键. 甚至连多屏幕功能都可以具备了.
+</p>
+
+<p>
+09.07.2008
+</p>
+
+<p>
+今天写了一个脚本: ip-notify.py. 因为 alice 等网络供应商为了防止用户将自己的电脑当成服务器使用,每
+过大约24小时自动断线一次. 这样电脑的 IP 就发生变化了. 我想建立一个 ssh 服务器, 通过它能够在其他地
+方浏览自己电脑上的资料. 我写的这个脚本的功能就是每隔 20 分钟检测现在的 IP 地址, 如果 IP 地址发生
+变化, 则使用 mail 命令往指定邮箱发送一封邮件, 邮件里包含当前的 IP 地址. 脚本的大部分时间是在
+sleep, 所以并不会占用多少资源. 就是因为每次开机都会发送一封邮件到指定邮箱, 而事实上我在其他地方使
+用ssh登录本地电脑的可能性确实很少, 估计会产生不少的垃圾邮件数. 决定还是不要随电脑启动执行该脚本.
+</p>
+
+<p>
+11.07.2008
+</p>
+
+<p>
+今天在 Siemens 工作的时候, 需要阅读一个较为大型的 Project 的源代码. 说是大型, 其实源程序也总共大
+小不到 1M. 不过它使用了大量的 struct 类型变量, 而且都定义地相当复杂. 感觉今天就是靠着 rgrep 活下
+来的. 终于得要用到专门浏览代码的插件了! ECB 我没发现有多少用处, 它整理的当前buffer的信息感觉没什
+么大必要. 因为在一个文件里可以使用 * 到处跳. cscope 因为只能在linux上面使用, 所以也就不考虑了.
+想想还是 xrefactory 比较实用. 关键就是要它快速跳到某个变量的定义之处. 如果是个 struct 类型,
+xrefactory 直接跳转到该类型的定义处. 感觉非常方便.
+</p>
+
+<p>
+另外, 在公司通过 putty 远程登录到 linux 系统进行编程. 中途忽然发现, 只要按下 C-s putty 就没有任何
+反应,必须关闭重新连接. 上网查询后发现:
+</p>
+
+<p>
+Apparently <b><b>CTRL-S</b></b> actually does <b><b>XOFF</b></b>, which means the terminal will <b><b>accept key strokes</b></b> but <b><b>won't</b></b>
+<b><b>show the output of anything</b></b>. It will appear as if your terminal is dead when it's really just
+waiting to be turned back on. The <b><b>fix</b></b>? Simply press <b><b>CTRL-Q</b></b> to turn flow-control on (XON). If you
+pressed a whole bunch of keys before pressing CTRL+Q, you'll see the output from those
+keystrokes.
+</p>
+
+<p>
+要命的是, Ctrl-s 差不多是 emacs 最重要的命令. 如果这个命令始终被解释为 XOFF 就完蛋了. 后来我进入
+emacs 发现, C-s 是直接输入到 emacs 程序中的. 但是在 vim 等程序中. C-s 才被解释为 XOFF. 但是为何
+进入了 screen, C-s 就又被解释为 XOFF 了呢?
+</p>
+
+<p>
+我查询了 screen 的 flow-control. 发现只要设置 flow 为 off, 那么 screen 也不再对 C-s 特殊对待.
+</p>
+
+<p>
+13.07.2008
+</p>
+
+<p>
+用 emacs 的时候, 我感觉我有两个不好的习惯. 一个是喜欢关闭 buffer. 一旦临时结束某个 buffer 的编辑,
+我便习惯性地将其关闭. 我还可别定义了 F4 作为关闭当前 buffer 的快捷键. 其实和其他编辑器不一样,
+emacs 并不是打开那个文件, 而是目标文件拷贝一份到 buffer, 所以即使是 buffer 开启, 目标文件照样可
+以被其他程序读写, 甚至删除. 而且在buffer之间切换, emacs 提供了大量好使的命令. 比单单地使用标签切
+换好使很多. 所以我删去快捷键 F4. 定义了 C-x i 为 ido-switch-buffer.
+</p>
+
+<p>
+另外一个感觉不专业的习惯在于喜欢关闭 Emacs. 这个也是大量其他程序使用以后遗留下来的不良习惯. 一般
+的程序使用的频率都不怎么高. 用完了关闭之, 使其释放内存. 这本来无可厚非. 但是 Emacs 是我的学习和工
+作平台. 我不断需要用到它. 比如 Email, 笔记, 编程, 修改文件 等等. 用句流行话语来说: 没有 Emacs,天
+都暗下来了. 但是开启 Emacs 虽然在我现在的电脑上只需要 2.2 sec. 但是也是一件很不爽的事情. 我要的就
+是 召之即来, 挥之即去 的效果. 更关键是 Emacs 还有 Server 的功能. 所以我将 C-x C-c 这个快捷键和
+save-some-buffers 绑定.
+</p>
+
+<p>
+这样我再按下 C-x C-c 的时候, 就会提示保存所有未保存的 Buffer. 另外, 本来的
+save-buffers-kill-terminal 实在是有点长了, 所以给它定义了一个新名字: exit.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+;; From now on I must type M-x exit to exit emacs
+(defun exit() (interactive) (save-buffers-kill-terminal))
+&lt;/src&gt;
+</p>
+
+<p>
+16.07.2008
+</p>
+
+<p>
+发现了 aptitude 这个强大的命令行下面的软件包管理器. 和 synaptic 相比, 这个 aptitude 感觉专业很多,
+而且在命令行下面, 自然会更加迅速. 很多功能也是 synaptic 不具备的. 唯一暂时没有解决的问题在于:
+aptitude 使用 / 进行搜索, 但是它不是一次性将所有符合条件的条目都罗列出来, 而是需要通过不断按 n
+继续搜索. 感觉效率有点低下.
+</p>
+
+<p>
+发现新的 File-Manager: Xfe! 感觉这个文件管理器非常强大, 比如它可以实现多窗口显示, 快速切出虚拟终
+端 等等. 有些快捷键还是不怎么习惯. 比如 F2 成了新建文件, C-n 居然才是重命名. 至于好使的 C-h 切换
+对隐藏文件的浏览也被删去了. C-h 现在是 Go-$HOME 的快捷键了. 不过我已经在 sawfishrc 里面设置: 输入
+xef 的 F2 转义为 C-n, 而 C-h 转义为 C-F6. 还有个问题, Xfe支持中文字体的浏览, 但是不支持中文的输入.
+不过我感觉这个对我来说没什么问题, 毕竟我极少用中文命名文件. 发现一个非常好使的快捷键: C-p. 利用
+它可以将两个窗口的内容调换. 暂时没有找到如何在键盘上将焦点切换到另外一个窗口的方法, 现在可以利用
+C-p 达到类似的效果. 右边的窗口本来比较小. 现在要对右边的窗口进行操作, 使用 C-p 切换到左边来, 调
+整完毕以后, 再切换回去, 非常方便.
+</p>
+
+<p>
+还有另外一个叫 rox-filer 的窗口管理器感觉也相当爽. 但是关键两点让我受不了. 首先是没有垃圾箱. 我觉
+得这个问题似乎没有任何理由! 到了 21 世纪居然还有文件管理器没有垃圾箱! 连 bash 里面大家都想办法把
+rm 修改成将要删除的文件扔进垃圾箱, 防止'一失足成千古遗恨'. 第二点比较尴尬: rox-filer 的窗口名字就
+是当前浏览的文件夹的地址. 这个对我来说比较要命. 因为我的 sawfish 基本靠对比窗口名字来进行各种操作.
+现在它的名字从来没有确定的部分, 我强大的 jump-or-exec 就根本没办法实现了. rox-filer 的各种快捷键
+确实很让人有羡慕. 当然, xfe 的多窗口还是 rox-filer 不具备的.
+</p>
+
+<p>
+我在 Emacs desktop 的插件中设置: 如果 desktop 已有 lock 存在, 那么不在加载 desktop. (注: 这里所指
+的 desktop 其实就是保存 emacs 上个 session 结束时候依然开启着的 buffer 的列表的文件) 因为有时候会
+启动多个 Emacs实例. 每次都询问 'desktop 有 lock 存在, 是否加载?' 感觉非常麻烦. 但是现在出现一个小
+问题: 如果是emacs 异常终止, 那么 lock 没有被解开. 重启以后的 Emacs 就不会去加载 desktop. 所以感觉
+也是 鱼和熊掌不可兼得. 当然, 可以人为删除 lock 文件, 然后再启动 Emacs.
+</p>
+
+<p>
+18.06.2008
+</p>
+
+<p>
+我就想说一句: Emelfm2 ist einfach genial!
+</p>
+
+<p>
+有点怪怪的地方在于, emelfm2 的复制就是直接将选中文件拷贝到另外一窗口. 而不是先将连接拷贝到剪切板,
+然后再粘贴到另外文件夹.
+</p>
+
+<p>
+不要随便换系统: 今天打算将感觉无用的 nautilus 从随机启动中删去, 结果引起一系列的问题, 比如按下
+W-f 启动 firefox, 居然没有自动转到前端. 更糟糕的是, 连移动硬盘都不识别了. 我被迫启动 nautilus,
+一切又正常了. 看来要捣腾还有待时日啊!
+</p>
+
+<p>
+好不容易, 终于让我找到了 sawfish 启动时加载的脚本了. 在 ~/.sawfish 下面新建一可执行的 startup 文
+件, sawfish 在启动的时候就会自动加载之. 如果使用纯的 sawfish, .bash<sub>profil</sub> 是不会被自动加载的.
+</p>
+
+<p>
+20.06.2008
+</p>
+
+<p>
+尝试了 table.el, 发现它在 Emacs 23 下面不能正常运行. 另外发现 muse-publish-markup-regexps 是控制
+各种标签转换的变量. muse 首先搜索这里定义的标签, 让后进行相应的格式转换. 本来想修改一下 footnote
+的表示方式, 后来发现原来这个表示比较漂亮, 而且需要修改的地方太多了. 最后放弃了.
+</p>
+
+<p>
+Xref 在linux上面运行相当顺畅, 快捷键相当好使. 但是到了 windows 下面, 感觉非常垃圾. 最重要的跳转
+都不能实现. 不知道是我没弄好, 还是本来在 windows 下面就不怎么行. 不过使用 etag 能将基本问题解决.
+可惜 etag 不怎么合适 Siemens 里面那种大型项目, 带着非常多层的文件夹. 因为在生成 Tag 的时候, 必须
+将所有要扫描的文件夹一一列出. 而且 etags 常常查询出让人好笑的结果. 毕竟是免费的, 不要要求太高了.
+</p>
+
+<p>
+想要扫描自动扫描文件的子文件夹, 可以考虑使用 python 自己写一程序. 网上有人干过, 看起来不难.
+</p>
+
+<p>
+-&#x2014;
+</p>
+
+<p>
+新的方向
+</p>
+
+<p>
+说实在, 半年前曾经觉得自己很成功了. 不错的成绩, 不错的工作, 也有很不错的德国朋友. 这个学期感觉异
+常糟糕. 事实上, 这个学期应该是到德国以来最轻松的一个学期.
+</p>
+
+<p>
+看看课表, 一门 Seminar, 一个 Praktikum, 一门两学分的任选课, 一门四学分的限选课. 当 Seminar 和
+Praktikum 都早早结束以后, 生活中就更加没有什么压力了. 除了打工, 我基本都呆在电脑前面, 在linux的
+各种网页上逗留. 尝试乱七八糟的软件, 满世界搜索需要的配置. 常常也是忙得不亦乐乎.
+</p>
+
+<p>
+终于有一天, 我发现我的世界很惨淡, 很无聊.
+</p>
+
+<p>
+学业上, 周一考的 Medzin, 估计是刚过, 10月份时候打算再考一次. 下周三的 Sensor 估计也得等到十月份
+再好好考了. 本来时间就紧, 感觉生命没有动力, 看不进书. 很郁闷.
+</p>
+
+<p>
+工作上, 在西门子的工作本身倒还算有点意思吧. 不过都不知道如何和其他同事交流. 每天就去的时候讲:
+Guten Morgen. 走的时候: Tschüss.
+</p>
+
+<p>
+交际上, 这个就更加差劲了. 整天呆在家里的人, 如何能够有多少交际? 感觉这个学期就没有新认识的朋友.
+</p>
+
+<p>
+电脑方面: 基本上的时间都花在了这里. 看看我的 Log 就直到, 从 C 语言的代码浏览器, 到邮件接收服务器,
+还有最近文件管理器&#x2026; 太多的软件被我折腾来折腾去的. 甚至我已经在 Arch, Debian, Gentoo 之间徘徊很
+久了, 对顺手的 Ubuntu 开始厌倦了. 计划在考完试以后开始更狂野的捣腾&#x2026;
+</p>
+
+<p>
+我在论坛上说: 不多尝试各种文件管理器, 哪能知道哪个是最适合自己的?
+</p>
+
+<p>
+这句话我觉得确实是非常正确的. 但是问题是: 这些软件之间能够多少差距? 为了找到一个最顺手的, 花这些
+时间值不值得?
+</p>
+
+<p>
+对于文件管理器, 我在捣腾完 Nautilus, Konqueror, ROX-Filer, PCMan File Manager, emelFM2, Xfe 之后,
+发现 emelFM2 实在是相当完美, 相当地符合我的各种要求. 选择这个的过程中, 我花了大约两天的时间, 这
+个结果算是相当让我满意了.
+</p>
+
+<p>
+我们看看 Email: 从 emacs + gnus (用 gnus 完成 gmail 的邮件收发), 到 emacs + gnus + fetchmail
+(fetchmail 实现邮件接收, gnus 完成邮件阅读发送), 后来的 emacs + fetchmail + gnus + exim4 + mail
+(fetchmail 接收邮件, gnus 浏览邮件, mail 和 exim4 发送邮件), 更后面的 emacs + mutt + fetchmail +
+procmail + exim4 + mail ( mutt 代替 gnus 完成浏览邮件的功能, procmail 进行邮件分类), 最后回到
+emacs + gnus + fetchmail + exim4 + mail. 后来自己根据 gmail-notify 的源代码写的 c-mail-notify,实
+现 gnome 下面 新到邮件自动提醒 的功能. 完美了! 但是我为了这套东东, 至少花了 4 个多星期. 值得么?
+我就每周那么两三封邮件, 用 pidgin 或者 gmail-notify 提醒, 并在 gmail 网页上面直接处理邮件不就行了
+么?
+</p>
+
+<p>
+至于 C 语言的相关插件. 那些乱七八糟 abbrev 扩展就不提了. 说说代码浏览器: 最简单的 etags, 太简单
+了, 不合适我这样的 '高手'. 尝试 cscope, 感觉不错. 结果发现没有 Windows 版本. 事实上是需要使用
+CygWin. 我对编译比较感冒, 便终止了继续尝试. 后来发现 Xrefacotry 不错, 捣腾了半天, 定义各种快捷方
+式. 后来也没怎么用. 最后又看到最强大的 Semantic + ECB, 捣腾了很久, 终于也不继续了. 原因很简单,
+乱七八糟关于当前代码的信息, 我其实根本不怎么需要: 因为我的代码很简单, 就像我根本没多少邮件一样,
+根本不需要多少强大的代码浏览器. 加上 Semantic 还建立各种索引文件, 感觉很不爽. 后来终于有天要浏览
+稍微复杂点的 C 代码. 发现 Xref 在 windows 上面也不怎么样, 最后居然还是 Etags 工作起来比较顺畅&#x2026;
+</p>
+
+<p>
+捣腾, 捣腾, 捣腾&#x2026;
+</p>
+
+<p>
+我觉得, 如果我在大学时候不迷恋于游戏, 能够好好捣腾一下这些东西, 可以对我以后的发展有很大的帮助.
+但是我现在不再是大学时代了! 我的时间不再那么没有价值了. 我记得当年听到有人将自己玩了一年的游戏账
+号卖了 1K+ RMB 的时候, 都相当羡慕. 现在我一天的工资差不多就有这些了.
+</p>
+
+<p>
+我确实很喜欢 Linux 的各种功能, 希望能将 Linux 用得更加完美. 不过我可能应该往前看: 要成为高手, 不
+仅仅是用别人的软件, 而应该是写程序, 做软件. 不辞辛劳找到 emelfm2, 事实上 Nautilus 就不错. 废寝忘
+食搞定 mail 的各个步骤, 事实上 gmail 足够. 昏天黑地研究 ECB, 事实上 Etags 才是最合适的.
+</p>
+
+<p>
+时间不够的情况下, 要学会取舍. Linux 已经不存在我不认识的银弹!
+</p>
+
+<p>
+看看自己, 发现瘦多了. 最近捣腾地确实比较专注. 环顾四周, 房间乱糟糟. 少研究一点点软件也就可以让生
+活更美好.
+</p>
+
+<p>
+以后要少捣腾软件, 多写程序. 要玩, 就玩深的! 努力学习专业课, 多研究艺术. 好好生活, 保护眼睛.
+</p>
+
+<p>
+写于 2008年7月20日
+</p>
+
+<p>
+26.07.2008
+</p>
+
+<p>
+不知道如何开启 Emacs 的 info-mode. 因为输入 M-x info 是进入默认的 info 列表, 而不是对当前 buffer
+使用 info-mode. 不过我偶然, 在 dired-mode 下, 按 I, 便用 info-mode 打开光标所在文件.
+</p>
+
+<p>
+终于将 c<sub>mail</sub><sub>notify</sub> 修改成了一个比较通用的接口. 以后任何想要定时检查, 并希望通过 Popup 窗口来显
+示提示的任务, 都可以通过修改 c<sub>check</sub><sub>all</sub> 来实现了. 接口相当简单, 而且已经写了足够详细的使用说明.
+</p>
+
+<p>
+15.08.2008
+</p>
+
+<p>
+最近忙于工作, 都没怎么记日志了.
+</p>
+
+<p>
+现在在西门子实习, 编写 Module 来收集电脑的硬件信息. 和 lsusb, lspci, hwinfo, lshw 打了不少交道.
+对计算机的硬件信息了相对了解了不少. 最大的收获莫过于对了 lib 的了解. 现在总算是明白应该如何使用
+lib了. 也终于明白在使用 ./configure 命令编译软件的时候, 报错缺少某个 lib, 但事实上此 lib 已经安
+装. 只要装上 libxx-dev 之后, 编译就又能继续. 原来 libxx-dev 里包括了 lib 的头文件. 有了这个头文
+件, 其他软件才可以调用此 lib 中的函数.
+</p>
+
+<p>
+libnotify 很好玩, 有时间就开始仔细看它的 Tutourial. 可以用它来代替原来辛辛苦苦从 gmail-notify 改
+编过来的提示系统.
+</p>
+
+<p>
+前几天倒腾了 archlinux&#x2026; 看到 7.20 写的文章, 感觉很 sad.
+</p>
+
+<p>
+今天我的 emacs muse 又出了小问题了&#x2026; src标签下的代码无法正常生成网页. 是 Emacs 版本的问题. 不知
+道哪里又有了变动.
+</p>
+
+<p>
+16.08.2008
+</p>
+
+<p>
+今天晚上有给 sawfish 编了一个小程序: c-disp-window. 用于跳转到符合某个类的窗口, 另外还可以规定忽
+略某些窗口. 编写过程中出现一个奇怪的问题, 窗口的类名为 pidgin 的窗口始终不能搜索到. 后来调试了很
+久后忽然明白, 因为我在程序中使用了 c-jump-or-exec 里面编写的 satisfied-window 这一函数. 我使用的
+方法就是直接将此函数拷贝到 c-disp-window.jl 之中. 后来又进行了某些修改. 如果是 C 等语言是肯定没
+有问题的, 因为函数的作用域比较窄. 除非特殊声明, 否则不同文件中的函数之间是没有任何影响的. 但是
+Lisp 语言就不一样了, 默认的都是全局定义. 所以他们之间就出现了冲突. 但是按照我的想像, 应该后来新
+定义的将原来的 satisfied-window 替代才对啊? 不过事实上好像不是这样. 反正我后来将新的函数名换了一
+个, 问题马上解决了.
+</p>
+
+<p>
+17.08.2008
+</p>
+
+<p>
+Totem 无法加载字幕, 或者准确地说应该是: 字幕已经加载, 不过没有显示. 后来想法让 mplayer 代替
+Totem 播放带字幕的 avi 影片. 结果发现异常简单: smplayer, 或者 mplayer (ubuntu 下安装的其实就是
+gmplayer) 设置编码为简体中文, 然后选择能显示中文的字体即可. 都是 GUI 下操作, 非常简单.
+</p>
+
+<p>
+21.08.2008
+</p>
+
+<p>
+昨天和 Wang Zheng 聊天, 中途我给他发送邮件, 对方居然迟迟不能收到, 我这次发现我的 exim4 发送邮件有
+问题, 今天经过反复调试还是不行. 其实也是懒得再花很多时间倒腾这个邮件系统了. 还是回归到 gnus 自带
+的发送系统吧, 起码用这个我能确切地知道什么时候邮件发送完毕. 我尝试着卸载了 exim4, gnus 依然可以
+发送邮件, 但是 fetchmail 就无法工作了. 另外, 又是原来的问题, 现在要把 邮箱的密码写在 gnus 的配置
+文件中, 关系到保密的问题. 虽然我现在的邮箱根本没有入侵的价值, 但是安全意识要从小培养好. 我最后想
+到了一个好办法: 我添加了 ~/.gnus.el 文件, 这个文件会在我启动 gnus 的时候才加载, 而这个文件里面只
+有一行: (load-file "~/emacs<sub>lib</sub>/lib/emacs<sub>init</sub>/gnus.el.gpg")  这样我就将密码大胆地放在加密了的配
+置文件中, 而这个文件又只有启动 gnus 才会被调用, 也不需要每次启动 Emacs 就输入密码. 而且有时候启
+动 Emacs 的时候输密码会导致无响应的尴尬局面.
+</p>
+
+<p>
+23.08.2008
+</p>
+
+<p>
+在终端下, 按下 ESC 后马上紧接下一个 移动光标 的操作, 那么 Emacs 便会将他们解释为一个操作, 比如
+ESC-l. 但我们想要的是退出编辑模式, 然后光标右移一格. 这个问题困扰了我很久, 因为按下 ESC 后都得等
+待 1 sec 左右, 这对于追求 Emacs 的高效简直就是一种巨大阻碍. 今天忽然来了灵感, 其实解决之道非常非
+常简单, 无非就是不要使用 ESC 来切换模式. 我定义了
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(define-key viper-insert-global-user-map [f4] 'viper-intercept-ESC-key)
+&lt;/src&gt;
+</p>
+
+<p>
+F4 和 任何按键都不会出现新的组合, 所以问题便解决了.
+</p>
+
+<p>
+另外, 原来将 F1-a 和 outline-mode 的 show-all 相关联. 不过 F1 和 C-h 基本等价, 所以默认和 C-h a
+关联的 apropos-command 就被屏蔽了. 今天将 F1 设定为开启 shell 的快捷键, 而将 F2 的组合交给
+outline 使用. 这样 C-h 的所有默认组合键就又都有效了.
+</p>
+
+<p>
+24.08.2008
+</p>
+
+<p>
+常常想将看到的文字暂时摘抄到 remember.muse 下面, 等有时间了再一起整理. 每次都是切换到 remember,
+将光标移动到底部, 然后复制, 粘贴, 然后切换回当前 buffer 继续阅读. 如此机械的动作应该交给 Emacs 去
+自动完成.
+</p>
+
+<p>
+于是我写了如下 to-re 函数, 算是我第一个给 Emacs 写的正规函数, 以前的都是杂牌的. 恩, 很多是给
+sawfish 写的.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(defun to-re (start end)
+  "Append to remeber.muse"
+  (interactive "r")
+  (if (and mark-active transient-mark-mode)
+      (catch 'quit
+        (let ((oldbuf (current-buffer))
+            (buf-name "Remember.muse")
+            (file-path "~/emacs<sub>lib</sub>/muse/src/mylife/remember.muse")
+            append-to)
+        (if (y-or-n-p "Save the String in Remember.muse? ")
+            (progn
+              (unless (file-exists-p file-path)
+                (message "Can not find the file: %s" file-path)
+                (throw 'quit nil))
+              ;; open Remeber.muse, if necessary
+              (setq append-to (find-file-noselect file-path)))
+          ;; do not want to save in Remember.muse
+          ;; get the new buf-name
+          (setq buf-name (read-buffer "Append to buffer: " (other-buffer (current-buffer) t)))
+          (setq append-to (get-buffer-create buf-name)))
+        (save-excursion
+          (let ((windows (get-buffer-window-list append-to t t))
+                (time (current-time-string))
+                point)
+            (set-buffer append-to)
+            (setq point (point))
+            (goto-char (point-max))
+            (barf-if-buffer-read-only)
+            (insert (concat "\n\nBEGIN:-----&#x2013;&#x2014;" time "--------\n\n"))
+            (insert-buffer-substring oldbuf start end)
+            (insert (concat "\n\nEND:-----&#x2013;&#x2014;" time "--------\n"))
+            (goto-char point)
+            (message "The selected String has been saved in %s." buf-name)))
+      (message "This function works only unter the transient-mark-mode, and you must choose a region.")))))
+&lt;/src&gt;
+</p>
+
+<p>
+有了这个函数, 我只要选择想要摘录的文字, 然后运行 to-re 命令, 默认情况下, 这段文字就会被复制到
+Remember.muse. 而且文字前后用 时间 和 横线 与其他的内容隔离开.
+</p>
+
+<p>
+26.08.2008
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(defun leo (beg end)
+  (interactive "r")
+  ;; if not in the transient-mark-mode, can not decide
+  (if (and mark-active transient-mark-mode)
+      ;; do-something-when-mark-active
+      (browse-url (format "<a href="http://dict.leo.org/?search=%s">http://dict.leo.org/?search=%s</a>"
+                          (buffer-substring-no-properties beg end)))
+    ;; else
+    (let (word)
+      (setq word (read-from-minibuffer "Word: "))
+      (browse-url (format "<a href="http://dict.leo.org/?search=%s">http://dict.leo.org/?search=%s</a>" word)))))
+&lt;/src&gt;
+</p>
+
+<p>
+今天学习了 Emacs Manual 中 Set Mark 一节. 默认情况, 选区会被高亮显示. 这是 Transient Mark Mode 的
+表现. 我们可以将此模式关闭, set Mark 就变得悄无声息. 比如某个位置接着还要跳回, 那么就可以 C-Spc
+设置 Mark, 然后移动到其他位置进行编辑, 最后使用 C-u C-Spc 跳转回来. 关闭了 Transient Mark Mode
+以后, Mark 便一直存在, 任何操作都不再清除原来的 Mark. 以前写程序, 常常想判断一下, 是否有选区被选
+定, 如果有的话, 执行 A 代码, 否则执行 B 代码. 现在好了, Mark 一直存在, 也就是说选区一直存在. 那
+么象开头这个程序这样, 判断 mark-active 是没有任何意义了. 以后的程序都可以省略如下的判断:
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(if (and mark-active transient-mark-mode)
+    &#x2026;  ;; do sth when mark active
+ &#x2026;)
+&lt;/src&gt;
+</p>
+
+<p>
+如果我写下这个就是为了万一哪天又想要使用这个判断, 也或许还能通过正则表达式找到.
+</p>
+
+<p>
+我的 to-re 程序已经取消了对 transient 模式的判断, 但是最后决定保留 google 和 leo 两个程序的
+transient 判断, 因为用户可能是想自己输入某些词组进行查询. 不在 transient 模式的下, 依然可以通过
+C-Spc C-Spc 暂时激活transien 模式.
+</p>
+
+<p>
+27.08.2008
+</p>
+
+<p>
+使用 linux 真是惊喜不断. 找到好玩的东西, 往往过不了一天就发现不是很适合自己. 比如昨天发现的
+non-transient 模式, 感觉异常欣喜. 今天在西门子使用了半天以后, 发现还是默认的 transient-mode 比较
+适合自己的要求. 因为很多的程序都必须要求显式地指定选区范围. 比如我在编程时候常常使用的 M-; 命令.
+而且对于没有任何高亮的选区, 我还是稍微一点点不适应.
+</p>
+
+<p>
+今天将 exim4 又修复了. 本来都已经计划为其重装系统了. 原因很简单, 就是在输入 smtp.gmail.com 的时
+候, 设成了 stmp.gmail.com. 以前几次检查都没有发现问题所在. 这样很多发送邮件的事情又可以交给电脑
+去完成了.
+</p>
+
+<p>
+30.08.2008
+</p>
+
+<p>
+装好了 debian, 这次装的是 testing 的版本, 就是 lenny. 原来 debian 有三种版本, 一种是 stabil, 名
+称是 etch. 这个版本我本来比较向往, 因为他的所有包都是非常稳定的. 不过真正用上去以后感觉很尴尬,
+因为这个版本不能安装任何非稳定的软件包, 比如 w32codecs 和我需要的 ATI 显卡驱动都是 testing 下面
+的. 所以我被迫放弃之.
+</p>
+
+<p>
+第二种是 unstabil, 这个也成为是 sid (still in developing), 安装盘每天都更新, 内部的软件基本都是最
+新的, 这个我估计和 archlinux 源里的软件差不多, 让人很不放心. 尤其是象我这样不安于寂寞, 但是对各种
+配置的玩意不是特别敢兴趣的人. 这个稍微太不稳定了一点点. 我还是选择第三种: testing. 这个版本每周更
+新一次. 应该算是比较稳定了, 毕竟打包的人都是专业人士.
+</p>
+
+<p>
+安装了 testing 以后发现 debian 和 ubuntu 根本没有什么差别. 安装完毕以后所有驱动, 包括 IBM 的锁定
+键盘等快捷键都已经可以工作了. 再使用了 sawfish 以后, 就更加看不出有任何区别了. 好吧, 让我们看看
+水木上大家都说牛的操作系统到底如何. 恩, 加一句: 基本所有我的 ubuntu 下面的配置, 在 debian 都是完
+全能够工作的.
+</p>
+
+<p>
+补充一点: 如果是安装 etch, 那么如果是需要使用网络安装, 需要在启动光盘中系统的时候加上:
+</p>
+
+<p>
+&lt;example&gt; install modules=ppp-udeb &lt;/example&gt;
+</p>
+
+<p>
+而安装完毕以后, pppoe 软件 (拨号上网) 可以直接在 aptitude 中安装(需要的包包含在光盘中). 如果是安
+装 lenny 则不需要加上启动参数. 安装完毕以后也要安装 pppoe 软件.
+</p>
+
+<p>
+发现一个小问题:  我的 audacious 如果启动的时候加参数 -p (启动时候自动播放), 就会收到一个
+segmentation fault. 后来我尝试自己编译, 结果 audacious 都不干活了. 倒腾了很久也没搞定, 感觉很郁
+闷. 后来干脆上网搜寻替代品. 发现了 Exaile, 这个播放软件简单, 方便. 而且占资源不多, CPU 大约是
+0.76%. 不过比较尴尬的是: 我尝试让其启动自动播放音乐的时候, 也收到了一个 segmentation fault 的报
+告. 我估计是不是我系统的原因. 也不管他们了. 另外, 我曾经尝试使用 rhythmbox, 这个毕竟是 gnome 自
+带的播放器, 结果发现这个软件坚持对歌曲的演唱者进行分类, 对于我这样对歌曲没有鉴赏力的人, 听的歌曲
+都是新旧错杂, 中外交融, 看了它的分类感觉非常难受. 不过我倒是查看到了 Rhythmbox 显示中文歌曲题目
+乱码的解决之道, 我使用这个办法解决了 exaile 的乱码问题. 附上解决办法:
+</p>
+
+<p>
+Rhythmbox乱码的解决办法
+</p>
+
+<p>
+用 python-mutagen, 改变mp3标签编码
+</p>
+
+<p>
+&lt;src lang="shell-script"&gt;
+sudo apt-get install python-mutagen
+mid3iconv -e gbk *.mp3
+&lt;/src&gt;
+</p>
+
+<p>
+cp 的 -p 参数: 加了这个参数以后, 复制的时候不修改文件所有人, 修改时间等文件属性.
+</p>
+
+<p>
+02.09.2008
+</p>
+
+<p>
+上周五晚上, 无意中看到了已经借来的 SHELL-Skript 一书. 一直没看, 也没还. 忽然来了兴趣. 周六开始仔
+细学习 BASH 编程. 今天下午 6 点, 已经将其重要部分看完, 并且做好笔记, 感觉不错. 写下两句, 聊表庆
+祝.
+</p>
+
+<p>
+04.09.2008
+</p>
+
+<p>
+Emacs 确实是用会的, 只有使用的时间不断增长, 加上自己的不断学习才能不断有新的进步. 比如 muse 中的
+'::' 代表定义, 挺好使的. 原来一直不用, 可惜了. 另外, '::' 前面的字符串的样式和三颗星(二级)的强调
+一致.
+</p>
+
+<p>
+07.09.2008
+</p>
+
+<p>
+今天把在西门子写到一半的函数写完了. 我常常需要通过加星号将某些字符串高亮, 机械的事情重复多了, 就
+会想到让电脑帮忙分担一下, 所以我就写了这个函数. 默认情况下面是在所在的单词 或者是 下一个单词 (光
+标在非文字字符上) 前后各加两个星号. 如果加了前缀的话, 加入需要的星号数. 光标停留在单词后面, 以便
+继续给下一个单词添加星号. 我发现直接输入命令, 就是不通过 C-u 加参数的话, num 也是 1. 所以我都不
+需要在 num 前面加上 &amp;optional 的标记了. 测试了一下, 感觉还是很不错的.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(defun add-stars (num)
+  "add 2 or more stars around this word"
+  (interactive "p")
+  (let ((number (- num 2)) (str) (pointer))
+    (setq str "**")
+    (while (&gt; number 0)
+      (setq str (concat str "*"))
+      (setq number (- number 1)))
+    (forward-word)
+    (insert str)
+    (setq pointer (point))
+    (backward-word)
+    (insert str)
+    (goto-char pointer)
+    (message "added %d stars" num)))
+&lt;/src&gt;
+</p>
+
+<p>
+10.09.2008
+</p>
+
+<p>
+前些天, 被我倒腾后的 audacious 不再播放音乐. 我尝试使用 exaile 代替它, 但是感觉很不爽. 尤其是感觉
+连个坏了的软件都修复不了, 实在是非常郁闷. 今天使用 find + xargs 将 home 目录下所有和 audacious 相
+关的文件, 文件夹统统删去, 然后重新开启 audacious, 结果很惊讶地发现, 不但 audacious 能够使用了,
+而且即使加上参数 -p 使其开启便播放, 也没有再得到 segmentation fault 的报告了.
+</p>
+
+<p>
+另外, loadkeys 也尝试着使用了.  xmodmap 只能在 X 下使用. 在终端下面得使用 loadkeys. 方法很简单:
+</p>
+
+<p>
+&lt;src lang="shell-script"&gt;
+$ dumpkeys &gt; my<sub>keymap</sub>
+$ vim my<sub>keymap</sub>  # eg. change Caps<sub>Lock</sub> to Control
+$ loadkeys my<sub>keymap</sub>
+&lt;/src&gt;
+</p>
+
+<p>
+loadkeys 只能在终端下使用. 另外, 最后 loadkeys 在我这里需要有 root 权限才能执行.
+</p>
+
+<p>
+12.09.2008
+</p>
+
+<p>
+今天在西门子将昨夜写到半夜的函数 c-more-space 终于写完了:
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+;; 很多的时候, 我们需要同时修改几个文件, 或者好几个文件都需要被修改, 那么我们希望
+;; 一次就将所有要修改文件都放在 Frame 中, 然后修改完毕一个, 关闭一个. 但是当需要修改的
+;; 文件数目比较多, 比如 4 个的时候, 如果只开启一个 Frame, 每个 window 的区域就比较狭窄
+;; c-more-space 的主要功能是希望尽可能多地将 frame 的空间给需要修改的 buffer
+;; 这个函数会删除所有 非紧贴 frame左边界 的窗口, 如果 selected-window 本身就不在紧贴左边界, 则
+;; 删去其旁边的窗口, 使其紧贴左边界. 简单地说, 执行此函数后, 所有纵向分割的窗口都会被删去, 仅仅
+;; 剩下多个平行的窗口. 接着, 除了 selected-window 以外, 所有的窗口被缩小为 window-min-height 的高度.
+;; 将这个函数绑定为 C-x -, 和 C-x + (balance-windows) 结合起来效果很不错.
+;; 注: 我希望不要删去 纵向分割 的窗口, 但是算法比较复杂, 迟迟没有找到很好的解决办法, 在后面还有一个
+;; more-space-safe(), 它就不删除任何窗口, 但是往往会导致某些窗口没有被缩小到最小.
+</p>
+
+<p>
+(defun more-space()
+  (interactive)
+  ;; delete vertically splitted windows
+  (let* ((w0 (selected-window)) (wl (window-list)) (n (length wl)) (wmin (window-min-height)) elem)
+    (while (&gt; n 0)
+      ;; get an element
+      (setq elem (nth (- n 1) wl))
+      ;; except the selected window
+      (select-window elem)
+      ;; there is vertically splitted windows
+      ;; and the selected window should not be deleted!
+      (unless (or (equal (car (window-edges)) 0) (equal elem w0))
+        (delete-window elem))
+      (setq n (- n 1)))
+    (select-window w0)
+  ;; delete windows next to selected window
+  (unless (equal (car (window-edges)) 0)
+          (enlarge-window (frame-width) t))
+  (let ((n (length (window-list))))
+   (enlarge-window (- (frame-height) (window-height) (* (- n 1) wmin) 1)))))
+</p>
+
+<p>
+(defun more-space-safe()
+  (interactive)
+  (let* ((n (length (window-list))))
+       (enlarge-window (- (frame-height) (window-height) (* (- n 1) (window-min-height)) 1))))
+&lt;/src&gt;
+</p>
+
+<p>
+注释里面已经将问题写得比较明白了. 补充一点点, 我写这个程序, 主要是因为看到 Oli 大侠常常使用 Vim
+进行这种操作. 我比较羡慕, 而且更想说明: Vim 能做的, 我们 Emacs 也能自己来将其搞定. 虽然程序无论
+算法还是结构都比较低级, 不过毕竟是自己看 Elisp Manual 然后慢慢编写的. 感觉还是很有成就感的.
+</p>
+
+<p>
+今天在 西门子 的时候还抽空尝试了一下 Oli 和 Siemon 整天使用firefox的 vimperator 插件, 使用了一下
+感觉非常不错. 当然也详细做了笔记, 想想和 emacs 的 viper 插件差不多一个类型的, 所以一起加到了
+vim 一文.
+</p>
+
+<p>
+13.09.2008
+</p>
+
+<p>
+今天在 urxvt 下测试我的 一个脚本, 这个脚本复制了不少文件到 ~/h 下面, 测试完毕以后, 自然应该将这些
+文件都删除. 我在 \(HOME 目录下, 首先用 ls -a h 参看了一下里面的文件, 接着习惯性地输入 rm -r *,计划
+删除 h 下面所有文件, 文件夹... 首先来的就是一个是否删除写保护文件的确认. 我想: 恩, 那里面不少系统
+的配置文件, 按下 y 确认. 接着感觉有点不大对劲, 不知道是时间久了还是因为想起刚才确认删除的文件名有
+问题, 猛然想到当前目录是 Home! 我战战兢兢地看了看提示符, 果然是 '~\)' !! 我有看了看 刚才的命令, 非
+常希望看到的是 rm -r .* 这样我的重要资料还能得以保存. 结果当然是 negative, 当时一阵晕眩, 赶紧按下
+C-c 终止任务&#x2026; 打开 Nautilus, 发现主要的资料都还在, 就是少了不少照片. 估计my<sub>document</sub> 下面的照片
+比较巨大, 他们用自己的生命保护了我的 emacs<sub>lib</sub> 等重要信息!! 感动啊!
+</p>
+
+<p>
+14.09.2008
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+;; --------------&#x2013;&#x2014; if you have to 2 windows, then you can &#x2026; ------------&#x2013;&#x2014;
+;; 我比较喜欢使用 C-x 3 来切割屏幕, 但是有时候发现代码在纵向分割的屏幕中显示很不好,
+;; 希望能够一个简单的函数, 快速将纵向分割的 windows 变成 横向分割. 相反当然应该也是可以实现.
+;; 如下这个函数就是实现这个功能.
+(defun c-change-split-style ()
+ "If you have 2 windows, it change their split style:"
+"horizontal -&gt; vertical or inversely"
+(interactive)
+(cond ((not (= (count-windows) 2))
+(message "You need exactly 2 windows to do this."))
+ (t
+ (let* ((w0 (selected-window)) (wlist (window-list))
+        (w1 (first (window-list)))
+        (w2 (second (window-list)))
+        w2del w2keep buf vertical<sub>flag</sub>)
+   ;; which window should be deleted ?
+   (if (equal (first (window-edges w1))
+              (second (window-edges w1)))
+       ;; the edges of w1 starts with (0 0..)
+       ;; so w2 should be deleted
+       (setq w2del w2 w2keep w1)
+     (setq w2del w1 w2keep w2))
+   (if (equal (first (window-edges w2del)) 0)
+       ;; should be vertical splited
+       (setq vertical<sub>flag</sub> t)
+     (setq vertical<sub>flag</sub> nil))
+</p>
+
+<p>
+   ;; save the buffer in the window which is going to be deleted
+   (setq buf (window-buffer w2del))
+   (delete-window w2del)
+   ;; The upper or leftmost window is the original one, and remains selected
+   (split-window nil nil vertical<sub>flag</sub>)
+   (set-window-buffer (next-window) buf)
+   (unless (equal w0 w2keep)
+       (select-window (next-window)))))))
+&lt;/src&gt;
+</p>
+
+<p>
+周日早上, 抽空将上面这个功能实现了, 这次花时间比较少, 大约 1.5 小时. 水平的提高还是很慢的&#x2026;
+</p>
+
+<p>
+本来打算写一个函数, 在 ibuffer 模式下面同时打开所有标记了的 buffer, 和 dired 的 F
+(dired-do-find-marked-files) 差不多. 后来发现在 ibuffer 下面已经够这样的函数:
+ibuffer-do-view. 不过默认将其绑定到了 v, 另外看到默认的 F 和 ! 都绑定到了执行 shell 命令之上, 所
+以我决定将 ibuffer 中的 F 重新绑定到 ibuffer-do-view, 这样就不需要另外记住一个操作了. 使用
+ibuffer 或者 dired 同时打开都个需要执行的 buffer 或 文件, 然后使用刚刚写完的 c-more-space 函数应
+该会有相当不错的操作快感.
+</p>
+
+<p>
+17.09.2008
+</p>
+
+<p>
+今天仔细学习了 ywb 写的 ywb-dired-filter-regexp 函数. 发现我们可以通过判断 current-prefix-arg 是
+否为真来区别调用函数的时候, 是否加了参数. 我想到我以前写的 add-starts 函数, 我要求用户传 0 个 或
+者 1 个参数, 用以确定添加的星号的个数. 事实上, 我一般只需要添加 两个 或者 三个 星号, 所以我决定
+将函数改写: 如果调用函数的时候带了前缀, 比如 C-u, 那么添加三个星号, 否则只加两个星号.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+;; before
+(defun add-stars (num)
+  "add 2 or more stars around this word"
+  (interactive "p")
+  (let ((number (- num 2)) (str) (pointer))
+    (setq str "**" num 2)
+    (while (&gt; number 0)
+      (setq str (concat str "*"))
+      (setq number (- number 1)))
+    (forward-word)
+    (insert str)
+    (setq pointer (point))
+    (backward-word)
+    (insert str)
+    (goto-char pointer)
+    (message "added %d stars" num)))
+</p>
+
+<p>
+;; now
+(defun c-add-stars ()
+  "add 2 or 3 (call with C-u) stars around this word"
+  (interactive)
+  (let ((str "**") point)
+    (when current-prefix-arg
+        (setq str "<b>*</b>"))
+    (forward-word)
+    (insert str)
+    (setq pointer (point))
+    (backward-word)
+    (insert str)
+    (goto-char pointer)))
+&lt;/src&gt;
+</p>
+
+<p>
+现在的代码就简单多了, 用户在调用的时候也简单了. 我将这个函数和 F10 捆绑, 如果是 C-u F10 则在
+word 两边加三个星号. 有连续的 words 需要加星号, 可以通过 C-x C-z z z 来重复执行命令.
+</p>
+
+<p>
+18.09.2008
+</p>
+
+<p>
+有时候想在新窗口查看一下某个页面. 如果那个页面有了 bookmark, 那么就得先 C-x 2, 然后 执行
+bookmark 的跳转. 我今天顺便写了一个小程序让自己可以更加方便在新窗口中浏览某个文件.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(defun c-bookmark-jump (bookmark)
+  ;; jump to bookmark in a new Window, if called with prefix
+  (interactive
+   (list (bookmark-completing-read "Jump to bookmark"
+                                   bookmark-current-bookmark)))
+  (let (buf)
+    (if current-prefix-arg
+        (progn
+          (select-window (split-window))
+          (bookmark-jump bookmark))
+      (bookmark-jump bookmark))))
+&lt;/src&gt;
+</p>
+
+<p>
+将 c-bookmark-jump 代替原来的 bookmark-jump. 如果调用命令的时候加了前缀, 在新窗口中打开
+bookmark, 否则在原窗口中打开.
+</p>
+
+<p>
+19.09.2008
+</p>
+
+<p>
+贴上最新版的 c-add-stars:
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(defun c-add-stars (beg end)
+  "add 2 or 3 (call with C-u) stars around a word or a selected region"
+  (interactive "r")
+  (let ((str "**") (add-str-f nil) (add-str-b nil) point beg-new)
+    (when current-prefix-arg
+      (setq str "<b>*</b>"))
+    ;; if not in the transient-mark-mode, can not decide
+    (if (and mark-active transient-mark-mode)
+        (catch 'break
+          ;; add stars around the marked region, when mark is active
+          ;; 处理选区头部
+          (goto-char beg)
+          ;; 删去选区开头的所有空白字符
+          (while (eq (char-syntax (char-after)) ?\ )
+            ;; 防止选区为空白字符串
+            (when (&lt; (- end 1) (point))
+              (deactivate-mark)
+              (error "Have you really selected some words?")
+              (throw 'break))
+            (forward-char))
+          (setq beg-new (point))
+          (unless (or (= (point) (point-min))
+                      (eq (char-syntax (char-before)) ?\ )
+                      (memq (char-before)
+                            '(?&#x00ad; ?\[ ?\&lt; ?\( ?\' ?\` ?\" ?\n)))
+            ;; 文字前面需要添加空格, 否则星号不会被转义
+            ;; 这个主要是出于中文汉字之间没有空格的问题考虑
+            (setq add-str-f " "))
+          ;; 处理选区尾部
+          (goto-char end)
+          (while (eq (char-syntax (char-before)) ?\ )
+            (when (&lt; (point) (+ beg-new 1))
+              (deactivate-mark)
+              (error "Have you really selected some words?")
+              (throw 'break))
+            (backward-char))
+          ;; 看光标后面的字符是否是 单词 的组成部分
+          (when (equal (char-syntax (char-after)) ?w)
+            ;; 文字后面需要添加空格, 否则星号不会被转义
+            (setq add-str-b " "))
+          (insert (concat str add-str-b))
+          (goto-char beg-new)
+          (insert (concat add-str-f str))
+          ;; 光标移动到星号尾部
+          (goto-char (+ end (* 2 (length str)) (length add-str-b) (length add-str-f))))
+      ;; add stars around the word, when mark is not active
+      (forward-word)
+      (insert str)
+      ;; get the place after stars
+      (setq pointer (point))
+      (backward-word)
+      (while (not (or (= (point) (point-min))
+                      (eq (char-syntax (char-before)) ?\ )
+                      (memq (char-before)
+                            '(?&#x00ad; ?\[ ?\&lt; ?\( ?\' ?\` ?\" ?\n))))
+        (backward-char))
+      (insert str)
+      (goto-char (+ pointer (length str))))))
+&lt;/src&gt;
+</p>
+
+<p>
+一个考虑非常全面的版本. 有选区, 则将选区高亮, 否则将光标所在, 或者紧接着的单词高亮. 处理了大量边
+界情况.
+</p>
+
+<p>
+在 .sawfish 文件中增加了 W-a 用于将 audacious 切到前台来. 另外, 修改了 c-disp-window 文件, 使其
+在结束的时候, 将找到的窗口句柄 或者 是在没有找到的情况下 nil 返回到上层调用的函数中. 然后我在
+c-jump-pidgin 中对返回值进行判断, 如果没有找到任何窗口的情况, 显示 Buddy List 窗口. 最后感叹, 还
+是自己写的函数用起来方便啊.
+</p>
+
+<p>
+25.09.2008
+</p>
+
+<p>
+Siemon 毕业被迫闪人了. 我们 Team 缺人, 老大在西门子网站里贴出了招聘 Werkstudent 的广告. 以下是广
+告的内容. 看了挺伤心的, 感觉干了半年多了, 还有很多条件没有满足. 想起来上班的头一天, Stefan 就很惊
+讶地说: 我们部门终于来了一个不是学 Informatik 的学生. 可见我能进入那个部门确实是非常幸运的一件事
+情. 因为上班很宽松, 可以上网, 看书, 聊天&#x2026; 所以我时不时就倒腾点自己的小玩意, 比如看看同学的
+blog, 学学 elisp 语言, 编编自己的小程序等等.
+</p>
+
+<p>
+感觉以后要多干活, 少磨蹭了. 主要是上班磨蹭没什么意思. 难得有个高人在旁边可以常常指导自己, 应该抓
+紧把 C 语言水平提高到一个相当不错的程度. 估计以后毕业了, 也就不会这么花时间编 C 语言程序了.
+</p>
+
+<p>
+&lt;verse&gt;
+Werkstudent (m/w) im Bereich Basic Software Team
+</p>
+
+<p>
+Gesellschaft: Healthcare Sector
+Arbeitsgebiet: Medical
+Geschäftsbereich: Healthcare
+Arbeitsort: Erlangen
+Jobnummer: GER64454
+</p>
+
+<p>
+Als einer der großen Anbieter weltweit hilft Siemens Healthcare Prozesse im Gesundheitswesen zu
+optimieren und Patienten besser zu versorgen. Rund 49.000 Menschen integrieren Medizintechnik,
+IT, Service und Beratung zu innovativen Lösungen mit nachweisbarem Kundennutzen. Dazu brauchen
+wir Ihr Know-how als Werkstudent (m/w).
+</p>
+
+<p>
+Wir suchen ab sofort für mindestens 6 Monate Unterstützung bei der Erstellung eines Werkzeugs
+zum Benchmarking von Rechnern.
+</p>
+
+<p>
+Ihre Aufgaben:
+Mitarbeit bei der Systementwicklung im Rahmen des Basic Software Teams mit dem Schwerpunkt
+Benchmarking:
+</p>
+<ul class="org-ul">
+<li>Implementierung und Test eines Werkzeugs zum Benchmarking.</li>
+<li>Durchführung von Tests, Untersuchungen inkl. Dokumentation.</li>
+</ul>
+
+<p>
+Ihr Profil:
+Sie sind Student (m/w) der Studienrichtung Informatik, Elektrotechnik oder Vergleichbarem und
+haben das 3. Semester erfolgreich absolviert.
+</p>
+
+<p>
+Weiterhin verfügen Sie über folgende Kenntnisse und Fähigkeiten:
+</p>
+<ul class="org-ul">
+<li>Kenntnisse von Windows, Linux und UNIX: Systemarchitektur, Systemmechanismen, HW-Komponenten</li>
+<li>Programmiererfahrung: Python, C#, C oder C++</li>
+<li>Deutsch- und Englischkenntnisse (mündlich/schriftlich)</li>
+<li>Strukturierte und selbständige Arbeitsweise</li>
+<li>Bereitschaft zur Teamarbeit</li>
+<li>Ziel-, termin- und kostenorientiertes Handeln</li>
+</ul>
+
+<p>
+Folgende Erfahrungen/Kenntnisse sind wünschenwert:
+</p>
+<ul class="org-ul">
+<li>Multithread Programmiererfahrung</li>
+<li>Kenntnisse in statistischen Verfahren</li>
+<li>Erfahrung in Anbindung von C-Code an Python oder anderen 4GL Sprachen</li>
+<li>Kenntnisse in Assembler</li>
+</ul>
+
+<p>
+Recruiting Film
+</p>
+
+<p>
+<a href="http://www.medical.siemens.com/siemens/de_DE/rg_marcom_FBAs/files/multimedia/recruiting/Recruiting_deutsch_low.wmv">…und hier geht es zum Video</a>
+</p>
+
+<p>
+Zusätzliche Informationen
+</p>
+
+<p>
+Wir freuen uns auf Ihre aussagekräftige Bewerbung, die Ihr persönliches Anschreiben, Ihren
+Lebenslauf sowie Ihre relevanten Zeugnisse enthält. Bitte bewerben Sie sich online unter dem
+unten aufgeführten Link und geben Sie bitte an, wie Sie auf unsere Anzeige aufmerksam geworden
+sind.
+</p>
+
+<p>
+Bitte beachten Sie, dass jedes einzelne Dokument nicht größer als 1,5 MB sein darf.
+</p>
+
+<p>
+Falls Sie Fragen zu diesem Stellenangebot haben, wenden Sie sich bitte an unser Recruiting-Team,
+Tel. 09131-84-8448.
+&lt;/verse&gt;
+</p>
+
+<p>
+29.09.2008
+</p>
+
+<p>
+最近我的 exim4 发送邮件老是失败, 而且收到 gmail-smtp-msa.l.google.com '认证错误'的回复. 后来看了
+看 /etc/exim4/passwd.client 原有的设置, 在最后添上了 gmail-smtp-msa.l.google.com 的相关认证, 邮件系
+统又重新工作了. 可能是现在 gmail-stmp 服务器的地址又修改了的缘故.
+</p>
+
+<p>
+30.09.2008
+</p>
+
+<p>
+神州 7 号载人飞船的升空, 德国报纸当然也需要报道一下了. 看 法兰克福 报纸 的 三个农民上太空:
+</p>
+
+<p>
+&lt;verse&gt;
+China
+</p>
+
+<p>
+Drei Bauern im All
+</p>
+
+<p>
+VON BERNHARD BARTSCH
+</p>
+
+<p>
+Den besten Ausblick bekommt man nur von den gefährlichsten Gipfeln." Mit diesem Ausspruch von
+Mao Tse-tung verabschiedete sich am Donnerstag Chinas drittes Astronautenteam ins All. Die
+Raumfähre "Shenzhou 7" hob um 21.10 Uhr Ortszeit (15.10 Uhr MEZ) vom chinesischen
+Weltraumbahnhof Jiuquan in der zentralchinesischen Provinz Gansu ab. Höhepunkt der dreitägigen
+Mission soll Chinas erster Weltraumspaziergang sein.
+</p>
+
+<p>
+Chinas Staatspresse feiert den Start seit Tagen als nationales Großereignis, sichtbar darum
+bemüht, den Negativnachrichten über den Milchskandal, in dem mehr als 50 000 Kinder erkrankt
+sind, ein positives Medienevent entgegenzusetzen. Ausführlich breiteten sie die
+Aufsteigerbiografien der drei Astronauten aus, die alle 1966 in ärmlichen ländlichen
+Verhältnissen geboren wurden und in der Volksbefreiungsarmee als Jagdflieger Karriere machten.
+&lt;/verse&gt;
+</p>
+
+<p>
+他们也是挺能自己找平衡的.
+</p>
+
+<p>
+01.10.2008
+</p>
+
+<p>
+今天的 SAM 考试一塌糊涂. 本来上次考试的时候, 已经准备地相当充分了. 没想到计算题忽然多出了一个新
+题型. 为了能拿高分, 我最后只上交了一张答卷纸, 以获得重考的机会. 这次又准备了很久, 想着能拿个
+1.7 左右的好成绩. 结果 3 道计算题两道完全不会的新题&#x2026; 尴尬至极. 当时想死的心都有了. 如果这次还
+求重修的话, 万一第三次失利, 我可是就得因为这破课转学了啊! 想想还是不和自己作对了.
+</p>
+
+<p>
+考完以后感觉非常郁闷. 我的学业都基本已经结束, 但是我对于 传感器 感觉还是无从下手. 看到
+Studienarbeit 的题目, 都完全不知道会是什么样子. 到现在还在迷茫之中, 这是我万万没有想到的. 而且回
+首以往的考试, 这次估计考试是 3.7 左右. 那么我整个 Hauptstudium 中三个 3.0 以上的科目居然都是
+Lehrstul für Sensorik 的&#x2026; 这个可是我的专业方向啊! 事实上, CM 3.3  和这次的 SAM 算是我花时间最
+多的. 为什么结果是这么凄惨??
+</p>
+
+<p>
+算了, 过去了就让它过去吧. 可能做个 Studienarbeit 以后会对 Sensor 有比较好的认识.
+</p>
+
+<p>
+今天使用 getlive 从 hotmail 收取邮件, 放入 /var/mail/c 这个邮件池中. 然后等待 gnus 去读取. 现在
+使用 getlive 就弥补了 fetchmail 不支持 hotmail 邮箱的缺陷.
+</p>
+
+<p>
+另外修改了一个我的 notify 程序. 在每小时的休息提醒的时候, 播放另外一段音乐, 这样从声音上就可以区
+分出是否是有新邮件到来.
+</p>
+
+<p>
+02.10.2008
+</p>
+
+<p>
+学习了这么久的 elisp, 对于一般的代码也稍微有些感觉了, 于是重新将 5 月份在水木社区看到的代码:
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(defun ywb-remove-html-cjk-space ()
+  (when (string= (muse-style-element :base muse-publishing-current-style) "html")
+    (save-excursion
+      (goto-char (point-min))
+      (while (re-search-forward "\\(\\cc\\)\n\\(\\cc\\)" nil t)
+        (unless (get-text-property (match-beginning 0) 'read-only)
+          (replace-match "\\1\\2"))))))
+(add-hook 'muse-after-publish-hook 'ywb-remove-html-cjk-space)
+&lt;/src&gt;
+</p>
+
+<p>
+这个函数的功能是删除汉字之间因换行产生的空格. 当时我拿到手, 一测试, 发现没有效果. 马上放弃了. 不
+过因为这个函数是高人写的, 即使不行也应该能从中找到解决问题的思路. 今天重新搜索到了这个代码, 感觉
+从头到位都没有任何问题. 尤其是从中学到了 <b><b>\\cc</b></b> 表示 <b><b>汉字字符</b></b> 这点. 最后目光汇聚到了 "html" 之上.
+因为我隐约记得我的 muse 发布的是 xhtml. 可能就是这里的问题了. 修改了一下, 果然运作良好了!
+</p>
+
+<p>
+06.10.2008
+</p>
+
+<p>
+今天复习了一下 Emacs multi-TTY 的特性. 一直很头疼 gnome2 的背景色不能在终端下很好显示的问题, 今
+天得到了初步的解决:
+</p>
+
+<p>
+gnome2.el 里面原来定义的背景色不能在虚拟终端下显示, 而替代色实在难看, 所以我将 color<sub>gnome2.el</sub> 中
+设置背景色那几句命令注释掉了. 另外发现, 我使用 set-background-color 设置的背景色, 不会影响到终端.
+这样, 在 x-window 下的 emacs 使用 darkslategery 背景色, 而利用Multi-TTY 特性在虚拟终端下的 emacs
+依然使用终端默认的背景色. 如果是物理终端比较麻烦, 因为 gnome2 中基本的颜色都不能正确显示, 这种情
+况应该暂停使用 color-theme.
+</p>
+
+<p>
+另外, 我一直希望 emacs 在新启动的时候, 不但能够恢复我的上次打开的 Buffer, 而且最好能够恢复我的窗
+口设置, 虽然我的窗口一般不会太多. 今天重新温习了一下 windata, 并尝试开始使用 hook 来解决让 emacs
+更好地为我工作.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+;; windata
+;; 这个插件能够将某时刻的窗口设置以一个名字保存起来
+(require 'windata)
+;; 让 desktop 插件保存所有命名了的窗口设置
+(add-to-list 'desktop-globals-to-save 'windata-named-winconf)
+;; 在关闭 emacs 之前, 以 last<sub>win</sub><sub>situation</sub> 为名保存窗口设置.
+(add-hook 'kill-emacs-hook
+          '(lambda ()
+             (windata-name-winconf "last<sub>win</sub><sub>situation</sub>")))
+;; 回复保存了的上次的窗口设置
+;; desktop 插件实在 after-init-hook 中, 将上次保存的信息重新释放
+;; 所以, 为了使用上次保存的窗口信息, 我们调用下面这个函数要保证
+;; 其位置在 desktop 信息释放之后. 这里我设置可选参数 APPEND 为 t,
+;; 这使得新增加的函数在 hook 列表的最后.
+(add-hook 'after-init-hook
+          '(lambda ()
+             (windata-restore-named-winconf "last<sub>win</sub><sub>situation</sub>")) t)
+&lt;/src&gt;
+</p>
+
+<p>
+注释应该足够详细了. 到目前为止, 一切都工作的非常顺畅. 提一句, 象add-hook 的可选参数 APPEND 是我在
+看以前 Manual 的时候不小心瞟到的, 结果现在到关键时候, 就能想到,并用上.
+</p>
+
+<p>
+在加上 session 插件, 以后重启 emacs, 基本上和原来关闭时候没什么区别了.
+</p>
+
+<p>
+07.10.2008
+</p>
+
+<p>
+看了 ywb 的配置文件, 发现他大量使用了如下的方法忽略加载模块时候出现的错误.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(require 'session nil t)
+(when (featurep 'session)
+      (do-something))
+&lt;/src&gt;
+</p>
+
+<p>
+在 require 的函数中设置可选参数 NOERROR 为 t, 所以在执行 require 出错的时候, 系统仅仅返回一个
+nil. 接下去我们利用 <b><b>featurep</b></b> 来判断现在系统中是否已经加载了 session 这个插件. 如果已经加载, 则继
+续定义某些变量, 快捷键, 等等. 这样的脚本就能够方便地在各种版本的 Emacs 中运行. 顶多就是某些版本
+下运行的时候, 某些模块失效了而已.
+</p>
+
+<p>
+后来我又发现一个更加方便的, 但是不知道是否有上面这个方法这么安全:
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(if (require 'session nil t)
+      (do-something)
+    (do-something-else))
+&lt;/src&gt;
+</p>
+
+<p>
+我更加倾向于用这下面一个方法, 因为在 (do-something-else) 中我们可以发送 'can not load' 的错误信
+息, 有助于 debug.
+</p>
+
+<p>
+另外, 对于难得一用的模块, 我们可以利用 autoload 来使其在用到的时候方才加载, 比如
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(autoload 'w3m "~/emacs<sub>lib</sub>/lib/emacs<sub>init</sub>/w3m<sub>init.el</sub>" "internet browser" t)
+&lt;/src&gt;
+</p>
+
+<p>
+这个 w3m 我很少使用, 所以我就使用 autoload 的特性, 只有我调用这里指明的 w3m 函数的时候, 系统才会
+去加载在 emacs<sub>init</sub> 里的 w3m<sub>init.el</sub> 文件.
+</p>
+
+<p>
+07.10.2008
+</p>
+
+<p>
+.emacs 中 session, windata 等模块在 windows 和 Linux 中的配置是一致的, 但是又有别于 shell 中的配
+置. 为了减少冗余, 我用一个函数将他们封装起来, 然后在需要的地方对其进行调用. 在西门子工作主要就学
+到了 "杜绝冗余". 我估计 Oli 已经将之上升为信念了.
+</p>
+
+<p>
+19.10.2008
+</p>
+
+<p>
+在 debian 的 lenny 上安装 vmware 的时候遇到两个问题, 不过都被我成功解决了.
+</p>
+
+<p>
+问题一: debian 默认没有安装 linux-headers 文件
+</p>
+
+<p>
+使用 uname -r 发现, 我的 linux 内核的版本比源里的 linux-headers 的版本要低. 为什么我每天升级系统,但
+是内核版本依然没有更新呢? 在水木社区上询问后得到解答: 把 linux-image-2.6-686 和
+linux-headers-2.6-686 之类的包装上, 以后升级的时候就可以自动安装最新的内核包了.
+</p>
+
+<p>
+问题二: 编译内核需要 gcc-4.1, 而我的 gcc 版本是 gcc-4.3
+</p>
+
+<p>
+事实上, /usr/bin/gcc 只是一个链接, 它指向 /usr/bin/gcc-4.3, 我们临时将其备份, 然后使用 ln 命令为
+/usr/bin/gcc-4.1 建立一个 gcc 的快捷方式. 这样 vmware 就能成功编译了.
+</p>
+
+<p>
+问题三: 编译错误
+</p>
+
+<p>
+错误信息:
+</p>
+
+<p>
+&lt;example&gt;
+CC [M]  /tmp/vmware-config1/vmmon-only/linux/driver.o
+/tmp/vmware-config1/vmmon-only/linux/driver.c:197: error:
+unknown field ‘nopage' specified in initializer
+&lt;/example&gt;
+</p>
+
+<p>
+在 <a href="http://groups.google.com/group/vmkernelnewbies/web/vmware-any-any-update117c.tar.gz">http://groups.google.com/group/vmkernelnewbies/web/vmware-any-any-update117c.tar.gz</a> 下载
+vmware-any-any-update 文件. 解压, 然后在得到的文件夹下运行:
+</p>
+
+<p>
+&lt;src lang="shell-script"&gt;
+</p>
+
+<p>
+&lt;/src&gt;
+</p>
+
+<p>
+这个脚本会自动将 vmware 安装完毕.
+</p>
+
+<p>
+29.10.2008
+</p>
+
+<p>
+最近忙着学车和英语, 计算机稍微搁置一下, 对身心都有好处. 今天往 ppc 用蓝牙传文件的时候,
+系统提示: The name org.openobex was not provided by any .service files, 上网查找一篇大约西班牙语
+写的文章, 里面提到安装 obex-data-server 包 (幸好大家的 linux 命令都相同). 安装完毕以后, 问题就解
+决了.
+</p>
+
+<p>
+02.11.2008
+</p>
+
+<p>
+折腾了两天的 Linux. 我其实就是一个装机爱好者. 一个系统用了一段时间, 如果不将其重装, 心里就特别不
+舒服. 看到 ubuntu 8.10 放出, 而 debian lenny 的发布时间居然一直还是个未知数. 加上感觉 vista 太占
+资源, 于是又决定倒腾!
+</p>
+
+<p>
+下载了学校免费的 windows XP, 结果发现 XP 居然不能找到硬盘! 非常奇怪的问题. 我重新分区以后, XP 依
+然报错, 说没有找到任何硬盘. 没有办法, 难道这个 XP sp2 不支持串行的硬盘? 又把 Windows Vista 装回
+去了. 其实我本来用 Windows 的机会就很少, 是不是很费资源都无所谓了.
+</p>
+
+<p>
+接着安装了 ubuntu 8.10. 感觉很不错. 系统能够自动辨识我的显卡型号, 另外受限驱动说支持 3D 加速. 默
+认情况下, 还开启了桌面特效. 当然我后来换成 sawfish 以后, 特效便不被支持了. 不过我看影片的时候,
+依然感觉画面有些丢帧. 最让我郁闷的是 ubuntu 8.10 暂时还不支持 蓝牙传输. 我最近需要这个给我的手机
+传单词表. 于是我又想出了逃腾的新方法: 再安装以后 Debian! 安装以后稳定的, 一个不稳定的. 不稳定的
+可以用于倒腾, 稳定的以后防止软件出问题后影响工作.
+</p>
+
+<p>
+今天整整一个早上, 我使用以前用过的 lenny 安装盘, 居然每次在 软件安装 那一栏的时候, 就出问题. 而
+且接下去 grub 也不能安装了. 到最后, lenny 没装上, ubuntu, vista 也找不到了. 很郁闷. 我最后一次让
+lenny 忽略错误, 强行将 lilo 引导程序装上去. 重启后居然还真能进入 Debian. 找到恢复 Grub 的方法,
+然后将 ubuntu, vista 重新找到.
+</p>
+
+<p>
+下午一直想如何能让多个系统使用同一个数据区. 但是 $HOME 下面很多配置文件, 每个系统的配置文件不一
+定都一样. 我最后想到的办法其实很简单, 也非常有效: symbolic link. 就是将所有共同的数据文件, 配置
+文件都放到一个 /common 的文件夹下, 这个文件夹权限是 777, 所有人都可以访问, 修改. 然后在 $HOME 下
+面建立位于 /common 下的文件的快捷方式. 软件, 用户一般都感觉不到其中的区别, 出了图标上多了一个表
+示快捷方式的箭头. 在重装系统的时候就方便了, 我要做的就是将这些快捷方式保存一下就行.
+</p>
+
+<p>
+07.11.2008
+</p>
+
+<p>
+Debian系统下, 我将 emacs 安装在 $HOME 目录中, 然后在 /usr/bin 下面建立 emacs 和 emacsclient 的快
+捷方式. 切换到 Ubuntu 系统后, 直接调用 /common/programme/emacs23/bin/emacs 便能使用 emacs. 看来
+以后都不用再为安装 emacs 费神了. 关键是 6月 的这个 emacs 版本各个方面我都已经相当满意了. 倒是后
+来的新版, 很多地方改得反而不喜欢. 使用公共的 common 区以后, 从 ubuntu 切换到 debian 都感觉不到什
+么变化了, 因为主要的配置文件都一样. 今天将 deluge 的配置文件也放入公共区, 那么在 ubuntu 下载到一
+半的电影, 到了 debian 下, 打开 deluge 继续下载. 感觉相当 happy.
+</p>
+
+<p>
+想想, 其实很多软件都可以用类似于 emacs 的方法, 将它们安装到我的 /common 下面, 重装系统也不需要再
+次安装. 不过有点可能要注意, 那就是软件的依赖关系. 比如我要在新系统中使用已经编译好的 emacs, 应该
+也得使用 sudo apt-get build-dep emacs22 将依赖关系搞定先. 现在主要就 firefox3 和 emacs 执行了绿
+色计划&#x2026;
+</p>
+
+<p>
+09.11.2008
+</p>
+
+<p>
+不断遇到 Emacs 21, 没有 ido, 没有 ibuffer, 没有&#x2026; 特别烦! 终于忍不住写了一个判断 emacs-version
+的函数. 写完了以后发现没几行.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+;;- - - - - - - - - - - Main Version Number - - - - - - - - - - - - - - - - - -
+;; get the MAIN VERSION NUMBER of the running Emacs
+(defvar the<sub>emacs</sub><sub>main</sub><sub>version</sub> nil)
+(if (not the<sub>emacs</sub><sub>main</sub><sub>version</sub>)
+    (progn
+      (string-match "GNU Emacs \\(2[0-3]\\)\\.[0-9]+" (emacs-version))
+      (if (and (match-beginning 1) (match-end 1))
+          (setq the<sub>emacs</sub><sub>main</sub><sub>version</sub> (string-to-number
+                                        (substring (emacs-version) (match-beginning 1) (match-end 1))))
+        (error "Are you using Emacs with version 24 or higher? "
+               "Or has the syntax of emacs-version changed?"
+               "\n\tIf you know the Version of this Emacs, "
+               "set the variable 'the<sub>emacs</sub><sub>main</sub><sub>version</sub>' at the beginning of .emacs")))
+  (message "The variable 'the<sub>emacs</sub><sub>main</sub><sub>version</sub>' has been set by user"))
+&lt;/src&gt;
+</p>
+
+<p>
+无非就是利用正则表达式获取 (emacs-version) 返回回来的信息中的 有用部分. 然后将其赋值给
+the<sub>emacs</sub><sub>main</sub><sub>version</sub>. 在后面的大量配置文件中, 都可以直接通过查看这个变量的值获取版本信息, 然后
+决定执行哪些代码.
+</p>
+
+<p>
+15.11.2008
+</p>
+
+<p>
+在 dired mode 中, 使用 ^ 可以切换到上层目录, 但是 ^ 所在位置不是特别舒服, 或者应该说是挺舒服, 但
+是因为很少用它, 所以每次使用以前都得看下键盘, 防止误按了. 受不了的是在 windows 下面, 单单按一个
+^ 是没用的, 还得加上空格才会往系统输入 ^ 字符. 后来不小心发现在 dired mode 下面按下 C-x C-j 也能
+返回到上层目录.
+</p>
+
+<p>
+今天发现 Evince, 也就是 gnome 默认打开 pdf 文件的软件, 居然支持 hjkl 的移动方式, 我对它的感觉一
+下子就好了很多了. 想想 acroreader 好像也没有哪里特别强大, 除了启动慢点以外. 可能主要就是先入为主,
+而且它是正宗嘛. Evince 的中文支持也很容易解决, 安装 no-free 的 poppler-data 即可.
+</p>
+
+<p>
+17.11.2008
+</p>
+
+<p>
+今天 Oli 要求我在 python 脚本中的缩进使用四个空格. 其实我一直都是用四个空格表示缩进, 后来发现西
+门子其他 Werkstudenten 写的 python 脚本都是使用 TAB. 我在前一周将我以前的脚本中 4 个空格的缩进全
+部转为 TAB, 以求和别人一致. 现在又要转为 4 个空格的风格. 那好吧, 老大要求的嘛.
+</p>
+
+<p>
+不过真正干起来发现事情比想像中麻烦一点, 主要是文件太多. testcases 大约 30+ 个文件, Frameworker
+还有很多. 我将  (untabify (point-min) (point-max)) 绑定到 F5 上, 每一文件只要按一下 F5, 然后 C-x
+C-s 保存即可. 不过发现还是不爽, 主要是因为最近常常干这种无聊的替代工作. 看着还有几十个 Krum 留给
+我的脚本需要修改, 决定忙里偷闲, 写一个脚本, 帮忙处理这种无聊的替代工作. 这个脚本关键是要将某个目
+录下所有符合条件的文件进行扫描, 将其中符合某一正则表达式的字符串中新的字符串替代. 最好还能扫描子
+目录. 经过大约 1.5 小时的编程, 最后写好了我的 c<sub>replace.py</sub>. 运行脚本, 瞬间将几十个脚本中的 TAB
+全部转换成 空格. 感觉相当不错, 而且主要是以后类似的事情都不需要再自己处理了. 代码有 100+ 行, 所
+以就不在黏贴到这里了.
+</p>
+
+<p>
+19.11.2008
+</p>
+
+<p>
+今天在西门子碰到一个正则表达式的问题, 倒腾了很久也没有解决, 最后决定放弃. 结果晚上回家, 修改以前
+写的 c<sub>ip</sub><sub>notify.py</sub> 的时候, 居然又碰到了同样的问题.
+</p>
+
+<p>
+有如下一 List:
+</p>
+
+<p>
+list =
+('ppp0    Link encap:Point-to-Point Protocol  \n   inet addr:92.229.138.81  \n packets:&#x2026;', '')
+</p>
+
+<p>
+现在要得到inet addr 后面的 ip 地址. 最简单的办法就是使用 re:
+</p>
+
+<p>
+&lt;src lang="python"&gt;
+IP<sub>PATTERN</sub> = re.compile(".*inet addr:([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+) +.*")
+m = IP<sub>PATTERN.match</sub>(list[0])
+if m != None:
+   ip<sub>add</sub> = m.group(1)
+else:
+   print "error"
+&lt;/src&gt;
+</p>
+
+<p>
+运行以后, 结果居然是 error. 倒腾了很久发现, 正则表达式中的 '.' 可以替代所有字符, 但是除了
+'\n'. 所以, 以 '.*' 开头的表达式根本不会匹配 '\n' 以后的字符串. 知道原因了, 解决就简单了:
+</p>
+
+<ol class="org-ol">
+<li>除去 '\n':</li>
+</ol>
+
+<p>
+&lt;src lang="python"&gt;
+for msg in list[0].split('\n'):
+    m = IP<sub>PATTERN.match</sub>(msg)
+    if m:
+        print m.group(1)
+print "no IP address can be found"
+&lt;/src&gt;
+</p>
+
+<p>
+使用 str.split('\n') 函数, 使用'\n'为分割符, 将字符串转为 List. 利用 for 循环, 依次扫描每一个元
+素.
+</p>
+
+<ol class="org-ol">
+<li>保留 '\n', 使用 [^^]* 等表达式代替 .*</li>
+</ol>
+
+<p>
+.* 不能匹配 '\n', 导致问题的出现, 我们可以使用 比如 [^^]* 表示零个以上 非'^' 的字符. 这里选了
+'^' 只不过是因为我要匹配的字符串中不会出现 '^'. 当然也可以比如用 [^$]* 等替代.
+</p>
+
+<p>
+&lt;src lang="python"&gt;
+IP<sub>PATTERN</sub> = re.compile("[^^]*inet addr:([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+) +.*")
+m = IP<sub>PATTERN.match</sub>(list[0])
+if m != None:
+   ip<sub>add</sub> = m.group(1)
+else:
+   print "error"
+&lt;/src&gt;
+</p>
+
+<p>
+我上网后发现, 方法一使用比较广泛的. 方法二毕竟只不过是我自己想出来的方法而已.
+</p>
+
+<p>
+另外一点, 我使用 p = subprocess.Popen(cmd, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+开启子进程, 然后想用 err<sub>msg</sub> = p.stderr.read() 读取并分析错误输出, 然后再用 msg =
+p.stdout.read() 读取标准输出. 后来发现, msg 为空. 估计在第一次使用 read() 以后, 缓存就被清空了.
+改用了 message = p.communicate(), 就没有问题了.
+</p>
+
+<p>
+今天发现有公司为 gid 写了 gid-mode, 不过我希望其 script 也能够有语法高亮. 于是我尝试照样画葫芦写
+出了一个 gid-script-mode. 起码现在能够对注释以及常用的关键字进行高亮. 还可以对其增加 hook.
+</p>
+
+<p>
+顺便提一下, 今天在西门子, 利用 emacs + plink 修改远程服务器上的文件. 一开始进入的时候感觉比较麻烦,
+输用户名, 端口, 密码, 还有各种格式要注意. 本来都几欲放弃, 结果发现登录完毕以后, 修改远程服务器上
+的文件非常方便, 和本地的没什么区别. 唯一的不同就是在 mode-line 上多了一个 '@', 告诉用户此文件不在
+本地. 以后都不用整天将自己的配置文件到处拷贝了.
+</p>
+
+<p>
+20.11.2008
+</p>
+
+<p>
+正在'开发'我的 gid-script-mode. 为了能让关键字正确高亮, 需要在关键字前后加上限制条件, 不然的话:比
+如 clear 是关键字, noclear 中的 clear 也会被高亮, 这个当然不是我所希望的. 但是发现 "\&lt;clear\&gt;" 都
+没有效果. 后来忽然想到, 在 双引号中, 需要用两个 '\'. 也就是说, 应该是: "\\&lt;clear\\&gt;".
+</p>
+
+<p>
+23.11.2008
+</p>
+
+<p>
+在 emacs 中需要使用浏览器预览某些网页的时候, emacs 总是孜孜不倦地要求使用 小冰熊. 我一生气将 小冰
+熊 请出系统, 发现 /usr/bin/firefox 也被删除了. 简单, 重建一个到/common/programme/firefox/firefox
+的快捷方式. 这下子 emacs 终于乖了.
+</p>
+
+<p>
+04.12.2008
+</p>
+
+<p>
+今天发现我使用 inline-latex 生成的 png 图片的同时, 文件名会很莫名其妙地加到 Contents 里. 倒腾了
+很久也没有解决. 估计是缓冲的问题. 后来干脆写了一个简单的 c-remove-inline-trush() 函数放在 html
+publish 完毕以后的 hook 上, 将这些字符删除. 临时的解决之道.
+</p>
+
+<p>
+05.12.2008
+</p>
+
+<p>
+每次在 gnus 中想将附件保存的时候, 提示的存储路径总是 ~/emacs<sub>lib</sub>/muse/src/mylife/xx.rar, 所以得删
+除至 ~ 然后再重写文件名. 非常麻烦. 后来发现这个路径就是我启动 gnus 时 当前窗口所显示文件的路径.
+我想起以前看别人在 windows 下面的 emacs 配置中使用了一个变量叫 'default-directory', 当时没明白干
+什么, 不过我现在觉得可能就是在我这种情况下使用. 看了一下说明, 发现它就是用于设定当前 Buffer 的默
+认路径. 尝试着在 gnus.el 中将其赋值为 '~', 问题迎刃而解. 为了保险起见, 我还是使用了
+make-local-variable 命令. 虽然我看 manual 说这个变量不会对全局产生影响.
+</p>
+
+<p>
+越来越觉得笔记有用, 因为很多时候看到某些怪怪的东西, 顺便也摘录下来, 可能某天灵光一现, 便能为我所
+用. 加上 emacs 的搜索功能&#x2026; 真是完美.
+</p>
+
+<p>
+在 muse 中, 如果一个 inline latex 语句被系统断行, 在 publish 的时候会提示出错. 以后看到错误的时
+候直接查找 $$ 即可.
+</p>
+
+<p>
+06.12.2008
+</p>
+
+<p>
+evince 相当好使, 因为它可以使用 hjkl 来移动 pdf 文件, 也支持 SPC 翻页等. 不过我还想使用 g 和 G来
+达到 Home 和 End 的效果. 于是我想到了我的 sawfish. 可以 evince 的窗口名仅仅是打开的文件的名称. 而
+我的 convert-event.jl 暂时还不支持对窗口类型进行判断. 刚才花了大约半小时给 convert-event.jl 加上
+了一个新功能, 就是可以在最后加一个参数 t, 表明传入的 re 列表是 窗口类型 的正则表达式. 现在我的
+evince 就更加方便了. 不过在最后我放弃将 g 转为 Home. 因为使用 convert-event 的时候, 一般要尽量避
+免对 g 之类极简单的输入进行转换. 因为以后无论在什么窗口输入 g, 比如输入单词 google 的时候, 系统就
+会调用我的 convert-event.jl 两次. 在使用 fcitx 的时候, 系统不断判断 g 是否应该转换, 导致输入框不
+断闪动, 所以最后决定将 C-g 转换为 Home, 而 G 的出现频率应该就少很多, 使用 G 代替 End 则没什么太大
+问题.
+</p>
+
+<p>
+08.12.2008
+</p>
+
+<p>
+使用 gdebi-gtk 可以直接打开 deb 包, 然后该软件会查找这个包的所有依赖关系. 但是现在有个问题, 直接
+双击运行 gdebi-gtk 是没有 su 权限的, 也就是不能安装该包. 现在解决方法自然就是默认使用
+&lt;example&gt;
+gksu gdebi-gtk
+&lt;/example&gt;
+打开 deb 包.
+</p>
+
+<p>
+12.12.2008
+</p>
+
+<p>
+在看别人的 .sawfish 的时候看到两行有用的代码:
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(require 'sawfish.wm.ext.error-handler)
+(setq error-destination 'screen)
+&lt;/src&gt;
+</p>
+
+<p>
+这个能将 sawfish 遇到的错误显示在屏幕上. 以前不知道的时候, 都得自己用 display-message 函数, 显式
+地让 sawfish 显示某个变量的值.
+</p>
+
+<p>
+升级了 Emacs 以后发现我的 muse 中链接的颜色变得奇丑无比, 源代码的引用部分也便糟了. 我借助 gcolor2
+得到新的链接颜色为 blue. 在 muse-colors.el 中发现, 在整体颜色为 light 的情况下, 链接颜色为 blue,
+深色的情况下为 cyan. cyan 就是我以前一直使用的. 估计是现在 emacs 使用新的判断标准, 将我的颜色判断
+为浅色. 我直接将 muse-colors.el 中 light 情况下各种配色方案修改同深色一致.
+</p>
+
+<p>
+14.12.2008
+</p>
+
+<p>
+今天倒腾了一个早上才把 ATI 的驱动真正装好了. 最大的感觉依然是: 方法很简单, 就是网上错误信息太多,
+导致时间的大量浪费. 方法如下:
+</p>
+
+<ol class="org-ol">
+<li>去官网 <a href="http://ati.amd.com/support/driver.html">http://ati.amd.com/support/driver.html</a> 下载需要的显卡驱动. 发现 ATI 的更新还是非常勤快
+的, 值得常常去看看.</li>
+<li>运行下载到的 ati-*-x86.run 文件.</li>
+<li>使用 aticonfig 初始化 /etc/X11/xorg.conf:</li>
+</ol>
+<p>
+&lt;example&gt; sudo aticonfig &#x2013;initial -f &lt;/example&gt;
+</p>
+
+<p>
+关键就是第三步, 我以前一直不知道. 虽然我安装了 ATI 驱动, 但是 xserver-xorg 依然使用默认的显卡驱
+动.
+</p>
+
+<p>
+输入 fglrxinfo 将得到下面的信息
+</p>
+
+<p>
+&lt;example&gt;
+display: :0.0 screen: 0
+OpenGL vendor string: ATI Technologies Inc.
+OpenGL renderer string: ATI MOBILITY FireGL V5200
+OpenGL version string: 2.1.6011 (8.28.8)
+&lt;/example&gt;
+</p>
+
+<p>
+如果 Vendor string 显示的不是 ATI 则说明还没有真正使用 ATI 的驱动.
+</p>
+
+<p>
+16.12.2008
+</p>
+
+<p>
+我今天在 write-file-hook 上加了 delete-trailing-whitespace 函数, 以后保存文件的时候, 都会自动将
+trailing whitespaces 删去.
+</p>
+
+<p>
+18.12.2008
+</p>
+
+<p>
+大约一个多月前的一个某日, 忽然想去技术系上自习. 那次冲动带来的一个小收获是看到 OpenSuSE 在招人做
+图形界面的易用性测试. 工资是 20€/H, 工作时间 1 到 2 小时. 我对于二三十欧的工资并不是特别在乎, 毕
+竟这个工作需要跑到纽伦堡去, 而且我在家门口的西门子干活, 每小时也有 13 欧左右. 不过为了 Linux 的
+忠实用户, 我对 OpenSuSE 这样一个开源计划非常感兴趣. 正如我在那天晚上发出的申请函中写到: 我对
+Linux 充满了热情, 我非常希望能去一个实行开源计划的公司看看, 感受一下那里的氛围&#x2026;这个工作对我来
+说更是一种眼界上的扩展. 很快 Novell 公司的相关人士就给我回复, 让我打电话过去约测试时间.
+</p>
+
+<p>
+接待我的是一位 40 来岁的中年女子, 打扮得很得体. 聊天中得知她是学心理学的. 对计算机的了解估计比较
+有限. 本来这个工作要的就是让客户说出自己的意见, 也不是辩论恰当与否. 不需要太多的专业知识.
+</p>
+
+<p>
+工作内容简单的要命, 就是在网上根据自己的需求定制一张 OpenSuSE 的光盘. 我要做的无非就是说下自己在
+使用这个网页定制服务的过程中满意的和不满意的地方. 有摄像头将测试过程录下, 而那位女士则一直在旁边
+和我交流, 顺便记下要点. 我对 Linux 是非常在行的, 不断提出非常有专业水平的要求 (这么低级别的专业水
+准还是有的^-^). 比如我建议他们列出预安装软件所依赖的包的大小等等. 也没什么好说了, 因为实在是太低
+水平的工作了. 三下五除一就定制完毕, 我以为接着我要安装操作系统, 因为网上的工作介绍上是这样讲的,
+结果那位女士居然直接说 OK 了. 看了看表, 差不多一个小时! 女士给了我 20€以后说我干得相当叙述, 并询
+问我是不是以前干过这方面的工作, 我想了想说在我们的 Lehrstuhl 干过类似小工作. 她说: 看出来你很有经
+验. 并说下次有类似的测试工作还会在给我写邮件. 我想她肯定很喜欢象我这样迅速的人, 因为她得一直陪在
+旁边的, 她的工资可不止 20 €/H. 对于出色完成这种低要求的工作我并不应该觉得有多高兴, 咱档次不一样啊.
+但是听了别人的夸奖, 心里确实是很美了许久. 也不在于人家是不是专长就是把握心理&#x2026; 晚上没忍住, 还把
+这赞扬之词告诉了别人. 恩, 要阳光嘛!
+</p>
+
+<p>
+今天去纽伦堡, MobiCard 没借到, 是打条票过去的, 来回 8 欧. 加上中午吃了一顿 Doener 3 €. 从 11 点出
+发到 15 点 回到 Erlangen, 辛辛苦苦净赚 9 欧. 平均是 2.25 €/H. 真是不容易. 偷偷的想, 其实我稍微拖
+一拖, 故作思考一下, 至少能多拿 10 €&#x2026; 算了, 真不是冲着钱去的. 另外终于看到了一直感觉很遥远的开源
+世界, 而且一小时的谈话对我的德语表达也是一种提高. Novell 的员工休息室很大, 很吸引我的是很傻很可爱
+的变色龙. 另外整个房间的色调也很和谐. 一直想问那位女士这个 OpenSuSE 计划的经费是不是大部分靠
+Novell 资助, 还是自己也要想方设法获取利润.
+</p>
+
+
+<div id="org546a001" class="figure">
+<p><img src="./pic/open_suse_test.jpg" alt="open_suse_test.jpg" />
+</p>
+</div>
+
+<p>
+07.01.2008
+</p>
+
+<p>
+如何是在同一个文件系统 (filesystem) 下面移动文件, 适用 os.rename 就行了. 否则就必须使用
+shutil.move.
+</p>
+
+<p>
+为了写一个自动处理照片的脚本, 首先想到的当然是 photoshop 的批处理, 但是发现这个批处理难以根据图片
+的不同而使用不同的参数. 接着想到了 gimp, 发现 gimp 果然可以使用脚本, 利用 Script-fu 可以给gimp 写
+插件, 也可以在命令行里执行 script, 不用开启图形界面就可以修改图片. 应该算是比较符合我的要求了.
+script-fu 使用 scheme 语言, 基本算是 lisp 的后代, 我当然比较熟悉了. 但是 script-fu 的资料太少. 磕
+磕碰碰, 花了一天的时间写了一个很蹩脚的脚本. 为了更好符合我的要求, 我在水木社区提出了问题. 接着别
+人告诉我, 如果想在命令行处理图片, 不如花时间研究一下 imagemagick. 我上去一看, 它和命令行完美结合,
+还有 pythonmagick (python + imagemagick). 太符合我要求了! 我马上动手写 python 程序. 但是发现
+pythonmagick 的资料少得可怜, 我被迫使用 os.system(cmd) 在 python 中调用 imagemagick 的各种命令.
+在 linux 下我花了一天的时间就解决问题了. 但是到了 windows 下面, 因为 windows 的命令行不支持
+UTF-8, 所以我要根据用户所在区域选择解码方式. 当然, 从中我也第一次对编码有了较好的了解 (中途我发
+现 gimp 还支持 python 脚本).
+</p>
+
+<p>
+程序能运行以后, 因为我想给 单荣 等电脑不是很熟悉的人使用, 完全的命令行处理方式估计会吓到她们. 所
+以我打算给我的程序加一个 gui 前端. 考虑到程序应该在 windows 和 linux 下面运行, 我选择了 tkinter
+这个跨平台性较好的模块, 虽然 tkinter 确实比较丑. 我一边看我的 How to program Python, 一边照样画
+葫芦地写我的程序. 本来对 python 比较了解, 很快我就编出了一个丑丑的面板. 反正我是满意了, 比命令行
+好多了.
+</p>
+
+<p>
+上网中, 发现了 Image 的模块. 这个模块能够生成, 处理各种图形文件. 太好了! 我本来嫌 python 调用
+imagemagick 来处理图形太慢了. 而且使用了 Image 模块以后, 所以字符串都改为 unicode 格式, 无论在
+windows 还是 linux 下面, 都能处理任何语言了. 编码问题从此不再.
+</p>
+
+<p>
+为了方便用户, 我上网搜索如何将 python 脚本转为可执行程序. 果然有! py2exe 可以实现! 其实它就是将
+所有我脚本用到的包都放在一个压缩包里, 这样即使用户的电脑没有 python 程序, 也能运行我的脚本, 而且
+直接双击即可.
+</p>
+
+<p>
+注: tkinter 和 image 模块 的教材我下载到了硬盘上, 因为我对网站总是不放心, 他们整日迁徙.
+</p>
+
+<p>
+13.02.2009
+</p>
+
+<p>
+看到上面提到 py2exe, 感觉很好. 因为在家里使用 py2exe 不久, 在 西门子 就遇到了关于 py2exe 的问题
+了. 当老大提到关于 py2exe 的问题时, 我马上就有了概念, 不用象当年老大提到 putty 时候那样弱弱地说:
+不知道.
+</p>
+
+<p>
+今天写 gui4title.py, 发现整个程序已经很大了, 主要程序已经近千行. 后时候删除了一点东西, 过会觉得
+还是原来好, 就得回去找备份, 感觉不方便. 想到以前玩过的 svn, 于是又装上了. 先进, 高级!
+</p>
+
+<p>
+有笔记真好, 根本没有走弯路, 网络都不需要就搞定了. 另外在 水木 向别人请教了如何让 svn 忽略某些文
+件夹.
+</p>
+
+<p>
+06.04.2009
+</p>
+
+<p>
+在家真是爽, 一看日志就知道在家里有多么堕落. 整整两个月没有更新了. 在家里主要学习了
+<a id="org602648f"></a>, 还把 gui4title.py 进行了改进. 比如 处理完一个图片以后, 刷新文件列表, 并自动显示
+下一个照片; 文件列表自动排序 等.
+</p>
+
+<p>
+不小心在网上看到了 emacs-major-version 的常数, 感觉一阵尴尬, 因为我为了得到这个数值, 曾经写了一
+个函数, 从 emacs-version 中截取. 删去冗余代码的感觉真是非常不错.
+</p>
+
+<p>
+13.04.2009
+</p>
+
+<p>
+回到德国了, 要潜心学习了.
+</p>
+
+<p>
+今天早上6点就醒来了. 无聊, 于是决定去学校的蓝楼看书, 顺便再尝试配置学校的无线网络认证. 其实本来对
+linux 下面的无线网络配置有阴影, 所以每次稍微尝试一两步就放弃了. 这次反正也没什么其他任务, 跟着引
+导一步步走下去, 花了半个小时时间就搞定了. 想起 meng Fei 他们还问过我配置问题, 于是顺便写了一片小
+文章, 简单地讲了讲过程.
+</p>
+
+<p>
+16.04.2009
+</p>
+
+<p>
+最近一个月 pidgin 的 qq 死活说我的 qq 版本过低, 而且最近 pidgin 更新以后, 问题依旧. 今天在网上查
+了很多方法, 好像都不是很好的解决办法&#x2026; 最后, 翻到 pidgin 中 qq 网络配置那一页, 发现我一直使用的
+居然是 qq 2005&#x2026; 改为 2008 &#x2026; 一切都 OK 了. 尴尬啊.
+</p>
+
+<p>
+17.04.2009
+</p>
+
+<p>
+想找一个双面板的文件管理器, 因为有时候两个文件夹之间的拷贝, 还是双面板的舒服. 找了半天以后发现还
+是 emelfm2 稍微顺手一点. 反正不是整天用这个, 也不用详细配置了.
+</p>
+
+<p>
+我的 gui4title 加入右键后不能被启动, 后来发现因为路径上带了 ~, 改为 /home/c 就可以了.
+</p>
+
+<p>
+19.04.2009
+</p>
+
+<p>
+想到很久以前发生的小故事, 想把它记录下来.
+</p>
+
+<p>
+刚到德国的时候, 临时住在一个田学长那里. 他的房间里面有张很大很舒适, 带滚轮的椅子. 当时感觉非常好,
+于是想着等我有了不错的房间以后, 我也要买一张这样的大椅子享受一下.
+</p>
+
+<p>
+在德国的求学生涯一路艰辛, 等我真正申请到不错的学生宿舍, 并打算长治久安的时候, 已经过了两年了. 尽
+管如此, 我在购置家具的时候, 我依然没有忘记那张很大很舒适的椅子. 实际上, 房间自带的仅仅是一张简单
+的木头椅子. 别说调节高度, 连滚轮都没有, 没什么太大舒适性可言.
+</p>
+
+<p>
+我于是开始关注此类椅子的信息. 终于一天在 Handelshof 看到了心仪的椅子, 而且恰逢打折. 马上将巨大的
+椅子活活从 Handelshof 搬回家里, 并花了大力气将其组装起来.
+</p>
+
+<p>
+但是好像结果和我想想中差别很大&#x2026; 因为我家虽然在学生宿舍中不算小, 但是因为吃饭也得在卧室里, 所以
+不少空间都已经被一张小饭桌占据着, 加上本来标配的书桌, 衣柜, 电视柜, 床&#x2026; 剩下的空间本来不算很多,
+忽然多了一张巨大的椅子以后, 发现都没有走动的空间了. 而且椅子坐起来好像没有印象中那么舒适. 可能当
+年不错是因为刚到德国, 长途奔波, 坐下来以后感觉什么都好. 搬出原来那张木头椅子, 忽然感觉和房间非常
+般配. 倒是刚进来的皮椅, 怎么看这么不协调.
+</p>
+
+<p>
+最后将椅子转手给了 Denis, 因为他觉得学校的椅子让他很不舒服, 有损健康. 反正我将皮椅出手以后, 感觉
+我的木椅越看越和谐, 越看越喜欢.
+</p>
+
+<p>
+可能有些梦永远只应该是一个梦, 就像乱世佳人中的展现的那样. 真正适合自己的, 并不一定是那个存在梦境
+中的幻影. 不过可能有机会的话, 经历一下那个幻境, 会更加珍惜现在所拥有的.
+</p>
+
+<p>
+28.04.2009
+</p>
+
+<p>
+今天又倒腾了一下 ecb, 因为以后要在 LSE 编程, CFS++ 已经是硕大无比, 没有一个好的编程环境估计比较
+尴尬. 但是最后发现, 我把 ecb 放到以后函数里面, 然后等启动完毕以后再调用这个函数, 效果和随 emacs
+启动而启动不是很一样. 很奇怪.
+</p>
+
+<p>
+03.05.2009
+</p>
+
+<p>
+locate 可以很快地找到一个文件所在的位置. 其实这个命令是在数据库 <i>var/lib/mllocate/mlocate.db 中
+查找. 所以如果删除一个文件, 比如 ~</i>.emacs 然后在 命令行中使用 find 寻找 .emacs 是不能找到那个文
+件的. 但是如果使用 locate, 则仍显示 .emacs 存在于 ~ 下. 另外, 命令 updatedb 默认 update
+mlocate.db 文件, 所以运行完 updatedb 以后再使用 locate 查找 .emacs 文件就无法找到.
+</p>
+
+<p>
+06.05.2009
+</p>
+
+<p>
+今天终于顺利拿到我的驾照了. 我把向驾校的汇款记率看了看:
+</p>
+
+<p>
+&lt;example&gt;
+06.05.2009 :  117,00 EUR
+27.04.2009 :  474,00 EUR
+18.02.2009 :   85,00 EUR
+16.02.2009 :  556,00 EUR
+02.02.2009 :  594,00 EUR
+12.01.2009 :  566,00 EUR
+01.12.2008 :  466,00 EUR
+03.11.2008 :  128,00 EUR
+</p>
+<hr />
+<p>
+             2986,00 EUR
+&lt;/example&gt;
+</p>
+
+<p>
+另外驾校报名, Rathaus 报名, 红十字会学急救, 估计共花了 320 EUR. 呵呵, 算起来都有些超过 3000 € 了,
+看来我实在学了很久了. 随便了, Ende gut, alles gut.
+</p>
+
+<p>
+当时考完就拿到驾照了, 很惊喜的就是: 驾照上照片是黑白的, 难得我一张证件照很好看.
+</p>
+
+<p>
+07.05.2009
+</p>
+
+<p>
+今天解决了一个困扰我很久的问题. 就是在 latex + auctex 下面, 我使用 preview 以后, 按 C-c C-c 编译
+文件的时候, latex 便对 <span class="underline">region</span>.tex 文件进行编译, 而不是当前源文件. 以前以后是 auctex 的问题, 现
+在重装了还是依旧, 感觉很奇怪. 又上网找答案. 其实以前曾经多方查找未果, 上 BBS 询问亦没人说有此问题.
+我后来都一度不使用 auctex. 今天运气不错, 使用了合适的关键字 auctex + <span class="underline">region</span>, 很快就找到了答案:
+</p>
+
+<p>
+Preview / AUCTeX bug: preview-latex sets <span class="underline">region</span>.tex/pdf to main file. The bug reported below
+shows up because we have TeX-master set to nil by default rather than t, which is the AUCTeX
+default.
+</p>
+
+<p>
+解决方法就一行 : (set-default 'TeX-master t)
+</p>
+
+<p>
+现在 latex 可乖了.
+</p>
+
+<p>
+另外说 auctex + emacs 23 的小问题: 当装 auctex-11.85 时, 在 make 时出错:
+</p>
+
+<p>
+&lt;example&gt;
+In toplevel form:
+tex-jp.el:274:1:Error: Invalid read syntax: ". in wrong context"
+make: <b>*</b> [lisp] 错误 1
+&lt;/example&gt;
+</p>
+
+<p>
+解决办法就是在 tex-jp.el的行首加入
+</p>
+
+<p>
+&lt;example&gt;
+;;; -<b>- coding: iso-2022-jp -</b>-
+&lt;/example&gt;
+</p>
+
+<p>
+auctex 的测试员们也稍微太不负责了.
+</p>
+
+<p>
+08.05.2009
+</p>
+
+<p>
+比如 lebenslauf 之类的 latex 文件还是很重要的, 有必要放入 repository 中保存, 但是每次使用 latex
+编译后, 会出现大量的临时文件, 这些文件如果加入到了 repository 中就太损美观了, 另外想让这些文件不
+在使用  svn st 的时候列出 也稍微太麻烦了一点. 最后我想到了 symbol link. 就是把 .tex 文件放在
+repository 中, 然后将其链接放到另外一个文件夹中, 编译 .tex 文件的时候在那个文件中进行, 那么所有
+的临时文件都会被保存在那个文件中, 从而保持我的 work 目录整洁.
+</p>
+
+<p>
+有个包叫做 texlive-latex-recommended, 里面有很多常用的 packages, 比如 pdfpages. 其他模板我不知道,
+反正 pdfpages 这个包有问题. 安装 texlive-latex-recommended 以后, 系统能找到 padfpages, 但是里面
+的命令都不能用. 我在网上下载了最新的包, 然后将文件替换以后就 OK 了.
+</p>
+
+<p>
+gdebi 在点击安装以后, 因为没有管理员权限所以安装无法进行. 理论上 gdebi 应该向用户询问
+管理员密码, 但是在 lenny 这个算是个 bug. 解决办法很简单:
+</p>
+
+<p>
+&lt;example&gt;
+As root, you want to edit /usr/share/pyshared/GDebi/GDebi.py
+Go to line 358. It should read:
+</p>
+
+<p>
+Code: Select all
+                         "&#x2013;always-ask-pass",
+Delete that line.
+Save.
+&lt;/example&gt;
+</p>
+
+<p>
+09.05.2009
+</p>
+
+<p>
+stardict 有个 stardict-plugin-espeak 的东东, 电脑用很恶心的音调, 按照英语的朗读规则朗读查找的所
+有单词. 遇到德文单词的时候, 发音更加让人非常难受. 方法当然就是卸载了这个软件包即可.
+</p>
+
+<p>
+14.05.2009
+</p>
+
+<p>
+在录制 emacs marco 的时候, 中间不小心按错一个键, 可能整个 macro 都得重新定制. 我当年凭借自己难得
+的耐心活活将一个由 50 来个按键组成 macro 录制成功. 并且在一段时间以后, 还凭借对 ascii 码的一点了
+解, 直接修改 macro 的源代码. 今天想把全角的空格也替换成两个半角空格的时候, 无论如何没有兴趣再去
+研究那完全没有可读性的 macro 源代码. 写一个函数吧, 用 elisp, 以后也还可以再扩展. 经过在 西门子
+的长年工作, 已经深刻明白可维护性的重要性. 这种没有可读性的 macro 根本就不值得保存下来.
+</p>
+
+<p>
+花了大约半个多小时, 我的 c-umcn 大功告成:
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(defun c-umcn ()
+  "alle chinesischen Zeichensetzungen im Buffer werden
+in den englischen Zeichensetzungen konvertieren"
+  (interactive)
+    (save-excursion
+      (let* (( conv<sub>pairs</sub> '( (". " ". ") (", " ", ") ("; " "; ") (": " ": ") ("  " "  ")
+                           ("! " "! ") ("? " "? ") ("&lt;&lt;" "<a id="org8b95a38"></a>" "&gt;&gt;")
+                           (", " ", ") (" &lt;" "&lt;") ("&gt; " "&gt;") ("&#x2013;" "&#x2013;")
+                           (" (" "(") (") " ")") ("" " "\"") ("'" "'")
+                           ("&lt;&lt;" "<a id="org69e416c"></a>" "&gt;&gt;") (" &lt;" "&lt;") ("&gt; " "&gt;")))
+             (n (length conv<sub>pairs</sub>)) pair org goal)
+        (while (&gt; n 0)
+          (goto-char (point-min))
+          ;; select a pair
+          (setq pair (nth (- n 1) conv<sub>pairs</sub>))
+          (setq org (nth 0 pair))
+          (setq goal (nth 1 pair))
+          (while (re-search-forward org nil t)
+            (replace-match goal))
+          (setq n (- n 1))))))
+&lt;/src&gt;
+</p>
+
+<p>
+这下子扩展性就好多了.
+</p>
+
+<p>
+15.05.2009
+</p>
+
+<p>
+在 muse 上写 latex 代码的时候, 难免会打错某些命令, 这样会造成 latex2png 出错, emacs 在生成 html 文
+件的时候直接忽略这段代码, 同时在 <b>Message</b> Buffer 里显示一条错误信息, 比如
+</p>
+
+<p>
+&lt;example&gt;
+Failed to create dvi file /tmp/latex2png-wikimath_<sub>116840504</sub>
+&lt;/example&gt;
+</p>
+
+<p>
+解决办法非常简单. 到 /tmp 下找到 latex2png-wikimath_<sub>116840504.tex</sub> 文件, 然后看看这个临时的, 完
+整的 latex 文件哪里出问题, 然后修改 muse 的源代码即可.
+</p>
+
+<p>
+修改了 iswitch-window.jl. 结果非常成功. 具体变化可以看其源代码, 以及 sawfish.muse 里的介绍.
+</p>
+
+<p>
+16.05.2009
+</p>
+
+<p>
+在 LSE 的服务器上, .xmodmap 文件不会被自动调用, 还得手动执行 xmodmap .xmodmap
+</p>
+
+<p>
+我将其加到 .bashrc 里面, 但是如果第二次执行上面的命令, 系统就会报错, 说找不到 capslock 这个按键.
+所以我使用 /dev/null 忽略错误信息:
+</p>
+
+<p>
+&lt;example&gt;
+xmodmap .xmodmap &gt; /dev/null 2&gt;&amp;1
+&lt;/example&gt;
+</p>
+
+<p>
+一直觉得版本控制下的文件不能被很好备份, 今天终于找到了解决之道, 原来关键是要设置
+vc-make-backup-files 的值. 默认为 nil, 也就是忽略版本控制下的文件. 我将其设为 t.
+</p>
+
+<p>
+21.05.09
+</p>
+
+<p>
+今天也加两句纯数学的条目:
+</p>
+<ul class="org-ul">
+<li>积分生成从在某个区间的实数值上所有可积分函数的空间到 R 的线性映射.</li>
+<li>微分是从所有可微分函数的空间到所有函数的空间的线性映射.</li>
+</ul>
+
+<p>
+居然微分这么复杂的运算都是线性映射. 怪不得上学习学的 包含 拉普拉斯算子 的恐怖等式, 都被成为是线
+性的. 不知道这个学期开始学的非线性又会是多么恐怖的事情.
+</p>
+
+<p>
+22.05.09
+</p>
+
+<p>
+到了国外才知道, 原来他们邮箱地址的标准格式是 vorname.nachname@mailbox.com. 因为外国人的名和姓之间
+如果没有 dot 隔开, 而且不是特别常见的名字, 别人很难看出名字到底是哪部份. 但是这个问题在中国人名上
+比较难发生, 毕竟我们的拼音比较简单, 声母韵母便是一个字. 所以在国内申请 gmail 的时候, 我的邮箱地址
+是 vornamenachname@gmail.com 的. 因为感觉 gmail 实在太好用了, 所以想再申请一个
+vorname.nachname@gmail.com 的邮箱. 可以系统已经不允许了, 说已经有人使了. 我想那个人是不是就是我
+自己呢, 于是用 vorname.nachname 来登录 gmail 邮箱. 马上被拒, 很伤心, 也只好作罢.
+</p>
+
+<p>
+今天早上忽发奇想, 我给 vorname.nachname@gmail.com 发一封邮件看看, 到底能不能转到我的邮箱里. 结果
+居然还真的收到邮件了, 而且 gmail 还特地在收件人地址那栏里标出: (Yes, this is you.), 此外还有相应
+的帮助链接.
+</p>
+
+<p>
+看了链接以后才知道: gmail 的邮箱转发系统忽略大小写和用户名之间的 dot. 而且只要有人用
+vornamenachname 注册了邮箱, 其他人便不再被允许使用 vorname.nachname, V.OR.NA.ME.NA.CH.NAM.E 等等
+注册. 而发到这些邮箱地址的邮件全部转到 vornamenachname 的邮箱中. 但是出于安全因素的考虑, 用户必须
+使用注册时候的用户名登录邮箱. 所以我使用 vorname.nachname登录的时候被拒了.
+</p>
+
+<p>
+看来我以后可以到处使用 vorname.nachname@gmail.com 了. 现在是越来越喜欢 gmail 了.
+</p>
+
+<p>
+update: 这种忽略 dot 的特效只存在于 gmail, 或者准确的说 gmx 就不支持. 德国人最喜欢 gmx 了. 事实上
+我不是很喜欢. 不过顺便去申请一个 vorname.nachname@gmx.de 还是很有必要的, 起码那个域名确实很短啊!
+</p>
+
+<p>
+23.05.2009
+</p>
+
+<p>
+我常常将 latex 源文件放在 svn 下面, 然后将其快捷方式放在其他文件夹下, 这样在别的文件夹下编译生成
+的各种临时文件就不会污染我的 repository 了. 每次使用 emacs 打开快捷方式的时候, emacs 总是询问我
+是否要转到快捷方式所指的文件夹下去, 我当然不希望了. 使用下面的设置后, 系统不再询问, 仅仅给我一个
+warning.
+</p>
+
+<p>
+(setq vc-follow-symlinks nil)
+</p>
+
+<p>
+使用 latex 写文档的时候, 德文中的特殊字母, 比如 ö 要写成 "o, 但是比如拷贝文字, 或者自己输入的时
+候, 常常会忘了这个要求, 那么在生成 pdf 文件的时候, 这个字母便被忽略了. 我想让这些字母在 latex 模
+式下面都使用 红色 显示, 那样既是输入错误了, 也马上能够发现. 在网上稍微搜索一下, 然后找到例子, 照
+样画葫芦得到如下代码:
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(font-lock-add-keywords 'latex-mode
+  '(("\\(ö\\|ä\\|ü\\|Ö\\|Ä\\|Ü\\|ß\\)" 1 font-lock-warning-face prepend)))
+&lt;/src&gt;
+</p>
+
+<p>
+这样所有的特殊字母都会使用大红色显示, 非常显眼. 这个 font-lock-add-keywords 还可以用来定义任何模
+式下的其他关键字.
+</p>
+
+<p>
+24.05.2009
+</p>
+
+<p>
+今天有人在 newsmth 让我使用 highlight-regexp 来使某关键字高亮, 使用以后感觉很不错, 起码比
+font-lock-add-keywords 用起来顺手多了. 用法如下:
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(add-hook 'c-mode-hook
+          (lambda()
+            (highlight-regexp "FIXME" font-lock-warning-face)))
+&lt;/src&gt;
+</p>
+
+<p>
+这样在 c-mode 中的 FIXME 就被高亮了. 我顺便让 python 等模式也都高亮 FIXME 以及 德文特殊字母.
+</p>
+
+<p>
+利用原来的 c-umcn 写了一个函数, 作用是搜索 Buffer 中的德文特有的字母, 然后使用类似 "o 这样形式进
+行替代. 我将其加到了一个 hook 之上:
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(add-hook 'TeX-auto-prepare-hook 'c-de-letters)
+&lt;/src&gt;
+</p>
+
+<p>
+按照 hook 的文档, 应该在编译以前, 不过我一存档它就调用 c-de-letters(). 没有找到计划中的
+TeX-before-compile-hook. 另外我修改了高亮, 现在德文特殊字母不需要用鲜红来高亮了. 以后我就可以简
+单输入 ö , 然后让系统帮我改为 "o, 真的很方便.
+</p>
+
+<p>
+另外我在写 latex 文件的时候, 常常会少写 \, 比如 &Omega; 写成了 Omega, 系统没有任何提示, 我现在正
+在想办法让这些没有 \ 的关键字用鲜红色高亮, 不过工作好像蛮庞大的, 现在写了个开头.
+</p>
+
+<p>
+25.05.2009
+</p>
+
+<p>
+在默认情况下, 使用 re-search-forward 等命令进行搜索都是忽略大小写的. 而 replace-match 会自动根据
+上下文进行选择, 是否将替换的单词的首字母大写. Emacs 的这种智能在有些情况下是完全不能容忍的.
+</p>
+
+<p>
+re-search-forward 等命令是否忽略大小写是由变量 case-fold-search 决定的, 默认为 t, 表示忽略大小写.
+我们可以在使用 re-search-forward 以前将其现在的值保存, 然后修改为 nil, 等搜索结束的时候再赋予其原
+来的值.
+</p>
+
+<p>
+而 replace-match 命令的第二个参数可以控制是否禁止命令更改字符串的大小写, 比如
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(replace-match "good" t)
+&lt;/src&gt;
+</p>
+
+<p>
+这种情况下, good 在任何情况下都不会被修改为 Good.
+</p>
+
+<p>
+确实是太尴尬了!!! 前几天花了这么多时间在处理德文字母和 latex 之间的冲突. 今天上网研究了很多方法,
+甚至连 auctex 的源代码下载了研究一遍. 后来发现我原来看到所有文章都已经是老得掉牙了, 现在 latex
+完全支持德文字母了. 在前言中加上:
+</p>
+
+<p>
+&lt;src lang="latex"&gt;
+%Neue Deutsche Rechtschreibung
+\usepackage{ngerman}
+%Fur UTF-8 notwendige Pakete
+\usepackage{ucs}
+%Bei aelteren tetex-Paketen [utf8x] durch [utf8] ersetzen
+\usepackage[utf8x]{inputenc}
+&lt;/src&gt;
+</p>
+
+<p>
+什么高亮, 转换都没用了. 伤心死了. 不过起码很方便了!! 感谢无名的高手们!
+</p>
+
+<p>
+晚上和 Deborah 等人一起去'茶馆'吃冰激凌. 有个德国人很厉害, 学语言学的, 会 8 国语言, 现在的毕业论
+文居然是计算机方面的语言识别系统. 他中途问我有什么兴趣爱好, 我说和计算机有关的东西我都很感兴趣.
+结果他说: 可怜的人.
+</p>
+
+<p>
+崩溃了! 看来如果一个人只会工作, 应该算是一种悲哀, 而我离这种悲哀还有多远呢?
+</p>
+
+<p>
+26.05.2009
+</p>
+
+<p>
+&lt;src lang="latex"&gt;
+\setlength{\parindent}{0pt}
+% &#x2026;.
+\setlength{\parskip}{2.5ex}
+&lt;/src&gt;
+</p>
+
+<p>
+设置 \parindent 取消段首的缩进, 再设置 \parskip 设置段落之间的间距. 修改段落间距的命令放在生成目
+录命令之后, 这样目录的条目之间依然使用原来的小间距. 这样修改以后的效果和普通论文格式相当.
+</p>
+
+<p>
+Latex 的 amsmath 宏包包含在 texlive-latex-base 包里了. 要使用这个宏包只需在序言中加上 usepackage
+的命令.
+</p>
+
+<p>
+29.05.2009
+</p>
+
+<p>
+abbrev 和 msf-abbrev 都是使用空白字符当做展开缩写的信号. 如果定义了一些常用的字母, 比如 src, 有
+可能会常常在不愿意展开的地方, 系统自动就展开了. yasnippet 使用 TAB 当做展开信号, 这个感觉就更好
+了, 可以定义比如 equ, begin 之类常见的单词, 只要不按 TAB 键, 系统便不会对其展开.
+</p>
+
+<p>
+很开心的事情莫过于感觉自己每天都在进步. 很久以前钻研了 gpg 加密软件, 以及 emacs 的 epa 插件. 不
+过我重装系统以后, 将备份的私钥复制到 ~/.gnupg 中, 结果没有效果, 导致加密文件从此没能再打开. 今天
+上网看到使用原来的私钥的办法是重新导入, 而不是复制, 粘贴&#x2026;
+</p>
+
+<p>
+&lt;src lang="shell-script"&gt;
+gpg &#x2013;allow-secret-key-import &#x2013;import mykey.gpg
+&lt;/src&gt;
+</p>
+
+<p>
+终于将关闭了一年左右的加密文件打开了!
+</p>
+
+<p>
+30.05.2009
+</p>
+
+<p>
+又啃了一个晚上的 FEM 还是云里雾里. 主要中间的太多计算简直不具备可读性!! 很郁闷!
+</p>
+
+<p>
+2.06.2009
+</p>
+
+<p>
+Nomachine 的窗口的 class 属性 居然是空的, 导致我的几个 sawfish 的脚本, 在进行 class 判断的时候出
+错. 花了半个多小时修改了我的脚本, 现在 Nomachine 和 sawfish 可以很好地共存了. 相当 happy!
+</p>
+
+<p>
+在完成脚本以后忽然发现在我的 sawfishrc 里面有
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+;; (require 'sawfish.wm.ext.error-handler)
+;; (setq error-destination 'screen)
+&lt;/src&gt;
+</p>
+
+<p>
+事实上, 如果我将这两条代码投入使用, 那么系统就会告诉我, 原来的错误是因为 match-string 对 nil 进
+行操作, 导致函数异常中断. 我已经将其的注释符号取消了, 但愿在运行过程中不要有太多不必要的错误提示,
+否则影响了我的正常工作可就问题大了.
+</p>
+
+<p>
+02.06.2009
+</p>
+
+<p>
+花了5个小时左右的时间, 大幅修改了我的 .sawfish 配置, 对原来的函数进行整理, 然后修剪冗余代码. 学会
+了使用 delete-if, mapcar, 可以很好地减少 while 之类循环的使用, 并且大量减少代码的长度.
+exec-and-jump.jl 已经暂时被 app.jl 代替了. 看看以后的使用情况, 如果 app 工作正常, exec-and-jump
+可能真要成为历史了.
+</p>
+
+<p>
+03.06.2009
+</p>
+
+<p>
+TCL 太白痴了!!!! 今天花了几个小时, 有怪怪的问题, 就是不知道怎么回事. 最后发现, 我用 # 注释了一行,
+那行末尾有个 }, 结果 TCL 就不知道那个 } 也是被注释了的!
+</p>
+
+<p>
+06.06.2009
+</p>
+
+<p>
+在 lse 的服务器上, 常常想往自己电脑拷贝文件, 所以我在自己电脑上装了一个 ssh-server. 因为我家里的
+电脑是在一个 Router 之下的, 所以我让 Router 给我的电脑一个固定的 IP: 192.168.1.33, SSH 服务器开
+2345 的端口, 然后在 NAT/Port-Weiterleitung 上设置, 将 193.168.1.33 + 2345 映射到外网上.
+</p>
+
+<p>
+于是在其他地方就可以通过 c@IP<sub>OF</sub><sub>ROUTER</sub> -p 2345 访问我的电脑了. 不过恶心的问题就是我好像暂时还没
+有很好地办法得到路由器的 IP 地址.
+</p>
+
+<p>
+09.06.2009
+</p>
+
+<p>
+在本该最繁忙的时候, 忙里偷闲, 倒腾如何简化 Debian. 经过两天的尝试, 我发现我基本上已经没有可能离
+开 gnome 了, 而且其实也没有必要离开, 毕竟我的笔记本连 Vista 都能运行, 何况是 Linux 系统呢. 不过
+如果有些洁癖, 对于 gnome 预装的大量无用的软件深恶痛绝的话, 现在的方法就是在安装 debian 的时候不
+要让它安装 dekstop environment. 在光盘安装结束以后, 自行安装 gnome-core. 我发现这个包里包含了我
+最需要的所有管理工具, 而类似于 gnome-game, 大量 internet 软件都被刨除在外. 看起来相当舒坦. 安装
+基本完成以后, 我看 / 的体积是 1.3G, 而使用完全安装, / 的体积大约是3G. 虽然 1.5G 对于我 100 G 的
+硬盘来说基本没什么意义, 但是起码心情好了些. 倒腾吧. 反正在乎的不是省下来的空间
+</p>
+
+<p>
+10.06.2009
+</p>
+
+<p>
+今天终于将 latex 下面的文件进行了大规模的清扫, 然后将其放入了 repository 之中. 不过为了保持原来
+的 repository 的整洁, 我特别为其新建了一个 repository, 以后某些重要的 bin 文件都可以放在这个
+repository 之中. 因为这个 repository 并不一定要很长远地使用.
+</p>
+
+<p>
+11.06.2009
+</p>
+
+<p>
+Erik 帮我修改了我的 Ausarbeitung, 有四点比较重要, 值得记录:
+</p>
+
+<ul class="org-ul">
+<li>现在一般不怎么使用 nämlich, 取而代之的可以是 und zwar, &#x2026; 比如:</li>
+</ul>
+
+<p>
+&lt;example&gt;
+PML hat einen Nachteil und zwar, dass es nur im Frequenzbereich funktionieren kann.
+&lt;/example&gt;
+</p>
+
+<ul class="org-ul">
+<li>在 und 前面一般没有逗号.</li>
+</ul>
+
+<p>
+&lt;example&gt;
+Die Ziel von ABC liegt daran, dass die Welle sich nur durch Ränder nach außen verbreiten kann und alle von außen kommenden Wellen
+werden auf den Rändern reflektiert.
+&lt;/example&gt;
+</p>
+
+<p>
+除非是完全完整的两个句子, 也就是说原来可以写成  blabla. Und blabla. 这种的可以写成 blabla, und
+blabla.
+</p>
+
+<ul class="org-ul">
+<li>写论文时候要阐述某个事情, 不要用 erzählen, 因为这个感觉是 ein Märchen erzählen, 可以使用</li>
+</ul>
+<p>
+aufzeigen:
+&lt;example&gt;
+Hier möchte ich die grundlegende Ideen von ABC und PML aufzeigen.
+&lt;/example&gt;
+</p>
+
+<ul class="org-ul">
+<li>使用 photoshop, GiD 等软件进行作图, 不是说 malen, 而是 zeichnen.</li>
+</ul>
+
+<p>
+12.06.2009
+</p>
+
+<p>
+删除 gnome-panel:
+</p>
+
+<p>
+一直想完全离开 gnome-panel, 结果 gnome-panel 不允许用户删除所有的 panel. 今天在网上搜索了一下,
+发现解决办法居然就是去 sessions, 然后结束 gnome-panel, 并将现在的 session 保存, 有点象取消
+mega-city 的办法. 不过现在发现有个 gnome-panel, 让其完全隐藏还是有必要的.
+</p>
+
+<p>
+19.06.2009
+</p>
+
+<p>
+最近忙于写在 EMF Lehrstuhl 下的 Seminar, 期间也学了不少专业单词. 另外看到 时寒冰 的一篇文章, 感
+觉受益非凡.
+</p>
+
+<p>
+有人问诺贝尔经济学奖获得者克鲁格曼教授: 您几次都很不幸的预测到经济的恶化或者危机, 您是以什么样的
+指标来衡量经济有泡沫了?
+</p>
+
+<p>
+保罗·克鲁格曼: 我有两个主要指标, 一个是看一些简单的指标, 比如说股价与交易量的关系, 我在意房价的话
+就看房价和租赁的比例, 如果这个比例超过历史平均水平太远的话, 这就意味着这个当中会有问题. 这样差异
+偏离太大的话就意味着有泡沫. 还有, 如果是那种对于金融新闻的热情高涨的话, 也意味着可能会有泡沫.  在
+90年代末的时候, 我开始意识到会有经济危机, 是因为我可以看到我进酒吧的时候以前放的是体育比赛, 现在
+放的是经济新闻, 所以我觉得股市有问题了. 当你看到电视剧里面也开始讲住宅, 房价的事情, 有很多人通过
+买房挣了很多钱, 这个时候就会觉得当中有问题了. 所以, 从大众文化当中都体现出了金融热情的话, 或者是
+过分的热情就意味着有问题了.
+</p>
+
+<p>
+我于是明白了, 中国人人关注政治, 张口就是代表, 主义原来不是什么好事啊! 目标看来应该就是: 人民把政
+治交给政客们, 让他们管理国家. 人民看自己的足球, 聊今天的天气, 休应有的假. 政治, 那玩意有啥用啊?
+有天政客干活偷懒了, 把他们拉出来训训, 换个总理啥的.
+</p>
+
+<p>
+20.06.2009
+</p>
+
+<p>
+使用 flyspell 检查文档的时候, 很多名词, 比如 GalerKin-Verfahren 可能就在这篇文档中会用到, 没有必
+要加入到个人词典中. 那么可以使用 M-$ 让系统检查这个单词, 然后按 A 将其加入到 个别词典中, 这就是
+说仅仅在这个文档中认为这个单词是正确的. 自动会在文档最后加上这些单词的列表, 例如:
+</p>
+
+<p>
+&lt;src lang="latex"&gt;
+% LocalWords:  magnetostatischen GalerKin transiente
+&lt;/src&gt;
+</p>
+
+<p>
+29.06.2009
+</p>
+
+<p>
+今天尴尬死了. 想要安装 gentoo, 使用 ubuntu live cd 进入了系统, 然后将原来 sda2 分区删除, 并计划
+将其分成 /boot 和 根分区. 结果我没有多思考就将 sda2 和 新生成的 'sda3' 使用 ext3 进行格式化. 伤
+心的就是: sda3 是原来 /common 所在的分区, 所有重要资料都在这个盘里保存着&#x2026; 我当时相当无语, 还能
+说什么呢? 使用 fdisk 我已经好几次干这种龊事了. 所有的资料, 照片, 信息都将一去不复返. 既是使用所
+谓的修复软件也够呛.
+</p>
+
+<p>
+不过这次最大的不同在于, 我在 上个月的时候 鬼使神差地对 studium 和 pic 两个重要文件夹备份了, 我当
+时都还不知道, 后来看到的时候, 感觉如在梦中: 我多年积累的照片和电子书籍居然还留有备份, 实在是大喜
+事. 而基本上的系统配置都在 emacs<sub>lib</sub> 之中. svn 的 repository 也在 一个星期以前备份过. 虽然有些损
+失, 不过幸好今天已经把恶心的 vortrag 和 ausarbeitung 交上去了, 不然这几天的活真是白干了, 我非哭
+死了不可. 以后看来还是要多注意备份啊.
+</p>
+
+<p>
+03.07.2009
+</p>
+
+<p>
+周二 (30.06.09) 在西门子把 gentoo 的 Handbook 看完了, 回家以后便开始了我的 gentoo 之旅. 除了中途
+切入 Debian 查找中文化问题以外, 一般都更加乐意呆在 Gentoo 之中. 到现在为止, 应该算是将日常处理需
+要解决的问题, 包括 语言环境, 文字显示, 常用命令, 基本软件 都解决了. 中途发现了方便的邮件服务器
+ssmpt, 以及非常强大的 mpd + sonata 播放器. 回头看看这几天努力应该算是比较值得的, Gentoo 也确实没
+有让我失望. Ende gut, alles gut.
+</p>
+
+<p>
+今天用 sudo 启动了 firefox, 退出并以普通用户身份重进以后, 发现 firefox 变得莫名其妙, TAB 也不显
+示, 而且 firefox 不断报错. 后来想了想, 肯定是因为 当时使用 管理员 身份使用的时候, 留下了很多普通
+用户根本没法读取的 cache. 我使用 chown 将 .mozilla 的所有文件都重新转为 c 所有之后, firefox 又听
+话了.
+</p>
+
+<p>
+7.7.2009
+</p>
+
+<p>
+昨天开始遇到一个很郁闷的问题, 具体介绍看我在 水木社区 的求助信:
+</p>
+
+<p>
+-&#x2014;
+问题还没有解决, 还完全没明白哪里有可能是出问题了. 事情非常匪夷所思.
+</p>
+
+<p>
+我使用的 emacs23 以及 gnus 都是最近 cvs 下来的. 在 debian 下, 使用 fetchmail 抓取文件邮件到我的邮
+件池, 然后由 gnus 去 /var/mail/username 读取邮件. 一直工作地非常顺利.
+</p>
+
+<p>
+现在转到 gentoo 上了. emacs, gnus 使用完全相同的配置.  结果 德文的特殊字母不能正确显示. 如图:
+</p>
+
+
+<div id="org9030bad" class="figure">
+<p><img src="./pic/1_wrong.png" alt="1_wrong.png" />
+</p>
+</div>
+
+<p>
+但是标题上的特殊字母却又没有问题.
+</p>
+
+<p>
+我当然是觉得编码的问题了. 所以我在 gnus 的配置文件上加上了
+</p>
+
+<p>
+&lt;example&gt;
+(setq gnus-summary-show-article-charset-alist
+'((1 . utf-8) (2 . iso-8859-1) (3 . gbk) (4 . windows-1252)))
+&lt;/example&gt;
+</p>
+
+<p>
+然后指定此邮件用 utf-8 编码( 1 g ), 发现标题也成了乱码了:
+</p>
+
+
+<div id="org39358d5" class="figure">
+<p><img src="./pic/2_wrong.png" alt="2_wrong.png" />
+</p>
+</div>
+
+<p>
+然后 (2 g) 标题不在乱码, 正文依然乱码, 说明 gnus 确实使用 iso-8859-1 阅读邮件. 而 iso-8859-1 是中
+欧地区的标准编码, 肯定可以显示 德文特殊字母.
+</p>
+
+<p>
+我奇怪了, 想可能是 gentoo 下的 fetchmail 等软件有问题, 我切换到 debian 下, 开启 gnus 阅读邮件, 结
+果发现正文阅读完全没有问题 (两个系统使用共同的emacs, gnus 配置, 而且邮件也保存在一个地方, 也就是
+说 debian 下 gnus 读取的文件和 gentoo 下读取的是完全一样的), 也就是说 gentoo 下的邮件系统应该是没
+有问题的.
+</p>
+
+<p>
+我将邮件正文另存为一个文件, 然后用 让 emacs 使用 iso-8859-1 打开, 所有字母都能正确显示.
+</p>
+
+<p>
+我相当崩溃&#x2026;. 倒腾到了凌晨, 夜里还做梦把问题解决了, 早上醒来很sad.
+</p>
+
+<p>
+可能大家很少处理 德文 的邮件, 不一定要给确切解决办法, 给个提示, 说个猜想也好. 我现在觉得哪里有没
+有问题.  我还特别升级了 gnus, 然后还自己编译了 好几个版本的 emacs23, 真的很惆怅&#x2026;.
+</p>
+
+<p>
+主要是我给我的整套邮件系统写了很多python脚本, 要是放弃了还是很心痛的.
+</p>
+
+<p>
+-&#x2014;
+</p>
+
+<p>
+这个问题确实很奇怪, 一般人给出的帮助当然也就只能是: 查查版本, 看看变量等. 不过刚才我把问题找到了,
+见我在水木的回复:
+</p>
+
+<p>
+-&#x2014;
+</p>
+
+<p>
+很崩溃, 崩溃了一天多, 在无数次的 debian&lt;-&gt;gentoo 切换以后, 加上非常幸运的误操作, 导致 w3m 的一个
+lib 无法找到而报错. 于是知道 gnus 还和 w3m 有一腿&#x2026;
+</p>
+
+<p>
+在 gentoo 上装上了 w3m, 我于是不崩溃了&#x2026;&#x2026;
+</p>
+
+<p>
+-&#x2014;
+</p>
+
+<p>
+我都开始查 emacs 的另外一个邮件系统 mew 了, 幸好 gnus 即使归来.
+</p>
+
+<p>
+09.07.2009
+</p>
+
+<p>
+将 gpg 搞定了, 现在发送的邮件都可以使用 gpg 自动加上数字签名, 另外将 pub-key 上传到了
+keys.gnupg.net 以及 wwwkeys.de.pgp.net, 以后别人需要我的 pub-key, 直接用网页打开
+wwwkey.de.pgp.net 就可以下载了. 另外我将我的密钥的密码修改了一下, 原来那个输入太慢了, 发邮件的时
+候需要输入两次, 简直不可接受. 现在的密码和邮箱的差不多, 不过结尾使用标点符号. (我想别人总不能利用
+这么一点点的信息量来推算出我的密钥密码吧?) 不过备份状态的密钥还是使用的完全版密码.
+</p>
+
+<p>
+今天和 Erik 聊天, 那哥们居然也都使用 pgp 来加密, 很神奇&#x2026; 主要是有些基督教的信息可能不方便让别
+人知道. Erik 说今天收到了 Tobi 的邮件, 不过在图书馆还不能看, 因为加密了, 得等到回家以后&#x2026;
+</p>
+
+<p>
+10.07.2009
+</p>
+
+<p>
+现在计划每天以实验室为家了. 今天忙里偷闲还写了一个 elisp 程序, 用来自动执行使用 smart-compile 生
+成的可执行文件, 现在只限于 c 和 c++ 使用, 因为他们生成的可执行文件名称和源文件一样, 就是少了扩展
+名而已.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+;; shell-command: 如果输出能够在 mini-buffer 显示, 则不将 "<b>Shell Command Output</b>" 提前.
+;; 我使用 smart-compile 进行编译, 而 smart-compile 会新建一个窗口反馈编译结果, 如果成功, 那么使
+;; 用 run<sub>exe</sub><sub>file</sub> 运行可执行文件. 既然存在没什么用处的窗口, 不如将其利用起来, 在那个窗口上显示
+;; 执行结果. 所以当判断当前只有一个窗口的时候, 则不新建窗口显示 执行结果.
+;; 被执行的文件路径就是 源文件截取扩展名
+</p>
+
+<p>
+(defun run<sub>exe</sub><sub>file</sub> ()
+  "run the exectue file in shell, which has the same name as the buffer name without suffix"
+  (interactive)
+    (let ((org-window (selected-window)))
+      (if (= (count-windows) 1)
+        (shell-command (file-name-sans-extension (buffer-file-name)))
+      (select-window (next-window))
+      (setq buf<sub>obj</sub> (get-buffer-create "<b>Shell Command Output</b>"))
+      (set-window-buffer (selected-window) buf<sub>obj</sub>)
+      (select-window org-window)
+      (shell-command (file-name-sans-extension (buffer-file-name)) buf<sub>obj</sub>))))
+&lt;/src&gt;
+</p>
+
+<p>
+现在 smart-compile 加上 run<sub>exe</sub><sub>file</sub>, 编译完毕, 接着自动执行, 确实方便极了, 完全不需要另切出终端.
+</p>
+
+<p>
+10.07.2009
+</p>
+
+<p>
+Gentoo 我觉得最强大的不是 USE-flag, 因为现在硬件系统对于运行 Linux 来说都是绰绰有余的. 最强大的
+地方在于 Gentoo 可以针对单个软件包, 让用户选择安装 稳定版 还是 测试版. 比如在 Debian 下, 用户要
+么安装稳定的系统, 要么就是 Testing 的系统, 不可以任意结合. 有个 Backport, 可以在 稳定版下安装某
+些 测试软件, 但是选择余地太少了.  现在 Gentoo 下, 基本上的软件我都安装稳定版, 但是比如 Emacs 等,
+我很熟悉, 而且确实希望能够使用最新功能的软件, 我选择安装测试版. 非常方便, 非常惬意.
+</p>
+
+<p>
+修改了昨天写的 run<sub>exe</sub><sub>file</sub> 函数, 使其更加智能:
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+;; shell-command: 如果输出能够在 mini-buffer 显示, 则不将 "<b>Shell Command Output</b>" 提前.
+;; 我使用 smart-compile 进行编译, 而 smart-compile 会新建一个窗口反馈编译结果, 如果成功, 那么使
+;; 用 run<sub>exe</sub><sub>file</sub> 运行可执行文件. 既然存在没什么用处的窗口, 不如将其利用起来, 在那个窗口上显示
+;; 执行结果.
+;; 如果已经在某个窗口打开了 "<b>Shell Command Output</b>", 那么在那个窗口继续输出运行结果. 如果某窗口
+;; 打开了 "<b>compilation</b>", 那么就在那个窗口打开 "<b>Shell Command Output</b>", 并输出运行结果.
+;; 如果没有任何窗口打开这两个 buffer, 那么使用 shell-command 的默认设置
+;; 被执行的文件路径就是 源文件截取扩展名
+</p>
+
+<p>
+(defun c<sub>select</sub><sub>window</sub><sub>of</sub><sub>certain</sub><sub>buffer</sub> (buf<sub>obj</sub>)
+  "This function is used by 'run<sub>exe</sub><sub>file</sub>'"
+  (let ((window<sub>obj</sub> nil))
+  ;; Is buf<sub>obj</sub> nil? It means, that the buffer does not exist.
+  (when buf<sub>obj</sub>
+    ;; opened in a window ?
+    (setq window<sub>obj</sub> (get-buffer-window buf<sub>obj</sub>))
+    ;; opened in a window ?
+    (when window<sub>obj</sub>
+      ;; select that window
+      (select-window window<sub>obj</sub>)))
+  ;; return nil, if no window is satisfied
+  window<sub>obj</sub>))
+</p>
+
+<p>
+(defun run<sub>exe</sub><sub>file</sub> ()
+  "run the exectue file in shell, which has the same name as the buffer name without suffix"
+  (interactive)
+  (save-selected-window
+    (let ((cmd (file-name-sans-extension (buffer-file-name)))
+          (buf<sub>obj</sub> nil))
+      (unless (= (count-windows) 1)
+        ;; if there are more than one window, then &#x2026;
+</p>
+
+<p>
+;; Does buffer "<b>Shell Command Output</b>" exist ?
+(setq buf<sub>obj</sub> (get-buffer "<b>Shell Command Output</b>"))
+(unless (c<sub>select</sub><sub>window</sub><sub>of</sub><sub>certain</sub><sub>buffer</sub> buf<sub>obj</sub>)
+  ;; if no satisfied window was found, then &#x2026;
+</p>
+
+<p>
+;; try another buffer name
+(setq buf<sub>obj</sub> (get-buffer "<b>compilation</b>"))
+(unless (c<sub>select</sub><sub>window</sub><sub>of</sub><sub>certain</sub><sub>buffer</sub> buf<sub>obj</sub>)
+  (setq buf<sub>obj</sub> nil))))
+</p>
+
+<p>
+      (when buf<sub>obj</sub>
+        ;; 将 "<b>Shell Command Output</b>" 调到前台来, 那么执行信息就会在此窗口中显示
+        (setq buf<sub>obj</sub> (get-buffer-create "<b>Shell Command Output</b>"))
+        (set-window-buffer (selected-window) buf<sub>obj</sub>))
+      (shell-command cmd))))
+&lt;/src&gt;
+</p>
+
+<p>
+12.07.2009
+</p>
+
+<p>
+使用 nomachine 登录 lse 服务器之后, 发现 AltGr 称了回车键. 上网看了一个发现这个现象很常见, 但是
+好像没看到有什么较好的解决办法. 我在当前电脑上看到 108 号键, 即 AltGr, 是 ISO<sub>Level3</sub><sub>Shift</sub> 的功
+能, 而且列在 Mod5 中. 于是我到服务器的电脑上, 使用如下命令将 108 号键赋予 AltGr 应有的功能.
+</p>
+
+<p>
+&lt;example&gt;
+keycode 108 = ISO<sub>Level3</sub><sub>Shift</sub>
+add Mod5 = ISO<sub>Level3</sub><sub>Shift</sub>
+&lt;/example&gt;
+</p>
+
+<p>
+事实上 xmodmap 只要在登录的时候运行一次即可, 不过 学校服务器的 kde 系统好像既不自动运行.profile,
+也不自动运行 .bash<sub>profile</sub>, 只好将需要运行的 xmodmap 放在了 .bashrc 里面, 反正电脑快,多让它干些无
+用功也无所谓.
+</p>
+
+<p>
+在 Lse 的服务器上还有很搞笑的问题, 我在 Emacs 中, 比如迅速按下 Alt-w 复制选区, 接着, Alt 键就出
+在按下的状态&#x2026;. 也就是我接着按下 L, 其实就是 Alt-L 的功能, 很受不了. 但是我按下 Alt-w, 然后先放
+开 w 再慢慢放开 Alt, 就没有问题了&#x2026;. 太搞了.
+</p>
+
+<p>
+测试后发现, 不光光是在 console 中的 emacs, 连带 gui 的 emacs 也存在这个问题, 看来比较难解决了.
+</p>
+
+<p>
+18.07.2009
+</p>
+
+<p>
+相当崩溃的两天啊! 看到 sawfish 升级到了 1.5 了, 而且已经完全剔除 sawmill 的组建, 我个人觉得有升
+级的必要了. 结果编译的过程中, 不断出现奇怪的问题. 解决一个出现另外一个. 比如 明明安装了 librep,
+在安装 rep-gtk 的时候, 系统偏说没有找到 librep. 上网搜索发现如果 librep 的 &#x2013;prefix 不设置为
+/usr 便会比较麻烦&#x2026; 反正完全让人感觉不到这是一个强健的系统. 到最后我崩溃了, 决定重新使用老的
+sawfish. 结果尴尬的是, 老的 sawfish 也不能用了. 将 librep 安装在 /usr 下, rep 就说找不到某些文
+件&#x2026; 事实上那些文件一直存在. 在网上到处找, 找到一个变量叫做  REP<sub>LOAD</sub><sub>PATH</sub>, 我看这个可能有用,
+于是将那些文件的地址放在这个变量中. 到编译 sawfish 的时候, sawfish 的 makefile 居然自己修改
+REP<sub>LOAD</sub><sub>PATH</sub>, 导致 rep 又报错说找不到文件&#x2026; 真的很崩溃.
+</p>
+
+<p>
+我后来直接将 deb 包解压缩, 放到相应的目录中, 然后将 REP<sub>LOAD</sub><sub>PATH</sub> 在 .xprofile 中设置一下.
+sawfish 暂时可以使用了, sawfish-client 还报错说找不到某些文件, 不能运行, 已经没有心情去理会了. 比
+如我的 halt 和 reboot 脚本无效了, 也随便了. 起码能继续干活了. 这两天在 metacity 下面, 难受死了.
+</p>
+
+<p>
+Gentoo 重装太麻烦了, 我不知道出现这种问题应该如何处理. 我还不知道如何编译这个系统啥的, overlay也
+还不清楚. 慢慢来吧, 如果太影响工作, 可能还是得回到 debian 去, 毕竟那里即使要重装系统, 也就小半天
+的事情.
+</p>
+
+<p>
+25.07.2009
+</p>
+
+<p>
+今天小试了一下 ibus-pinyin, 感觉还行. 但是没有 fcitx 健壮, 中途还崩溃了. 可以设置的选项也还较少.
+在 Gentoo 下安装 ibus-pinyin 非常简单. 直接使用
+</p>
+
+<p>
+&lt;example&gt;
+emerge ibus-pinyin
+&lt;/example&gt;
+</p>
+
+<p>
+安装, 中途要设置几个keywords,因为有些用到的包还不是稳定版. 安装完成以后, 在 env.d/99local 下, 或
+者 .profile 中设置全局变量.
+</p>
+
+<p>
+&lt;example&gt;
+LC<sub>CTYPE</sub>=zh<sub>CN.UTF</sub>-8
+XMODIFIERS="@im=ibus"
+GTK<sub>IM</sub><sub>MODULE</sub>="ibus
+&lt;/example&gt;
+</p>
+
+<p>
+第一个 LC<sub>CTYPE</sub> 不是 ibus 所要求的, 但是如果没有的话, 结果是在 urxvt 等终端 及 emacs 中, 能调出
+ibus-pinyin, 但是软件并不读入中文. 而且 urxvt 和 conky 的字体也变得极其可怖.
+</p>
+
+<p>
+ibus 的设置可以使用命令 ibus-setup, 而 ibus-pinyin 的设置则是在调出 pinyin 以后, 点击状态栏的倒
+数第二个图标.
+</p>
+
+<p>
+看来我是可以持续关注 fcitx 的发展了. 况且对于 fcitx 我也暂时没有什么可以抱怨的地方, 捣腾
+ibus-pinyin 就是尝鲜而已了.
+</p>
+
+<p>
+26.07.2009
+</p>
+
+<p>
+今天收获不错. 首先是将 /var, /tmp 和 /usr/portage/distfiles 这几个碎片大户放到了一个单独的分区中.
+根据 Gentoo 创始人 Daniel 的说法, 应该可以改善系统性能. 事实上, 对我来说是因为 / 分区已经快被用
+光了, 有必要新开一个分区给 Gentoo. 另外, 我把 swap 分区改为 2G+ 大小, 但是发现 Gentoo 的休眠功能
+不能用, 休眠后再开机, 和冷启动没有任何区别.
+</p>
+
+<p>
+另外一个很大的收获在于: 前几天的 Sawfish 问题一直没有解决. 我今天终于愤怒了, 用蹩脚的英语, 给
+sawfish 的 maillist 发了邮件, 将我的问题描述了一番. 没想到很快就有高人答复, 不过高人也不知道具体
+原因, 仅给了我一些解决方法. 不过几次交流, 他们的方法都是不能解决问题 :). 不过感觉这种直接的高人
+相助的感觉真不错. 最后我真的都有点想把问题乎略了, 因为高人也说不怎么清楚, 追问怕为难人家.
+</p>
+
+<p>
+今天在 IBM 的 Linux 技术网页上随便看到了一篇 使用truss, strace或ltrace诊断软件的"疑难杂症" 的文
+章. 我稍微瞄了一眼, 对于里面说的 Segment Fault 还能跟踪并解决 觉得蛮有趣. 但是看到
+</p>
+
+<p>
+&lt;example&gt;
+739: read(0x6,0x806f000,0x1000)               = 4096 (0x1000)
+&lt;/example&gt;
+</p>
+
+<p>
+类似没有可读性的东东的时候, 我就把网页关掉了.
+</p>
+
+<p>
+在我对于 rep 非常无语的时候, 圣灵告诉我应该去 死马当成活马医, 试试那文章说的软件或许有希望. 结果
+我安装并使用了 strace:
+</p>
+
+<p>
+&lt;example&gt;
+strace -f -o log rep
+&lt;/example&gt;
+</p>
+
+<p>
+打开 log 一看, 居然看到
+</p>
+
+<p>
+&lt;example&gt;
+access("/usr/local/share/rep/0.90.0/lisp/rep/lang/interpreter.jlc", R<sub>OK</sub>) = -1 ENOENT (No such file or directory)
+&lt;/example&gt;
+</p>
+
+<p>
+这里的 /usr/local 是 librep 的默认 prefix. 我将其改成了 /usr. 原来是这个问题! 问题很快解决了, 然
+后写了一封邮件告诉别人, 我已经搞定了, 顺便说我将 prefix 改成 /usr 也是因为看了他们的邮件列表的原
+因. 在二月份的邮件列表里, chris 还说 librep 必须要安装到 /usr 下.
+</p>
+
+<p>
+不错, 又知道了一个新的调试工具.
+</p>
+
+<p>
+另外在 sawfish 1.5 中, 我的 windows 按键已经不再是 W 或者 H 了, 而是 Mod4. 随便了, 虽然看起来不
+怎么好看.
+</p>
+
+<p>
+28.07.2009
+</p>
+
+<p>
+swiftfox 有点意思, 它是对 firefox 对应各种处理器优化后的结果. 速度有较大的提升, 而且基本感觉不到
+和原版的有什么区别. 它也同样会使用 .mozilla 中的各种配置和记录.
+</p>
+
+<p>
+29.07.2009
+</p>
+
+<p>
+昨天建立了 local overlay 之后, emerge 根本不理会我放在 local overlay 中的 librep 等 ebuild. 很尴
+尬. 今天仔细查看了 sawfish 维护人员给的 ebuild 后发现, 里面的 KEYWORDS 只有 amd64. 增加了 x86 之
+后, emerge 便可找到 local overlay 中的软件了. 另外, 每次修改了 ebuild 之后, 都必须重新运行
+ebuild, 否则 emerge 的时候会导致校验错误, 看来防止黑客的搔扰确实体现在细节.
+</p>
+
+<p>
+yakuake 完美实现:
+</p>
+
+<p>
+为了能在 Gentoo 中安装 yakuake, 我得编译 200+ M 的代码, 安装大量根本没有其他用处的软件. 这是我所
+非常不愿意看到的. 但是在卸载了 yakuake 之后, 我的 'F12-习惯' 让我感觉非常难过. 忽然我想到了使用
+sawfish 的函数实现 Yakuake. 方法其实很简单, 我要的 Yakuake 其实关键就是: 招之即来, 挥之即去. 而
+且不要在 窗口的选择列表 之中.
+</p>
+
+<p>
+我用 gnome-terminal 建立一个名叫 my-yakuake 的 Terminal, 隐藏起 menubar. 然后使用 sawfish
+"matched windows" 的功能规定 新建的 Terminal 的尺寸和位置. 另外通过设定
+iswitch-filter-out-window-name-regexp-list 将此 Terminal 排除在 窗口选择列表 此外.
+</p>
+
+<p>
+然后在 rc 中写 c-jump-or-exec-my-yakuake 跳转到 Terminal. 如果此窗口已经 focused, 那么再按下 F12
+就表示最小化此窗口. 这些都是符合 yakuake 模式.
+</p>
+
+<p>
+还有一点, 是我非常喜欢, 就是 yakuake 在失去焦点的时候, 会自动卷起. 这点连 tidla 都不具备. 在
+sawfish 下的实现也不是很复杂, 查到有个 focus-out-hook, 在失去焦点的时候, 运行
+c-yakuake-lose-focus 函数, 判断失去焦点的窗口是否是 my-yakuake, 如果是的话, 将此窗口最小化.
+</p>
+
+<p>
+最后, 我想到 yakuake 还有一个小锁, 点击小锁之后, 即使 yakuake 失去焦点, yakuake 也不会卷起, 从而
+方便抄录 Terminal 中的运行结果, 或者观察状态. 我的实现也很简单, 就是在 my-yakuake 失去焦点之后,
+查看此时窗口所在 layer, 如果是高于 0 层, 那么即使失去焦点, my-yakuake 也不会卷起. 所以如果要抄录
+某些数据, 可以使用 W-p 将 my-yakuake 放在高层&#x2026;
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(defun c-jump-or-exec-my-yakuake()
+  (interactive)
+  (c-jump-or-exec "yakuake"
+                  (lambda ()
+                    (wy-run "gnome-terminal -t my-yakuake &#x2013;hide-menubar &amp;"))
+                  (lambda (wind)  ; when already focused
+                    (iconify-window wind))))
+;; 如果窗口名为 my-yakuake 而且 此窗口在 0 层以下
+;; 则自动最小化
+(defun c-yakuake-lose-focus(w)
+  (when (and (string-match "my-yakuake" (window-name w))
+             (&lt;= (window-get w 'depth) 0))
+                    (iconify-window w)))
+</p>
+
+<p>
+(add-hook 'focus-out-hook c-yakuake-lose-focus)
+(bind-keys global-keymap "F12" 'c-jump-or-exec-my-yakuake)
+&lt;/src&gt;
+</p>
+
+<p>
+没想到我最喜欢的 Yakuake 在 sawfish 中可以如此简单地实现, 结果让我非常满意!!
+</p>
+
+<p>
+30.07.2009
+</p>
+
+<p>
+热烈庆祝 Emacs 23.1 正式版发布!
+</p>
+
+<p>
+因为 gnome-terminal 的光标一直闪个不停, 让我比较不爽. 虽然很多人将其报成 bug 希望维护者增加 '禁
+止闪烁' 的选项, 但是我升级到了测试版也没有看到此选项的出现, 所以打算换一个 terminal, xterm 默认安装,
+尝试了一下, 使用下面的命令启动, 可以实现指定字体, 标题等要求.
+</p>
+
+<p>
+&lt;example&gt;
+xterm -fa "YaHeiMono" -fs 9 -n "my-yakuake" &amp;
+&lt;/example&gt;
+</p>
+
+<p>
+结果很尴尬的就是, xterm 不支持 readline. 比如 C-p, C-a 之类的命令都无效了, 这个太让我不能接受了.
+google 了半天, 没有找到简单有效的解决办法, 所以只好放弃了. 回到原来的 gnome-terminal. 如果想要关
+闭闪烁的光标的话, 可以到 gnome-keyboard-properties 将光标闪烁关闭. 但是那样的话, 所有 gtk 的闪烁
+光标都被禁用, 包括文本输入框. 我后来想想, 其实闪烁的光标也没那么恶心了.
+</p>
+
+<p>
+31.07.2009
+</p>
+
+<p>
+庆祝 Emacs 23.1 正式版加入 Gentoo Portage 中.
+</p>
+
+<p>
+最近启动到桌面系统以后, 有几次 Emacs 等 GUI 不能正常启动, fcitx 使用率上升到 50%. 怀疑 fcitx 有
+问题. 如果继续发生, 我将使用源码手动安装 fcitx 3.6.
+</p>
+
+<p>
+问题又次出现, 我干脆下载了 gentoo-china 的一个 ebuild, 放在自己的 local overlay 中. 这个 ebuild
+以前用过, 应该没有什么问题.
+</p>
+
+<p>
+nautilus 2.24 开始就已经支持 TAB 了. 不过功能好弱阿. 基本只有新建: C-t, 关闭: C-w, 下翻:
+C-pagedown, 上翻: C-pageup. 打开某个 Tab: M-num.
+</p>
+
+<p>
+升级到 2.26, 没有开到多大区别. 我在 .sawfishrc 中定义按键转换: M-p 转为上翻, M-n 为下翻, C-M-n
+为新建. 这样就和我在 kconsole 中定义的一样了. 可能稍微舒服一些. 以后考虑更多使用一个 instance 来
+处理事物.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Lizhuo Chen</p>
+<p class="date">Created: 2021-07-03 Sat 22:40</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

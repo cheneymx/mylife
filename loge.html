@@ -1,0 +1,4792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-07-03 Sat 22:40 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Log</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Lizhuo Chen" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Log</h1>
+<p>
+#top Time-stamp: &lt;03/07/2021 edited by Lizhuo Chen&gt;
+</p>
+<p>
+旧的足迹：
+</p>
+
+<p>
+<a href="./log_old.html">./log_old.html</a>
+</p>
+
+<p>
+01.08.2009
+</p>
+
+<p>
+使用 svn 管理系统配置有个好处, 就是重装, 升级软件的时候, 配置文件可能会被默认的配置文件代替, 这
+个时候如果有 svn 在管理, 就可以很快发现区别. 这个对 fcitx 尤其有用.
+</p>
+
+<p>
+06.08.2009
+</p>
+
+<p>
+刚才阅读了关于 tmpfs 的文章, 发现可以对 /tmp 以及 /var/tmp/portage 使用 tmpfs 的虚拟硬盘, 将这些
+反复读写的部分放在 内存 中. 原来放在单独的磁盘估计还不不能获得最佳性能. 如下是我在 fstab 中加入
+的设置. 我不是很清楚, 为什么 一个是 none 一个是 tmpfs, 估计这两个其实没什么区别. 因为是从不同的
+文章中获取的, 我也懒得去验证了.
+</p>
+
+<p>
+&lt;example&gt;
+tmpfs 			/tmp 		tmpfs 		defaults,nosuid,size=4000M,mode=1777 0 0
+none 			/var/tmp/portage	tmpfs 		size=4000M,nr<sub>inodes</sub>=1M 0 0
+&lt;/example&gt;
+</p>
+
+<p>
+我的 swap 是 2G, RAM 是 2G, 当 内存用完之后, Linux 会考虑使用 swap. 估计除了编译 openoffice 之类
+的个别巨型软件以外, swap 根本是不需要的.
+</p>
+
+<p>
+11.08.2009
+</p>
+
+<p>
+真不是又想吹捧 EMACS, 但是确实太强大了!
+</p>
+
+<p>
+从酷狗上下载的 mp3 都带有多个 .mp3 后缀, 比如 song.mp3.mp3.mp3, 虽然对于播放没有影响, 但是今天我
+让播放中的歌曲在 conky 中显示, 而只有文件名能保证不会被显示成乱码, 这样的文件名也确实难看. 我于
+是决定改名. 事情本来很简单: 将多余的后缀删去, 但是因为数量很大, 写个脚本又太小题大做&#x2026;
+</p>
+
+<p>
+为难之际, 我想到了 Emacs. 进入 dired 模式, 按下 r 进入编辑文件名状态, 然后就可以象修改普通文本文
+件一样批量处理文件名了. 直接用 query-replace 命令, 选择 mp3 替换 mp3.mp3, 然后一路 y 便将问题解
+决了. 太神奇了!
+</p>
+
+<p>
+12.08.2009
+</p>
+
+<p>
+IBM 的保修可以到 <a href="http://www-947.ibm.com/systems/support/machine_warranties/index.html">http://www-947.ibm.com/systems/support/machine_warranties/index.html</a> 查看是否已
+经过了保修期, 以及如何保修. 我的电脑保修到 2010-09-04.
+</p>
+
+<p>
+14.08.2009
+</p>
+
+<p>
+今天将 Debian 的系统从 /dev/sda4 转到了 /dev/sda9, 方法很简单: 进入 Gentoo, 保证不会有其他程序去
+读写 sda4 中的文件, 然后使用 dd 命令:
+</p>
+
+<p>
+&lt;example&gt;
+dd fi=/dev/sda4 fo=/dev/sda9
+&lt;/example&gt;
+</p>
+
+<p>
+经过 10 分钟, sda4 中的每个字符都被拷贝到了 sda9 中, 然后修改 menu.lst 以及 debian 的 /etc/fstab
+文件 即可.
+</p>
+
+<p>
+网上说直接使用 复制粘贴 也能转移系统分区, 毕竟 linux 就是比较简单, 不像 windows 系统盘那么匪夷所思.
+</p>
+
+<p>
+另外根据 gentoo doc 中的 'Changing the Runlevel Behaviour' 一文, 增加了两个启动项, 分别启动进入
+'无网络状态' 和 '纯命令行状态'.
+</p>
+
+<p>
+进入 纯命令行状态 修复某些配置应该还是比较快捷的.
+</p>
+
+<p>
+18.08.2009
+</p>
+
+<p>
+不在使用 gnome 啦! 基本问题都已经解决, 具体看 gentoo 下的 '告别 gnome' 一文. 现在启动系统之后,
+内存占用率仅仅为 4%, 实在太&#x2026;
+</p>
+
+<p>
+现在我的 gentoo 和 debian 的配置越走越远, 已经没有什么必要再去支持 debian 的配置文件了. 以后需要
+使用的时候, debian 应该完全定义自己的一套, 取消快捷方式. Gentoo 可以更多的尝试, debian 现在只不
+过时防止万一的替补选手.
+</p>
+
+<p>
+28.08.2009
+</p>
+
+<p>
+从 ext3 升级到 ext4 失败了&#x2026; 导致整个 lvm 出错. 幸亏在 22 号的时候因为安装 lvm 而完全备份了整个
+系统&#x2026; 数据恢复到 22 号状态. 心疼我这周写的笔记&#x2026; 以后再要折腾分区, 一定要备份, 最好时完全备份.
+</p>
+
+<p>
+29.08.2009
+</p>
+
+<p>
+原来 emacs<sub>lib</sub> 的备份文件 *.tar 无法打开, 今天看了一下生成备份文件的 bash script, 发现其实生成的
+应该时 *.tar.gz, 加上了扩展 .gz, 问题就解决了. 我顺便比较了一下 tar 和 tar.gz 的差别.
+</p>
+
+<p>
+&lt;example&gt;
+emacs<sub>lib</sub><sub>org</sub>: 109.5 MB
+emacs<sub>lib.tar</sub>: 110.8 MB
+emacs<sub>lib.tar.gz</sub>: 56.9 MB
+&lt;/example&gt;
+</p>
+
+<p>
+所以 tar 仅仅将文件打包了, 并没有做任何压缩, 导致打包后的文件居然比原来的还大. 不过加上 gz 扩展
+之后, 效果还是比较让人满意的.
+</p>
+
+<p>
+24.09.2009
+</p>
+
+<p>
+YaHeiMono 能够确保英文字母大小刚好为汉字的 1/2, 在显示小字体的时候, 比如 6 号字, YaHeiMono 显示
+出来的英文字体破碎不堪, 这种情况就得使用 Consolas 代替了.
+</p>
+
+<p>
+29.09.2009
+</p>
+
+<p>
+基本解决了 gnus 显示 html 邮件图片的问题.
+</p>
+
+<p>
+使用 visudo 可以让用户在不用输入密码的情况下, 执行特定的命令, 比如关机:
+</p>
+
+<p>
+&lt;example&gt;
+</p>
+
+<p>
+%wheel Cherry=NOPASSWD: /sbin/halt
+&lt;/example&gt;
+</p>
+
+<p>
+所有属于 wheel group 的用户执行 sudo halt 之后便不需要再输入任何密码了.
+</p>
+
+<p>
+06.10.2009
+</p>
+
+<p>
+昨天升级 xorg-server 之后, 键盘和鼠标都没有任何效果了, 可是把我郁闷了半天. 今天上网搜索, 解决办
+法之一就是重新 emerge xorg-server, 不过去掉 hal 这个 USE-flag. 之后重启, 问题依旧, 更愁了. 不过
+想到当时 emerge xorg-server 的时候, 系统要求我重新编译所有 x11 的驱动, 其中包括了 keyboard 和
+mouse. 重新编译以后, 问题就解决了, 而且现在 windows 键又被映射为 Super 键了. 呵呵.
+</p>
+
+<p>
+今天进了 rc.conf, 把 rc<sub>parallel</sub> 设置为 Yes, 这样各个 Service 就可以并行启动, 发现速度快了好多啊!
+关键是不用再等待 net.eth0 了.
+</p>
+
+<p>
+07.10.2009
+</p>
+
+<p>
+实验室的程序终于搞定了, 居然是把 ETA 写成了 Eta, 结果 Eta 是另外一个变量的名称. 所以找了很多天才
+发现. 发现的时候也是相当的有如神助.
+</p>
+
+<p>
+下载了 matlab 2009, 安装的时候, 如果不使用 root 权限安装, 结果会报错说 "Cannot locate Java
+Runtime Environment (JRE)"
+</p>
+
+<p>
+08.10.2009
+</p>
+
+<p>
+有点想实现 eclipse 中 Ctrl-Tab 快速切换 头文件 和 代码文件的函数, 不过估计有点点麻烦, 先搁置在这
+里, 下面两个函数是今天查到的, 可能有用.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(setq file-name (buffer-file-name))
+(file-name-extension file-name)
+&lt;/src&gt;
+</p>
+
+
+<p>
+使用 mailutils 中的 mail 命令之后, 系统发送错误报告: sh: sendmail:/usr/sbin/sendmail: No such
+file or directory, 查看了 bugs.gentoo.org 后发现, 解决方法可以是:
+</p>
+
+<p>
+you re-emerge with `EXTRA<sub>ECONF</sub>="&#x2013;enable-sendmail" emerge mailutils`
+</p>
+
+<p>
+不过我最后自己修改了原来的 ebuild, 加上 &#x2013;enable-sendmail 的选项, 而且关键是去掉了原来的一个
+&#x2013;disable-sendmail 的选项.
+</p>
+
+<p>
+10.10.2009
+</p>
+
+<p>
+今天升级系统, 安装了 jpeg-7 包, 结果因为太多软件依赖于这个库文件, 而 libjpeg.so.7 和原来的
+libjpeg.so.26 接口不一致, 所以执行了 revdep-rebuild 以后, 27 个软件需要重新编译. 电脑呼哧呼哧跑了
+1.5 小时, 总算是搞定了. Emacs 之类的软件都正常了, 不过 s-c 启动 nxclient, 结果系统说找不到
+libjpeg.so.26. 想想, 原因八成是因为 nxclient 不是从源代码安装的, 所以 revdev-rebuild 不能检测出它
+到底依赖什么库文件.
+</p>
+
+<p>
+简单的建议个 libjpeg.so.26 软链接指向 libjpeg.so.7 的办法是不行的, 虽然 nxclient 能启动, 但是里面
+的图标都没法看. 从网上下载了 nxclient 的源代码包, 打开一看, 果然是编译以后的结果. 里面就有
+libjpeg.so.26, 直接拷贝到 /usr/lib, 解决问题.
+</p>
+
+<p>
+12.10.2009
+</p>
+
+<p>
+发现使用并行启动组件以后, tpfand 不能成功运行. 但是在启动完成以后再运行则没有任何问题. 我稍微看
+了一下 tpfand 的介绍, 发现它依赖于 dbus, 于是在 /etc/init.d/tpfand 加上了关于依赖的设置:
+</p>
+
+<p>
+&lt;example&gt;
+depend() {
+	need dbus
+	use logger
+	after xdm
+}
+&lt;/example&gt;
+</p>
+
+<p>
+这样它就依赖于 dbus, 另外 tpfand 不用急着启动, 干脆将它放到 X 启动之后. 测试一切正常.
+</p>
+
+<p>
+13.10.2009
+</p>
+
+<p>
+alarm-clock 不知为何不能正常启动. 想办法自己整一个极其简单的约会提醒程序. 最后解决办法为:
+emacs + fcron + conky + sawfish.
+</p>
+
+<p>
+Emacs 中使用 calendary + diary 写下约会的时间, Emacs 会提前 30 分钟 (在 Emacs 状态栏) 自动提醒.
+python 脚本分析 diary 的文件, 将即将到来的约会输出到 .c<sub>info</sub> 文件中. sawfihs 的 "rich-title" 插
+件查看 .c<sub>info</sub> 是否已有内容, 如果是的话, 在窗口上显示 '&#x2013;&gt; New Appt &lt;&#x2013;', 另外 conky 将 .c<sub>info</sub>
+中的内容输出到屏幕上. 所以现在我的特殊闹钟和邮件一样, 三管齐下: 窗口, emacs, conky.
+</p>
+
+<p>
+尝试将 common 的容量从 20G 增加到 25G, 使用了两个命令, 花了 5 秒钟:
+</p>
+
+<p>
+&lt;example&gt;
+lvresize -L +5G /dev/clvm/common
+resize2fs /dev/clvm/common
+&lt;/example&gt;
+</p>
+
+<p>
+resize2fs 支持 ext4.
+</p>
+
+<p>
+24.10.2009
+</p>
+
+<p>
+修改了 c-more-space 函数, 现在不再简单地删去右侧的窗口了, 那样实在不怎么的. 现在此函数将右侧的窗
+口删去, 然后在下方打开, 尽量不改变原来的窗口顺序.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(defun c-more-space()
+  "Moeglichst viel Flaeche wird von aktualem Window genommen. Andere Windows
+im Frame werden gezwungen, min-height zu erreichen"
+  (interactive)
+  ;; delete vertically splitted windows
+  (let* ((w0 (selected-window)) (buf0 (window-buffer w0)) (wl (window-list))
+         (n (length wl)) (wmin window-min-height) (w0<sub>deleted</sub><sub>p</sub> nil)
+         (closed<sub>bufs</sub> nil) (buttom 0) tmp win<sub>at</sub><sub>buttom</sub> elem buf n1)
+    (while (&gt; n 0)
+      ;; get an element
+      (setq elem (nth (- n 1) wl))
+      (if (not (equal (car (window-edges elem)) 0))
+          ;; buffers, which are not at the left side
+          (progn
+            ;; save these buffer, they will be opened at the end
+            (when (equal elem w0)
+              (setq w0<sub>deleted</sub><sub>p</sub> t))
+            (push (window-buffer elem) closed<sub>bufs</sub>)
+            (delete-window elem))
+        ;; I want to know the window at the buttom
+        (setq tmp (second (window-edges elem)))
+        ;; tmp = 0 is for the initialization of win<sub>at</sub><sub>buttom</sub>
+        (when (&gt;= tmp buttom)
+          (setq buttom tmp)
+          (setq win<sub>at</sub><sub>buttom</sub> elem)))
+      (setq n (- n 1)))
+</p>
+
+<p>
+(setq n (length closed<sub>bufs</sub>))
+(when (&gt; n 0)
+  (select-window win<sub>at</sub><sub>buttom</sub>)
+  ;; get enough space for the closed buffers
+  (setq n1 (length (window-list)))
+  (enlarge-window (- (frame-height) (window-height) (* (- n1 1) wmin) 1)))
+</p>
+
+<p>
+    ;; I am going to use function 'pop', so the orientation will be changed
+    (setq closed<sub>bufs</sub> (reverse closed<sub>bufs</sub>))
+    ;; open the closed buffers
+    (while (&gt; (length closed<sub>bufs</sub>) 0)
+      (setq tmp (split-window nil wmin))
+      (select-window tmp)
+      (setq buf (pop closed<sub>bufs</sub>))
+      (set-window-buffer tmp buf)
+      (when (and w0<sub>deleted</sub><sub>p</sub> (equal buf buf0))
+        (setq w0 tmp)))
+    (select-window w0)
+    (let ((n1 (length (window-list))))
+      (enlarge-window (- (frame-height) (window-height) (* (- n1 1) wmin) 1)))))
+&lt;/src&gt;
+</p>
+
+<p>
+26.10.2009
+</p>
+
+<p>
+搞定了 c 模式下的代码折叠, 不过发现折叠了代码以后移动光标比较占用资源, 有点卡. 看来适合简单定位,
+定位完成了还是应该展开的.
+</p>
+
+<p>
+28.10.2009
+</p>
+
+<p>
+在 elecPDE.cc 中, 太多的测试代码使用 #if 0 &#x2026; #endif 注释掉. 使得程序看起来很不明了. eclipse 使
+用灰色标记了这些代码. 我想起 emacs 可以将 #if 0 &#x2026; #endif 这样的代码折叠起来. 但是就是想不起来
+是什么了. 上网查了一下是  hide-defif-mode, 看了我 c-mode 的配置文件, 已经设置完毕. 看来确实需要
+不断温习.
+</p>
+
+<p>
+16.11.2009
+</p>
+
+<p>
+有人在 gentoo 论坛上让我共享一下我的 sawfish 配置, 我本来想写一篇文章. 结果写了 一个多小时 以后
+才发现, 这个工程对于现在的我来说实在太重了, 于是给那位发了封邮件, 简单介绍了一下我的配置:
+</p>
+
+
+<p>
+首先: 我的系统是 gentoo, sawfish 1.6.0, 没有gnome等桌面环境
+其次: c- 开头的函数, 插件基本都是我自己写的. 有些并不是我原创的, 而是在别人的代码上修改,以适合
+自己的需求. 为了防止别人在升级插件版本的时候, 将自己的修改覆盖, 所以我将这些函数也加上了 c- 前缀.
+你可以看看是不是适合你, 一般都有比较详细的注释. 我不确定是否有些是用德文写的.
+</p>
+
+<p>
+我没有真正的研究过 lisp 语言, 就是简单地水木社区看了 叶文彬 写的 elisp编程入门 了解的, 基本上的代
+码思路都是使用 c 语言 :) 所以常常用 while 便利 list, 其实有更好的命令. 不过我只要能用就好. 我对于
+自己代码的可靠性还是比较放心的, 应该没什么 bug, 起码在我这里用了很久了.
+</p>
+
+<p>
+下面说说我觉得你可能有兴趣的东东:
+</p>
+
+<p>
+很赞的插件/配置:
+</p>
+
+<ol class="org-ol">
+<li></li>
+</ol>
+<p>
+&lt;src lang="shell-script"&gt;
+;; 在屏幕上显示函数执行中的错误
+(require 'sawfish.wm.ext.error-handler)
+(setq error-destination 'screen)
+&lt;/src&gt;
+</p>
+
+<ol class="org-ol">
+<li>你如果定义很多快捷键, 又象我一样, 基本 Ctrl, Alt, f1&#x2026; 等键都是为 emacs 预留的, 那么你可能</li>
+</ol>
+<p>
+需要下面这个代码:
+</p>
+
+<p>
+&lt;src lang="shell-script"&gt;
+(define my-sawfish-keymap (make-keymap))
+(bind-keys global-keymap "F10" my-sawfish-keymap)
+(bind-keys my-sawfish-keymap
+           "a" 'c-mpd-toggle
+           "i" 'c-jump-or-exec-inkscape)
+&lt;/src&gt;
+</p>
+
+<p>
+这里 F10-a 就调用了 c-mpd-toggle
+</p>
+
+<ol class="org-ol">
+<li>app 和 jump-or-exec 两个脚本的作用我估计你应该知道. 基本上也是我使用最频繁的.</li>
+</ol>
+
+<p>
+app 的最大好处就是如果有多个实例存在, 可以依次聚焦到每个实例上这个对于 urxvt 之类的程序比较好. 否
+则应该尽量使用 jump-or-exec因为 app 对于不同虚拟桌面之间窗口的跳转不怎么理想
+</p>
+
+<p>
+c-jump-or-exec 其实就是加了一点: 很多窗口没有固定的窗口名, 所以我增加了对窗口 class 的检测. 有了
+app 以后, 这个加强就没什么大用处了, 推荐使用原版 jump-or-exec.
+</p>
+
+<ol class="org-ol">
+<li>我最自豪的就是使用 gnome-terminal 模拟 yakuake. 下面是我以前激动心情下写的笔记, 你看了别反胃:</li>
+</ol>
+<hr />
+<p>
+yakuake 完美实现
+</p>
+
+<p>
+为了能在 Gentoo 中安装 yakuake, 我得编译 200+ M 的代码, 安装大量根本没有其他用处的软件. 这是我所
+非常不愿意看到的. 但是在卸载了 yakuake 之后, 我的 'F12-习惯' 让我感觉非常难过. 忽然我想到了使用
+sawfish 的函数实现 Yakuake. 方法其实很简单, 我要的 Yakuake 其实关键就是: 招之即来, 挥之即去. 而
+且不要在 窗口的选择列表 之中.
+</p>
+
+<p>
+我用 gnome-terminal 建立一个名叫 my-yakuake 的 Terminal, 隐藏起 menubar. 然后使用 sawfish
+"matched windows" 的功能规定 新建的 Terminal 的尺寸和位置. 另外通过设定
+iswitch-filter-out-window-name-regexp-list 将此 Terminal 排除在 窗口选择列表 此外.
+</p>
+
+<p>
+然后在 rc 中写 c-jump-or-exec-my-yakuake 跳转到 Terminal. 如果此窗口已经 focused, 那么再按下 F12
+就表示最小化此窗口. 这些都是符合 yakuake 模式.
+</p>
+
+<p>
+还有一点, 是我非常喜欢, 就是 yakuake 在失去焦点的时候, 会自动卷起. 这点连 tidla 都不具备. 在
+sawfish 下的实现也不是很复杂, 查到有个 focus-out-hook, 在失去焦点的时候, 运行
+c-yakuake-lose-focus 函数, 判断失去焦点的窗口是否是 my-yakuake, 如果是的话, 将此窗口最小化.
+</p>
+
+<p>
+最后, 我想到 yakuake 还有一个小锁, 点击小锁之后, 即使 yakuake 失去焦点, yakuake 也不会卷起, 从而
+方便抄录 Terminal 中的运行结果, 或者观察状态. 我的实现也很简单, 就是在 my-yakuake 失去焦点之后,查
+看此时窗口所在 layer, 如果是高于 5 层 (yakuake 启动时默认为 5 层, 防止被其他窗口遮挡), 那么即使失
+去焦点, my-yakuake 也不会卷起. 所以如果要抄录某些数据, 可以使用 W-p 将 my-yakuake 放在高层&#x2026;
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(defun c-jump-or-exec-my-yakuake()
+  (interactive)
+  (c-jump-or-exec "yakuake"
+                  (lambda ()
+                    (wy-run "gnome-terminal -t my-yakuake &#x2013;hide-menubar &amp;"))
+                  (lambda (wind)  ; when already focused
+                    (iconify-window wind))))
+;; 如果窗口名为 my-yakuake 而且此窗口在 6 层以下
+;; 则自动最小化
+(defun c-yakuake-lose-focus(w)
+  (when (and (string-match "my-yakuake" (window-name w))
+             (&lt; (window-get w 'depth) 6))
+                    (iconify-window w)))
+</p>
+
+<p>
+(add-hook 'focus-out-hook c-yakuake-lose-focus)
+(bind-keys global-keymap "F12" 'c-jump-or-exec-my-yakuake)
+&lt;/src&gt;
+</p>
+
+<p>
+没想到我最喜欢的 Yakuake 在 sawfish 中可以如此简单地实现, 结果让我非常满意!!
+</p>
+
+<p>
+update: 默认情况下, 如果切换到 root 状态后, gnome-terminal 的标题会变成 'Root@:' 之类, 这时候,
+sawfish 就不能按我要求去处理此 terminal 的各种动作. gnome-terminal 没有选项禁止更改标题, 不过发现
+在 profile/title and command 下将 'When terminal commands set their won titles:' 改为 'Append
+initial title' 之后, gnome-terminal 的原始 title 就变成了 my-yakuake - my-yakuake, 而中途切换用户,
+仅仅前面一个标题被修改, 横线后面依然有 my-yakuake 的标题, 所以 sawfish 依然能够正确找到此
+terminal, 并正确执行命令. 这个问题在 xterm 之类的终端都会出现, gnome-terminal 的这个 append 选项
+真是有用哈.
+</p>
+
+<p>
+另外, 因为 gnome-terminal 启动比较慢, 其实大约费时越 3 秒, 但是我按下 F12, 等 3 秒才能输入 d 来
+启动 deluge, 这个就让人不舒服了. 于是我让 gnome-terminal 随系统启动, 然后在 matched-windows 里面
+设置 my-yakuake 启动时自动最小化. 今天稍微看了一下 gnome-terminal 的其他设定, 发现居然还可以设置
+输入 exit 以后的行为. 其中有个选项居然是 重新启动. 选了这个选项之后, 我的 my-yakuake 就和
+yakuake 实在太象了.
+</p>
+<hr />
+
+<p>
+要实现 yakuake 的功能, 别忘了加上 c-match-windows.jl 中关于 my-yakuake 的配置, 那里定义了 终端的
+位置, 大小等等重要信息.
+</p>
+
+<ol class="org-ol">
+<li>iswitch 当然很重要, 我也修改了一下代码, 因为我们中文用户有很多的窗口名字是完全中文的, 如果选</li>
+</ol>
+<p>
+择项中有 20 个, 那么 一下下 按 Tab 很痛苦, 输入中文也很难受. 我的解决方案就是加上数字序号, 变成
+了:
+</p>
+
+<p>
+&lt;example&gt;
+</p>
+<ol class="org-ol">
+<li>新浪</li>
+<li>不错的网站</li>
+<li>&#x2026;&#x2026;</li>
+</ol>
+<p>
+&lt;/example&gt;
+</p>
+
+<p>
+那么可以通过前面的数字快速检索. 另外还增加了一些快捷键, 比如 Ctrl-k 是结束关闭最上面的那个窗口,
+不过都是小改动.
+</p>
+
+<ol class="org-ol">
+<li>smart-tile 是我最喜欢的插件. 我对其改动相当多. 原来的脚本有些小 bug.</li>
+</ol>
+<p>
+具体说明在 rc 文件中已经描述. 我很想有空玩玩平铺式窗口管理器, 那样我觉得可以更好地扩展这个插件.
+我用得最多的就是 c-tile-windows-restore-min
+</p>
+
+<ol class="org-ol">
+<li>rich-title, 看人用了. 我用它来通知我是否有新邮件, 有新的会见等等.</li>
+
+<li>dual monitor: 我花了 100 人民币买了台 二手液晶显示器, 所以写了关于 dual monitor 的插件, 稍微玩</li>
+</ol>
+<p>
+了玩, 感觉还不错, 不过如果单显示器就不需要了
+</p>
+
+<ol class="org-ol">
+<li>c-convert-event.jl 这个插件实现功能现在已经不在需要, 起码到 sawfish 1.6.0 已经通过</li>
+</ol>
+<p>
+match-window 的来实现了, 连我自己也不用了.
+</p>
+
+<p>
+详见 c-match-windows.jl 中 add-windows-matcher &#x2026;. keymap-trans 的配置.
+那些东西都是一看就明白的.
+</p>
+
+<p>
+好吧, 我把我乱七八糟糊弄的结果都给你发过去了. 如果还有什么问题, 我们可以交流交流. 如果发现 bug,
+那一定要告诉我.
+</p>
+
+<p>
+03.12.2009
+</p>
+
+<p>
+Acroread 9 相当垃圾! 常常崩溃或者无相应. 但是在浏览 beamer 做的 pdf 文件时, evince 支持不是很好,
+导致我将 acroread 9 装了删, 删了装. 今天终于受不了了, 决定不用 portage 里的 acroread 9, 而去官网
+下载了 acroread 8. 安装完毕以后, 感觉速度和稳定性都有较大的提高&#x2026;
+</p>
+
+<p>
+04.12.2009
+</p>
+
+<p>
+今天装上了 xfce4-panel, 感觉还不错. 恩, 还有 dropbox, 也还好. 就是不知道用到的机会是多少.
+</p>
+
+<p>
+05.12.2009
+</p>
+
+<p>
+今天没能搞定 KMS, 根据论坛只字片语描述的步骤之后, smplayer 只能用软件解码了. 升级 xorg-server 到
+测试版以后, 字体破碎不堪. 我知道这个应该是 dpi 的问题. 在 .Xdefault 中设置了 Xtf.dpi:147 以后,
+gtk2, xft 等程序的字体都已经没有问题, 不过不知道为何 emacs 还有 evinice 的 dpi 很明显还是 120 左
+右. 因为正在论文期, 直接将 xorg-server 退回稳定版.
+</p>
+
+<p>
+不过我找到网页, 知道设置了 Xtf.dpi 之后, gkt, qt都会使用这个 dpi. 否则他们会自动判断 dpi. 另外,
+原来曾经设置过 dpi, 无效的原因是 开头的 x 没有大写! 所以软件直接忽略了这个设定, 而使用自行判断的
+dpi. 在但显示器的情况下, 结果还是可以的, 但是到了多显示器的时候, 错误的 dpi 导致了字体破碎. 于是,
+只要正确设定 dpi, 即使在多显示器的情况下, 依然可以使用原来的各种设置, 不需要象原来那样给单显和多
+显不同的配置文件, 而且还在启动时候自动判断&#x2026; 都不用了!
+</p>
+
+<p>
+07.12.2009
+</p>
+
+<p>
+打算使用两个密钥, 一个使用复杂密码, 加密重要文件. 一个使用简单密码, 作为发出邮件的数字签名.
+</p>
+
+<p>
+12.12.2009
+</p>
+
+<p>
+不知道为什么, 在安装 sawfish 的时候, 执行 configure, librep 常常找不到. 我将 librep 安装到了/usr
+下面, sawfish-1.6.0 (svn) 可以将其找到了, 但是刚下载了 sawfish-1.6.0-rc1, 结果又是同样的问题. 怪
+了. 现在 librep, rep-gtk 都出了官方的 ebuild. 用他们的 ebuild, 这两个软件都安装在/usr/local 下面,
+官方的 sawfish-1.5.3 是没有问题的, 不过我的 sawfish-1.6.0 就不行&#x2026;. 莫名其妙.
+</p>
+
+<p>
+12.12.2009
+</p>
+
+<p>
+我发现 gnus 将不同人的邮件罗列到一组中, 我仔细查看了一下, 原来这些邮件标题都是 hi 或者 Re:hi,
+gnus 认为这些是一个主题的邮件. 应该算是智能了, 可惜我标题常常使用 hi &#x2026;  这个看来是我自己的问题
+了 :)
+</p>
+
+<p>
+我将 mail.misc 和 mail.sent 设定为自动过期. 阅读过的邮件都会在固定时间, 比如 45 天以后自动被删除.
+朋友的邮件会放到 mail.friends 中, 那里的邮件不会过期.
+</p>
+
+<p>
+10.01.2010
+</p>
+
+<p>
+今天在 USB Flash Stick 中安装 Gentoo. 慢啊! 编译一个 200K 的软件都很痛苦. 安装 urxvt 的时候居然
+报错说磁盘空间用尽&#x2026; 我总共给 Gentoo 分了 4G, 已经很阔绰了! 看了一下, 主要是在 /var/tmp 中解压
+缩非常缓慢, 而且占用了大量的空间. 这个好说, 我用内存来空间替代 /var/tmp :
+</p>
+
+<p>
+&lt;src lang="shell-script"&gt;
+mount -t tmpfs var/tmp/portage
+&lt;/src&gt;
+</p>
+
+<p>
+安装结束以后, 可以在 fstab 中加入:
+</p>
+
+<p>
+&lt;example&gt;
+none /var/tmp/portage tmpfs size=1512M,nr<sub>inodes</sub>=1M 0 0
+&lt;/example&gt;
+</p>
+
+<p>
+处理过后, 那速度提高了 N 多倍. 想想 U 盘的传输速度 和 内存的传输速度&#x2026; 能比么?
+</p>
+
+<p>
+16.01.2010
+</p>
+
+<p>
+昨天看到一篇文章, 所以在 firefox 设置对话框中, 可以将密码明码显示出来. 我今天尝试了一下, 果然.
+赶紧勾上了 'Use a master password' 来保护这些密码.
+</p>
+
+<p>
+update: 后来又将这个密码取消了&#x2026;. 因为使用了这个密码以后, 每次进入 gmail 等等都得输入一次
+master password. 唉.
+</p>
+
+<p>
+27.01.2010
+</p>
+
+<p>
+前天通宵, 将 Studienarbeit 的讲稿搞定&#x2026; 前些时间玩 博得之门 太过火了. 不过昨天的报告时间控制地相
+当不错, 老大们的反应还是很好的. 尤其是我的导师对我删减的内容, 以及 Folien 中颜色的运用给予了充分
+的肯定. 下面是我的大部分讲稿:
+</p>
+
+<hr />
+
+<p>
+Meine Damen und Herren, zuerst herzlich willkommen zu meinem Vortrag.
+</p>
+
+<p>
+In diesem Vortag möchte ich eine Abbildungsmethode, nämlich "Blending-Funktionen-Methode", für
+die p-Version der finiten Elementen Mothode vorstellen.
+</p>
+
+<p>
+Am Anfang werde ich aufzeigen, warum die Methode von der $p$-FEM benötigt ist.
+</p>
+
+<p>
+Dann möchte ich die mathematischen Grundlagen der Blending-Funktionen-Methode und der
+Nurbs-Kurven erläutern.
+</p>
+
+<p>
+Danach werden einige Untersuchungen gezeigt, damit man die Eigenschaften dieser
+Abbildungsmethode besser kennenlernen kann.
+</p>
+
+<p>
+Am Ende kommt noch die Zusammenfassung dazu.
+</p>
+
+<p>
+Die Finite Elemente Methode hat sich in den letzten 50 Jahren zum wohl meist verwendeten
+Diskretisierungsverfahren entwickelt.
+</p>
+
+<p>
+h-FEM und p-FEM sind zwei wichtige Versionen der FEM.
+</p>
+
+<p>
+Bei h-FEM wird das Netz für die Simulation verfeinert, damit die Genauigkeit der Lösungen
+verbessert werden kann. Im Gegensatz dazu wird das Netz bei p-FEM gleich gelassen und den
+Polynomgrad der Basisfunktionen erhöht.
+</p>
+
+<p>
+Seite 5
+</p>
+
+<p>
+Betrachtet wird ein Zylinderkondensator.
+</p>
+
+<p>
+Anhand der geometrischen Symmetrie reicht eine Betrachtung eines Viertelkreisrings in 2D. Auf
+den beiden Elektroden sind die Potentiale schon vorgegeben. Auf den anderen Kanten sollte die
+Neumann-Randbedingung erfüllt werden, d.h. kein elektrischer Fluß geht durch diese Kante nach
+außern.
+</p>
+
+<p>
+Seite 6:
+</p>
+
+<p>
+Vor der Berechnung muss das Modell diskretisiert werden.
+Bei h-Fem werden die Kurven durch zahlreiche stückweise gerade Linien angenähert.
+</p>
+
+<p>
+Aber bei p-FEM ist der Geometriefehler groß und kann man nicht durch Erhöhung des Polynomgrades
+der Basisfunktionen den Geometriefehler beheben.
+</p>
+
+<p>
+Die Blending-Funktionen-Methode ist eine gute Lösung für die Probleme mit gerükmmten Kanten.
+</p>
+
+<p>
+Nun möchte ich die mathematischen Grundenlagen aufzeigen.
+</p>
+
+<p>
+Die meisten Berechnungen in der FEM werden in Referenzelementen ausgeführt. Nach den
+Berechnungen müssen die Ergebnisse von dem lokalen Koordinatensystem auf dem globalem
+Koordinatensystem abgebildet werden.
+</p>
+
+<p>
+Unter Anwendung der Blending-Funktionen-Methode besteht die Abbildungsfunktion aus zwei Terme.
+</p>
+
+<p>
+Der erste Term beschreibt die Abbildung von dem Referenzelement auf dem vierekigen Element. Bei
+dieser Abbildung werden alle Kante als gerade angenommen.
+</p>
+
+<p>
+Durch den zweiten Term werden die Kurven berücksichtigt. Er ist die Summe der
+Kanten-Blending-Terme aller Kanten.
+</p>
+
+<p>
+Seite 9
+</p>
+
+<p>
+E<sub>2</sub> ist eine Darstellung der gekrümmten Kante. Die Darstellungsmethode kann z.B. B-Spline-Kurve
+sein.
+</p>
+
+<p>
+Dieser Term beschreibt die gerade linie zwischen beiden Endepunkten.
+</p>
+
+<p>
+Also e<sub>2</sub>* bezeichnet die Differenz &#x2026;
+</p>
+
+<p>
+Durch die Multiplikation mit dem Blending-Term wird die Auswirkung der Differenz von dieser
+Kanten nach andrer Kanten ausgeblendet.
+</p>
+
+<p>
+Ebenso ist es bei den anderen gekrümmten Kanten.
+</p>
+
+<p>
+Um die E<sub>2</sub> bwz. die gekrümmten Kannten darzustellen, wird in dieser Arbeit die Nurbs-Darstellung
+verwendet.
+</p>
+
+<p>
+Seite 11
+</p>
+
+<p>
+NURBS steht für non-uniform rational B-Spline. Es ist eine Erweiterung der B-Spline-Kurve.
+</p>
+
+<p>
+In der Definition der Nurbs-Kurve sollte beachtet werden, dass in der Funktion der Parameter t
+eindimensional ist. Die Anzahl der Dimensionen des Ergebnisses wird von den globalen Koordinaten
+des Kontrollpunktes d<sub>i</sub> festgelegt.
+</p>
+
+<p>
+Wie bei der FEM sind die Basisfunktionen bei Nurbs-Kurven auch nur in einem kleinen endlichen
+Intervall von Null verschieden.
+</p>
+
+<p>
+Seite 12
+</p>
+
+<p>
+Im Vergleich mit B-Spline-Kurven, die Kegelschnitten nur approximieren können, können
+Nurbs-Kurven Kegelschnitte exakt beschreiben. Die Kreisbogen gehören auch zu Kegelschnitten.
+Außerdem werden die Nurbs-Kurven von GiD unterstützt.
+</p>
+
+<p>
+Ein Nachteil der Nurbs-Kurven ist, dass der Parameter t sich nicht exakt proportional zur Bogenlänge
+verhält. Seine negetive Folge wird später erläutert.
+</p>
+
+
+<p>
+Wenn ein Punkt auf einer Kurve ist, erfolgt die Abbildung von dem lokalen Koordinatensystem auf
+dem globalen Koordinatensystem erst mittels der Nurbs-Darstellung.
+</p>
+
+<p>
+Durch die Koordinate q wird den Parameter t bestimmt. Obwohl der Parameter t bei Nurbs-Kurven
+nicht exakt proportional zur Bogenlänge ist, wird die Proportionalität bei der Transformation
+von q nach t verwendet. Der durch die Annäherung erzeugte Fehler wird später aufgezeigt.
+</p>
+
+<p>
+Sobald der Parameter \(t\) bestimmt wird, setzt man ihn in die Nurbs-Darstellung ein und erhält
+die globalen Koordinaten.
+</p>
+
+<p>
+Jetzt werden einige numerische Untersuchungen gezeigt.
+</p>
+
+<p>
+In den Untersuchungen wurden hauptsächlich 3 Programme, GiD, CFS++ und Matlab verwendet.
+</p>
+
+<p>
+Man definiert das Modell in GiD und erhält durch TCL-Skripte die Nurbs-Informationen über alle
+gekrümmten Linien in der Geometrie. Alle Ausgaben von GiD werden in einer Datei gespeichert und
+danach von CFS++ eingelesen.
+</p>
+
+<p>
+Nach der Berechnung wird die Ausgabe von CFS++ durch Python-Skripte analysiert und in Matlab
+dargestellt.
+</p>
+
+<p>
+Sobald CFS++ die Informationen der Nurbs-Kurven hat, wird das Netz in CFS++ rekonstruiert und
+für alle weitere Berechnungen dieses Netzt verwendet.
+</p>
+
+<p>
+Zuerst wird ein qualitativer Vergleich gezeigt.
+</p>
+
+<p>
+Wegen des großen Geometriefehlers hat nicht nur die Größe sondern auch die Richtung der
+elektrischen Feldstärke große Abweichung von der Realität.
+</p>
+
+<p>
+In der zweiten Simulation wurde das rekontruiertes Netz verwendet. Man sieht in der Abildung
+keine auffalende Fehler. Die Richtung der elektrischen Feldstärke auf den graden Kanten nicht
+radial ist.
+</p>
+
+<p>
+In dieser Untersuchung werden die Fehler der Ergebnisse bei h-FEM und bei p-FEM miteinandern
+verglichen.
+</p>
+
+<p>
+Das Volumen und die Energie werden betrachtet. Sie sind einfach zu berechnen und auch einfach zu
+kontrollieren.
+</p>
+
+<p>
+Während das Netz bei p-FEM festbleibt, werden die Geometrie bei h-FEM immer feiner
+diskretisiert.
+</p>
+
+<p>
+Die Abbildung stellt die relativen Fehler in einem logarithmischen Maßstab über die Anzahl der
+Freiheitsgrade für die Berechnungen dar.
+</p>
+
+<p>
+Der relative Fehler des Volumens bei p-FEM ist schon ziemlich klein, ca. 10<sup>-14</sup>. Er ist
+unabhängig von dem Polynomensgrad p.
+</p>
+
+<p>
+Der relative Fehler der Energie reduziert sich schnell mit zunehmendem Polynomgrad.
+</p>
+
+<p>
+Bei h-FEM wurden die Kurven durch stückweise gerade Linien angenähert. Wegen der ungenügenden
+Geometrieapproximation hat diese Art der Geometrieerfassung großer relativer Fehler im Volumen
+und in der Energie.
+</p>
+
+<p>
+Außerdem ist die Konvergenzrate des Fehlers ziemlich klein.
+</p>
+
+<p>
+Obwohl das Ergebnis der Energie bei p-FEM schon zufriedenstellend ist, gibt es noch mehrere
+Verbesserungsmöglichkeiten.
+</p>
+
+<p>
+In folgenden Untersuchungen wurde das Netz B verwendet. Beim Netz B wurde die Geometrie durch
+eine Kurve in Umfangsrichtung manuell untergeteilt, damit man die Abbildungsfunktion Q<sub>e</sub> und die
+Jacobi-Matrix J trigonometrisch darstellen kann. Danach kann man die trigonometrische
+Darstellungen in CFS++ einsetzt und die neuen Ergenisse mit vorherigen Ergebnissen vergleichen.
+</p>
+
+<p>
+Die Table liefert die relativen Fehler der Energie unter verschienden Bedingungen.
+</p>
+
+<p>
+Schauen wir zuersten die ersten beiden Simulationen an. In den beiden Simulationen wurde nur
+verschiednen Netzen verwendet, aber der relativer Fehler der Energie hat sich vom ca. 10<sup>-10</sup> auf
+ca. 10<sup>-13</sup> reduziert.
+</p>
+
+<p>
+Die Ursache möchte ich anhand diese Abbildungen erklären. Dieser sind die globale Abildungen der
+lokalen Einheitsvektoren.
+</p>
+
+<p>
+Im viertelkreisring sollten die globale Abbildungen der lokalen Einheisvektoren entweder in
+Radialrichtung oder in tangentialen Richugntung zeigen. Nach der Gebietdiskretisierung stimmen
+die Richtungen dieser inneren Kanten nicht mit tangential Richtung überein. Daraus folgt, dass
+diese Kante die Abbildung verzerrt hat. z.B. auf dem gleichen Punkt wird ein lokaler
+Vektor in zwei verschiedene Richtungen abgebildet.
+</p>
+
+<p>
+Die Verzerrung hat Sprünge der Jacobi-Matrizen an den Kanten zur Folge. Die elektrische
+Feldstärke an Elementsgrenzen sind nicht mehr kontinuierlich und die künstliche Energie
+versteckt sich im System.
+</p>
+
+<p>
+Beim zweiten Fall hat die Gebietdiskretisierung die Abbildung nicht verzerrt. Deswegen ist die
+Energie beim zweiten Fall keiner als beim ersten Fall, ebenso ist der relative Fehler.
+</p>
+
+<p>
+Nun werden die beide Untersuchungen betrachtet. Anstatt der Nurbs-Darstellung wurde die
+trigonometrische Darstellung für die Kurve bei der letzten Simulation verwendet.
+</p>
+
+<p>
+Der realtive Fehler der Energie wurde weiter reduziert und zwar von 5 mal 10<sup>-13</sup> auf 10<sup>-13</sup>.
+</p>
+
+<p>
+Schauen wir mal die Ursache an.
+</p>
+
+<p>
+Der Parameter t in der Nurbs-Darstellung nicht exakt proportional zur Bogenlänge. Aber in der
+Tranformation von der lokalen Koordinate nach t wurde Proportionaliät verwedet. Z.B. wenn der
+&xi; gleich -0.5 ist, bekommt man t gleich 0.25. Aber Bogenlänge von hier bis hier ist nicht
+genau ein viertel des ganzen Bogens. Sonder dieser Punkt entspricht einviertel des Bogens.
+</p>
+
+<p>
+Diese Figure zeigt die Relativer Unterschied zwischen der Nurbs-darstellung und der
+trigonometrischen Darstellung. Der relativer Unterschied hat ein Maxmimum von ca. 1.6 Prozent.
+</p>
+
+<p>
+Die nicht exakte Abbildung hat eine starker variierender Wert der Jacobi-Determinate zur
+Folge. Bei dieser Untersuchung wurde noch mehere künstliche Energie im System versteckt.
+</p>
+
+<p>
+Obwohl der Parameter t nicht proportional zur Bogenlänge ist, kann man doch versuchen, einen
+Parameter t' zu finden, damit der neuen Parameter t' sich proportional zur Bogenlänge L
+verhält.
+</p>
+
+<p>
+Unter der Anwendung von dem Newton-Verfahren und der Romberg-Itegration wurde diese Idee in
+CFS++ implementiert. Der maximale relative Unterschied hat sich von 0.016 auf 8.7 mal 10<sup>-16</sup>
+reduziert.
+</p>
+
+<p>
+Aber wegen der numerischen Integration der Bogenlänge wird ein zusätzlicher Fehler
+eingeführt. Die relativen Fehler der Bogenlänge ist groß und verschlechtet die andere
+Ergebnisse. Außerdem hat die Berechnungszeit stark zugenommen.
+</p>
+
+<p>
+Jetzt ist nun noch eine Frage interssant, ob die Fehler sich reduzieren kann, wenn man die
+Bogenlänge aller Kanten richtig berechnet.
+</p>
+
+<p>
+In der Abbildung wird die relativer Fehler der Energie zeigt. Ab einem Polynomgrad von \(p=6\)
+hat der relative Fehler bei den Simulationen mit und ohne t-Reparametrisierung einen bemerkbaren
+Unterschied.
+</p>
+
+<p>
+Als Fazit lässt sich festhalten, dass die Anwendung der t-Reparametrisierung sinnvoll ist, nur
+wenn effektivere Integrationsmethode und hoher Polynomgrad p verwendet werden.
+</p>
+
+<p>
+Vor allem wurde in dieser Arbeit die Kontrolle des Geometriefehlers unter Anwendung der
+Blending-Funktionen-Methode realisiert. Dabei basiert die Blending-Funktionen-Methode auf der
+Implementierung der NURBS-Darstellung, welche die gekrümmten Kanten der Elementen in CFS++ exakt
+rekonstruieren kann.
+</p>
+
+<p>
+Um die Verbesserung der numerischen Lösung nach der Implementierung zu zeigen, sowie die
+verbleibenden Fehler zu analysieren, wurden mehrere Untersuchungen ausgeführt.
+</p>
+
+<p>
+Bei dem ersten Vergleich zwischen Simulationen mit und ohne Nurbs-Info ist die Verbesserung der
+Ergebnisse mit Nurbs-Info deutlich erkennbar. Ohne NURBS-Informationen bzw.~ohne die
+Unterstützung der Blending-Funktionen-Methode kann keine zuverlässige Lösung erhalten werden.
+</p>
+
+<p>
+Danach wurde durch den Vergleich der relativen Fehler bei $p$-FEM und bei $h$-FEM gezeigt, dass
+die Konvergenzrate der rel. Fehler bei p-FEM viel großer als bei der $h$-FEM, weil bei $h$-FEM
+die Geometrie langsam approximiert wird.
+</p>
+
+<p>
+Bei dem Vergleich mit analytischer Darstellung wurde festgestellt, dass die verbleibenden Fehler
+durch eine verbesserte Gebietdiskretisierung weiter reduziert werden können.
+</p>
+
+<p>
+-------------------&#x2013;&#x2014; Ende ------------------------------&#x2013;&#x2014;
+</p>
+
+<p>
+备份一则新闻:
+</p>
+
+<p>
+外籍人士资助贫困学生 纪念在华遭灭门德国家庭
+</p>
+
+<p>
+000年4月1日深夜, 来自江苏北部沭阳县的4个失业青年潜入南京一栋别墅行窃, 被发现后, 他们持刀杀害了屋
+主德国人普方(时任中德合资扬州亚星-&#x2014;奔驰公司外方副总经理)及其妻子, 儿子和女儿. 案发后, 4名
+18岁~21岁的凶手随即被捕, 后被法院判处死刑.
+</p>
+
+<p>
+这起当时轰动全国的特大涉外灭门惨案很快结了案, 但故事并没有结束.
+</p>
+
+<p>
+就在那年11月, 在南京居住的一些德国人及其他外国侨民设立了纪念普方一家的协会, 自此致力于改变江苏贫
+困地区儿童的生活状况. 协会用募集到的捐款为苏北贫困家庭的孩子支付学费, 希望他们能完成中国法律规定
+的9年制义务教育, 为他们走上 "自主而充实" 的人生道路创造机会.
+</p>
+
+<p>
+这一举动默默延续了9年, 虽然已有超过500名的中国贫困学生因此圆了求学梦, 但它至今鲜为人知.
+</p>
+
+<p>
+24.02.2010
+</p>
+
+<p>
+现在 pcmanfm 作者完全重写了 pcmanfm. 对我来说, 最关键的一点就是支持 回收站. thunar 的回收站功能很
+糟糕, 因为它将所有的删除的文件都移动到统一的回收站之下, 也就是说, 我在 移动硬盘 上删除的文件会被
+剪切到 HOME分区下, 在删除大文件的时候, 这个简直不能容忍. 不知道 Thunar 的作者为什么这么做, 可能是
+为了符合某种学术理论.
+</p>
+
+<p>
+不过 pcmanfm 需要的 libfm 还不能编译, 即使是 cvs 下来的版本也无法编译, 等等吧, 毕竟才是 Alpha 版
+本.
+</p>
+
+<p>
+另外建立了 sawfish-1.6.2 和 sawfish-pager 的 ebuild. 不过没觉得 sawfish-pager 有多么强大的功能.
+</p>
+
+<p>
+28.02.2010
+</p>
+
+<p>
+今天在 Zeng 家过了元宵节. 吃了他们做的大饼, 还有汤圆, 之后赏月, 很是不错. 离家千里, 如此过节也算
+是体面了.
+</p>
+
+<p>
+Firefox 的 easy link 可以将 迅雷 之类的专用链接转为普通的 ftp, http 链接方式. 而 flashgot 则可以
+下载网页中出现的在线影片, 歌曲, flash 等多媒体文件.
+</p>
+
+<p>
+12.03.2010
+</p>
+
+<p>
+今天, Jens 帮我获取了几篇关于 DAMAS 的文章. 本来这些文章我们都是必须要购买才能获取, 幸好我们系有
+人是 AAIA ( American Institute of Aeronautics and Astronautics ) 成员. DAMAS 虽然效果不错, 不过计
+算十分费时, 2D 的解析得用 天 为单位, 升级到了 DAMAS2 以后, 利用 FFT 几秒即可解决, 看来理论分析确
+实很神奇.
+</p>
+
+<p>
+大概看了看文章的插图, 对我的 Diplomarbeit 的任务相对比较了解了. 用白话文说: 首先是麦克风信号收集,
+大约能得到一张图, 因为信号经过麦克风处理过(声-&gt;电), 自然夹杂了 麦克风 的一些影响, 导致了此图不够
+清晰 (dirty map). 接着就是如何除去麦克风的影响.
+</p>
+
+<p>
+除去麦克风影响这个步骤成为反卷积, 其实 photoshop 中锐化等工具就是在执行反卷积. 幸运的是, 今天还
+在文献中看到了此反卷积在 Java 中的实现. 代码大约仅有 500+ 行, 虽然它大量使用了 ImageJ 的工具包,
+不过我即将使用的 matlab 也同样功能强大, 应该有了这个示例, 能让我事半功倍. :)  Gott sei Dank!
+</p>
+
+<p>
+27.03.2010
+</p>
+
+<p>
+fcitx-3.6.3 有些问题, 起码原来的配置文件不能很好兼容, 而且使用一个, 系统便没有了响应. 但是
+fcitx-3.6.2 还是很不错的.
+</p>
+
+<p>
+07.04.2010
+</p>
+
+<p>
+哈哈, 今天又将我的 sawfish 推进了一步. sawfish 对于同时显示多个窗口比较尴尬. 比如运行 matlab 以
+后, 往往会产生 5, 6 个 figure. 这些窗口挨个叠在一起, 在 metacity 等 WM 中, 因为鼠标不离手, 拖动
+一下即可. 不过在 sawfish 中, 要么手忙脚乱找鼠标, 要么就是使用 iswitch-window 选种一个 figure, 然
+后移动, 接着下一个&#x2026; 非常麻烦.
+</p>
+
+<p>
+在 sawfish 中, 有一个叫 smart-tile 的插件, 可以将当前 workspace 的窗口平铺开来, 但是遇到窗口过多
+的情况, 例如上文提到的, 仅仅 matlab 就产生了 5, 6 个窗口, 完全平铺, 每一个窗口都变得非常微小, 仍
+然需要再次手动调整. 如果能够有选择地平铺某些窗口的话, 便可以解决问题.
+</p>
+
+<p>
+今天我对 iswitch-window 再次扩展了一下, 使用 # 可以标记某些窗口, 之后使用 C-l 或者 C-SPC 便可将
+选择的窗口平铺于当前桌面上. 测试以后, 效果非常不错.
+</p>
+
+<p>
+另外, 因为可以在 iswitch-windows 上选择多个窗口, 如果有时间, 可以很简单地实现将多个窗口批量移动
+到下一个窗口.
+</p>
+
+<p>
+现在稍微感觉不爽的地方在于 smart-tile 插件在安排 2-3 个窗口的时候, 首先使用纵向分割, 而我的屏幕
+是宽屏, 事实上横向分割的结果会好很多.
+</p>
+
+<p>
+14.04.2010
+</p>
+
+<p>
+在老大 Urlaub 期间, 我将 DAMAS 的算法用 matlab 实现了, 并将论文中提到的例子也顺便验证了一下, 结
+果非常不错. 可惜 DAMAS 使用前提是所有的点声源相互之间没有关系, 不会干涉, 这个不符合我们的实验要
+求. 所以接下去还要继续实现 DAMAS-C 算法. 无论如何, 老大对于我前段时间的工作非常满意, 贴个图表示
+祝贺.
+</p>
+
+
+<div id="org3f57a40" class="figure">
+<p><img src="./pic/damas_simulation.png" alt="damas_simulation.png" />
+</p>
+</div>
+
+<p>
+左图为处理前的图案, 能够隐约看到 LSC, 但是右图就非常清晰地看到 虚拟声源 的分部了. 可惜还是虚拟声
+源&#x2026;
+</p>
+
+<p>
+20.04.2010
+</p>
+
+<p>
+firefox 升级到 3.6.3 又不能启动了, 而且即使在终端下启动, 也没有任何提示. 我尝试着使用默认的
+.mozilla 配置 ( 其实就是删除 HOME 下的.mozilla), firefox 便能正常启动. firefox -h 告诉我可以通过
+添加 -safe-mode 的方式进入一个不加载任何扩展的 firefox. 我进入之后, 选中了必须的扩展, 然后重启
+firefox, OK! 应该是某个插件在新版本上工作有问题.
+</p>
+
+<p>
+29.04.2010
+</p>
+
+<p>
+我不知道为什么, 我的 inkscape 在 linux 下居然不能正确打开 pdf 文件. 这样便不能方便地'扣'下 Paper
+中的矢量图了. 不过幸好 windows 下地 inkscape 表现不错, 可以成功打开 pdf 文件, 并保存为 svg 格式.
+接下去继续在 linux 下处理即可. 我总觉得现在 gentoo 中地显卡驱动有问题. 但是使用了软件, 确实表明指
+定的开源显卡驱动正在使用当中&#x2026;
+</p>
+
+<p>
+01.05.2010
+</p>
+
+<p>
+Latex 默认的字体是 Computer Modern 系列. 不过这个字体的原始版本是没有 ö 等字体的. 我想现在 latex
+使用的应该是此字体的升级版本, 或者根本就是使用脚本自动生成 ö 等字体的. 在使用 inkscape 的时候,如
+果插图的文字和文本部分的文字差别太大就不好看了. 直接使用 CM 字体的话, 遇到 ö 等字母的时候, 系统就
+自动使用 Time 字体代替, 显得非常突兀. 我找了一个早上相关的资料, 最后发现 UM 系列字体很不错, 一方
+面非常接近 CM, 而且还有德文需要的 ö 等字母. 另外还有 super-cm 还象是 CM 的标准升级版, 不过 pfd
+格式的字体我始终不能正确安装, 也就作罢了.
+</p>
+
+<p>
+01.06.2010
+</p>
+
+<p>
+inkscape 不能打开 pdf 文件了, 重新编译也不能解决问题. 此前的临时解决办法是启动 windows 虚拟机, 将
+pdf 文件在 inkscape 中转为 svg 文件, 然后再次使用 linux 下的 inkscape 处理. 今天发现有个命令是
+pdf2svg. 利用这个命令便不需要使用 windows 中的 inkscape 转换了. 另外, 我查看了一下 inkscape 的官
+网, 发现 inscape 是利用 poppler 解读 pdf 文件的. 于是我重新编译了 poppler 和 inkscape, 问题便得以
+解决了&#x2026;
+</p>
+
+<p>
+15.06.2010
+</p>
+
+<p>
+走了一趟丹麦和瑞典, 感觉一般. 看来我确实不是喜欢旅游的人. 今天发现在 thunar 按下 / 或 ~ 就进入定
+位菜单. 没想到很好的词语描述那个对话框, 不过试一下就知道了. 非常方便.
+</p>
+
+<p>
+19.06.2010
+</p>
+
+<p>
+情况如下: 在 umount /media/tauschen 的时候, 系统告知有进程在使用其中的文件, 因此无法 umount. 在
+我关闭了所有窗口以后, 系统依然坚持有程序在使用 /media/tauschen 中的文件. 另外系统提示, 可以使用
+ lsof 或者 fuser 查看需要的信息. 首先是使用 fuser.
+</p>
+
+<p>
+&lt;example&gt;
+$ fuser -m /media/tauschen
+/media/tauschen:        11641
+&lt;/example&gt;
+</p>
+
+<p>
+我接着使用 ps 命令查看了 11641 这个进程的信息, 原来是 mplayer 的一个进程打开了 /media/tauschen
+的一个文件. 肯定是我之前强行结束了 smplayer 的时候, mplayer 没有自动退出导致的. 用 pkill 结束了
+mplayer 之后, /media/tauschen 也便能被 umount 了.
+</p>
+
+<p>
+如果使用
+</p>
+
+<p>
+&lt;example&gt;
+fuser -mk /media/tauschen
+&lt;/example&gt;
+</p>
+
+<p>
+则所有使用 /media/tauschen 的进程都会被终止, 非常快捷, 不过可能稍微粗鲁了一些.
+</p>
+
+<p>
+完成任务以后, 我尝试了 lsof 命令. lsof 更加简单, 命令加文件名即可:
+</p>
+
+<p>
+&lt;example&gt;
+$ lsof /media/tauschen
+COMMAND   PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+mplayer 13114    c    3r   REG   8,18  3043456  428 /media/tauschen/music/Schnappi/Ein Lama in Yokohama-Schnappi.mp3
+&lt;/example&gt;
+</p>
+
+<p>
+详细列举了打开这个文件的进程信息. 另外, 比如 emacs 的 pid 是 11937, 输入
+</p>
+
+<p>
+&lt;example&gt;
+$ lsof -p 11937
+COMMAND   PID USER   FD   TYPE     DEVICE SIZE/OFF    NODE NAME
+emacs   11937    c  cwd    DIR      254,5    12288      12 /home/c
+emacs   11937    c  rtd    DIR        8,6     1024       2 /
+emacs   11937    c  txt    REG      254,4  6699578  114569 /usr/bin/emacs-23
+emacs   11937    c  mem    REG      254,4    20472  223006 /usr/share/fonts/100dpi/helvB24.pcf.gz
+&#x2026;
+&lt;/example&gt;
+</p>
+
+<p>
+罗列了这个进程打开的所有的文件. 我感觉 lsof 比 fuser 还强大一些. 另外更多的用法, 可以参照 man.
+</p>
+
+<p>
+06.07.2010
+</p>
+
+<p>
+在终端, 进入 init 1 单用户模式, 运行 unison 同步除 common, dev, proc 等几个目录以外的整个系统.
+此后同步估计时间不会多于 5 分钟. 使用 fcron 提醒我, 每使用电脑 8 天, 同步 common 目录, 每 24 天
+同步系统, 每 96 天备份所有文件.
+</p>
+
+<p>
+最后还是那句话: 有备无患!
+</p>
+
+<p>
+06.10.2010
+</p>
+
+<p>
+哈哈, 搞定答辩了. 观众反应非常之好. 想来估计能拿 1.3 以内了. 下面是我 Vortrag 的讲稿.
+</p>
+
+
+<hr />
+
+<p>
+Meine Damen und Herren, zuerst herzlich willkommen zu meinem Vortrag.
+</p>
+
+<p>
+In diesem Vortag möchte ich mehrere Beamforming-Algorithmen und ihre Anwendungen für die Aeroakustik vorstellen.
+</p>
+
+<p>
+Am Anfang stelle ich das Prinzip des Beamformings und die Ideen der Algorithmen vor. Danach werden die Programme zur Lokalisation der Lautsprecher und der Bestimmung des Schallfeldes im Windkanal einsetzt, um die Qualität der Algorithmen zu untersuchen. Am Ende kommt noch die Zusammenfassung dazu.
+</p>
+
+<p>
+Im Beamforming-Verfahren wird das Signal mittels Mikrofonarray aufgenommen und dann mit digitalen Verfahren analysiert. Das Ziel vom Beamforming-Verfahren ist die Positionen und Schalldruckpegel der Quellen zu bestimmen.
+</p>
+
+<p>
+Hier wird das Mikrofonarraysystem am LSE gezeigt. Ein Mikrofonarray ist nichts anderes als eine Anordnung aus örtlich verteilten Mikrofonen. Bei unseren Fall werden insgesamt 64 Mikrofonen in zwei Ringe angeordnet. Die Signale der Mikrofone werden nach der Verstärkung, der AD-Wandlung und der Format-Konvertierung im Rechner gespeichert.
+</p>
+
+<p>
+Hier wird das Prinzip des Beamformings durch ein eindimensionales äquidistantes Mikrofonarray demonstriert. Wegen der unterschiedlichen Abstand zwischen den Mikrofonen und der Quelle haben die Signale aus Kanälen verschiedene Verzögerungen. Obwohl die genaue Position der Quelle normalerweise unbekannt ist, befindet sie sich irgendwo auf der Fokuslinie. Man kann die Fokuslinie diskretisieren und jeden Punkt als eine Quelle annehmen. Dann können die Entfernungen bzw.~Laufzeitunterschiede berechnet werden. Die Signale aus allen Kanälen werden um die Laufzeitunterschiede verschoben. Im Fall der Übereinstimmung der Quelle mit dem Fokuspunkt kann man das Signal rekonstruieren.
+</p>
+
+
+<p>
+Dieser Prozess kann durch die beiden Terme dargestellt werden. In diesem Vortrag wird der Delay-and-Sum-Algorithmus im Zeitbereich abgekürzt als DAS-T.  Für Kugelwellen wird das Verhältnis zwischen dem Abstand und dem Schalldruckpegel durch diesen Term berücksichtigt.
+</p>
+
+<p>
+Der Term p<sub>m</sub> ist kontinuierlich aber die Signale der Mikrofonen wurden vor der Speicherung vom AD-Wandler diskretisiert. Deswegen wird eine lineare Interpolation von DAS-T benötigt. Ab und zu ist ein Bandpassfilter auch nötig. Die beide können zusätzliche Fehler hervorrufen.
+</p>
+
+<p>
+Um diesen Nachteil zu umgehen erfolgt die Auswertung im Frequenzbereich. Unter der Anwendung der Fourier-Transformation ist die Grundgleichung vom Delay-and-Sum-Algorithmus im Frequenzbereich, DAS-F, für Kugelwellen zu erhalten. Die Zeitverzögerung wird durch die Phasenverschiebung dargestellt.
+</p>
+
+<p>
+Aber normalerweise wird der Schalldruck nicht direkt durch diese Gleichung berechnet.
+</p>
+
+<p>
+Hier wird die Berechnung des Leistungspektrums gezeigt. Nach der Ersetzung von P durch die gerade vorgestellte Gleichung erhält man diese ausführliche Darstellung. Sie kann durch die sog.~Kreuzspektralmatrix und dem Steuervetor umgeschrieben werden.
+</p>
+
+<p>
+CSM ist unabhängig von Fokuspunkten und muss daher nur einmal berechnet werden.  Außerdem ist CSM eine Basis mehrerer verbesserter Algorithmen.
+</p>
+
+<p>
+Hier werden zwei Schallbilder von DAS-F gezeigt. Der Kreisring zeigt die Position und den Umfang der Quelle und der Kreis zeigt die Mitte des Mikrofonarrays. In den Schallbildern werden alle Quellen außer S<sub>2</sub> aufgefunden. Aber ohne Kreisringe ist es schwer zu sagen, ob z.B.~hier noch eine Quelle gibt. Die Schallbilder, die man wirklich gewünscht sind, sollen z.B. so aussehen. Sie liefern eindeutige Informationen über die Pegel und Positionen der Quellen. Deswegen brauchen wir noch einige verbesserte Algorithmen.
+</p>
+
+<p>
+Orthogonal-Beamforming-Algorithmus mit einer Abkürzung von OB kann die nutzlose Keulenanteile im Schallbild beseitigen.
+</p>
+
+<p>
+Die Basis von OB ist die Darstellung von CSM der einzelnen Quellen durch den Eigenwerten und -Vektoren von CSM des gemessenen Signals.
+</p>
+
+<p>
+Deswegen kann man ein Schallbild aus C<sub>m</sub> konstruieren. In diesem Schallbild gibt es nur eine Quelle und die Quellposition stimmt definitiv mit der Spitze überein. Einfach gesagt wird eine Quelle lokalisiert aus jenem Eigenwert. Nach der Zusammensetzung aller gefundenden Quellen erhält man das gesuchte Ergebnis.
+</p>
+
+<p>
+Die Anzahl der Eigenwerte ist gleich der Anzahl der Mikrofonen, deswegen kann man mittels OB max. so viele Quellen lokalisieren wie die Anzahl der Mikrofonen.
+</p>
+
+<p>
+Clean-SC hat eine ähnliche Funktion wie OB, aber verwendet verschiedene Methode. In Clean-SC wird es angenommen, dass die Position der stärksten Quelle mit der Spitze im Schallbild übereinstimmt.
+</p>
+
+<p>
+Am Anfang wird ein sog.~schmutziges Schallbild erstellt. Ein Schmutziges Schallbild ist genau das Schallbild von DAS-F.
+</p>
+
+<p>
+Dann wird die Spitze im Schallbild gesucht. Unter dieser zusätzlichen Annahme entspricht die Spitze der stärksten Quelle. Danach werden alle mit der Spitze kohärente Anteile im Schallbild beseitigt. Falls die Informationen von CSM nach der Beseitigung sich reduziert hat, wird die Spitze auf das "saubere Schallbild" hinzugefügt. Das saubere Schallbild ist am Anfang ganz leer. Nach jeder Schleife wird eine Spitze bzw. eine Quelle hinzugefügt. Wenn CSM mehr Informationen nach der Beseitigung enthält, was nicht logisch ist, beendet der Algorithmus. Und das saubere Schallbild ist das gesuchte Ergebnis.
+</p>
+
+<hr />
+
+<p>
+Nun schauen wir die Experimente an. Gezeigt wird die Anordnung der Lautsprecher. Die Quellpositionen im Bezug auf der Mitte des Mikrofonarrays wurden vor den Experimenten gemessen.
+</p>
+
+<p>
+Zuerst lassen sich die Lautsprecher A, B, C, und S<sub>1</sub> monofrequente Signale abstrahlen. Der Lautsprecher S<sub>2</sub> strahlt weißes gaußsches Rauschen ab. S<sub>1</sub> und S<sub>2</sub> werden als Störquellen betrachtet und ihre Informationen sind nicht von Interesse. Bei der Auswertung wird ein Gebiet von 1 Meter mal 1 Meter abgetastet und die Störquellen sind außerhalb des Abtastgebietes. Die Lautsprecher A B C werden in beiden Schallbilder richtig lokalisiert. Im Schallbild von DAS-F sieht man noch einige konzentrische Kreisringe, die die Nebenkeulen der Quelle S<sub>1</sub> sind.
+</p>
+
+<p>
+Bei der Anwendung von OB wird ein Schallbild der Quelle S<sub>1</sub> erzeugt und das Maximum im Schallbild als die Quelle betrachtet. Aber wenn die Quelle außerhalb dem Abtastgebiet ist, stimmt das Maximum im Schallbild natürlich nicht mehr mit der Quellposition überein. Demzufolge wird eine Scheinquelle gebildet.
+</p>
+
+<p>
+Die Auswertung wird noch mal ausgeführt mit einem vergrößerten Abtastgebiet. Im Schallbild von DAS-F wird die Hauptkeule der Quelle S<sub>2</sub> von den Nebenkeulen anderer Quellen überdeckt. Im Gegensatz dazu wird S<sub>2</sub> im Schallbild von Ob aufgefunden und richtig lokalisiert.
+</p>
+
+<p>
+Zusammenfassend lässt sich sagen, dass im Schallbild von DAS-F und DAS-T schwache Quellen von starken Quellen überdeckt werden können. Bei der Anwendung von OB oder Clean-SC muss das Abtastgebiet alle Quellen einschließen.
+</p>
+
+<p>
+Statt monofrequenten Signalen strahlen jetzt alle Quellen weißes gaußsches Rauschen ab. Die Energie verteilt sich in einem großen Frequenzbereich. Das Beamforming wird in zwei Oktavbände ausgeführt. Im Fall von 5 kHz-Oktavband sind alle Quellen auseinander trennbar. Im Schallbild von OB werden die Quellen nicht mehr eindeutig lokalisiert, aber meiste Quellen sind noch innerhalb vom Umfang entsprechender Lautsprechermembranen. Wegen der niedrigen räumlichen Auflösung bei niedriger Frequenz sind die Quellen in beiden Schallbildern nicht mehr auseinander trennbar. Im Schallbild von OB gibt es viele Scheinquellen und man kann die Positionen der Quellen ungefähr schätzen.
+</p>
+
+<hr />
+
+
+<p>
+Bei der Strömung der Luft über eine Stufe werden Rückströmgebiete vor und hinter der Stufe ausgebildet und dadurch wird auch Strömungsschall erzeugt. In folgenden Experimenten wird das Schallfeld untersucht.
+</p>
+
+<p>
+Eine glatte Grundplatte mit einer scharfkantigen Stufe wird auf der Düse montiert. Die Luft mit einer Geschwindigkeit von 30 m/s strömt aus der Düse über die Stufe und wird am Ende vom Auffang gesammelt. Der Auffang erzeugt auch Schallwellen, deswegen muss er vom Abtastgebiet eingeschlossen werden. Demzufolge ist der Abtastgebiet ziemlich groß.
+</p>
+
+<p>
+Aus dem Frequenzspektrum des Signals ist zu erkennen, dass die Energiedichte mit der wachsenden Frequenz abnimmt. Die Energie konzentriert sich unter 300 Hz.
+</p>
+
+<p>
+Um möglichst viele Informationen aus den Schallbildern zu erhalten, wird das Beamforming jeweils in zwei Frequenzbereichen ausgeführt.
+</p>
+
+<p>
+Zuerst wird die Schallbild von DAS-T bzw.~DAS-F im hohen Frequenzbereich betrachtet.
+</p>
+
+<p>
+Die Quellen an der Kante als hauptsächliche Geräuschquellen im Schallbild können gerade noch vom Geräusch aus der Düse getrennt werden.
+</p>
+
+<p>
+Die beide Verteilungen der Schalldruckpegel haben ähnliche Forme. Aber die Pegel der Quellen sind in beiden Schallbildern unterschiedlich. Der Grund liegt daran, dass ein Bandpassfilter von DAS-T verwendet wird. Damit der Phasewinkel des Signals nicht vom Filter verfälscht wird, lässt sich der Filter zwei mal benutzen.
+</p>
+
+<p>
+Im Schallbild von Clean-SC bzw.~OB ist zu erkennen, das die Schallquellen an der Stufe sich auf und hinter der Kante konzentrieren.
+</p>
+
+<p>
+Im Schallbild von OB sieht man kaum Quellen an der Düse und die Anzahl der Quellen am Auffang ist auch viele kleiner als die im Schallbild von Clean-SC. Es liegt daran, dass mit dem Mikrofonarray OB max. nur 64 Quellen lokalisieren kann. Im Gegensatz dazu hat Clean-SC keine solche Beschränkung. Deswegen kann Clean-SC die Quellen an der Düse und Auffang besser lokalisieren.
+</p>
+
+<p>
+; Im Vergleich mit den Strömungsgebieten kann man schätzen, dass das Rückstrom über der Stufe sich in einer Entfernung von ca.~3 cm hinter der Kante beendet.
+</p>
+
+<p>
+Das Maximum im Schallbild von DAS-F ist knapp 10 dB höher als das bei Clean-SC.
+</p>
+
+<p>
+Dieser Unterschied kann man so erklären. DAS-F hat nicht darum gekümmert, dass die nutzlose Keulenanteile zu beseitigen. Durch die Überlagerung der Haupt- und Nebenkeulen verschiedener Quellen ist das Maximum im Schallbild von DAS-F viel größer als den realen maximalen Schalldruckpegel. Deswegen ist der von Clean-SC bzw.~OB gelieferte Wert relativ zuverlässiger.
+</p>
+
+<p>
+Aus den Schallbilder im niedrigen Frequenzbereich ist zu erkennen, dass der höchste Schalldruck an der Stufe sich vor der Kante befindet. Aus diesem Phänomen kann man sagen, dass das Rückströmgebiet vor der Stufe Schallwellen mit relativ niedrigen Frequenzen erzeugt und das Rückströmgebiet nach der Stufe Schallwellen mit relativ hohen Frequenzen erzeugt.
+</p>
+
+<p>
+DAS-T und DAS-F sind sehr einfach und robust. Aber wegen der Überlagerung der Keulen besitzen ihre Schallbilder niedrige räumliche Auflösung.
+</p>
+
+<p>
+Im Vergleich mit DAS-F benötigt DAS-T den Bandpassfilter und die lineare Interpolation. Er ist auch relativ langsamer als DAS-F. In dieser Arbeit ist DAS-T völlig ersetzbar durch DAS-F.
+</p>
+
+<p>
+OB und Clean-SC versuchen die nutzlosen Keulenanteilen zu entfernen. Normalerweise liefern die beide Algorithmen zufriedenstellende Ergebnisse. Aber manche Quellen können bei der Beseitigung gedämpft oder völlig gelöscht werden, z.B. die miteinander kohärenten Quellen.
+</p>
+
+<p>
+OB kann max. so viele Quellen lokalisieren wie die Anzahl der Mikrofonen, deswegen wird seine Lokalisationsfähigkeit bei der Existanz zahlreicher Quellen eingeschränkt.
+</p>
+
+<p>
+Clean-SC hat eine zusätzliche Annahme, nämlich die Übereinstimmung der Quellposition mit der Spitze, und diese Annahme kann bei mancher Situationen erfüllt werden.
+</p>
+
+<p>
+Als Vorschlag kann man bei wenigen Quellen DAS-F und OB verwenden und ansonsten DAS-F und Clean-SC.
+</p>
+
+<p>
+Nach der Programmierung wurden mehrere Experimenten über die Lokalisation und Schallpegelmessung der Lautsprecher bzw. über die Bestimmung des Schallfeldes im Windkanal ausgeführt.
+</p>
+
+
+<p>
+Als nächsten Schritt kann man die Anordnung der Mikrofone einstellen, um die räumliche Auflösung des Mikrofonarrays weiter zu verbessern.
+</p>
+
+<p>
+Die Algorithmen im Frequenzbereich bestehen aus zahlreicher miteinander völlig unabhängigen Schleifen und sind deswegen optimal für parallel Berechnung.
+</p>
+
+<p>
+-&#x2014;
+</p>
+
+<p>
+20.10.2010
+</p>
+
+<p>
+学校, ubuntu 10.10, 使用 .configure &#x2013;prefix=/usr 把 librep 等软件装在  /usr 下. 奇怪的是, 在
+make gtk-rep 的时候, configure 生成的 Makefile 依然在 /usr/local 下找 librep, 导致出错. 我干脆进
+入 Makefile, 将 字符串 /local 都手动删去, 于是便搞定了.
+</p>
+
+<p>
+实在不愿意把太多时间花在配置电脑上, 所以邮件和日历系统都使用 Thunderbird, 简单方便. 我让此软件启
+动时自动化, 且定位在右侧, 也就是在右边的 屏幕 上最大化. 另外 Thunderbird 会被所有 窗口 lists 忽略.
+除非使用 exec-jump-&#x2026; 跳转, 或者最小化所有其他的窗口后, 才能看见它. 其实和桌面的效果是一样了. 因
+为右侧显示器桌面不能提供任何信息, 而且 电脑 也基本不会被关闭, 使用 thunderbird 变相当做桌面其实
+也很不错.
+</p>
+
+<p>
+29.10.2010
+</p>
+
+<p>
+为了能在 lse35 上直接使用 sudo 命令, 需要将我的账户, 比如 cli 加入到 admin group 中:
+</p>
+
+<p>
+&lt;src lang="shell-script"&gt;
+</p>
+
+<p>
+&lt;/src&gt;
+</p>
+
+<p>
+然后再用 visudo 给予 cli 管理员的权限, 比如加入如下一行:
+</p>
+
+<p>
+&lt;example&gt;
+cli lse35=(ALL) ALL
+&lt;/example&gt;
+</p>
+
+<p>
+这样 cli 在本地电脑上就可以直接运行所有命令. 好像 ssh 登录到 lse35 也可以&#x2026;
+</p>
+
+<p>
+29.11.2010
+</p>
+
+<p>
+写论文没有 flyspell 不行. 在ubuntu中, 每次启动 flyspell 之后, 都会得到 启动失败 的错误反馈. 而且
+没有更多的错误信息. 事实上, 同样的配置我在 gentoo 中确实可以正常运行. 更有趣的是, ispell 能够很好
+得执行, 说明 emacs 配置文件应该没有问题. 反复google之后, 发现另一仁兄也为此备受挫折:
+</p>
+
+<p>
+&lt;example&gt;
+After upgrade to Ubuntu 10.10, my emacs got a bug. Whenever I wanted to enable the
+flyspell-mode, minibuffer answer was  "Enabling Flyspell mode gave an error" , no more information
+were given even with the debugger turned on.
+</p>
+
+<p>
+Some googling, web surfing, et cetera&#x2026; and still nothing.
+</p>
+
+<p>
+Finally, right now (after almost 3 week, and quasi-given up), it occurs to me that and update of
+Emacs could solve the problem&#x2026; How?
+</p>
+
+<p>
+THAT'S IT!!!!! I looked for an Emacs PPA source,
+</p>
+
+<p>
+    $ sudo add-apt-repository ppa:ubuntu-elisp/ppa
+    $ sudo apt-get update
+    $ sudo apt-get dist-upgrade
+&lt;/example&gt;
+</p>
+
+<p>
+22.01.2011
+</p>
+
+<p>
+"Firefox is already running, but is not responding. To open a new window, you must first close
+the existing Firefox process, or restart your system."
+</p>
+
+<p>
+明明 firefox 已经关掉. Thunderbird 也如此. google 后发现:
+</p>
+
+<p>
+Firefox did not shut down normally
+</p>
+
+<ul class="org-ul">
+<li>Go to your Firefox profile folder and Delete the lock file parent.lock.parentlock</li>
+</ul>
+
+<p>
+26.01.2011
+</p>
+
+<p>
+不知道为何, 开心的显示有问题了. 但是 firefox 默认配置下却没有问题, 发现也不是扩展的问题. 于是进
+入 .mozilla, 将 firefox 文件夹改名为 firefox1, 启动firefox. firefox 便使用默认配置重建了 firefox 文件夹. 进
+入 firefox1 将里面的 extensions 和 scrapbook 两个文件夹拷贝到 firefox 目录下. 于是 扩展和
+scrapbook 的信息被保留, 而其他配置得以重置. kaixin 又没有问题了.
+</p>
+
+<p>
+30.01.2011
+</p>
+
+<p>
+看照片, 没有缩略图, 感觉很不爽. 夜里, 决定卸载thunar, 重回 nautilus 的怀抱. 早上用 eix 扫描了一
+下 thunar 的插件, 嘿嘿, thunar-archive-plugin 也出来新版本了, 另外安装了 tumbler 来显示 thunar 的
+缩略图, 又完美了.
+</p>
+
+<p>
+17.03.2011
+</p>
+
+<p>
+在安装 librep, 运行 "make" 命令的时候, 结果出现大量莫名其妙错误, 比如
+</p>
+
+<p>
+&lt;example&gt;
+eval: 1: libtool<sub>args</sub>+=: not found
+&lt;/example&gt;
+</p>
+
+<p>
+最后发现在 ubuntu 中, /bin/sh 指向 /bin/dash, 而编译  librep 需要 bash 的支持. 最简单的, 的解决
+办法就是备份原来的 /bin/sh, 另外 让其指向 /bin/bash. sawfish 1.80 修改了不少接口, 另外增加了 hot
+spot 之类的特性, 比如将鼠标移动到右上角会触发某个函数之类. 暂时我还没有想到好的主意去使用这个特
+性.
+</p>
+
+<p>
+21.03.2011
+</p>
+
+<p>
+Thunderbird 最小化的插件, 最好用的还是 firetray!
+</p>
+
+<p>
+29.03.2011
+</p>
+
+<p>
+在安装 sawfish 的时候, 最关键的问题是一定要彻底清除有的旧文件, 无论是 liprep, rep-gtk, 无论是在
+/usr 下 还是在 /usr/local 下. 残留的文件可能会让 sawfish 在链接的时候指向旧版本, 从而导致版本不
+符, 函数不存在等问题. 感觉手动用 find 寻找并删除是比较有必要的. 因为 make uninstall 并不是那么完
+美.
+</p>
+
+<p>
+03.04.2011
+</p>
+
+<p>
+每次输入internet的密码都觉得很麻烦. 即使写到文件里, 打开, 复制, 粘贴也还是很麻烦&#x2026; 懒啊! 上网查
+找, 发现了 xclip 程序, 可以将从标准输入进来的文本复制到剪切板上. 在 .bashrc 里加上如下语句:
+</p>
+
+<p>
+&lt;src lang="shell-script"&gt;
+alias pw='echo ahwahgai | xclip -selection clipboard; echo "pw has been copied to clipboard"'
+&lt;/src&gt;
+</p>
+
+<p>
+运行 pw 以后, 密码 就会被复制到剪切板, 然后在 firefox 里执行粘贴即可. :)
+</p>
+
+<p>
+16.04.2011
+</p>
+
+<p>
+最近对键盘非常着迷, 已经到了有点失控的地步了吧? 虽然说, 我用Emacs需要一个很好的键盘 :) 或许是因
+为工资发了几个月, 又找到便宜的房子了, 钱没地方去烧得慌吧  :)
+</p>
+
+<p>
+很久以前买过罗技的曲线型键盘, 固体型号已经忘记了, 反正样子非常好看. 不过手感一般, 另外它把 F1-F3
+F4-F6 放到一起, 所以按 Alt-F4 之类的快捷键感觉不舒服. 于是就退回去了. 毕竟要近 50 欧元.
+</p>
+
+<p>
+最近入手的第一键盘是微软的人体工程 4000, 虽然好像手放着比较舒服, 但是按键完全没有感觉到有多么舒
+服, 而且尤其是空格键. 因为布局的需要, 空格键被迫做得非常之大, 只要不是按在非常中间的位置, 很容易
+按不下去, 或者需要用很大的力气才能按下去. 总之非常不舒服. 看网文说需要几个小时适应&#x2026; 结果用了一
+个早上, 我手都疼了. 这个键盘最让人不能忘怀的就是皮手托了, 真的是非常舒服.
+</p>
+
+<p>
+接下去入手了 Cherry G80-3000-LP (茶釉), 倒是挺舒服的, 不过感觉按键稍微重了点, 声音倒是挺轻的. 但
+是, 在 Saturn 感受了一下 Razer blackwidow, 感觉青釉的击键感觉更好一些. 因为 Amazon 可以免费退货,
+Saturn 也可以, 我就很贪心地把 Razer 的键盘搬回家了. 感觉还比较舒服, 按键稍微太紧凑了一些. 这个估
+计是为了迎合游戏玩家的需要. 当然价格&#x2026; 99 欧元, 远远高于 cherry 的 54 欧元. 声音很响, 不知道
+Sandra 会不会介意.  这个键盘的空格键很舒服. 空格键在很多键盘里都很有问题, 比如那个 茶釉 的空格键
+就不是那么舒服, 反正远比其他的难受. 这个键盘的 大小写键 离a比较近, 我是很喜欢这点, 因为我常常用
+这个键 ( 当作 Ctrl ). 最左侧的一排附加的快捷键好不舒服啊! 感觉特碍事.
+</p>
+
+<p>
+后天我的cherry青釉应该也到了, 哈哈, 再感受一下那个键盘. 这个 黑寡妇 估计得退回去了. 毕竟我也没那
+么多钱啦. 哈哈哈.
+</p>
+
+<p>
+19.04.2011
+</p>
+
+<p>
+青釉的感觉真的很不错, 声音我觉得也还能忍受了, 其实 siemens 的键盘大约也有这么吵了. 就是稍微少了
+一个 click 的声音. Cherry 的空格键感觉没有 Razer 舒服, 或者说按下去的时侯没有那个键盘按么顺畅.
+性价比当然比那个高得多了. 而且我是非常喜欢 Cherry 极度简约的风格了.
+</p>
+
+<p>
+今天在网上买了一个键盘护腕垫, 另外还看到了一款木制的键盘护腕垫. 那款垫子和键盘配起来非常好看, 而
+且制作过程应该是极度简单的. 我在图上标上尺寸以后, 让父母找人加工. 呵呵, 这个应该不算侵犯产权吧?
+毕竟就是摩仿它的形状而已. 我父母说, 顶多也就 200 人民币吧.
+</p>
+
+<p>
+发现在 sawfish 中, 不能利用 synthesize-event 命令传输带 Alt Gr 按键的字符, 比如 } 是由
+Alt Gr + 0  得到的, 在传输过程之后, 窗口仅仅得到了 0 . 我本来想通过映射自己定义 { , [ , ] , } 等
+按键.
+</p>
+
+<p>
+20.04.2011
+</p>
+
+<p>
+今天将 synthesize 的问题搞定了, 不能直接使用 (synthesize-event "{" (input-focus)), 而应该用
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(bind-keys window-keymap "Mod5-a" (lambda () (synthesize-event "Mod5-7" (input-focus))))  ; {
+&lt;/src&gt;
+</p>
+
+<p>
+实现. 其中 Mod5 是 AltGr 在 sawfish 中的表示. 反正感觉非常好, 以后再不会因输入 {} 这些符号而影响
+盲打了. 而且, 最关键的是, AltGr +a, +s, +d 等等组合, 以前根本没有任何用处. 哈哈. 不过习惯还需要一
+小段时间.
+</p>
+
+<p>
+06.05.2011
+</p>
+
+<p>
+因为 sawfish 1.8 增加了 "当鼠标碰触屏幕边缘时触发相应函数" 的功能, 导致了 tint2 自动隐藏以后, 即
+使鼠标移到边缘, tint2 也不会显示了. 昨天安装了 sawfish 1.8.1, 增加了一个变量, 用来开启 边缘促发
+功能. 在关闭的情况下, tint2 就能很好工作了.
+</p>
+
+<p>
+12.05.2011
+</p>
+
+<p>
+把 python 从 2.6 升级到了 2.7. 运行 python-updater, 然后&#x2026; 某天运行了 emerge &#x2013;depclean, 把
+python 2.6 清除以后, 系统就开始不断说找不到 python 了. 关键是当时忘了运行 eselect, 所以系统依然
+使用 2.6 python.
+</p>
+
+<p>
+&lt;example&gt;
+emerge python
+eselect python list
+eselect python set xx
+python-updater
+&lt;/example&gt;
+</p>
+
+<p>
+14.05.2011
+</p>
+
+<p>
+对gentoo进行升级的时候, 就有个别包没有编译过去, 发现不同的包都出现了同一个错误:
+</p>
+
+<p>
+"缺少 /usr/lib/libX11.la 文件"
+</p>
+
+<p>
+revdep-rebuild 也不能解决问题. 解决办法就是装上 lafilefixer , 运行一下
+</p>
+
+<p>
+&lt;example&gt;
+lafilefixer &#x2013;justfixit
+&lt;/example&gt;
+</p>
+
+<p>
+其实, la文件本身就是一个记录同名动态库或者静态库文件信息的一个文本文件. 而lafilefixer也仅仅是一个
+bash脚本, 它把需要更新的la文件都重写了一遍, 哈哈.
+</p>
+
+<p>
+16.05.2011
+</p>
+
+<p>
+在 Linz 开会, 发现捷克人的科研真挫. 那英语, 太让人崩溃了. 老大们其实很不容易的, 因为尽管演讲者的
+英语让人无法理解, 他们还得努力听课, 哈哈, 因为他们有提问的义务啦. 我们这些博士生就在下面写
+blog&#x2026; 比如我现在. :)
+</p>
+
+<p>
+捷克人演讲完了, 大家都没有问题, 主持人用最简单的英语问了一个问题, 哈哈. 他们真的不容易.
+</p>
+
+<p>
+关于 virtualbox, 编译的时候, 需要加上 qt4 的 flag. 否则只能得到文本话的控制平台.
+</p>
+
+<p>
+20.05.2011
+</p>
+
+<p>
+renren.com 网的flash要求占用超过 1M 的硬盘资源, flash 弹出对话框请求确认. 结果却死活不能点击确定
+按钮. 即使用键盘把光标移动到确定按键上, 点空格, 依然无效. 上网搜索, 当然有很多人也有这个奇怪问题.
+解决办法也很诡异, 进入
+</p>
+
+<p>
+<a href="http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager03.html">http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager03.html</a>
+</p>
+
+<p>
+看到的上方的 flash 并不是图片, 而是你系统的 flash 设定. 你可以通过调节这个网页上选项而达到修改系
+统 flash 设定的目的, 非常诡异! 不过能用.
+</p>
+
+<p>
+21.05.2011
+</p>
+
+<p>
+my presentation in linz (18.05.2011)
+</p>
+
+<p>
+Good morning, everyone. Welcome to my presentation. In the next 10 minutes, I'll talk about how
+to reconstruct ultrasound pressure fields by means of computed tomography.
+</p>
+
+<p>
+My presentation is divided into 4 main parts. In the first part, I'd like to show the motivation
+of this unconventional measurement technique. Then I'll shortly explain the principle of the
+measurement and show some results I've got. The last part of my presentation is the conclusion
+and outlook of this technique.
+</p>
+
+<p>
+Hydrophones are at present most widely used for the measurements of underwater
+ultrasound. During the measurement the hydrophone must be immersed in water, which can cause
+sound diffraction. Besides, the output of the hydrophone depends on the angle of incidence. This
+is the directivity of hydrophone HGL-4000. We can see, when the angle of incidence increases,
+the relative amplitude decreases quickly.
+</p>
+
+<p>
+To get rid of these disadvantages, we tried an optical measurement technique to reconstruct the
+ultrasound pressure fields.
+</p>
+
+<p>
+The measurement setup mainly consists of a ultrasound transducer, a laser Doppler vibrometer and
+a fixed reflector. A laser beam emitted by the laser Doppler vibrometer propagates through the
+sound pressure field and is reflected back to the vibrometer from the reflector at the bottom of
+the water tank. Due to the piezo-optic effect, the refractive index in water is influenced by
+the ultrasound pressure field and can be expressed like this. P is the ultrasound pressure
+distribution. This term is so-called piezo-optic coefficient, and can be treated as a constant
+in the following experiments.
+</p>
+
+<p>
+In this case, the optical path length between the vibrometer and the reflector can be described
+as the combination of the original optical path length and the change of optical path length due
+to the pressure field.
+</p>
+
+<p>
+Now, let's take a look at this variable part. The piezo-optic coefficient as well as the factor
+two are constant, and can be moved to the left side. Then we get this equation. On the left side
+of the equation, the change of optical path length can be measured by means of LDV. On the right
+side, the P, which indicates the pressure distribution on a cross section, is the single unkonwn
+in this integral equation. The question left is, how to solve this integral equation?
+</p>
+
+<p>
+Before showing the answer of this question, I'd like to shortly introduce the Fourier slice
+theorem. Imagine, this is a cross section of an investigated object, for instance, ultrasound
+pressure field. If we do the projection along an arbitrary line, and apply the Fourier Transform
+to it, according to the Fourier slice theorem, what we get is exactly equal to the function of
+this line in the frequency domain, which is parallel to the projection and passes through the
+origin. So if we do projections at different angles and then carry out the Fourier transform, we
+get to know different lines in the frequency domain. If there are so many lines in the spatial
+frequency domain, that the Nyquist sampling theorem is satisfied, we can apply the inverse
+Fourier transform to convert the spatial frequency distribution into the original function in
+spatial domain.
+</p>
+
+<p>
+The whole process from projection to reconstruction of original function has been well developed
+in medical area and is well known as computed tomography. Until now, the filtered back
+projection is the most effective algorithm to convert the projections into the original
+function. The p-theta is a projection at angle theta, h is so-called kernel for the
+reconstruction, which is just a low pass filter. Here, I don't want to talk about the
+FBP-algorithm too much. But you can see, its main components are just fft and ifft.
+</p>
+
+<p>
+Now we can convert the projections into the original function by using the FBP-algorithm. Let's
+look at the integral equation once more. The term on the left side is measurable. And this one
+is nothing else but a projection of the ultrasound pressure field under a certain angle.
+</p>
+
+<p>
+So, if we project the ultrasound pressure field from different angles, and apply the
+FBP-algorithm to these projections, we can reconstruct ultrasound pressure field.
+</p>
+
+<p>
+This picture shows the current experiment setup in our laboratory. The laser Doppler vibrometer
+is mounted on linear stages, which can move precisely in x, y, z directions.
+</p>
+
+<p>
+The ultrasound transducer is fixed in a big gear, which is driven by a rotation stage. Therefore
+the ultrasound transducer can rotate around its middle axis. In this way, the vibrometer doesn't
+have to rotate around the whole water tank, and can still obtain the projections of sound
+pressure fields from different angles.
+</p>
+
+<p>
+A piece of glass is installed to suppress the vibration of the water surface.
+</p>
+
+<p>
+During the measurement, the transducer sends a burst-signal every 20 millisecond, the laser
+Doppler vibrometer combined with oscilloscope records the virtual movement of water along the
+laser beam. During the measurement of one cross section, the vibrometer moves in y
+direction. The projection is measured on several hundred discrete positions, until the
+ultrasound transducer rotates to next angle. And once more, the vibrometer samples along the
+y-axis. All these actions are controlled by a computer.
+</p>
+
+<p>
+To verify the accuracy of the FBP-algorithm, the ultrasound pressure field was simulated by
+means of finite element method.
+</p>
+
+<p>
+For the simulation as well as the experiments, an axisymmetric ultrasound transducer with a
+radius of 6.35 mm was under investigation. It generated ultrasound with a frequency of 500 kHz.
+</p>
+
+<p>
+This picture shows the ultrasound pressure field in harmonic mode.
+</p>
+
+<p>
+Two cross sections haven been sampled and reconstructed. One is 3 millimeter apart from the
+transducer front and the other one is 15 millimeter apart. They are in near field and far field,
+respectively.
+</p>
+
+<p>
+The ultrasound pressure field was sampled every 0.2 mm. After the sampling, some white gaussian
+noise was added on purpose to the signal, so that the projections had a signal-to-noise ratio of
+30 dB.
+</p>
+
+<p>
+This is the reconstructed pressure field at z = 3 mm. The error has a maximum of about 4.5 %
+relative to the maximal pressure. At far field, the max. error is under 1 percent relative to
+the max. pressure. //In the reconstruction, a Hann-window was used to damp the noise. The energy
+of high frequency components is more damped than that of low frequency components. Therefore,
+the errors near the peaks are much bigger than at other places.//
+</p>
+
+<p>
+In the experiments, the ultrasound pressure field was also sampled every 0.2 millimeter, and
+projections from 120 different angles were measured. The entire measurement of one cross section
+took about 16 hours. This is the reconstructed sound pressure field. In case of hydrophone, the
+sound pressure field was sampled every 0.25 mm in x- and y-direction. The measurement cost about
+7 hours. This picture shows the results measured by a needle hydrophone. Now I'd like show the
+differences by comparing the results along the x-axis.
+</p>
+
+<p>
+Because of the low frequency signal used in the experiments, the results obtained by hydrophone
+should be rather accurate. The differences between reconstructed results and measured results
+have a maximum of about 10 % relative to the maximal pressure.
+</p>
+
+<p>
+These pictures show the sound pressure distributions along the x-axis at z equal to 15
+millimeter. The reconstructed results have now the max. difference of about 20% from that of
+hydrophone. The results of the reconstruction have deteriorated in the far field, because in the
+experiments the transducer didn't rotate perfectly around its middle axis. In another word, the
+movement is somewhat precessional. The error of the results caused by the small angular
+diviation increases with the distance apart from the transducer. For this reason, the results of
+the reconstruction is worse in the far field than in the near field.
+</p>
+
+<p>
+Now, I'd like to finish with comparison the optical and the conventional method. The laser used
+in the experiments is so weak that it doesn't disturb original ultrasound field. The measurement
+is inherent omnidirectional. Further more, this method can even be used to detect the pressure
+field in transparent solid.
+</p>
+
+<p>
+There are also some disadvantages of this technique. First, the whole cross section of the sound
+pressure field must be sampled from different angles for the reconstruction. Even if only the
+pressure on single position is required. Second, like many other optical experiments, the
+experiment setup must be highly precise, to obtain reliable results.
+</p>
+
+<p>
+As next step I'm going to use a non-equidistant sampling to increase the measurement
+efficiency. Because in ultrasound pressure fields, most energy concentrates in a very small area
+around the middle axis of a transducer, especially when high frequency signal is
+used. Consequently, the sampling rate can be greatly reduced in the peripheral area without
+introducing noticeable errors. So far, this method works quite well with simulated sound
+pressure fields.
+</p>
+
+<p>
+Besides, the ultrasound pressure field in plexiglass will be investigated.
+</p>
+
+<p>
+Thank your for your attention.
+</p>
+
+<hr />
+
+<p>
+24.05.2011
+</p>
+
+<p>
+帮 Throsten 解决了一个 binar 文件的读入问题. 懂 C 语言真好啊, 帮助文档里有个 c++ 的范例,
+Throsten 指着范例说: 恩, 这里有个例子, 当然对我是一点用没有&#x2026;  我稍微看了看, 在 Matlab 里关键是
+使用 fread 实现对任意格式文件的读入, 当然写代码的时候得非常小心了.
+</p>
+
+<p>
+26.05.2011
+</p>
+
+<p>
+感觉 Alt 按键对我来说并不是很常用, 反而 Win 按键因为 sawfish 的原因, 不断使用. 尴尬的是, win 按
+键用大拇指去按的时候, 拇指必须极度内敛, 经常这样, 觉得手不是很舒服. 今天觉得有必要调换 左 Alt 和
+win 的位置, 打开 Ubuntu 的键盘设置区域, 大吃一惊, 居然有调换这两个按键的选项. 看来不是我一个人有
+这样的需要. :)
+</p>
+
+<p>
+其实我真正想要的是把空格键缩短, 然后增加几个控制键&#x2026;
+</p>
+
+<p>
+update:
+</p>
+
+<p>
+在 gentoo 上也找到了调换 Alt 和 Win 的方法了.
+</p>
+
+<p>
+所有的 xorg.conf 能修改的按键组合都可以在 /usr/share/X11/xkb/rules/evdev.lst 中找到. 比如想调换
+win 和 alt 的位置, 那么输入
+</p>
+
+<p>
+&lt;src lang="shell-script"&gt;
+$ grep alt /usr/share/X11/xkb/rules/evdev.lst | grep win
+  altwin               Alt/Win key behavior
+  altwin:menu          Add the standard behavior to Menu key
+  &#x2026;
+  altwin:swap<sub>lalt</sub><sub>lwin</sub> Left Alt is swapped with Left Win
+&lt;/src&gt;
+</p>
+
+<p>
+然后据此在 xorg.conf 中加入 :
+</p>
+
+<p>
+&lt;src lang="shell-script"&gt;
+     Option "XkbOptions"     "altwin:swap<sub>lalt</sub><sub>lwin</sub>"
+&lt;/src&gt;
+</p>
+
+<p>
+31.05.2011
+</p>
+
+<p>
+我的笔记本今天到手了, 哈哈, 真是小巧. 就是感觉键盘稍微太小了点, 对打字速度有所影响. 安装 gentoo
+的时候, 首先使用 自动生成 kernel 的软件, 结果 lvm 怎么也不能被正确编译. 然后又用 老电脑 的
+kernel 设置编译了 kernel. 折腾好了以后, 重启, 结果发现系统就停在
+</p>
+
+<p>
+&lt;example&gt;
+switching to clocksource tsc
+&lt;/example&gt;
+</p>
+
+<p>
+上. 在网上搜索以后, 好像是 kernel 的一个 bug. 反正我是死活没搞定, 很奇怪的问题. 同样的现象, 但是
+他们都说是到了 2.26.39 以后才会出现, 我用的是 2.26.38. 忽然又有一个人说 38 以上的都会&#x2026;. 折腾了
+很久&#x2026;. 我都饿了&#x2026;. 我要回家吃饭&#x2026;. 但是系统不能正确运行的话, 回家是不能上网的, 也就是不能继
+续折腾&#x2026;.
+</p>
+
+<p>
+我很郁闷, 很不爽&#x2026; 我决定离开 gentoo 了. 虽然 ubuntu 有很多东西不适合我, 但是肯定不会在这些细枝
+末节上这么恶心人. 而且以后估计越来越忙, 越来越不会有心情折腾电脑.
+</p>
+
+<p>
+Ubuntu 就是快, 才写完了这个日记, Ubuntu 已经搞定了安装, 呵呵, 方便!!!
+</p>
+
+<p>
+02.06.2011
+</p>
+
+<p>
+唉, 花了 20 分钟安装了 Ubuntu 11.04, 进去一看, 和原来玩的 Ubuntu 差别好大! 什么东西都找不到, 非
+常不习惯. 反正我就是要用 sawfish, 原始桌面无所谓. 不过想让 sawfish 随系统启动, 折腾了很久也没有
+搞定. 非常非常不爽!
+</p>
+
+<p>
+决定还是继续重新安装 Gentoo. 安装 Gentoo 的时候,
+</p>
+
+<p>
+现在的 Gentoo 默认使用 Openrc, 但是 Handbook 还没有更新, 所以有些地方不是很一样. 尤其是因为
+Openrc 使用 udev, 它可以自动识别各种设备. 不过 udev 要手动加入到启动列表里. 否则 dev 下没有任何
+文件, 一旦重启, 全是错误.
+</p>
+
+<p>
+&lt;src lang="shell-script"&gt;
+</p>
+
+<p>
+&lt;/src&gt;
+</p>
+
+<p>
+另外, 不要随便编译 libreoffice, 实在太耗时了!! 另外, 我打算把系统从一个分区移动到另外一个分区,
+直接使用 cp 命令进行拷贝, 那个叫做慢啊!!!!  几个小时了, 还在 cp 中.
+</p>
+
+<p>
+19.06.2011
+</p>
+
+<p>
+终于把 X220 的 gentoo 系统搞定了. 显示器对比度, 亮度都被正确设置. i3 的内核居然没有温度传感器,
+我花了好几天时间在编译内核, 希望得到CPU的温度&#x2026;. 好凄凉. 下次还是不能随便买阉割版的 :) 这些风扇
+就不方便根据温度自动调速了.
+</p>
+
+<p>
+装了 libreoffice, 要求 JRE, 我心一凉, 立马想换回 openoffice, 搜索后发现, 其实 openoffice 就是自
+带了 JRE 的运行环境, 所以用户一般不知道.
+</p>
+
+<p>
+20.06.2011
+</p>
+
+<p>
+将 totem 和 pidgin 的窗口选择同时绑定到一个按键上. 也就是说, 连续按下 Super-a 可以在 pidgin 和
+totem 之间切换, 这样就空出一个 Super-q 键.
+</p>
+
+<p>
+26.06.2011
+</p>
+
+<p>
+mpd 安装好以后居然缺少一个 /var/lib/mpd/log 文件. 用 root 身份生成以后, 此文件的用户名和组名分别
+是: mpd, audio. 使用下面的命令修改:
+</p>
+
+<p>
+&lt;example&gt;
+</p>
+
+<p>
+&lt;/example&gt;
+</p>
+
+<p>
+另外, 从王铮家拿来的 logitech 音箱确实很不错.
+</p>
+
+<p>
+15.07.2011
+</p>
+
+<p>
+matlab 无压缩方式制作的 avi 文件可以在 powerpoint 2003 中添加以及播放.
+</p>
+
+<p>
+另外, 可以用如下命令压缩matlab制作的视频:
+</p>
+
+<p>
+&lt;example&gt;
+mencoder measurement<sub>video2.avi</sub> -of avi -ovc lavc -o output2.avi
+&lt;/example&gt;
+</p>
+
+<p>
+我不确定这样压缩的视频能否在 windows 下播放. keyu 说不能在 mac 上播放.
+</p>
+
+<p>
+28.07.2011
+</p>
+
+<p>
+我自己的电脑相当奇怪, 很多软件报错找不到 libstdc++.so.6. 经查找, 这是 gcc 包里的一个文件. 搜索后,发
+现 gcc 所在文件夹中确实已经将这个文件. 一开始以为系统不能找到这个文件, 所以使用了很多办法, 比如
+重新编译 acroread, 在 /usr/lib 下建立软链接, 确定当前使用的 gcc 版本&#x2026; 都搞不定. 最后使用
+strace 查看了 acroread 在启动的时候搜寻的路径. 发现中间确实进入 gcc 所在文件夹中, 并且找到此文件,
+加载后好像是异常退出了. 于是想到可能是 gcc 当时编译的时候有问题. 所以重新编译了 gcc 程序. 之后,
+一切都正常了, happy!
+</p>
+
+
+<p>
+29.07.2011
+</p>
+
+<p>
+&lt;example&gt;
+Reiseplan
+</p>
+
+<p>
+Datum, Uhrzeit (Abfahrt)      Verkehrsmittel
+</p>
+
+<p>
+17.10.2011 6:30               Air Berlin              Nürnberg → Orlando
+</p>
+
+<p>
+18.10.2011 – 21.10.2011      Konferenz
+22.10.2011 – 31.10.2011      Urlaub in den USA
+</p>
+
+<p>
+31.10.2011 19:10              Swiss                    New York → Paris
+</p>
+
+<p>
+------------------&#x2013;&#x2014; Ende der Dienstreise -----------------------&#x2013;&#x2014;
+</p>
+
+<p>
+05.11.2011                    die Bahn                Paris → Erlangen  (privat)
+</p>
+
+
+
+<p>
+Information der Flugtickets:
+</p>
+
+<p>
+Hinflug:
+</p>
+
+<p>
+17.10.2011   Nürnberg → Berlin Tegel → New York → Orlando (Air Berlin)
+</p>
+
+<p>
+                                                 Preis: 534.77 €
+Rückflug:
+</p>
+
+<p>
+31.10.2011   New York → Zurich → Paris (Swiss)
+                                                 Preis:  615.60$ → about 453 €
+</p>
+
+<p>
+Wenn ich nach der Konferenz sofort nach Nürnberg zurückfligen würde, die billigest Flugticket wäre
+</p>
+
+<p>
+22.10.2011   Orlando → Miami → Berlin Tegel → Nürnberg (Air Berlin)
+                                                  Preis:  486.48 €
+</p>
+
+<p>
+Ich bezahle den differenz der Tickets seblst, wenn der Preis von New York nach Paris teuer ist als 486.48 €.
+</p>
+
+<p>
+&lt;/example&gt;
+</p>
+
+<p>
+31.07.2011
+</p>
+
+<p>
+之前使用 unetbootin 解决了在无光驱情况下的 linux 安装问题. 但是不知道为何, unetbootin 好像对
+windows 7 支持不好. 几次尝试都失败了. 今天采用了 windows 下的 ultraiso 解决了将 ISO 写入 U 盘的
+问题.
+</p>
+
+<p>
+&lt;example&gt;
+</p>
+<ol class="org-ol">
+<li>插入U盘, 用UltraISO打开windows 7 iso 光盘镜像文件</li>
+<li>选择 菜单上的"启动"下的"写入硬盘镜像"</li>
+<li>请多次确认 被写入的盘符.</li>
+<li>写入方式选择"USB-HDD+". 最好先格式化一下.然后再写入. 直到完成即可.</li>
+</ol>
+<p>
+&lt;/example&gt;
+</p>
+
+<p>
+接下去的就是从 U 盘启动, 想光盘一样安装系统.
+</p>
+
+<p>
+02.08.2011
+</p>
+
+<p>
+在旅馆, 机场临时上网, 使用 wpa<sub>supplicant</sub> 需要确切知道各种信息, 感觉非常麻烦.  Networkmanager 不
+知道现在怎么样了, 不过网上推荐了轻量的 wicd . 用了一下, 感觉非常顺手. 注意应该首先启动
+/etc/init.d/wicd 服务, 其实就是 wicd 的一个 daemon. 然后启动 wicd-gtk 便不需要管理员权限.
+</p>
+
+<p>
+03.08.2011
+</p>
+
+<p>
+touchpad 本可以通过 synclient 启动和暂停, 但是 synclient 需要 hal 支持. 我最后干脆在 bois 中
+disabled touchpad.
+</p>
+
+<p>
+要对 ntfs 格式的分区进行读写, 现在的 ntfs-3g 应该已经非常成熟了.
+</p>
+
+<p>
+&lt;example&gt;
+</p>
+
+<p>
+or
+</p>
+
+<p>
+/dev/sdb1  /mnt/ntfs-p1  ntfs-3g  defaults  0  0
+&lt;/example&gt;
+</p>
+
+<p>
+我使用了第二种方法, 让 第一个 windows 的分区始终挂载于 /media/Win7 下. 如果要使用中文, 估计得特
+别设置编码. 另外, 如果在 fstab 的顺序安排上, /usr 之类的分区需要首先加载, 因为在mount的时候需要
+用到 /usr 下面的一些 libs.
+</p>
+
+<p>
+09.08.2011
+</p>
+
+<p>
+;; 在网上看到的函数, 使用 ido 的方式选择 window, 然后跳转. 有个小 bug 是: 如果有两个以上 windows
+;; 显示同一 buffer, 该函数无法区分这些 windows, 从而每次都跳到 第一个显示该 buffer 的 window 中.
+;; 这个 bug 应该比较容易修复. 关键是我发现了另外一个很不错的窗口跳转程序: window-number-mode
+;; 所以这个函数没有太大意义了.
+</p>
+
+
+
+<p>
+10.08.2011
+</p>
+
+<p>
+Checklist for the application of Visa to the USA
+</p>
+
+<p>
+Application materials:
+</p>
+
+<ol class="org-ol">
+<li>Passport</li>
+<li>Electronic Visa Application Form (EVAF) DS-156                                   (*)</li>
+<li>Supplemental Nonimmigrant Visa Application Form DS-157                           (*)</li>
+<li>Payment confirmation of visa application fee (Visa-Einzahlungsnachweis)          (*)</li>
+<li>Invitation Letter of RSNA's 95th Scientific Assembly and Annual Meeting          (*)</li>
+<li>RSNA Scientific Status Notification – Accepted Presentation</li>
+<li>Confirmation of registration at RSNA 2009</li>
+</ol>
+
+<p>
+Supporting materials:
+</p>
+
+<ol class="org-ol">
+<li>Abstract of the accepted presentation</li>
+<li>Trip itinerary (air ticket and hotel reservation)                                 (*)</li>
+<li>Applicant's scholarship from Bavarian Science Foundation, which will cover the travelling cost of this trip</li>
+<li>Applicant's curriculum vita and previous publications in the field of CT imaging  (*)</li>
+<li>Applicant's registration at the University of Erlangen-Nuremberg as a PhD student</li>
+</ol>
+
+<p>
+20.08.2011
+</p>
+
+<p>
+在linux中可以使用下面的命令压缩视频文件, 不过在 windows 中不能被打开.
+</p>
+
+<p>
+&lt;example&gt;
+mencoder measurement<sub>video2.avi</sub> -of avi -ovc lavc -o output2.avi
+&lt;/example&gt;
+</p>
+
+<p>
+windows xp 以后的版本都自带了影片制作工具, 用那个转换出来的影片反而能在各个系统上播放. 另外, ppt
+中估计只支持没有压缩过的影片.
+</p>
+
+<p>
+03.09.2011
+</p>
+
+<p>
+说 evil 是下一代的 viper, 不过我用了一下, 感觉还行. 不过介于这个项目还开始不久, 大约是 2011 年 3
+月开始的, 且没有正式版本发布. 因为我在使用的时侯, 要将 vi 模式下所有带 Ctrl 的快捷方式都删除, 因
+为我其实仅仅是很喜欢 vi 的移动光标的方式, 以及某些小功能. 最后我还是放弃了, 继续使用我的 viper
+吧. 或许等个半年, 我可以转到 evil. 下面是我写的 evil 的简单配置.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+ (add-to-list 'load-path "~/emacs<sub>lib</sub>/elisps/evil")
+ ;; the cursor does not move backwards when exiting Insert state
+ (setq evil-move-cursor-back nil)
+ (require 'evil)
+ (evil-mode 1)
+</p>
+
+<p>
+ (setq evil-replace-state-cursor `("red" box))
+ (setq evil-normal-state-cursor `("LightGray" box))
+ (setq evil-operator-state-cursor `("LightGray" box))
+ (setq evil-insert-state-cursor `("green" bar))
+&lt;/src&gt;
+</p>
+
+<p>
+evil 让我很难受的还是用 v 选择区域以后, 光标所在的字符也在选择区域以内.
+</p>
+
+<p>
+09.09.2011
+</p>
+
+<p>
+"Using urxvt with Nautilus "Open in Terminal"
+</p>
+
+<ul class="org-ul">
+<li>run: gconf-editor</li>
+<li>Drill down to desktop/gnome/applications/terminal/ and alter the values to:</li>
+<li>exec urxvt</li>
+<li>exec<sub>arg</sub> -e</li>
+</ul>
+
+<p>
+(from archlinux wiki)
+</p>
+
+<p>
+11.09.2011
+</p>
+
+<p>
+设置 Emacs 的字体, 可以在 .emacs 中设置, 或者在 .Xresources. 如果在 .emacs 中设置, 当 emacs 启动
+时, 自动加载原始默认的字体, 然后等加载到 .emacs 相关部分时候, 再改变 font 及窗口的大小, 因此会影
+响到 emacs 的启动速度. 如下是在 .Xresources 设置的方法:
+</p>
+
+<ol class="org-ol">
+<li>编辑 ~/.Xresources 文件, 将其内容设置如下:</li>
+</ol>
+
+<p>
+&lt;example&gt;
+Xft.antialias:1
+Xft.hinting:None
+Xft.rgba:rgb
+Xft.dpi: 96
+</p>
+
+<p>
+Emacs.font: Lucida Sans Typewriter-12
+Emacs.FontBackend:xft
+&lt;/example&gt;
+</p>
+
+<p>
+微软雅黑或者华文黑体, 这两个字体只有在Hinting 关闭的情况下才能表现出让人满意的效果; 因此把
+Hinting关了. 运行
+</p>
+
+<p>
+&lt;example&gt;
+xrdb -load ~/.Xresources
+&lt;/example&gt;
+</p>
+
+<p>
+来使刚做的改动生效.
+</p>
+
+<ol class="org-ol">
+<li>修改~/.emacs, 增加如下两行, 定义中文字体.</li>
+</ol>
+
+<p>
+&lt;example&gt;
+(set-fontset-fint  "fontset-default"
+    'han '("Microsoft YaHei" ,"unicode-bmp"))
+&lt;/example&gt;
+</p>
+
+<p>
+(nemona.cublog.cn)
+</p>
+
+<p>
+另外, YaHeiMono 看腻了, 使用了 Monaco 字体, 觉得很有趣.
+</p>
+
+<p>
+11.09.2011
+</p>
+
+<p>
+monaco 的字体在 10 以下觉得挺好, 但是 11 以上感觉字符之间间距过大, 导致每行显示的内容比其他字体
+少挺多. 上网搜索, 居然还有 Monaco for Linux 版本, 估计是某些网友在 monaco 的基础上做了简单的处理
+得到. 这种字体大小感觉不错.
+</p>
+
+
+<p>
+在 hhkb 中, 为了得到足够多的快捷键, Mod5 也就是 level three chooser 需要被启动, 有如下三个方法将
+右侧 win 键设置为 level three chooser:
+</p>
+
+<p>
+&lt;example&gt;
+</p>
+
+<p>
+setxkbmap -option lv3:rwin<sub>switch</sub>
+</p>
+
+<p>
+Option "XkbOptions" "lv3:rwin<sub>switch</sub>"
+</p>
+
+<p>
+click on "right win"
+&lt;/example&gt;
+</p>
+
+<p>
+20.09.2011
+</p>
+
+<p>
+哈哈, 昨天折腾了一个晚上, 恨死 evil 插件了. 今天水木有人说将 evil-visual-char 设为 exclusive
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(setq evil-visual-char 'exclusive)
+&lt;/src&gt;
+</p>
+
+<p>
+那么光标下的字符就不会被包括进选区. 一下子把我最头疼的问题解决了. 今天又重新开工, 将 evil 搞定了.
+其实我还是没有感觉其中牛掰的地方. 不过这个项目在大规模的开发中, 值得跟进. :)
+</p>
+
+<p>
+关于 vim 中复制括号中的内容, 按 %, vi 定位于最近的前向括号, 如果是在括号上, 那么则定位到相应的另
+外一个括号上. 因此 按下 y% , vi 复制了从当前位置到最近的前向括号的内容. 如果是已经在某一括号上,
+那么这个命令就复制了括号中的内容. 那么 d% 自然就是删除括号中的内容了. vi 支持 (), [], {}, 以及 C
+语言中 #if &#x2026;.#endif, 但是不支持引号. 我想这是因为 " 很难进行匹配.  (evil 还不支持 #if
+&#x2026; #endif)
+</p>
+
+<p>
+相对于 c-kill-sexp, % 能帮忙定位, 能在后向括号 比如 ) 上进行正确复制. 以后我应该开始习惯使用这
+个操作.
+</p>
+
+<p>
+23.09.2011
+</p>
+
+<p>
+反复看到 openrc 启动的时候出现警告
+</p>
+
+<p>
+&lt;example&gt;
+Use of the opts variable is deprecated and will be
+removed in the future.
+Please use extra<sub>commands</sub> or extra<sub>started</sub><sub>commands</sub>.
+&lt;/example&gt;
+</p>
+
+<p>
+google 后得知, /etc/init.d 里的 scripts 使用 opts 变量, 而 openrc 的作者希望去除此变量的支持. 是
+不用普通用户担心了, 升级相应的软件以后, opts 自然会慢慢消失.
+</p>
+
+<p>
+07.10.2011
+</p>
+
+<p>
+感觉还是 ing-diba 的 giro konto 最合我意. 它的 ec-card 倒是很烂, 没有利息, 很少取款点. 但是它的
+visa 卡在欧元区带 visa 标示的取款机取款都是免费的. 不过这个其实不是标准的 visa 卡, 因为它在消费
+当天就在 girokonto 里扣钱了. 所以其实就是变相的 ec-card.
+</p>
+
+<p>
+netbank 以为很好, 后来发现它的 ec-card 取款也不是那么方便, master-card 才是到处免费取款, 但是
+master-card 是要年费的. comdirct 的卡得要在 cashgroup 取款才行.
+</p>
+
+<p>
+所以在 DKB 不能申请到以前, ing-diba 还是很不错的. 唯一的遗憾就是不能取外币. 那个可能得用
+gebührfrei 的 mastercard 代替了.
+</p>
+
+<p>
+18.10.2011
+</p>
+
+<p>
+发现在 powerpoint 中插入视频和插入图片不一样. 插入视频仅仅是将链接放入 ppt 文件中, 所以如果仅仅
+将 ppt 文件单独拷贝, 视频是不能播放的. 我以前看到 ppt 文件包含了一个 12 M 的 video 以后才 5 M 左
+右, 还以为 ppt 有极其强大的压缩能力 :D
+</p>
+
+<p>
+23.10.2011
+</p>
+
+<p>
+美国奥兰多会议的演讲稿
+</p>
+
+<hr />
+
+<p>
+Good morning, everyone. Welcome to my presentation. In the next 10 minutes, I'm going to talk
+about non-perturbing measurement of ultrasound pressure fields by means of laser Doppler
+vibrometer.
+</p>
+
+<p>
+My presentation is divided into 4 main parts. In the first part, I'd like to show the motivation
+of this unconventional measurement technique. Then I'll shortly explain the principle of the
+measurement and show some results I've got. The last part of my presentation is the conclusion
+and outlook of this technique.
+</p>
+
+<p>
+Hydrophones are at present the most widely used for the measurements of underwater
+ultrasound. During the measurement the hydrophone must be immersed in water, which can cause
+sound diffraction. Besides, the output of the hydrophone depends on the angle of incidence.
+</p>
+
+<p>
+To get rid of these disadvantages, instead of hydrophone, we use the laser Doppler vibromter
+combined a reflector to detect the ultrasound pressure field.
+</p>
+
+<p>
+A laser beam emitted by the laser Doppler vibrometer propagates through the sound pressure field
+and is reflected back to the vibrometer from the reflector at the bottom of the water tank. The
+exisitence of the ultrasound pressure field causes the change of water density, which then
+results in the change of reflective index as well as the change of optical path length of the
+laser beam.
+</p>
+
+<p>
+The change of optical path length can be expressed like this. This term is so-called piezo-optic
+coefficient, and can be treated as a constant in the following experiments. Y is the distance
+between the vibromter and the reflector, and the factor 2 results from the fact that the laser
+light travels through the pressure field twice. p is the sound pressure field along the laser
+beam at instant of time t.
+</p>
+
+<p>
+After the movement of the constant term to the left side of the equation, we get a pretty simple
+integral equation with single unknown in the right side. The left side is able to be
+acquired. In order to solve this equation, the computed tomography is used.
+</p>
+
+
+<p>
+According to the computed tomography, the ultrasound pressure field needs to be projected along
+radial lines under different angles. The integral term on the left side of the equation denotes
+the projection at one sampling point. By moving the sensor head along the xi-axis, the
+ultrasound pressure field is projected under one angle. If we can do the projection from
+different perspectives, then, the ultrasound pressure field can be reconstructed from
+projections by means of the filtered backprojection.
+</p>
+
+<p>
+In the experiment, a cylindrically focused ultrasound transducer is under investigation. It is
+mounted in a hollow cylinder. The hollow cylinder as well as the transducer are rotated by a
+precise rotation stage. In this way, the ultrasound pressure field can be projectioned from
+different perspectives, without rotating the whole measurement setup around the water basin.
+</p>
+
+<p>
+The sensor head of laser Doppler vibrometer is mounted on linear stages, which allow pricise
+movement in x, y, z directions.  A reflector is placed on an adjustable base, so that laser beam
+emitted by the vibrometer can be exactly reflected back to the sensor. A piece of glass is
+installed to suppress the vibration of the water surface.
+</p>
+
+<p>
+During the measurement, the transducer sends a burst-signal every 400 microseconds, the laser
+Doppler vibrometer combined with oscilloscope records the virtual movement of water along the
+laser beam. During the measurement, the pressure field is measured on several hundred sampling
+points along the x-axis, until the ultrasound transducer is rotated to next angle. And once
+more, the vibrometer samples along the x-axis. All these actions are controlled by a computer.
+</p>
+
+<p>
+In the experiment, the cylindrically focused ultrasound transducer is excited by a one mega
+hertz burst signal. The cross section under investigation is at 25.4 mm apart from the
+transducer front, and is within the focus zone.
+</p>
+
+<p>
+Using the optical method, the pressure field was sampled every 0.2 mm in x-direction and under
+100 different angles. The whole measurement took about 4 hours. As expected, we got an
+elliptical beam pattern on the measured cross section.
+</p>
+
+<p>
+To verified the reliability of this method, the ultrasound pressure field was also measured by
+means of a hydrophone. The hydrophone is sampled every 0.25 mm in both x and y directions. The
+measurement took about 8 hours, because the hydrohone vibrated after each movement so strongly,
+that we had to wait a pretty long time for the vibration to stop.
+</p>
+
+<p>
+From the pictures, we can see the resuts obtained by the optical method and the hydrophone do
+have many details in common. Even the pattern of the pressure amplitude at the periphery are
+similar.
+</p>
+
+<p>
+To simplify the comparison, the results are going to be compared along the x-axis and y-axis
+individually.
+</p>
+
+<p>
+The results match each other quite well, especially in the main lobe. In both cases, the maximal
+differences between the normailized results is less than 10 percent.
+</p>
+
+<p>
+Before I introduce this measurement, let us take a look at the video at first. It is about the
+propation of the ultrasound in water after sending the burst signal. Two cross sections along
+the z-axis are shown here. One is the horizontal cross section, on which the ultrasound is
+barely focused. And the other one is the frontal cross section, on which the ultrasound is most
+strongly focused.
+</p>
+
+<p>
+The ultrasound pressure field was sampled every 0.2 mm within the volume from 17 to 27 mm apart
+from the transducer, and was sampled every 0.4 mm in rest volume. The skipped scanning planes
+were filled up after reconstructions by means of cubic spline interpolation. For the
+reconstruction, altogether 98 scanning planes have to be measured.
+</p>
+
+<p>
+Because of the large number of scanning planes, we had to reduce the measurement duration for
+each scanning plane. From the video, we can clearly see, that the most energy of the ultrasound
+pressure field concentrates in a relative small range, especially when the transducer has the
+ability of focusing. On account of this fact, we sampled the small range with high sampling
+rate, and reduced the sampling rate beyond this range. Besides, the pressure field was sampled
+under 50 angles instead of 100 angles. By doing so, the measurement duration for each scanning
+plane took about 1 hour.
+</p>
+
+<p>
+(By doing so, the measurement of each plane took circa one-fourth as long as the one in the
+original scanning manner, with a price of about 2.5\% additional uncertainty.)
+</p>
+
+<p>
+I'd like to emphasize that, the within this area, neither interpolation nor smooth function has
+been carried out in z-direction. Each pixel column at each instant of time is reconstructed
+individually. Nevertheless, the images are rather smooth.
+</p>
+
+<p>
+As expected, we can clearly see the constructive and destructive interference pattern in the
+near field, the variety of maximum and minimum along the z-axis, the main lobe and side
+lobes. Let's finish the video.
+</p>
+
+<p>
+Now, I'd like to finish with the comparison of both methods. The laser light used in experiments
+is so weak that it doesn't disturb original ultrasound field. The measurement is inherent
+omnidirectional. Further more, it's an universal measurement method and can even be used to
+detect the pressure field in transparent solid.
+</p>
+
+<p>
+There are also some disadvantages of this technique. First, the laser beam should have small
+spot size and small divergence. And these two requirements are difficult to be fulfilled
+simultaneously. Second, like many other optical experiments, the experiment setup must be highly
+precise, to obtain reliable results.
+</p>
+
+<p>
+As next step, ultrasound pressure fields in plexiglass are going to be investigated.
+</p>
+
+<p>
+Thank your for your attention.
+</p>
+
+
+<p>
+03.11.2011
+</p>
+
+<p>
+今天在皮蓬杜呆了了半天, 被折磨了半天, 一点不懂. 感觉专业化就是将一切的兴趣都摧毁&#x2026; 让后一个个都
+是牛逼自己, 让外行完全不知所以.
+</p>
+
+<p>
+11.11.2011
+</p>
+
+<p>
+在使用了 evil 以后, yy 和 dd 总是不能按照我的想法去做. 使用 yank 命令以后, 复制或删除的行总是出
+现在光标所在行的上一行中. 我不是很喜欢这个特点. 所以我想使用 emacs 自带的命令进行复制. 但是要复
+制整行, 在 emacs 中默认是 C-a C-SPC C-e M-w , 非常麻烦. emacs wiki 中还有很多自定义的命令, 进行
+单行的复制, 剪切. 最后我发现了一个对现有 M-w, C-w 进行拓展的命令. 其实非常简单, 就是在没有选区的
+情况下, M-w 和 C-w 分别复制和剪切当前行. 命令的结果符合我的要求.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+;; ------------------&#x2013;&#x2014; Whole Line Or Region ----------------&#x2013;&#x2014;
+;; "M-w" with no selection copies the current line, "C-w" kills it entirely. As the
+;; interactive-form property only affects the commands' interactive behavior, they are safe for
+;; other functions to call.
+</p>
+
+<p>
+;; Use the function put to alter the interactive form of kill-ring-save and kill-region:
+    (put 'kill-ring-save 'interactive-form
+     '(interactive
+       (if (use-region-p)
+           (list (region-beginning) (region-end))
+         (list (line-beginning-position) (line-beginning-position 2)))))
+    (put 'kill-region 'interactive-form
+     '(interactive
+       (if (use-region-p)
+           (list (region-beginning) (region-end))
+         (list (line-beginning-position) (line-beginning-position 2)))))
+&lt;/src&gt;
+</p>
+
+<p>
+另外我把 evil 的 git 相关文件也都放到了 svn 中. 以后运行 git pull 即可同步服务器. evil-maps.el
+被我改名了 evil-maps-changed.el. 以后 evil-maps.el 有更新的话, 需要同步到 evil-maps-changed.el.
+</p>
+
+<p>
+16.11.2011
+</p>
+
+<p>
+lse 的设备使用需要运行 java-plugin 进行预约. 除了安装 jdk 之类的抛以外, 还需要安装
+icedtea6-plugin.
+</p>
+
+<p>
+我把 hhkb 的按键交换了一下, 现在 [ 按键比其旁边的按键要稍微矮一下. 这种我就不会和其他按键混淆了.
+因为我觉得 hhkb 最大的问题在于左上角的几个按键实在太紧凑了.
+</p>
+
+<p>
+gnome-classic-3 的 gnome-panel 让窗口左上角的最小化按钮不方便使用, 而且每次用 pkill 讲进程关闭以
+后, 系统会默认重新启动, 感觉非常不爽. 于是我讲 /usr/bin/gnome-panel 的可执行性删去, 也就是系统调
+用这个命令也不会有任何效果. panel 用 tint2 代替. 有点点小小的问题, 如果要修改 gnome 的设置,
+在tint2上可不能找到 application menu 之类的东东. 那么就需要借助下面的命令行:
+&lt;example&gt; gnome-control-center &lt;/example&gt;
+</p>
+
+<p>
+另外, 要注销用户的话, 使用快捷键 Ctrl-Alt-Del 即可.
+</p>
+
+<p>
+17.11.2011
+</p>
+
+<p>
+When you running application that need Qt4 on Ubuntu 11.10 Oneiric, like PhantomJS or something,
+you will get kind of error :
+</p>
+
+<p>
+&lt;example&gt; Gtk-WARNING **: Unable to locate theme engine in module<sub>path</sub>: "pixmap", &lt;/example&gt;
+</p>
+
+<p>
+To solve this problem :  install gtk2-engines-pixbuf
+</p>
+
+<p>
+发现 fn 在 hhkb 里面也不是那么难按, fn-1 = f1 也蛮顺手的.
+</p>
+
+<p>
+18.11.2011
+</p>
+
+<p>
+发现 synthesize-event 在最新的 nautilus, gnome-terminal 都无效, 相当失望. 加上 nautilus 最新版行
+为怪异, 决定改用 pcmanfm. pcmanfm 感觉还是很顺手的, 其实就是老版 nautilus 的感觉了.
+</p>
+
+
+<p>
+super-p 在 gnome 中, 默认和 xrandr 绑定, 我根据网上的方法 xrandr 禁用了, 但是 sawfish 依然不能使
+用 super-p.
+</p>
+
+<p>
+不知道为什么, 现在 root-menu 不能通过点击中键呼出, 今天看到了 bash 中的命令 sawfish-config 呼出
+图形化的 sawfish-config. 把问题算是基本解决了.
+</p>
+
+<p>
+tips: hhkb pro2 中, fn-Tab 可以切换大小写.
+</p>
+
+<p>
+30.11.2011
+</p>
+
+<p>
+du 可以显示文件/文件夹的大小, &#x2013;max-depth 非常重要, 否则所有子文件夹的大小也都被显示出来, 非常不
+直观.  sort 可以排序, 如果加上 -h 参数以后, sort 会自动区别 G, M, K 等关键字, 比如它知道 1G 比
+120M 大. 我定义了一个 duu 的命令, 用以罗列当前目录下文件夹的大小:
+</p>
+
+<p>
+&lt;example&gt;
+alias duu='du -h &#x2013;max-depth=1 | sort -h'
+&lt;/example&gt;
+</p>
+
+<p>
+在使用 bash 的 cd 命令时, 如果文件夹名字很特别, 可以考虑使用 * 代替某些字符. 比如
+</p>
+
+<p>
+&lt;example&gt;
+sym<sub>water</sub><sub>harm</sub><sub>20</sub><sub>06</sub><sub>1MHz</sub>/             sym<sub>water</sub><sub>harm</sub><sub>28</sub><sub>06</sub><sub>1Mhz</sub><sub>fine</sub>/
+sym<sub>water</sub><sub>harm</sub><sub>20</sub><sub>06</sub><sub>1MHz</sub><sub>plexiglass</sub>/  sym<sub>water</sub><sub>harm</sub><sub>28</sub><sub>06</sub><sub>1MHz</sub><sub>piezo</sub>/
+sym<sub>water</sub><sub>harm</sub><sub>03</sub><sub>09</sub><sub>5MHz</sub>/  sym<sub>water</sub><sub>harm</sub><sub>22</sub><sub>03</sub>/
+&lt;/example&gt;
+</p>
+
+<p>
+我要进入 sym<sub>water</sub><sub>harm</sub><sub>20</sub><sub>06</sub><sub>1MHz</sub><sub>plexiglass</sub> 文件夹, tab 键当然能帮忙输入不少字符, 但是还是比较
+麻烦, 但是 plexiglass 具有唯一性, 所以我这样做:
+</p>
+
+<p>
+&lt;example&gt;
+cd s*plex*
+&lt;/example&gt;
+</p>
+
+<p>
+我把可以唯一标示这个文件夹的部分写出, 其他使用 * 代替, 非常方便.
+</p>
+
+<p>
+20.12.2011
+</p>
+
+<p>
+感觉 recoll 的搜索系统很不错, 尤其是对于 pdf, odt 等文件的支持. find, grep 虽然强大, 不过对于巨大
+范围的查找, 费时还是很恐怖的, 尤其是 grep. recoll 现在更新也很勤快. 在学校电脑上, 用 crontab -e
+增加了定时执行操作:
+</p>
+
+<p>
+&lt;example&gt;
+30 3 * * * recollindex &gt; /some/tmp/dir/recolltrace 2&gt;&amp;1
+&lt;/example&gt;
+</p>
+
+<p>
+每日的 3:30 分, recollindex 都会执行索引.
+</p>
+
+<p>
+另外, 利用 -t 参数,
+</p>
+
+<p>
+&lt;example&gt;
+recoll -t "hello"
+&lt;/example&gt;
+</p>
+
+<p>
+还能支持命令行下的检索.
+</p>
+
+<p>
+04.01.2012
+</p>
+
+<p>
+新刷的手机不能上 google market, 使用了网络上修改 hosts 文件的方法也无效. 不知道是不是因为我使用
+学校网络的原因, 很奇怪.
+</p>
+
+<p>
+18.01.2011
+</p>
+
+<p>
+DjVu:
+</p>
+
+<p>
+DjVu is a format <b><b>designed</b></b> <b><b>for</b></b> <b><b>scanned</b></b> <b><b>documents</b></b>. It solves the size vs. quality issue by
+providing high quality at very low file sizes, supporting also a (OCRed) text layer.
+</p>
+
+<p>
+Being initially developed at AT&amp;T, a commercial version of tools is maintained today by
+LizardTech, but the file format itself is open - specifications were published. GPLed tools are
+also maintained by the original authors of DjVu, under the name of "DjVuLibre".
+</p>
+
+<p>
+20.01.2012
+</p>
+
+<p>
+Here, n and p denote, respectively, the refractive index and the density of the medium in the
+absence of ultrasound.
+</p>
+
+<p>
+29.01.2012
+</p>
+
+<p>
+密码升级了! ' 1" 为标准状态
+</p>
+
+<p>
+30.01.2012
+</p>
+
+<p>
+Windows 7 希望将用户数据和用户普通文件分离开来, 所以比如游戏存档, 都放在了
+</p>
+
+<p>
+"C:\Users\USERNAME\AppData\Local\VirtualStore\Program Files (x86)\&#x2026;"
+</p>
+
+<p>
+下. 而且很多配置文件都会被复制到此, 比如 博得之门中的 bahur.ini 文件, 直接修改"C:\Program Files
+(x86)\&#x2026;" 下的这个文件, 不会有任何效果. 这个就是很多奇怪现象出现的原因.
+</p>
+
+<p>
+20.02.2012
+</p>
+
+<p>
+小 keyu 在国内不方便用 skype, 我的linux不适合用 qq. 解决办法就是 skype. 我希望都在 pidgin 上解决.
+发现ubuntu里有个 skype-pidgin 的插件. 这个软件并不能直接登录 skype 的服务器, 而是让 skype 在后台
+运行, 然后与其建立连接, 这样就大致实现了 pidgin 包含所有 im 程序.
+</p>
+
+<p>
+22.02.2012
+</p>
+
+<p>
+matlab 模式下, 如果一个 string 未结束, 会用和背景色很类似的颜色显示, 很让人难受. 通过命令
+describe-face 可以得到这个 face 在 matlab.el 里定义. 不过他们使用了非常复杂的命令加以实现, 我基
+本看不懂. 幸好 describe-face 有链接显示如何直接修改这个 face. 我将其改为 red1, 很显眼.
+</p>
+
+<p>
+发现 oxygen 还是不错的. 尤其是想试试 cfs 到底还支持哪些参数的时候. 用 emacs 也没有必要就敌视
+oxygen  :)
+</p>
+
+<p>
+有时候我在emacs里, 忽然想开启 oxygen 查看当前的这个文件. M-! oxygen 可以实现. 但是只要 oxygen 还
+在运行, emacs 就会被挂起. 所以我需要的是 async-shell-command, 快捷键是 M-&amp;. 也非常好记:  &amp; 本来
+就是后台运行的标志.  如果在 dired 中运行 async-shell-command, 则不需要 M, 直接按 &amp; 即可. M-! 也
+变成了 !.
+</p>
+
+<p>
+25.02.2012
+</p>
+
+<p>
+tee 有点意思, 就是读取输入, 然后将其放入标准输出, 同时写入某个文件中.
+</p>
+
+<p>
+29.02.2012
+</p>
+
+<p>
+今天要将一个 16 G 大小的文件拷贝到本地电脑上. 有个很尴尬的问题, 在拷贝过程中, 所有的带宽都被占用,
+导致我的电脑基本进入瘫痪状态. 经过长久的 google , 我发现 rsync &#x2013;bwlimit 5000 是个好的解决办法.
+当速度上限被限制在 5 MB/s 的时候, 剩下的带宽足够我进行我的其他事物. 顺手定义了一个 mycp, 因为
+rsync 在进行本地复制的时候, 语法和 cp 无异.
+</p>
+
+<p>
+02.03.2012
+</p>
+
+<p>
+今天看到文章说写论文的时候应该使用 times 包, 因为:
+</p>
+
+<p>
+Use the \usepackage{times} option for LaTeX2e - it comes out much nicer on printers with
+different resolutions. Plus, compared to cmr, it probably squeezes an extra 10% of text out of
+your conference allotment.
+</p>
+
+<p>
+我尝试了一下, 发现是不错. 后来在 IEEE 的文章里加上 times 包以后, 没有发现任何改变. 后来查看了格
+式文件, 发现他们已经将字体规定为 times 了.
+</p>
+
+<p>
+15.03.2012
+</p>
+
+<p>
+发现编程的时候, 使用 E, B, W 移动真的很方便. 它会将 (, . 之类的符号全当作单词的一部分. 所以非常
+迅速.
+</p>
+
+<p>
+19.03.2012
+</p>
+
+<p>
+用 chromium, 书签删了, 下次打开, 删除的书签又都回来了, 而且还出来两份&#x2026; 越删越多. 非常郁闷. 上
+网搜索, 中文的, 英文的, 大家都在抱怨. 最后到了 google chrome 的论坛, 里面有人说: 我不明白这么大
+的问题为什么会被标识为 " won't be fixed ". 我看了晕死了. 后来又看到有人说, 还好我们还有
+xmarks&#x2026;.
+</p>
+
+<p>
+我在之前也几次看到xmarks这个东东, 不过总是相信 google 会让大家满意. 终于失望了, 装上 xmarks. 它非
+常给力啊! 能够同时 sync 所有浏览器的标签, 而且不是另外出来一个下拉框, 而是直接修改本地的
+bookmarks 内容. 非常不错. 心里一阵happy. 过了半天, 感觉都应该写此 log 纪念.
+</p>
+
+<p>
+23.03.2012
+</p>
+
+<p>
+CDLatex 是蛮厉害的. 不过输入 _ 自动加上 {} 这点让我不是很喜欢, 主要是因为 _ 是很多文件名的组成部
+分. 我今天修改了 cdlatex.el 文件, 注释了这个功能.
+</p>
+
+<p>
+03.04.2012
+</p>
+
+<p>
+最近很郁闷. 学业压力很大, 实验问题很麻烦, 和女朋友关系很尴尬, 和朋友关系很别扭. 怎么会搞成这个样
+子. 极度郁闷!
+</p>
+
+<p>
+16.04.2012
+</p>
+
+<p>
+发现将数据存储在 lse22 和 lse16 差别不是想象中那么大, 77 s : 58 s . lse16 慢一些, 但是可以从任意
+电脑访问, 所以还是有优势的.
+</p>
+
+<p>
+13.05.2012
+</p>
+
+<p>
+今天终于知道为什么 LRT 测出来的结果刚好是 hydrophone 的结果的 2 倍了.
+</p>
+
+<p>
+激光在水中来回穿过声场, 所以声场作用了两次, 要除以 2.
+</p>
+
+<p>
+我们使用 LDV 测量 速度/距离 的变化.  LDV 是设计用来测量物体相对于 LDV 探头的移动距离. 物体远离探
+头 dL 的结果就是 激光必须多传播 2*dL. 但是输出结果是 dL, 所以 有个系数 2 已经在 LDV 内部除去. 所
+以我们在用它来测量声场导致的 optical path length change 的时候, 不需要再次除以 2. 这个很重要, 否
+则, 结果总是 hydrophone 结果的 1/2.
+</p>
+
+<p>
+14.05.2012
+</p>
+
+<p>
+Ubuntu 11.10 自动生成一系列文件夹, 比如 ~/Music. 删除之后又会自动生成.
+需要修改
+</p>
+
+<p>
+&lt;example&gt;
+/etc/xdg/user-dirs.defaults
+&lt;/example&gt;
+</p>
+
+<p>
+删去相关的条目即可.
+</p>
+
+<p>
+24.05.2012
+</p>
+
+<p>
+在纽伦堡会议上的讲演稿, 这个让我拿到了第一个最佳学生论文奖, :D
+</p>
+
+
+<p>
+Meine Damen und Herren, zuerst herzlich willkommen zu meinem Vortrag.
+</p>
+
+<p>
+In diesem Vortag möchte ich die refraktormetrische Tomographie vorstellen.
+</p>
+
+<p>
+Ich fange mit einer kurzen Motivation an. Danach erläutere ich das Messprinzip der Messtechnik
+und zeige zwei neuartigen Experimenten. Am Ende kommt die Zusammenfassung dazu.
+</p>
+
+<p>
+Wenn man den Schalldruck in Wasser messen möchte, verwendet man normalerweise ein
+Hydrophon. Obwohl es einige Fehlerquellen bei Messungen mit Hydrophon gibt, sind die Ergebnisse
+meistens zufriedenstellend.
+</p>
+
+<p>
+Eines Tages hat ein Kollege mich gefragt: "Wird das Schallfeld vom Hydrophon beeinflusst?"  Ich
+habe sofort geantwortet "Sicher!" 1MHz Ultraschall hat eine Wellenlänge von 1,5 mm in
+Wasser. Das Hydrophon hat einen Durchmesser von ca. 12 mm. Natürlich wird das Schallfeld
+beeinflusst.  Dann fragte mein Kollege weiter:"Kann man das beeinflusste Schallfeld messen?"
+Das ist eine gute Frage. Bevor ich die Frage antworte, sollte ich zuerst die Anforderungen für
+so eine Messung nachdenken.  Die ausgewählte Messtechnik muss vor allem berührungslos sein,
+damit keine zusätzlichen Störungen eingeführt werden.  Sie muss eine kugelförmige
+Richtcharakteristik haben, um die reflektierten Schallwellen richtig zu messen.  Außerdem sollte
+die Technik zeitaufgelöste Ergebnisse liefern. Am Ende ist eine Absolutmessung gewünscht.
+Hydrophon kann die ersten zwei Anforderungen nicht erfüllen.  Die einzige uns bekannte
+Messtechnik, die alle Anforderungen erfüllt, ist die refraktomatrische Tomographie.
+</p>
+
+<p>
+Nun stelle ich das Messprinzip dieser Technik vor.
+</p>
+
+<p>
+Bei der Anwesenheit des Schallfeldes wird die Wasserdichte vom Schalldruck leicht geändert.
+</p>
+
+<p>
+Die Änderung der Wasserdichte verursacht anschließend die Änderung des
+Brechnungsindexes.
+</p>
+
+<p>
+Wenn ein Laserstrahl sich durch das Ultraschallfeld ausbreitet, wird seine optische Weglänge vom
+Schallfeld beeinflusst.
+</p>
+
+<p>
+Die Beziehung zwischen dem Schalldruck und der Änderung der optischen Weglänge wird durch diese
+Integralgleichung beschrieben.
+</p>
+
+<p>
+Der sogenannte pizooptische Koeffizient in der Gleichung wird als konstant betrachtet. Die
+Änderung der optischen Weglänge kann man mit einem Vibrometer messen. Deswegen ist der
+Schalldruck die einzige unbekannte in der Integralgleichung. Die Computertomographie wird
+verwendet, um die Integralgleichung zu lösen.
+</p>
+
+<p>
+Für die Rekonstruktion wird das Schallfeld zuerst auf genügend Positionen entlang einer
+radialen Linie abgetastet. Der Prozess, oder die sogenannt Projektion, wird unter verschiedenen
+Winkeln wiederholen. Am Ende kann das betrachtete Schallfeld mit Hilfe der gefilterten
+Rückprojektion rekonstruiert werden.
+</p>
+
+<p>
+Im Experiment wird der Messkopf vom Laser-Doppler-Vibrometers auf den Translationseinheiten
+montiert, damit man den Messkopf beliebig positionieren kann. Ein Ultraschallwandler wird im
+Zahnrad befestigt, das dann mit einer Rotationseinheit verbunden ist. Somit kann das vom
+Ultraschallwandler erzeugte Schallfeld gedreht werden.  Der Spiegel wird so eingestellt, dass
+der Laserstrahl zurück zum Vibrometer reflektiert wird.  Als Hindernis wird ein Hydrophon vor
+dem Ultraschallwandler positioniert.  Ein nicht fokussierter Ultraschallwandler sendet jeder
+Millisekunden ein ein-Megahertz Burstsignal mit 8 Zyklen.  Untersucht wird das Schallfeld
+zwischen dem Hydrophon und dem Ultraschallwandler.  Wir haben insgesamt 105 Querschnitte
+rekonstruiert, und dann werden die Querschnitte nach ihren z-Koordinaten zusammengesetzt. Keine
+Interpolation und Glättung wurde verwendet.  Das Schallfeld hinter der Hydrophonspitze kann
+nicht rekonstruiert werden, weil das Hydrophon den Laserstrahl blockiert. Dort wird das
+Schallfeld direkt mittels Projektionen dargestellt.
+</p>
+
+<p>
+Das Video zeigt das rekonstruierte Schallfeld auf der xz-Ebene.
+</p>
+
+<p>
+Hier sieht man ein typisches, vom Kolbenstrahler erzeugtes Schallfeld.  Die konstruktive
+Interferenz und die destruktive Interferenz.  Die Interferenz zwischen den vorwärts und
+rückwärts laufenden Wellen taucht auf.  Die reflektierten Wellen sind kreisförmig.  Das Bild
+zeigt die Verteilung des Schalldrucks, nachdem die letzte fortschreitende Welle die
+Hydrophonspitze getroffen hat.
+</p>
+
+<p>
+Um den Struktur des Schallfeldes darzustellen, wird das Bild binarisiert. Alle positiven bzw.
+negativen Werte werden mit weiß bzw. schwarz dargestellt. Hier sieht man acht konzentrische weiß
+Kreisbogen. Alle Bogen enden hier, wo die fortschreitenden Wellen dominant sind. Die
+Wellenformen sind sehr symmetrisch in Bezug der z-Achse.
+</p>
+
+<p>
+Bisher wird es gezeigt, dass die refraktometrische Tomographie in Wasser gut funktioniert.  Wir
+habe die Messtechnik im transparenten Festkörper verwendet.
+</p>
+
+<p>
+Ein Plexiglas-Block wird vor dem Ultraschallwandler positioniert.
+</p>
+
+<p>
+In Festkörpern existiert der richtungsunabhängige Schalldruck nicht mehr.  Die relative
+Volumenänderung, oder sogenannt Dilatation in Plexiglas wird rekonstruiert.  Die restlichen
+Einstellungen bleiben gleich wie im letzten Experiment.  Wir haben 105 Querschnitte
+rekonstruiert. Die Auflösung des Videos in z-Richtung wurde durch Interpolation verdoppelt.
+</p>
+
+<p>
+In der Nähe der Grenzflächen wurde die optische Eigenschaft vom Plexiglas von der mechanischen
+Bearbeitung geändert. In diesen Gebieten wurde der Laserstrahl nicht zurück zum Vibrometer
+reflektiert. Deswegen ist das Schallfeld in diesem Bereich unmessbar.
+</p>
+
+<p>
+Wir sehen wieder ein typisches, vom Kolbenstrahler erzeugtes Schallfeld. Nun sieht man eine
+Seite die Interferenz im Wasser. Andere Seite sieht man größere Wellenlänge in Plexiglas als die
+in Wasser ist. Die Ausbreitungsgeschwindigkeit in Plexiglas ist auch wesentlich höher.  Hier
+kommen die Wellen, die vom Ultraschallwandler reflektiert wurden.
+</p>
+
+<p>
+Die Messung in Plexiglas hat wesentlich niedrigeres Signal-Rausch-Verhältnis als die in
+Wasser. Deswegen ist das rekonstruierte Schallfeld in Plexiglas auch &#x2026;.
+</p>
+
+<p>
+Ich fasse mal den Vortrag zusammen. Zwei Experimenten wurden demonstriert. Die Schallfelder in
+stückweise homogenen Medien wurden rekonstruiert. In beiden Experimenten sieht man deutliche
+Interferenzen zwischen den Wellen mit verschiedenen Ausbreitungsrichtungen.
+</p>
+
+<p>
+Die rekfraktometrische Tomographie ist berührungslos, und hat eine kugelförmige
+Richtcharakteristik. Sie liefert zeitaufgelöste Ergebnisse über den Schalldruck in Pascal.
+Außerdem kann man die Technik in verschiedene Medien verwenden.  Diese Technik hat zwei
+Anforderungen. Der Laserstrahl muss kleinen Durchmesser haben und ein präziser Messaufbau ist
+erforderlich. Die beiden Anforderungen sind schwer zu erfüllen, wenn Hochfrequenz-Ultraschall
+untersucht wird, zum Beispiel Ultraschall ab 10 MHz.
+</p>
+
+<p>
+29.05.2012
+</p>
+
+<p>
+一直以为 Ubuntu 的任务栏是不可修改的, 今天发现原来要 Alt+win+右键 才能开启快捷菜单. 好奇怪的设计.
+</p>
+
+<p>
+05.06.2012
+</p>
+
+<p>
+在加拿大东边驾车 7 日游, 下面是简单的旅程安排.
+</p>
+
+<p>
+&lt;example&gt;
+</p>
+<ol class="org-ol">
+<li>day: Montreal  -&gt; Quebec   (3 h)</li>
+<li>day: Quebec    -&gt; charleton (7 h)</li>
+<li>day: charleton -&gt; perce    (3 h)</li>
+</ol>
+<p>
+4., 5. day: perce &amp; Gaspe     (1 h)
+</p>
+<ol class="org-ol">
+<li>day: Perce     -&gt; rimoski   (5.8 h)</li>
+<li>day: rimoski   -&gt; montreal  (6.5 h)</li>
+</ol>
+<p>
+&lt;/example&gt;
+</p>
+
+
+<p>
+06.06.2012
+</p>
+
+<p>
+在 gnome 下, 有时候启动 iswitch 以后, 输入却无法被接收, 而且无法离开 iswitch, 这种情况下必须在
+Terminal下重启 sawfish:
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+sawfish-client -q -f restart
+&lt;/src&gt;
+</p>
+
+<p>
+26.06.2012
+</p>
+
+<p>
+发现新的 evil 加载有问题, 报错说某项递归加载. 原来是没有编译 evil 导致的.
+</p>
+
+<p>
+29.06.2012
+</p>
+
+<p>
+写论文的时候, 我一直使用 pdfLatex 生成 pdf 文档. 最大的好处是 pdflatex 支持 png, jpeg 这两种重要
+的位图文件. 但事实上最后我一般也都将 jpeg 等位图转为 pdf文件, 然后用 inkscape 修改, 引用.
+</p>
+
+<p>
+在发表期刊论文的时候, 一般要求上传的矢量图使用 eps 格式. 因为 eps 才是印刷界的图形标准格式. 直接
+将 pdf 图像转为 eps 图像以后, 质量损失非常之大. 所以我用 inkscape 将 svg 保存为 eps. 一般都没有问
+题. 但是, 中间发现了一个 bug: 图形中右边界的线条有可能在存为 eps 的时候丢失. google 了一下, 发现
+不光光是发生在我这里, 据说是某个相关软件的问题. 没有看到真正的解决方案. 不过在保存为 eps 的时候,
+不要选中 'Export area is drawing', 这个问题就不会出现. 但是要注意, 有可能会出现巨大的边缘空白, 不
+过我没有遇到. 最后, 如果画板的大小大于图形的面积 (比如左侧有留白), 那么eps会自动删去空白部分. 事
+实上留白我是为了多个图形对齐设计的. 解决方法非常简单, 在留白部分添加一个白色的矩形, 此矩形应该有
+部分穿过边界, 这样, 因为白色部分的存在, eps 不会裁去白色部分, 而且仅仅画板以内的区域会被保存.
+</p>
+
+<p>
+感觉使用 evince 或这 xdvi 打开 生成的 dvi 文件, 都感觉显示的图形文字不是很圆滑, 不过将其转为 pdf
+以后, 发现其实还是没有问题的. 另外我们的打印机居然不能打印 dvi 中的图形. 在 latex-mode 下, C-c
+C-c 然后选择 dvi2dpf 就可以将生成的 dvi 文件转为 pdf.
+</p>
+
+
+
+<p>
+02.07.2012
+</p>
+
+<p>
+使用 inkscape 将 svg 保存为 eps 的时候, 所有空白的背景都会被自动删去. 这点虽然通常情况下比较方便,
+但是有时候为了一系列图片比例相等, 需要一些空白背景进行扩张. 发现一个命令 <b><b>pdftops</b></b> 可以将 eps 极好
+地转为 pdf, 而且保存空白背景.
+</p>
+
+<p>
+18.07.2012
+</p>
+
+<p>
+在学校用我自己的电脑上网经常不能正常连上, 下面是解决方案
+</p>
+
+<ol class="org-ol">
+<li>用 admin-right 运行 cmd</li>
+<li>执行 ROUTE DELETE 0.0.0.0</li>
+<li>执行IPCONFIG /RENEW</li>
+</ol>
+
+<p>
+不过经验上, 好像得等又会, 让系统获得 '错误' 的信息先.
+</p>
+
+<p>
+06.08.2012
+</p>
+
+<p>
+sawfish 和 gnome nautilus 兼容性一般. 有时候我开启 iswitch 以后, 好端端什么也不能输入了. 只能切
+换到 terminal 然后 pkill -9 X. 现在有个不错的办法, 就是切换到 terminal, 然后终止 sawfish. 这时候
+回到 X 模式下, 只有鼠标能用, 什么字母都不能输入. 这个时候&#x2026; e, 没有办法. 必须要实现 在 menu 上
+点右键, 然后在 edit menus 下建立一个 sawfish 的命令. 这样在 sawfish 被终止以后, 也能通过鼠标重新
+启动 sawfish.
+</p>
+
+<p>
+07.09.2012
+</p>
+
+<p>
+我之前将 IUS2012 文件夹删去. 现在文件修改结束以后, 把 IUS2012<sub>PlanB</sub> 转正. 但是不能再建立 IUS2012
+文件夹. svn 报错说在数据库里存在 IUS2012 的条目. 原因当时删除文件夹的时候, 没有彻底删除, 我怀疑
+是我使用 svn cleanup 导致的. 虽然 svn st 看不到有 IUS2012 的条目, 但是使用
+</p>
+
+<p>
+&lt;example&gt;
+svn co <a href="file:///c:/home/lse10/lse/clizhuo/.my_svn_repos/svn4latex2011/IEEE_P/IUS2012">file:///c:/home/lse10/lse/clizhuo/.my_svn_repos/svn4latex2011/IEEE_P/IUS2012</a>
+&lt;/example&gt;
+</p>
+
+<p>
+居然还能 co 出 IUS2012 整个文件夹. 解决办法居然就是直接使用全路径删去该条目 (我蒙中的)
+</p>
+
+<p>
+&lt;example&gt;
+svn del <a href="file:///c:/home/lse10/lse/clizhuo/.my_svn_repos/svn4latex2011/IEEE_P/IUS2012">file:///c:/home/lse10/lse/clizhuo/.my_svn_repos/svn4latex2011/IEEE_P/IUS2012</a>
+&lt;/example&gt;
+</p>
+
+<p>
+然后就可以新建一个 IUS2012, 最后重新 check in 了.
+</p>
+
+<p>
+29.10.2012
+</p>
+
+<p>
+觉得回国没啥意思, 有点不想回国了. 而且keyu明年或许会来.
+</p>
+
+<p>
+02.02.2013
+</p>
+
+<p>
+使用 inkscape 编辑文件, 但是 latex 不能直接读入 svg 格式, 每次修改以后都必须保存为 pdf 文件.
+同时 pdf 文件自然不够完整, 最后结果就是 svg 和 pdf 都必须存在, 非常麻烦. google 了一下, 发现到处
+都是这样的问题, 希望 inkscape 能够同时保存 svg 和 pdf 文件, 而不需要手工操作两次. 但是&#x2026; 我看了
+一下愿望是 2008 年提出的&#x2026; 于是觉得希望渺茫. 我写了一个 bash 命令, 无非就是将选中的 svg 文件转
+为 pdf 文件.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell-script"><span style="color: #fa8072;">for</span> arg
+<span style="color: #fa8072;">do</span>
+    <span style="color: #fa8072;">if</span> [[ <span style="color: #ffa07a;">"$arg"</span> == *.svg ]]; <span style="color: #fa8072;">then</span>
+        <span style="color: #7fffd4; font-weight: bold;">filename</span>=<span style="color: #fa8072;">`basename "$arg" .svg`</span>
+        inkscape <span style="color: #ffa07a;">"$arg"</span> --export-pdf=<span style="color: #ffa07a;">"$filename.pdf"</span>
+    <span style="color: #fa8072;">fi</span>
+<span style="color: #fa8072;">done</span>
+</pre>
+</div>
+
+<p>
+这样我以后在 inkscape 中仅仅进行 svg 操作, 而将转为 pdf 的这一步使用nautilus的script完成. 应该会
+稍微简单一点点.
+</p>
+
+
+<p>
+04.02.2013
+</p>
+
+<p>
+gnome 有个快捷键是 super+p , 这样切换双显示器是同时显示同样的内容还是不同的内容. 我在学校根本不
+需要做这样的切换, 而且 super+p 容易不小心被按到, 因此用如下的方法将此快捷键禁用:
+</p>
+
+<ul class="org-ul">
+<li>Install the dconf-tools package, and then run dconf-editor.</li>
+<li>navigate org -&gt; gnome -&gt; settings-daemon -&gt; plugins -&gt; xrandr. Uncheck the active checkbox.</li>
+</ul>
+
+
+<p>
+15.04.2013
+</p>
+
+<p>
+在载入matlab数据文件(*.mat)的时候, 如果里面有巨大的矩阵,而这个矩阵在程序中并不需要, 应该要写出具
+体载入的变量名, 这样能节省大量的运行时间.
+</p>
+
+<p>
+28.05.2013
+</p>
+
+<p>
+在使用 latex 的论文的时候, auctex 有一个很方便的命令, 输入 " 就可以根据情况得到 `` 或者是 '', 这
+是latex中的左引号和右引号. 不过写 dissertation 的时候, 输入 " 仅仅得到 " 本身. 我查看了 " 所调用
+的函数以后发现, 这个命令还考虑到不同语言对引号的要求, 比如以前有些德语中好像用 &lt;&lt; &gt;&gt; 表示引号.
+现在我在dissertation中同时使用 英语 和 德国 的packages, 而现在德语默认的引号就是 " 本身. 解决办
+法就是使用下面语句告诉 emacs, 在使用了德语包的情况下, 依然使用 `` 和 '' 表示引号.
+</p>
+
+<p>
+&lt;src lang="emacs-lisp"&gt;
+(add-to-list 'TeX-quote-language-alist '("ngerman" "``" "''" nil))
+(add-to-list 'TeX-quote-language-alist '("german" "``" "''" nil))
+&lt;/src&gt;
+</p>
+
+
+
+<p>
+27.06.2013
+</p>
+
+<p>
+今天玩了一下 emacs 的一个插件, multiple-cursors, 蛮有趣的, 就是可以根据条件产生多个光标, 然后同
+时修改多行数据. 包括一起复制, 粘贴. 但是发现我实在用 evil , 所以很多命令, 比如 dw 之类的, 它就执
+行了 d, 然后遇到w的时候, 就出错了. 另外, 发现 undo 被这个插件弄得很乱. 我估计如果是纯的emacs, 应
+该会很好用.
+</p>
+
+
+<p>
+28.07.2013
+</p>
+
+<p>
+gnome-panel 在系统启动的时候, 都不知去向, 我每次都要 pkill 将其终止, 然后系统自动重新启动
+gnome-panel 才会出现.  我今天发现它原来在启动的时候处在屏幕之外.  我估计是因为它是和原来的WM 一
+起启动, 然后我使用 sawfish 代替原来的 WM 以后, 它的位置没有做相应的调整, 所以就身处屏幕之外了.
+</p>
+
+<p>
+除了将其重启以外, 更好的解决之道暂时还没有想出来.
+</p>
+
+
+<p>
+16.12.2013
+</p>
+
+<p>
+Sehr geehrte Damen und Herren. Zuerst herzlich willkommen zu meinem Promotionsvortrag.  In den
+nächsten 30 Minuten möchte ich Ihnen eine neue Messmethode vorstellen, nämlich die
+refraktometrische Tomographie. Mit dieser Messmethode kann man Ultraschall in unterschiedlichen
+Medien berührungslos messen.
+</p>
+
+<p>
+Mit Ultraschall bezeichnet man Schall mit Frequenzen oberhalb 20 kHz.  Im Allgemeinen hat
+Ultraschall eine hohe Richtwirkung und niedrige Dämpfung in Flüssigkeiten und Festkörpern.
+</p>
+
+<p>
+Heutzutage wird Ultraschall in verschiedenen Bereichen eingesetzt, z.B. in der Medizin oder in
+der Werkstoffprüfung. Hier werden ein paare konkrete Anwendungsbeispiele dargestellt. Für die
+meisten Anwendungen ist eine genaue Kenntnis des vom Ultraschallwandler erzeugten Schallfeld
+erforderlich.
+</p>
+
+<p>
+Um ein Schallfeld zu charakterisieren, wird Hydrophon am häufigsten verwendet. Ein Hydrophon
+wandelt den auf seine Spitze einwirkenden Schalldruck in Wechselspannung um. Die Messung mit
+einem kalibrierten Hydrophon hat normalerweise eine hohe Genauigkeit.
+</p>
+
+<p>
+Aber die Reflexion der Schallwellen am Hydrophon verursacht Messfehler und hat gleichzeitig
+Rückwirkung zum originalen Schallfeld. Außerdem ist die richtungsabhängige Empfindlichkeit des
+Hydrophons eine andere potenzielle Fehlerquelle.
+</p>
+
+<p>
+Außer Hydrophon gibt es noch ein paar andere Messmethode.  Die Abbildung zeigt den prinzipiellen
+Messaufbau der Membran-basierten Interferometrie.  Die goldbeschichtete dünne Membran ist
+akustisch transparent aber optisch intransparent. Die Partikergeschwindigkeit der Membran wird
+mit Hilfe von einem Michelson-Interferometer gemessen.  Mit der Membran-basierten
+Interferometrie kann eine sehr hohe Messgenauigkeit erreicht werden. Diese Methode ist
+rückwirkungsfrei, aber ist richtungsabhängig. Die Methode wird oft für Hydrophonkalibrierung
+eingesetzt.
+</p>
+
+<p>
+Die Schlierenfotographie wird häufig verwendet, um Schallfeld zu visualisieren. Ein kollimierter
+Laserstrahl breitet sich durch das Schallfeld aus. Die periodische Änderung der Wasserdichte
+wirkt hier wie ein optisches Gitter. Der gebeugte Strahl wird von einer CCD-Kamera
+aufgenommen. Die Messung mit Schlierenfotographie ist sehr schnell aber keine Absolutmessung.
+</p>
+
+<p>
+Wir können sehen, dass noch keine Messmethode alle Anforderungen erfüllt. Unter diesem
+Umständen wird die Messmethode refraktometrische Tomographie entwickelt.
+</p>
+
+<p>
+Ich möchte zunächst das Messprinzip der refraktometrischen Tomographie vorstellen. Dann zeigt
+ich ein paar Beispiele, dadurch man die Fähigkeiten der neuen Messmethode besser kennenlernen
+kann.  Am Ende schließe ich meinen Vortrag mit einer Zusammenfassung und einem Ausblick ab.
+</p>
+
+<p>
+Schauen wir zuerst das Messprinzip der neuen Messtechnik an.
+</p>
+
+<p>
+Bei der Anwesenheit des Schallfeldes wird die Wasserdichte vom Schalldruck geändert. Die
+Änderung der Wasserdichte verursacht anschließend die Änderung des Brechnungsindexes.
+</p>
+
+<p>
+Wenn ein schmaler Laserstrahl sich durch das Ultraschallfeld ausbreitet, kann man die Änderung
+der optischen Weglänge durch das Integral der Änderung des Brechungsindexes entlang des
+Strahlengangs beschreiben.  Der Faktor 2 ist nötig, da der Laserstrahl sich zwei mal durch das
+Schallfeld ausbreitet.
+</p>
+
+<p>
+Im Fall von Gas und Flüssigkeit ist die Änderung des Brechungsindexes proportional zum
+Schalldruck.  Man kann die zweite Gleichung in die erste einsetzen, und bekommt die neue
+Gleichung.
+</p>
+
+<p>
+Hier, die Änderung der optischen Weglänge kann man durch den Vibrometer messen. Der sogenannte
+piezooptische Koeffizient wird als konstant betrachtet. d.h. der Schalldruck ist die einzige
+unbekannte in der Integralgleichung. So eine Integralgleichung kann man mittels Tomographie
+lösen.
+</p>
+
+<p>
+Für die Rekonstruktion eines Querschnittes wird zuerst die Änderung der optischen Weglänge an
+verschiedenen Positionen entlang der x-Achse mit dem Vibrometer gemessen. Diese Prozess kann man
+auch als Projektion des Querschnittes bezeichnen.
+</p>
+
+<p>
+Dann wird der Ultraschallwandler rotiert und das Querschnitt wird unter unterschiedlichen
+Winkeln projiziert.
+</p>
+
+<p>
+Am Ende werden die Messdaten der Projektionen zum Computer übertragen. Und dort wird das
+Schallfeld in der Querschnittebene mittels der sogenannten gefilterten Rückprojektion
+rekonstruiert.
+</p>
+
+<p>
+Diese Messmethode wird als "refraktometrische Tomographie" bezeichnet, oder auf English "Light
+Refractive Tomography" mit der Abkürzung LRT.
+</p>
+
+<p>
+Das Foto zeigt den Messbau einer LRT-Messung.  Der Messkopf vom Vibrometer wird auf einer
+Translationseinheit montiert, damit man den Messkopf in xyz-Richtung verfahren kann. Ein
+Ultraschallwandler wird im Zahnrad befestigt, das dann mit einer Rotationseinheit verbunden
+ist. Somit kann das vom Ultraschallwandler erzeugten Schallfeld unter verschiedenen Winkeln
+projiziert werden. Der Spiegel wird so eingestellt, dass der Laserstrahl zurück zum Vibrometer
+reflektiert wird.
+</p>
+
+
+<p>
+Für eine Messmethode ist die Fehlerkontrolle besonders wichtig. Auf Grund der beschränkten Zeit
+zeige ich nur ein einfaches Beispiel.
+</p>
+
+<p>
+Es ist von der Tomographie erforderlich, die x-Koordinate der Symmetrieachse der zylindrischen
+Einspannung zu bestimmen. Die Aufgabe klingt ziemlich trivial.
+</p>
+
+<p>
+Auf dieser Abbildung wird die Draufsicht der zylindrischen Einspannung gezeigt. Für die
+Lokalisation der Symmetrieachse muss man zuerst die Position der beiden Kante bestimmen, und
+dann kann man schon die x-Koordinate der Symmetrieachse berechnen.
+</p>
+
+<p>
+Das Problem sind die Messfehler.
+</p>
+
+<p>
+Wegen der Messfehler bei der Lokalisation der Kanten, hat die ermittelte Position der
+Symmetrieachse einen Messfehler von Delta X. Nach den entsprechenden Simulationen verursacht ein
+Messfehler von 0,5 mm einen maximalen normierter Fehler von 19% im Rekonstruierten
+Schallfeld. Um die Fehler innerhalb von 1% zu beschränken, muss der Messfehler kleiner als 0,02
+mm sein, also viel kürzer als der Durchmesser vom Haar.
+</p>
+
+<p>
+Die Idee meiner Lösung ist ziemlich einfach.
+</p>
+
+<p>
+Wenn der Laserstrahl von einem Hindernis teilweise blockiert wird, ist die Intensität des vom
+Spiegel reflektierten Laserstrahl sehr empfindlich gegen die Position.
+</p>
+
+<p>
+Ich lasse den Vibrometer mit einer Schrittweite von 5 Mikrometer über eine Kante der
+Einspannung verfahren. Diese Kurve zeigt den Intensitätspegel vom zurück zum Vibrometer
+reflektierten Laserstrahl.
+</p>
+
+<p>
+Nachdem die Einspannung den Laserstrahl teilweise blockiert hat, steigt die Intensität des
+reflektierten Laserstrahls monoton ab. Der Abstand 130 Mikrometer entspricht ungefähr den
+Durchmesser des Laserstrahls. Die erste Position mit Intensitätspegel kleiner als 20 wird als
+die Position der Kante definiert.
+</p>
+
+<p>
+Mit dieser Methode bestimme ich die x-Koordinaten der beiden Kanten, und berechne die Position
+der Symmetrieachse. Die Messfehler Delta x ist garantiert kleiner als 20 Mikrometer. Die
+entsprechende Fehler im rekonstruierten Schallfeld sind dann kleiner als 1%.
+</p>
+
+<p>
+Für andere Fehlerquellen habe ich auch entsprechende Methoden gefunden, mit denen die Einfluss
+der Fehlerquellen kontrolliert wird.
+</p>
+
+<p>
+Im ersten Experiment möchte ich Ihnen die Genauigkeit der LRT-Messung in Wasser zeigen. Ein
+linear fokussierter Ultraschallwandler wird verwendet, um 1 MHz Ultraschall zu erzeugen.  Die
+Schalldruckamplitude in der Fokalebene des Ultraschallwandlers wird betrachtet. In der
+LRT-Messung wurde der Querschnitt vom Vibrometer mit einer Schrittweite von 0,2 mm in x-Richtung
+abgetastet. und die Abtastung wurde auf 100 Winkeln wiederholt. Die Messung hat insgesamt 6
+Stunden gedauert.
+</p>
+
+<p>
+Zum Vergleich wurde das Querschnitt durch kalibrierten Hydrophon mit einer Schrittweite von 0,2
+mm abgetastet. Die Hydrophon-Messung hat 12 Stunden gedauert.
+</p>
+
+<p>
+Auf den Abbildungen werden die ausgewerteten Messergebnisse von LRT und Hydrophon-Messung
+dargestellt. Wir können sehen, dass die beiden Abbildungen miteinander sehr gut
+übereinstimmen. Um den Unterschied zu verdeutlichen, wird die Differenz der Messergebnisse
+bezogen auf der maximalen Schalldruck der Hydrophon-Messung gezeigt. Die Ergebnis wird hier als
+die normierte Differenz bezeichnet. Die normierte Differenz ist im ganzen betrachteten Gebiet
+kleiner als 3,5%.  Nach der Kalibrierschein vom PTB beträgt das Hydrophon eine Messunsicherheit
+von ca. 10%. Daher kann man sagen, dass LRT-Messung eine hohe Genauigkeit hat.
+</p>
+
+<p>
+Nachdem die Genauigkeit der LRT-Messung von der Hydrophon-Messung bestätigt wird, kann man jetzt
+die LRT in Komplizierten Situationen einsetzen, in denen Hydrophon-Messung nicht mehr geeignet
+ist.
+</p>
+
+<p>
+Es ist eigentlich zweifellos, dass Hydrophon die einfallenden Schallwellen teilweise
+reflektiert. Aber alle Forschungen über die Reflexion am Hydrophon basieren bisher nur auf
+theoretischen Analysen und numerischen Simulationen.
+</p>
+
+<p>
+Vielleicht haben Sie sich auch die Frage gestellt: Warum ist eine quantitative Messung der
+Reflexion überhaupt so schwer?
+</p>
+
+<p>
+Wir können kurz überlegen, welche Anforderungen erfüllt werden müssen, um das Schallfeld
+zwischen Hydrophon und Ultraschallwandler zu rekonstruieren.
+</p>
+
+<p>
+Die ausgewählte Messtechnik muss vor allem berührungslos sein, damit keine zusätzliche Störung
+eingeführt wird.  Sie muss richtungsunabhängig sein, um die einfallenden und die reflektierten
+Schallwellen gleichzeitig aufzunehmen.  Außerdem muss die Messtechnik zeitaufgelöste Ergebnisse
+liefern. Am Ende ist eine Absolutmessung immer gewünscht.  Die einzige Messtechnik, die alle
+Anforderungen erfüllt, ist die refraktomatrische Tomographie.
+</p>
+
+<p>
+Sobald man die passende Messmethode gefunden hat, ist die Ausführung der Messung nicht mehr
+schwer.  Ein nicht fokussierter Ultraschallwandler sendet jeder Millisekunden ein 1 Megahertz
+Burstsignal mit 8 Zyklen. Das Hydrophon wird im Abstand von 27 mm vor dem Ultraschallwandler
+positioniert.  Der restliche Messaufbau bleibt gleich.
+</p>
+
+<p>
+Das Schallfeld zwischen Hydrophon und Ultraschallwandler wird untersucht.
+</p>
+
+<p>
+Insgesamt 134 Querschnitte vor der Hydrophonspitze wurden rekonstruiert. Nach der
+Rekonstruktion, wurden die Querschnitte nach ihren z-Koordinaten zusammengesetzt. In dieser
+Weise bekommt man dreidimensionale Auflösung des Schallfeldes zwischen Ultraschallwandler und
+Hydrophon.
+</p>
+
+<p>
+Das Schallfeld hinter der Hydrophonspitze kann nicht rekonstruiert werden, weil das Hydrophon
+den Laserstrahl blockiert. Dort wird das Schallfeld direkt aus Projektionen visualisiert.
+</p>
+
+<p>
+(Projektion ist proportional zum Integral des Schalldrucks entlang des entsprechenden
+Strahlengangs.)
+</p>
+
+<p>
+Das Video zeigt das rekonstruierte Schallfeld auf der xz-Ebene.
+</p>
+
+<p>
+Man sieht ein typisches, vom Kolbenstrahler erzeugtes Schallfeld.  Nun taucht die Interferenz
+zwischen den vorwärts und rückwärts laufenden Wellen auf.
+</p>
+
+<p>
+Die Abbildung zeigt das rekonstruierte Schallfeld, nachdem die letzte fortschreitende Welle die
+Hydrophonspitze getroffen hat.  Um den Struktur des Schallfeldes zu verdeutlichen, wird die
+Abbildung binarisiert, d.h. alle positiven und negativen Werte werden mit weiß bzw. schwarz
+dargestellt. Hier sieht man acht konzentrische weiß Kreisbogen. Alle Bogen enden hier, wo die
+fortschreitenden Wellen dominant sind. Die Wellenformen sind sehr symmetrisch in Bezug der
+z-Achse.
+</p>
+
+<p>
+Hier möchte ich erwähnen, dass jede Spalte vor der Hydrophonspitze individuell rekonstruiert
+wurde. Alle Spalten wurden nur zusammengesetzt. Weder Interpolation noch Glättung wurde
+eingesetzt. Die Symmetrie des rekonstruierten Schallfelds impliziert die Genauigkeit der
+LRT-Messung.
+</p>
+
+<p>
+Obwohl Festkörper sehr häufig in Ultraschall-Anwendungen eingesetzt werden, gibt es zur Zeit
+noch keine Messmethode, mit der Schallfeld in Festkörpern quantitativ rekonstruiert werden kann.
+</p>
+
+<p>
+Die Messung von Ultraschall in Festkörpern hat zwei Schwierigkeiten. Vor allem können Sensoren
+nicht in Festkörpern positioniert werden. Außerdem wird Schallfeld in Festkörpern nicht mehr mit
+dem Schalldruck beschrieben, sondern mit der mechanischen Spannung, die insgesamt 6 Komponenten
+hat.
+</p>
+
+<p>
+Nun überlegen wir die Situation einer LRT-Messung in der Anwesenheit von einem optisch
+transparenten Festkörper.  Die ursprüngliche Beschreibung über die Änderung der optischen
+Weglänge ist noch gültig, solange die Laserstrahl senkrecht zur Oberfläche des Festkörpers
+ist. Wenn der Festkörper auch isotrop ist, kann man die Änderung des Brechungsindexes mittels
+Tomographie rekonstruieren.
+</p>
+
+<p>
+Außerdem stellt die Lorentz-Lorenz-Gleichung eine Zusammenhang zwischen dem Brechungsindex und
+der Dichte her. Mit Hilfe dieser Gleichung kann man die relative Dichteänderung berechnet.
+</p>
+
+<p>
+In diesem Experiment wird ein Plexiglas-Block im Abstand von 24,4 mm vor dem Ultraschallwandler
+positioniert. Ein nicht fokussierter Ultraschallwandler sendet periodisch ein 1 MHz Burstsignal
+mit 8 Zyklen.  Der Schalldruck in Wasser und die relative Dichteänderung in Plexiglas werden
+untersucht.
+</p>
+
+<p>
+Insgesamt 105 Querschnitte wurden rekonstruiert.
+</p>
+
+<p>
+In der Nähe der Grenzflächen wurde die optische Eigenschaft des Plexiglases von der mechanischen
+Bearbeitung geändert. In diesen Gebieten wurde der Laserstrahl nicht zurück zum Vibrometer
+reflektiert. Deswegen kann man das Schallfeld in diesem Bereich nicht messen.
+</p>
+
+<p>
+Im Video wird das Schallfeld in Wasser durch Schalldruck dargestellt, und in Plexiglas durch
+relative Dichteänderung. Die Auflösung in z-Richtung wurde durch Interpolation verdoppelt, damit
+das Schallfeld visuell auch kontinuierlich ist.
+</p>
+
+<p>
+Wir sehen wieder ein typisches, vom Kolbenstrahler erzeugtes Schallfeld. Die akustische Energie
+wird teilweise reflektiert und teilweise in Plexiglas transmittiert.  Die Wellenlänge in
+Plexiglas ist wesentlich höher als die in Wasser. Diese Wellen wurden zuerst vom Plexiglas
+reflektiert und danach nochmal vom Ultraschallwandler zurück reflektiert.
+</p>
+
+<p>
+Außer den neuen Forschungsmöglichkeiten, kann die LRT-Messung auch für praktische Anwendungen
+eingesetzt werden. In diesem Beispiel wird ein Stosswellentherapiesystem untersucht.  Das System
+besteht aus einem Steuergeräte und einem Ultraschallwandler.  Im Ultraschallwandler wird ein
+Projektil durch Druckluft beschleunigt und dann auf den Transmitter stoßen. Nach dem Stoß fängt
+der Transmitter an zu schwingen. Und Ultraschall wird dadurch erzeugt.  Die Firma Stolz hat
+solche Geräte hergestellt und verkauft, obwohl niemand weiß, was für ein Schallfeld erzeugt
+wird. Durch Testmessungen wurde es festgelegt, dass das System hochintensiven Ultraschall mit
+einer Frequenz von ca. 90 kHz aussendet.
+</p>
+
+<p>
+Durch Hydrophon-Messungen habe ich keine zufriedenstellende Messergebnisse bekommen. Dafür gibt
+es zwei Gründe. Vor allem ist kein passendes Hydrophon verfügbar.  z.B. das Hydrophon Onda
+HGL-0400 kann keinen hochintensiven Ultraschall ertragen. Das Hydrophon von Imotec erträgt zwar
+Schalldruck bis 150 MPa, aber eignet sich nicht für Ultraschall mit Frequenzen unterhalb 300
+kHz. Außerdem verursacht Hydrophon-Messung zusätzliche Kavitationen, weil der Hydrophon in der
+Anwesenheit vom hochintensiven Ultraschall selbst ein Kavitationskeim ist.
+</p>
+
+<p>
+Im Gegensatz dazu hat LRT-Messung keine solche Probleme. Der piezooptische Koeffizient ist
+konstant bis ca. 200 MPa. Das Vibrometer ist geeignet für Frequenz oberhalb 0,5 Hz. Außerdem
+ist die LRT-Messung berührungslos und verursacht keine zusätzlichen Kavitationen. Deshalb ist
+die Wiederholgenauigkeit der LRT-Messung wesentlich höher als die der Hydrophon-Messung.
+</p>
+
+<p>
+Hier wird der Messaufbau gezeigt. Nennenswert ist, dass der Ultraschallwandler starke
+mechanische Vibration verurcht. Ein massiver Halter wurde eingesetzt, um den Ultraschallwandler
+festzuhalten. Leider ist der Halter nicht rotierbar, deswegen wurde die Messung unter der
+Annahme ausgeführt, dass das Schallfeld rotationssymmetrisch ist, d.h. die Projektionen unter
+verschiedenen Winkeln sind exakt gleich. Ein Glas wurde auf der Wasseroberfläche positioniert,
+um den Oberflächenwellen zu unterdrücken.
+</p>
+
+<p>
+Das Schallfeld wurde mit einer Schrittweite von 1 mm in x- und z-Richtung abgetastet. Unter der
+zusätzlichen Annahme wurde das Schallfeld nur unter einem Winkel projizieren. Die Messung hat
+insgesamt 2 Stunden gedauert.
+</p>
+
+<p>
+Wir können sehen, dass der maximale Schalldruck mehr als ca. 1,5 MPa beträgt. Das Schallfeld hat
+eine geringe Richtwirkung. Nach 200 Mikrosekunden sendet der Ultraschallwandler noch
+Schallwellen mit Schalldruck von ca. 500 kPa.
+</p>
+
+<p>
+Ich glaube, dass die Messergebnisse für die zufunktige Untersuchung über die Nebenwirkung der
+Therapie nützlich sein können.
+</p>
+
+<p>
+Ich fasse mal meinen Vortrag zusammen.
+</p>
+
+<p>
+Die rekfraktometrische Tomographie ist berührungslos und richtungsunabhängig.  Sie liefert
+zeitaufgelöste Ergebnisse mit hoher Genauigkeit. Die Messtechnik kann in verschiedene Medien
+verwendet wird, solange das Medium optisch transparent und isotrop ist.  In diesem Vortragen
+haben wir gesehen, dass LRT-Messung in Wasser eine gute Übereinstimmung mit Hydrophon-Messung
+zeigt. LRT-Messung ist problemlos in der Nähe eine Grenzschicht und ist geeignet für Messung
+von hochintensiven Ultraschall. LRT ermöglicht quantitative Messung in Plexiglas. Eine gute
+Übereinstimmung mit Simulation wurde erzielt.
+</p>
+
+<p>
+Diese Technik hat zwei Anforderungen. Der Laserstrahl muss kleinen Durchmesser haben und ein
+präziser Messaufbau ist erforderlich. Die beiden Anforderungen sind schwer zu erfüllen, wenn
+hochfrequenter Ultraschall untersucht wird, zum Beispiel Ultraschall oberhalb 10 MHz.
+</p>
+
+<p>
+In Zukunft kann man den Vibrometer durch einen Scanning-Vibrometer ersetzen. Der Ersatz kann den
+Messverfahren um einen Faktor von 20 beschleunigen.
+</p>
+
+<p>
+Vielen Dank für Ihre Aufmerksamkeit. Ich stehe für Fragen gerne zur Verfügung.
+</p>
+
+<p>
+31.01.2014
+</p>
+
+<p>
+conky 现在不能隐入背景色中, 蛮难看的, 不过尝试了网上的各种方法, 好像都没有效果.
+</p>
+
+<p>
+修改了一下 urxvt 的配色方案, 之前的有个小问题就是当 aptitude 启动的时候, 色调变得不但难看, 而且
+难以认清. 现在的方案是:
+</p>
+
+<p>
+&lt;example&gt;
+!! for 256 color
+URxvt.scrollBar:False
+Rxvt.saveLines:3000
+</p>
+
+<p>
+URxvt.font:xft:Monaco-10
+Rxvt.boldFont:xft:Monaco-10:Bold
+URxvt.preeditType:Root
+</p>
+
+<p>
+! color
+URxvt*background: #2F4B4F
+URxvt*foreground: #F5DEB3
+URxvt.color0:#2E3436
+URxvt.color1:#CC0000
+URxvt.color2:#4E9A06
+URxvt.color3:#C4A000
+URxvt.color4:#3465A4
+URxvt.color5:#75507B
+URxvt.color6:#06989A
+URxvt.color7:#D3D7CF
+URxvt.color8:#555753
+URxvt.color9:#EF2929
+URxvt.color10:#8AE234
+URxvt.color11:#FCE94F
+URxvt.color12:#61CDFF
+URxvt.color13:#AD7FA8
+URxvt.color14:#34E2E2
+URxvt.color15:#EEEEEC
+&lt;/example&gt;
+</p>
+
+
+<p>
+17.02.2014
+</p>
+
+<p>
+ssh 图形连接的时候, 可以带上 -C, 这样数据会被压缩以后传输. 减少对网络的依赖.
+</p>
+
+<p>
+&lt;example&gt;
+ssh -C -X lse22
+&lt;/example&gt;
+</p>
+
+<p>
+13.09.2014
+</p>
+
+<p>
+把学校的 svn repository 搬到了自己笔记本上了. 没有 repository 感觉总是不放心, 数据丢失很不好玩.
+</p>
+
+<p>
+21.09.2014
+</p>
+
+<p>
+牛仔裤买 levis 的 slim cut, 腰围 29,  长度 30 最好,  不然 32. 衬衫在德国 37 的凑合,  不过感觉袖子偏长.
+</p>
+
+<p>
+1.11.2014
+</p>
+
+<p>
+在 windows 下面使用 emacs+cywin, 最好不要带上 svn 这个 exe 文件. 不然每次开启, 保存svn控制下的文
+件,都有可能进入很久的等待时间. 因为svn这些程序毕竟不是windows下原生的. 至于 grep 之类的程序, 虽
+然也有可能导致几秒钟的没有响应, 但是毕竟使用不是很频繁.
+</p>
+
+<p>
+6.01.2018
+</p>
+
+<p>
+I can not make everything work in Ubuntu, sad!
+</p>
+
+<p>
+In case of Gnome-Shell, you can not just replace the Window Manager (i.e., Mutter) and use other
+applications. Therefore, I have to use the "feh" to draw the desktop, and use "tint2" for
+panel. However, I can not make chinese input working.
+</p>
+
+<p>
+In case of Gnome-2 desktop environment, you can simply replace the Window Manager (i.e.,
+Metacity) and still use all other applicaitons. To achieve this, you only need to install gnome-panel
+(and ubuntu will install all other packages). Then replace the Metacity with sawfish by put
+&lt;example&gt;
+sawfish &#x2013;replace &amp;
+&lt;/example&gt;
+to the autostart. In such mode, you have access to all kinds of system settings etc.  It works
+quite well, except one thing: Super-o is used by something else. And I can not find it
+out. Super-o is M-o in Emacs, and M-o is so important!!
+</p>
+
+<p>
+在后者模式下,  最大的好处中文输入完全没有问题,  可以随意定制快捷键切换输入法.  但是gnome-shell的
+东西时不时会崩溃. 实在找不到super-o对应的程序,  于是在system/keyboard里让任意一个程序有super-o的
+快捷键,  然后删除之. 结果还真的就可以在emacs里输入M-o了,  可惜重启以后就没用了.
+</p>
+
+<p>
+update:
+没有中文输入还是不行的 (启动ibus daemon以后, emacs不能输入中文), 所以只能选用第二种方法. 因为不
+再使用gnome-shell, 我干脆把它连着gdm3(登录系统)删除, 安装了metacity默认的lightdm. 我感觉很快可以
+去其他版本了.
+</p>
+
+<p>
+gnome-terminal 修改标题了, 导致我自己做的 yakuake 程序不能使用了. Ibus 的设置好像不能保存, 很烦.
+</p>
+
+<p>
+这次回归linux, 感觉不怎么样. 感觉很乱, 各种不好使.
+</p>
+
+<p>
+7.01.2018
+</p>
+
+<p>
+弄了两天linux, 今天忽然就全面搞定了, 关键还是回归到了 gnome2. Ubuntu Mate 就是 Ubuntu + Mate, 看
+来不是就我一个人觉得 gnome shell 不好使. 在这个模式下, 感觉需要自己设置的配置极少. 安装中文以后,
+fcitx 都默认被安装. 只要安装 sogou 输入法以后, 就可以在 fcitx 设置下加入, 然后调出. 连费解的语言
+编码设定都不需要了. 注: 搜狗的输入法在 emacs 中有时候会忽然失效, 重启emacs就好了. 暂时不知道为何.
+</p>
+
+<p>
+Super-o 也不在被系统使用后, 所以 emacs 在也可以安心的使用 M-o 了.
+</p>
+
+<p>
+Mate-Terminal 依然支持 -t 修改title, 我的yakuake又可以安心上线了. 另外, 这里的文件管理器是 caja,
+其实和 当年的 nautilus 也没什么区别, 所以修改了一下 sawfish 的 filter, 一切都很熟悉了.
+</p>
+
+<p>
+秉着闲得蛋疼的原则, 我把sawfish由原来的1.11升级到了1.12版本, 到现在为止没有发现什么问题. 为了编
+译通过, 需要安装大量的软件. 不过总的来说还是比较顺利. 其中c报错说找不到 librep, 安装 librep-dev
+就可以了. sawfish 1.11 被卸载, 但是不卸载 aptitude 认为不在需要 rep, rep-gtk 等包.
+</p>
+
+<p>
+8.1.2018
+</p>
+
+<p>
+发现有时候 Super+xxx 的快捷方式会忽然无效. 这时候重要用鼠标点已经任何窗口或者桌面即可. 可能是
+focus 落在某个地方, 导致出错了吧.
+</p>
+
+<p>
+12.08.2018
+</p>
+
+<p>
+在安装 ubuntu mate 的时候, 报错无法安装 'grub-efi-amd64-signed' 到 <i>target</i>. 解决办法居然是使用
+usb 启动, 而非 UEFI.
+</p>
+
+<p>
+29.07.2019
+</p>
+
+<p>
+在HHKB加上了日本网友hasu制作的芯片, 现在HHKB变成了全可编程键盘. 流程非常简单, 在网上把按键定义好, 然
+后把Hex文件写入芯片. 唯一需要注意的就是编程的时候, 需要按红色按钮重启键盘. 但是我发现不是每次都
+重启成功, 反而是往往需要按下5, 6次才行. 我是戴上耳机, 听到usb设备断开的声音, 就是重启完成. 然后
+用FLIP软件写入hex文件. 贴上这个项目的网页: <a href="https://github.com/tmk">https://github.com/tmk</a>
+</p>
+
+<p>
+现在我平时将 [] 和 -= 调换, 因为我写matlab代码基本不需要[], 而-=<sub>+却是不断使用的</sub>. 但是我的键盘按
+键是带键盘符号的, 所以设置了一个 layer2, 和本来的按钮一样. 其他同事要使用我的键盘的话, 进入layer2,
+别人就感觉不到任何区别. ''''
+</p>
+
+<p>
+另外按住f键就会进入layer3, 我将 hjkl 等设置为了箭头, 另外还设置了 home, end之类按键. 如果普通按下
+松开f, 则是普通的输入f. 感觉非常好.
+</p>
+
+<p>
+另外注意的是, 这个程序使用 layer, 最底层的是 layer0, 高层的layer会屏蔽底层layer. 也就是说, 如果
+进入 layer2, 而且layer2对某个按键已经有设置, 就无法看到 layer1 的按键.  比如 按下 Fn 是进入
+layer1, 而 layer1 的Q 键是进入layer2模式. 如果layer2的 Fn 和 Q 都是透明的, 那么进入 layer2以后,
+重新按下 Fn+Q 就可以退出layer2, 进入 layer0. 但是如果 layer2 的 Fn 或者 Q 被另外定义了, 那么按下
+Fn+Q就不能回到layer0了.
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Lizhuo Chen</p>
+<p class="date">Created: 2021-07-03 Sat 22:40</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-03 Sat 22:39 -->
+<!-- 2021-07-03 Sat 22:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>C#</title>
+<title>Notes</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Lizhuo Chen" />
 <style type="text/css">
@@ -193,7 +193,6 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" href="https://sandyuraz.com/styles/org.min.css">
 <script type="text/javascript">
 // @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
@@ -219,171 +218,31 @@
 </head>
 <body>
 <div id="content">
-<h1 class="title">C#</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org6c1e373">1. Hello world</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org6c1e373" class="outline-2">
-<h2 id="org6c1e373"><span class="section-number-2">1</span> Hello world</h2>
-<div class="outline-text-2" id="text-1">
-<div class="org-src-container">
-<pre class="src src-C++"><span style="color: #fa8072;">using</span> <span style="color: #fa8072;">static</span> <span style="color: #9acd32; font-weight: bold;">System</span>.Console;
-<span style="color: #add8e6;">// </span><span style="color: #add8e6;">...</span>
-WriteLine(<span style="color: #ffa07a;">"Hello World"</span>);
-</pre>
-</div>
-
+<h1 class="title">Notes</h1>
 <p>
-With the <i>using static</i> declaration you can open not only a namespace, but all <i>static members</i> of a class. The
-standard <b>System</b> namespace is where the most commonly used .NET types reside. It is important to realize that
-<b>everything</b> you do in C# depends on .NET base classes.
-</p>
-</div>
-
-<div id="outline-container-org214d058" class="outline-3">
-<h3 id="org214d058"><span class="section-number-3">1.1</span> Value Types and Reference Types</h3>
-<div class="outline-text-3" id="text-1-1">
-<p>
-C# distinguishes between two categories of data type:
-</p>
-
-<ul class="org-ul">
-<li>Value types</li>
-<li>Reference types</li>
-</ul>
-
-<p>
-Conceptually, the difference is that a <i>value type</i> stores its value directly, whereas a <b>reference type</b> stores a
-reference to the value. <b>Value types</b> are stored in <b>stack</b>, and <b>reference types</b> are stored in <b>managed heap</b>.
+5408701239:ing-diba
 </p>
 
 <p>
-Most of the complex C# data types, including classes, are reference types. They are allocated upon the heap, have
-lifetimes that can span multiple function calls, and can be accessed through one or several aliases. If you want to
-define your own type as a value type, you should declare it as a <i>struct</i>.
+5401871039595218:geb
 </p>
-</div>
-</div>
-
-<div id="outline-container-org99e4fc2" class="outline-3">
-<h3 id="org99e4fc2"><span class="section-number-3">1.2</span> .NET Types</h3>
-<div class="outline-text-3" id="text-1-2">
-<p>
-The C# keywords for data types are mapped from the comiler to .NET data types. You can treat all the primitive data
-types syntactically, as if they are classes that support certain methods.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-C++"><span style="color: #9acd32; font-weight: bold;">string</span> <span style="color: #7fffd4; font-weight: bold;">s</span> = i.ToString();
-</pre>
-</div>
 
 <p>
-Behind this syntactical convenience, they types really are stored as primitive types, so absolutely no performance
-cost is associatedwith the idea that the primitive types are notionally represented by C# structs.
+1033954965<sub>p</sub>
 </p>
-</div>
-</div>
-
-<div id="outline-container-orga84bb56" class="outline-3">
-<h3 id="orga84bb56"><span class="section-number-3">1.3</span> Predefined Value Types</h3>
-<div class="outline-text-3" id="text-1-3">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">Name</th>
-<th scope="col" class="org-left">.NET TYPE</th>
-<th scope="col" class="org-left">DESCRIPTION</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left">sbyte</td>
-<td class="org-left">System.SByte</td>
-<td class="org-left">8-bit signed integer</td>
-</tr>
-
-<tr>
-<td class="org-left">short</td>
-<td class="org-left">System.Int16</td>
-<td class="org-left">16-bit signed integer</td>
-</tr>
-
-<tr>
-<td class="org-left">int</td>
-<td class="org-left">System.Int32</td>
-<td class="org-left">32-bit signed integer</td>
-</tr>
-
-<tr>
-<td class="org-left">long</td>
-<td class="org-left">System.Int64</td>
-<td class="org-left">64-bit signed integer</td>
-</tr>
-
-<tr>
-<td class="org-left">byte</td>
-<td class="org-left">System.Byte</td>
-<td class="org-left">8-bit unsigned integer</td>
-</tr>
-
-<tr>
-<td class="org-left">ushort</td>
-<td class="org-left">System.UInt16</td>
-<td class="org-left">16-bit unsigned integer</td>
-</tr>
-
-<tr>
-<td class="org-left">uint</td>
-<td class="org-left">System.UInt32</td>
-<td class="org-left">32-bit unsigned integer</td>
-</tr>
-
-<tr>
-<td class="org-left">ulong</td>
-<td class="org-left">System.UInt64</td>
-<td class="org-left">64-bit unsigned integer</td>
-</tr>
-</tbody>
-</table>
 
 <p>
-In C#, all data types have been defined in a platform-independent manner to allow for the possible future porting of
-C# and .NET to other platforms.
+IEEE, under lizhuo.chen@fau.de , ch&#x2026;e12
 </p>
 
-<div class="org-src-container">
-<pre class="src src-C++"><span style="color: #9acd32; font-weight: bold;">long</span> <span style="color: #7fffd4; font-weight: bold;">x</span> = 0x12ab;  <span style="color: #add8e6;">// </span><span style="color: #add8e6;">hex</span>
-<span style="color: #9acd32; font-weight: bold;">uint</span> <span style="color: #7fffd4; font-weight: bold;">ui</span> = 1234U;
-<span style="color: #9acd32; font-weight: bold;">long</span> 1 = 1234L;
-<span style="color: #9acd32; font-weight: bold;">ulong</span> <span style="color: #7fffd4; font-weight: bold;">ul</span> = 1234UL;
-<span style="color: #9acd32; font-weight: bold;">long</span> <span style="color: #7fffd4; font-weight: bold;">l1</span> = 0x123_4567_89ab_cedf;  <span style="color: #add8e6;">// </span><span style="color: #add8e6;">digit separators</span>
-<span style="color: #9acd32; font-weight: bold;">uint</span> <span style="color: #7fffd4; font-weight: bold;">b1</span> = 0b1111_1101_0101_1100;
-</pre>
-</div>
-</div>
-</div>
-</div>
+<p>
+Versicherungsnummer 23 130383 C 023
+</p>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: Time-stamp: &lt;03/07/2021 edited by Lizhuo Chen&gt;</p>
 <p class="author">Author: Lizhuo Chen</p>
-<p class="date">Created: 2021-07-03 Sat 22:39</p>
+<p class="date">Created: 2021-07-03 Sat 22:40</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
