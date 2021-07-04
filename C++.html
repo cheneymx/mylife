@@ -3,12 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-03 Sat 23:04 -->
+<!-- 2021-07-04 Sun 10:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>C++</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="Lizhuo Chen" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -218,7 +217,11 @@
 </script>
 </head>
 <body>
-<div id="content">
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="./index.html"> UP </a>
+ |
+ <a accesskey="H" href="https://cheneymx.github.io/mylife/"> HOME </a>
+</div><div id="content">
 <h1 class="title">C++</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
@@ -232,7 +235,7 @@
 <li><a href="#org69808cc">6. Functions</a></li>
 <li><a href="#org6a36cd4">7. The IO Library</a></li>
 <li><a href="#org456a700">8. Sequential Containers</a></li>
-<li><a href="#orgf58a089">9. Associative Containers</a></li>
+<li><a href="#orgf0cc447">9. Associative Containers</a></li>
 <li><a href="#org338a30b">10. Classes</a></li>
 <li><a href="#org37cbad4">11. Copy Control</a></li>
 <li><a href="#org9d445e4">12. Object-Oriented Programming</a></li>
@@ -2543,7 +2546,7 @@ The IO types are defined in three separate headers:
 </ul>
 
 
-<div id="org65ec3f1" class="figure">
+<div id="orgff9039c" class="figure">
 <p><img src="./pic/iostream_inheritance_hierarchy.png" alt="iostream_inheritance_hierarchy.png" />
 </p>
 </div>
@@ -2950,8 +2953,8 @@ cout &lt;&lt; val1 &lt;&lt; <span style="color: #ffa07a;">" "</span> &lt;&lt; va
 <h2 id="org456a700"><span class="section-number-2">8</span> Sequential Containers</h2>
 </div>
 
-<div id="outline-container-orgf58a089" class="outline-2">
-<h2 id="orgf58a089"><span class="section-number-2">9</span> Associative Containers</h2>
+<div id="outline-container-orgf0cc447" class="outline-2">
+<h2 id="orgf0cc447"><span class="section-number-2">9</span> Associative Containers</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 Associative containers support efficient lookup and retrieval by a key. The two primary
@@ -3004,8 +3007,8 @@ p1 == p2
 </div>
 </div>
 
-<div id="outline-container-orgcf29a7f" class="outline-3">
-<h3 id="orgcf29a7f"><span class="section-number-3">9.1</span> Associative Containers</h3>
+<div id="outline-container-orgf090717" class="outline-3">
+<h3 id="orgf090717"><span class="section-number-3">9.1</span> Associative Containers</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 <b><b>Elements are ordered by key!</b></b> When we <b><b>iterate across</b></b> an associative container, we are guaranteed
@@ -4212,8 +4215,8 @@ code to call the function directly.</li>
 <h3 id="org9a2f7f1"><span class="section-number-3">13.1</span> Function Template</h3>
 <div class="outline-text-3" id="text-13-1">
 </div>
-<div id="outline-container-org0131055" class="outline-4">
-<h4 id="org0131055"><span class="section-number-4">13.1.1</span> Defining</h4>
+<div id="outline-container-orgf56cbb9" class="outline-4">
+<h4 id="orgf56cbb9"><span class="section-number-4">13.1.1</span> Defining</h4>
 <div class="outline-text-4" id="text-13-1-1">
 <p>
 A function template is a type-independent function that is used as formula for generating a
@@ -4232,8 +4235,8 @@ type-specific version of the function.
 </div>
 </div>
 
-<div id="outline-container-org72a1333" class="outline-4">
-<h4 id="org72a1333"><span class="section-number-4">13.1.2</span> Using</h4>
+<div id="outline-container-orgf465fe2" class="outline-4">
+<h4 id="orgf465fe2"><span class="section-number-4">13.1.2</span> Using</h4>
 <div class="outline-text-4" id="text-13-1-2">
 <p>
 int main() {
@@ -4265,8 +4268,8 @@ inline template &lt;typename T&gt; T min(const T&amp;, const T&amp;);
 <h3 id="org9ea3e5c"><span class="section-number-3">13.2</span> Class Template</h3>
 <div class="outline-text-3" id="text-13-2">
 </div>
-<div id="outline-container-org959582f" class="outline-4">
-<h4 id="org959582f"><span class="section-number-4">13.2.1</span> Defining</h4>
+<div id="outline-container-org6f8e7a5" class="outline-4">
+<h4 id="org6f8e7a5"><span class="section-number-4">13.2.1</span> Defining</h4>
 <div class="outline-text-4" id="text-13-2-1">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #fa8072;">template</span> &lt;<span style="color: #fa8072;">class</span> <span style="color: #9acd32; font-weight: bold;">Type</span>&gt; <span style="color: #fa8072;">class</span> <span style="color: #9acd32; font-weight: bold;">Queue</span> {
@@ -4288,8 +4291,8 @@ any other class.
 </div>
 </div>
 
-<div id="outline-container-org6e9d4ae" class="outline-4">
-<h4 id="org6e9d4ae"><span class="section-number-4">13.2.2</span> Using</h4>
+<div id="outline-container-org4b1c544" class="outline-4">
+<h4 id="org4b1c544"><span class="section-number-4">13.2.2</span> Using</h4>
 <div class="outline-text-4" id="text-13-2-2">
 <p>
 When we use a class template, we must explicitly specify arguments for the template
@@ -4711,10 +4714,7 @@ cout.precision();
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: Time-stamp: &lt;03/07/2021 edited by Lizhuo Chen&gt;</p>
-<p class="author">Author: Lizhuo Chen</p>
-<p class="date">Created: 2021-07-03 Sat 23:04</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-07-04 Sun 10:20</p>
 </div>
 </body>
 </html>
