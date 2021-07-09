@@ -3,11 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-04 Sun 10:20 -->
+<!-- 2021-07-10 Sat 00:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>C++</title>
 <meta name="generator" content="Org mode" />
+<meta name="author" content="Lizhuo Chen" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -235,7 +236,7 @@
 <li><a href="#org69808cc">6. Functions</a></li>
 <li><a href="#org6a36cd4">7. The IO Library</a></li>
 <li><a href="#org456a700">8. Sequential Containers</a></li>
-<li><a href="#orgf0cc447">9. Associative Containers</a></li>
+<li><a href="#org3ab3d8f">9. Associative Containers</a></li>
 <li><a href="#org338a30b">10. Classes</a></li>
 <li><a href="#org37cbad4">11. Copy Control</a></li>
 <li><a href="#org9d445e4">12. Object-Oriented Programming</a></li>
@@ -1635,12 +1636,12 @@ run-time check. Assert should be used only to verify things that truly should no
 <h2 id="org69808cc"><span class="section-number-2">6</span> Functions</h2>
 <div class="outline-text-2" id="text-6">
 <p>
-<b><b>Beware</b></b>:
+<b>Beware</b>:
 </p>
 <ul class="org-ul">
-<li>It is <b>illegal</b> to define or declare a <b><b>function without an explicit return type</b></b>.</li>
-<li>When we call a function, the type of each argument must be either the <b><b>same type</b></b> as the
-corresponding parameter <b><b>or</b></b> a type that <b><b>can be converted</b></b> to that type.</li>
+<li>It is <b>illegal</b> to define or declare a <b>function without an explicit return type</b>.</li>
+<li>When we call a function, the type of each argument must be either the <b>same type</b> as the
+corresponding parameter <b>or</b> a type that <b>can be converted</b> to that type.</li>
 </ul>
 </div>
 
@@ -1932,16 +1933,15 @@ that correspond to the ellipsis.
 <h4 id="org2fd5a13"><span class="section-number-4">6.1.4</span> Return from main</h4>
 <div class="outline-text-4" id="text-6-1-4">
 <p>
-There is one exception to the rule that a function with a return type other than void must
-return a value: The main function is allowed to terminate without a return. If control reaches
-the end of <b><b>main</b></b> and there is <b><b>no return</b></b>, then the compiler <b>implicitly</b> insert a <b><b>return of 0</b></b>.
+There is one exception to the rule that a function with a return type other than void must return a value: The main
+function is allowed to terminate without a return. If control reaches the end of <b>main</b> and there is <b>no return</b>,
+then the compiler <b>implicitly</b> insert a <b>return of 0</b>.
 </p>
 
 <p>
-The value returned from main is treated as a status indicator. A zero return indicates success;
-most other values indicate failure. A nonzero value has a machine-dependent meaning. To make
-return values machine-independent, the <b><b>cstdlib</b></b> header defines two preprocessor variables that we
-can use to indicate success or failure:
+The value returned from main is treated as a status indicator. A zero return indicates success; most other values
+indicate failure. A nonzero value has a machine-dependent meaning. To make return values machine-independent, the
+<b>cstdlib</b> header defines two preprocessor variables that we can use to indicate success or failure:
 </p>
 
 <div class="org-src-container">
@@ -1962,10 +1962,9 @@ can use to indicate success or failure:
 <h3 id="org24d7828"><span class="section-number-3">6.2</span> Function Declarations</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
-A function may be defined only once but may be declared multiple times. A function declaration
-consists of a <b><b>return type</b></b>, the <b><b>function name</b></b>, and <b><b>parameter list</b></b>. The parameter list must
-contain <b><b>the type of the parameters</b></b> but need <b><b>not</b></b> <b><b>name</b></b> of them. These three elements are referred
-to as the <b>function prototype</b>.
+A function may be defined only once but may be declared multiple times. A function declaration consists of a <b><b>return
+type</b></b>, the <b><b>function name</b></b>, and <b><b>parameter list</b></b>. The parameter list must contain <b><b>the type of the parameters</b></b>
+but need <b><b>not</b></b> <b><b>name</b></b> of them. These three elements are referred to as the <b>function prototype</b>.
 </p>
 
 <p>
@@ -2546,7 +2545,7 @@ The IO types are defined in three separate headers:
 </ul>
 
 
-<div id="orgff9039c" class="figure">
+<div id="org4adaaba" class="figure">
 <p><img src="./pic/iostream_inheritance_hierarchy.png" alt="iostream_inheritance_hierarchy.png" />
 </p>
 </div>
@@ -2951,10 +2950,702 @@ cout &lt;&lt; val1 &lt;&lt; <span style="color: #ffa07a;">" "</span> &lt;&lt; va
 
 <div id="outline-container-org456a700" class="outline-2">
 <h2 id="org456a700"><span class="section-number-2">8</span> Sequential Containers</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org278e272" class="outline-3">
+<h3 id="org278e272"><span class="section-number-3">8.1</span> Overview</h3>
+<div class="outline-text-3" id="text-8-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">vector</td>
+<td class="org-left">Flexible-aize array. Supports fast random access.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Inserting or deleting elements other than at the back may be slow.</td>
+</tr>
+
+<tr>
+<td class="org-left">deque</td>
+<td class="org-left">Dboule-ended queue. Supports fast random access.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Fast insert/delete at front or back.</td>
+</tr>
+
+<tr>
+<td class="org-left">list</td>
+<td class="org-left">Double linked list. Supports only sequential access in one direction</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Fast insert/delete at any point in the list</td>
+</tr>
+
+<tr>
+<td class="org-left">forward_list</td>
+<td class="org-left">Singly linked list. Supports only sequential access in one direction.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Fast insert/delete at any point in the list</td>
+</tr>
+
+<tr>
+<td class="org-left">array</td>
+<td class="org-left">Fixed-size array. Supports fast random access.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Cannot add or remove elements</td>
+</tr>
+
+<tr>
+<td class="org-left">string</td>
+<td class="org-left">A specialized container, similar to vector, that contains characters.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Fast random access. Fast insert/delete at the back.</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Note: The new library containers are dramatically faster than previous releases. The library containers almost
+certainly perform as well as (and usually better than) even the most carefully crafted alternatives. Modern C++
+programs should use the library containers rather than more primitive structures like arrays.
+</p>
+
+<p>
+Tip: Ordinarily, it is best to use <b>vector</b> unless there is a good reason to prefer another container.
+</p>
+
+<p>
+Almost any type can be used as the element type of a sequential container.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #9acd32; font-weight: bold;">vector</span> &lt; <span style="color: #9acd32; font-weight: bold;">vector</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt; &gt; <span style="color: #7fffd4; font-weight: bold;">lines</span>;
+</pre>
+</div>
+</div>
 </div>
 
-<div id="outline-container-orgf0cc447" class="outline-2">
-<h2 id="orgf0cc447"><span class="section-number-2">9</span> Associative Containers</h2>
+<div id="outline-container-org559b8a2" class="outline-3">
+<h3 id="org559b8a2"><span class="section-number-3">8.2</span> Container Operations</h3>
+<div class="outline-text-3" id="text-8-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Type Aliases</b></th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">iterator</td>
+<td class="org-left">Type of the iterator</td>
+</tr>
+
+<tr>
+<td class="org-left">const_iterator</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">size_type</td>
+<td class="org-left">Unsigned integral type</td>
+</tr>
+
+<tr>
+<td class="org-left">difference_type</td>
+<td class="org-left">Signed integral type</td>
+</tr>
+
+<tr>
+<td class="org-left">value_type</td>
+<td class="org-left">element type</td>
+</tr>
+
+<tr>
+<td class="org-left">reference</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">const_reference</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left"><b>Construction</b></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">C c;</td>
+<td class="org-left">Default constructor, empty container</td>
+</tr>
+
+<tr>
+<td class="org-left">C c1(c2);</td>
+<td class="org-left">Construct c1 as a copy of c2</td>
+</tr>
+
+<tr>
+<td class="org-left">C c(b, e);</td>
+<td class="org-left">Copy elements from the range denoted by iterators b and e</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">(not valid for array)</td>
+</tr>
+
+<tr>
+<td class="org-left">C c{a, b, c&#x2026;};</td>
+<td class="org-left">List initialize c</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Assignment and swap</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">c1 = c2</td>
+<td class="org-left">Replace elements in c1 with those in c2</td>
+</tr>
+
+<tr>
+<td class="org-left">c1 = {a, b, c &#x2026;}</td>
+<td class="org-left">Replace elements in c1 with those in the list (not valid for array)</td>
+</tr>
+
+<tr>
+<td class="org-left">a.swap(b)</td>
+<td class="org-left">Swap elements in a with those in b</td>
+</tr>
+
+<tr>
+<td class="org-left">swap(a, b)</td>
+<td class="org-left">Equivalent to a.swap(b)</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Size</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">c.size()</td>
+<td class="org-left">Number of elements in c (not valid for forward_list)</td>
+</tr>
+
+<tr>
+<td class="org-left">c.max_size()</td>
+<td class="org-left">Maximum number of elements c can hold</td>
+</tr>
+
+<tr>
+<td class="org-left">c.empty</td>
+<td class="org-left">false if c has any elements, true otherwise</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Add/Remove Elements</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">c.insert (args)</td>
+<td class="org-left">Copy element(s) as specified by <i>args</i> into c</td>
+</tr>
+
+<tr>
+<td class="org-left">c.emplace (inits)</td>
+<td class="org-left">Use <i>inits</i> to construct an element in c</td>
+</tr>
+
+<tr>
+<td class="org-left">c.erase (args)</td>
+<td class="org-left">Remove element(s) specified by <i>args</i></td>
+</tr>
+
+<tr>
+<td class="org-left">c.clear()</td>
+<td class="org-left">Remove all elements from c; return void</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Obtain Iterators</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">c.begin(), c.end()</td>
+<td class="org-left">Return iterator to the first, one past the last element in c</td>
+</tr>
+
+<tr>
+<td class="org-left">c.cbegin(), c.cend()</td>
+<td class="org-left">Return const_iterator</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Additional Members</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">reverse_iterator</td>
+<td class="org-left">Iterator that addresses elements in reverse order</td>
+</tr>
+
+<tr>
+<td class="org-left">const_reverse_iterator</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">c.rbegin(), c.rend()</td>
+<td class="org-left">Return iterator to the last, one past the first element in c</td>
+</tr>
+
+<tr>
+<td class="org-left">c.crbegin(), c.crend()</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgdfab94e" class="outline-3">
+<h3 id="orgdfab94e"><span class="section-number-3">8.3</span> Iterators</h3>
+<div class="outline-text-3" id="text-8-3">
+<p>
+The element range is called a <b>left-inclusive interval</b>: [begin, end) . Such ranges have three convenient properties
+</p>
+<ul class="org-ul">
+<li>if begin equals end, the range is empty</li>
+<li>if begin is not equal to end, there is at least one element in the range, and begin refers to the first element.</li>
+<li><p>
+We can increment begin some number of times till begin == end
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #fa8072;">while</span>( begin != end ) {
+  *begin = val;
+  ++begin;
+ }
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcfc92b9" class="outline-3">
+<h3 id="orgcfc92b9"><span class="section-number-3">8.4</span> Container Type Members</h3>
+<div class="outline-text-3" id="text-8-4">
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #9acd32; font-weight: bold;">list</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt; <span style="color: #7fffd4; font-weight: bold;">a</span> = {<span style="color: #ffa07a;">"Milton"</span>, <span style="color: #ffa07a;">"Shakespeare"</span>, <span style="color: #ffa07a;">"Austen"</span>};
+<span style="color: #7fffd4;">list</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt;::<span style="color: #9acd32; font-weight: bold;">const_iterator</span> <span style="color: #7fffd4; font-weight: bold;">it1</span> = a.end();  <span style="color: #add8e6;">// </span><span style="color: #add8e6;">type is explicitly specified</span>
+<span style="color: #fa8072;">auto</span> <span style="color: #7fffd4; font-weight: bold;">it2</span> = a.begin();  <span style="color: #add8e6;">// </span><span style="color: #add8e6;">list&lt;string&gt;::iterator</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3cc92f2" class="outline-3">
+<h3 id="org3cc92f2"><span class="section-number-3">8.5</span> Initializing a Container</h3>
+<div class="outline-text-3" id="text-8-5">
+<p>
+To create a container as a copy of another container, the container and element types must match. When we <i>pass
+iterators</i>, there is <i>no</i> requirement that the container types be identical. Moreover, the element types in the new
+and original containers can differ as long as it is possible to convert the elements&#x2026;
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #9acd32; font-weight: bold;">list</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt; <span style="color: #7fffd4; font-weight: bold;">authors</span> = {<span style="color: #ffa07a;">"Milton"</span>, <span style="color: #ffa07a;">"Shakespeare"</span>, <span style="color: #ffa07a;">"Austen"</span>};
+<span style="color: #9acd32; font-weight: bold;">vector</span>&lt;<span style="color: #fa8072;">const</span> <span style="color: #9acd32; font-weight: bold;">char</span>*&gt; <span style="color: #7fffd4; font-weight: bold;">articles</span> = {<span style="color: #ffa07a;">"a"</span>, <span style="color: #ffa07a;">"an"</span>, <span style="color: #ffa07a;">"the"</span>};
+
+<span style="color: #9acd32; font-weight: bold;">list</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt;<span style="color: #7fffd4; font-weight: bold;">list</span>(authors);        <span style="color: #add8e6;">// </span><span style="color: #add8e6;">ok: types match</span>
+<span style="color: #9acd32; font-weight: bold;">deque</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt; <span style="color: #7fffd4; font-weight: bold;">authList</span>(autors);   <span style="color: #add8e6;">// </span><span style="color: #add8e6;">error: types doesnot match</span>
+<span style="color: #add8e6;">// </span><span style="color: #add8e6;">ok: converts const char* elements to string</span>
+<span style="color: #9acd32; font-weight: bold;">forward_list</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt; <span style="color: #7fffd4; font-weight: bold;">words</span> (articles.begin(), articles.end());
+</pre>
+</div>
+
+<p>
+We can also initialize the sequential containers (other than array) from a size and an (optional) element
+initializer.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #9acd32; font-weight: bold;">vector</span>&lt;<span style="color: #9acd32; font-weight: bold;">int</span>&gt; <span style="color: #7fffd4; font-weight: bold;">ivec</span> (10, -1);
+<span style="color: #9acd32; font-weight: bold;">list</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt; <span style="color: #7fffd4; font-weight: bold;">svec</span> (10, <span style="color: #ffa07a;">"hi!"</span>);
+<span style="color: #9acd32; font-weight: bold;">forward_list</span>&lt;<span style="color: #9acd32; font-weight: bold;">int</span>&gt; <span style="color: #7fffd4; font-weight: bold;">ivec</span>(10);      <span style="color: #add8e6;">// </span><span style="color: #add8e6;">ten elements, each initialized to 0</span>
+<span style="color: #9acd32; font-weight: bold;">deque</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt; <span style="color: #7fffd4; font-weight: bold;">svec</span>(10);          <span style="color: #add8e6;">// </span><span style="color: #add8e6;">ten elements, each an empty string</span>
+</pre>
+</div>
+
+<p>
+Library <b>arrays</b> have fixed size. And <i>the size of a library array is part of its type</i>.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #9acd32; font-weight: bold;">array</span>&lt;<span style="color: #9acd32; font-weight: bold;">int</span>, 42&gt;        <span style="color: #add8e6;">// </span><span style="color: #add8e6;">type is: array that holds 42 ints</span>
+<span style="color: #9acd32; font-weight: bold;">array</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>, 10&gt;     <span style="color: #add8e6;">// </span><span style="color: #add8e6;">type is: array that holds 10 strings</span>
+
+<span style="color: #7fffd4;">array</span>&lt;<span style="color: #9acd32; font-weight: bold;">int</span>, 10&gt;::size_type i;   <span style="color: #add8e6;">// </span><span style="color: #add8e6;">array type includes element type AND size</span>
+<span style="color: #7fffd4;">array</span>&lt;<span style="color: #9acd32; font-weight: bold;">int</span>&gt;::<span style="color: #9acd32; font-weight: bold;">size_type</span> <span style="color: #7fffd4; font-weight: bold;">j</span>;       <span style="color: #add8e6;">// </span><span style="color: #add8e6;">error: array&lt;int&gt; is NOT a type.</span>
+</pre>
+</div>
+
+<p>
+A default-constructed array is not empty.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #9acd32; font-weight: bold;">array</span>&lt;<span style="color: #9acd32; font-weight: bold;">int</span>, 5&gt; <span style="color: #7fffd4; font-weight: bold;">ia1</span>;
+<span style="color: #9acd32; font-weight: bold;">array</span>&lt;<span style="color: #9acd32; font-weight: bold;">int</span>, 5&gt; <span style="color: #7fffd4; font-weight: bold;">ia2</span> = {0, 1, 2, 3, 4};   <span style="color: #add8e6;">// </span><span style="color: #add8e6;">list initialization</span>
+<span style="color: #9acd32; font-weight: bold;">array</span>&lt;<span style="color: #9acd32; font-weight: bold;">int</span>, 5&gt; <span style="color: #7fffd4; font-weight: bold;">ia3</span> = {42};              <span style="color: #add8e6;">// </span><span style="color: #add8e6;">ia3[0] is 42, remaining elements are 0</span>
+</pre>
+</div>
+
+<p>
+It is worth noting that although we cannot copy or assign objects of built-in array types, there is no such
+restriction on array.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #9acd32; font-weight: bold;">int</span> <span style="color: #7fffd4; font-weight: bold;">digs</span>[5] = { 0, 1, 2, 3, 4 };
+<span style="color: #9acd32; font-weight: bold;">int</span> <span style="color: #7fffd4; font-weight: bold;">cpy</span>[5] = digs;                    <span style="color: #add8e6;">// </span><span style="color: #add8e6;">error: no copy or assignment for build-in arrays</span>
+
+<span style="color: #9acd32; font-weight: bold;">array</span>&lt;<span style="color: #9acd32; font-weight: bold;">int</span>, 5&gt; <span style="color: #7fffd4; font-weight: bold;">digits</span> = {0, 1, 2, 3, 4};
+<span style="color: #9acd32; font-weight: bold;">array</span>&lt;<span style="color: #9acd32; font-weight: bold;">int</span>, 5&gt; <span style="color: #7fffd4; font-weight: bold;">copy</span> = digits;          <span style="color: #add8e6;">// </span><span style="color: #add8e6;">ok: so long as array types match</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd3b7ad2" class="outline-3">
+<h3 id="orgd3b7ad2"><span class="section-number-3">8.6</span> Assignment and swap</h3>
+<div class="outline-text-3" id="text-8-6">
+<p>
+The assign member let us assign from a different but compatible type, or assign from a subsequence of a container.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #9acd32; font-weight: bold;">list</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt; <span style="color: #7fffd4; font-weight: bold;">names</span>;
+<span style="color: #9acd32; font-weight: bold;">vector</span>&lt;<span style="color: #fa8072;">const</span> <span style="color: #9acd32; font-weight: bold;">char</span>*&gt; <span style="color: #7fffd4; font-weight: bold;">oldstyles</span>;
+name = oldstyles;    <span style="color: #add8e6;">// </span><span style="color: #add8e6;">error: container types do not match</span>
+<span style="color: #add8e6;">// </span><span style="color: #add8e6;">ok: convert from const char* to string</span>
+names.assign(oldstyles.cbegin(), oldstyle.cend());
+
+list&lt;string slist1(1);      <span style="color: #add8e6;">// </span><span style="color: #add8e6;">one elements, which is the empty string</span>
+slist1.assign(10, <span style="color: #ffa07a;">"Hiya!"</span>)  <span style="color: #add8e6;">// </span><span style="color: #add8e6;">ten elements; each one is Hiya!</span>
+</pre>
+</div>
+
+<p>
+The <i>swap</i> operation exchanges the contents of two containers of the same type. Excepting array, <i>swap</i> is guaranteed
+to run in a constant time. The elements themselves are not swapped; internal data structures are swapped.
+</p>
+
+<p>
+Swapping two arrays does exchange the element. As a result, swapping two arrays requires time proportional to the
+number of elements in the array.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #9acd32; font-weight: bold;">vector</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt; <span style="color: #7fffd4; font-weight: bold;">svec1</span>(10);
+<span style="color: #9acd32; font-weight: bold;">vector</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt; <span style="color: #7fffd4; font-weight: bold;">svec2</span>(24);
+swap(svec1, svec2);
+</pre>
+</div>
+
+<p>
+In the new library, the containers offer both a member and nonmember version of swap. As a matter of habit, it is
+best to use the nonmember version of swap.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8457bf1" class="outline-3">
+<h3 id="org8457bf1"><span class="section-number-3">8.7</span> Sequential Container Operations</h3>
+<div class="outline-text-3" id="text-8-7">
+</div>
+<div id="outline-container-org22d1a57" class="outline-4">
+<h4 id="org22d1a57"><span class="section-number-4">8.7.1</span> Adding elements to a sequential container</h4>
+<div class="outline-text-4" id="text-8-7-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Operations</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">c.push_back(t)</td>
+<td class="org-left">Creates an element with value t or constructed from <i>args</i> at the end of c. Returns void</td>
+</tr>
+
+<tr>
+<td class="org-left">c.emplace_back(args)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">c.push_front(t)</td>
+<td class="org-left">Creates an element with value t or constructed from <i>args</i> on the front of c. Returns void</td>
+</tr>
+
+<tr>
+<td class="org-left">c.emplace_front(args)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">c.insert(p, t)</td>
+<td class="org-left">Creates an element with value t or <i>args</i> before the element denoted by iterator <i>p</i>.</td>
+</tr>
+
+<tr>
+<td class="org-left">c.emplace(p, args)</td>
+<td class="org-left">Returns an iterator referring to the element that was added.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">c.insert(p,n,t)</td>
+<td class="org-left">Inserts <i>n</i> elements with value t before the element denoted by iterator p. Returns an iterator</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">to the first element inserted; if n is zero, returns p.</td>
+</tr>
+
+<tr>
+<td class="org-left">c.insert(p,beg,end)</td>
+<td class="org-left">Inserts the elements from the range denoted by <i>beg</i> and <i>end</i> before the element denoted by iterator p.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><i>beg</i> and <i>end</i> may not refer to elements in c. Returns an iterator to the first element inserted;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">if the range is empty, returns p.</td>
+</tr>
+
+<tr>
+<td class="org-left">c.insert(p,il)</td>
+<td class="org-left">il is a braced list of element values. Inserts the given values before the element denoted by the</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">iterator p. Returns an iterator to the first inserted element; if the list is empty return p.</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+WARNING: Adding elements to a <b>vector, string, or deque</b> potentially invalidates all existing iterators, references,
+and pointers into the container.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #9acd32; font-weight: bold;">string</span> <span style="color: #7fffd4; font-weight: bold;">word</span>;
+<span style="color: #fa8072;">while</span>(cin &gt;&gt; word)
+  container.push_back(word);
+
+<span style="color: #9acd32; font-weight: bold;">list</span>&lt;<span style="color: #9acd32; font-weight: bold;">int</span>&gt; <span style="color: #7fffd4; font-weight: bold;">ilist</span>;
+<span style="color: #fa8072;">for</span>(<span style="color: #9acd32; font-weight: bold;">size_t</span> <span style="color: #7fffd4; font-weight: bold;">ix</span> = 0; ix != 4; ++ix)
+  ilist.push_front(ix);
+
+<span style="color: #9acd32; font-weight: bold;">vector</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt; <span style="color: #7fffd4; font-weight: bold;">v</span>= {<span style="color: #ffa07a;">"nijj"</span>, <span style="color: #ffa07a;">"wej"</span>, <span style="color: #ffa07a;">"ndks"</span>, <span style="color: #ffa07a;">"wnal"</span>};
+<span style="color: #add8e6;">// </span><span style="color: #add8e6;">insert the last two elements of v at the beginning of slist</span>
+slist.insert(slist.begin(), v.end() - 2, v.end());
+slist.insert(slist.end(), {<span style="color: #ffa07a;">"these"</span>, <span style="color: #ffa07a;">"words"</span>, <span style="color: #ffa07a;">"go"</span>});
+
+<span style="color: #add8e6;">// </span><span style="color: #add8e6;">run-time error: iterators denoting the range to copy from</span>
+<span style="color: #add8e6;">// </span><span style="color: #add8e6;">must not refer to the same container as the one we are changing</span>
+slist.insert(slist.begin(), slist.begin(), slist.end());   <span style="color: #add8e6;">// </span><span style="color: #add8e6;">ERROR</span>
+</pre>
+</div>
+
+<p>
+The new standard introduced three new members &#x2013; emplace_front, emplace, and emplace_back &#x2013; that construct rather
+than copy elements. When we call a push or insert member, we pass objects of the element type and those objects are
+<i>copied</i> into the container. When we call an emplace member, we <b>pass arguments to a constructor for the element
+type</b>. The emplace members use those arguments to <i>construct</i> an element directly in space managed by the
+container.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #add8e6;">// </span><span style="color: #add8e6;">construct a Sales_data object at the end of c</span>
+<span style="color: #add8e6;">// </span><span style="color: #add8e6;">uses three-argument Sales_data constructor</span>
+c.emplace_back(<span style="color: #ffa07a;">"997-23239198"</span>, 25, 15.99);
+
+c.push_back(Sales_data(<span style="color: #ffa07a;">"997-23239198"</span>, 25, 15.99));
+</pre>
+</div>
+
+<p>
+The emplace function construct elements in the container. The arguments to these functions must match a constructor
+for the element type.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6c5eb46" class="outline-3">
+<h3 id="org6c5eb46"><span class="section-number-3">8.8</span> Accessing Elements</h3>
+<div class="outline-text-3" id="text-8-8">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Operations</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">c.back()</td>
+<td class="org-left">Returns a reference to the last element in c. Undefined if c is empty</td>
+</tr>
+
+<tr>
+<td class="org-left">c.front()</td>
+<td class="org-left">Returns a reference to the first element in c. Undefined if c is empty</td>
+</tr>
+
+<tr>
+<td class="org-left">c[n]</td>
+<td class="org-left">Returns a reference &#x2026; Undefined if n &gt;= c.size().</td>
+</tr>
+
+<tr>
+<td class="org-left">c.at(n)</td>
+<td class="org-left">Returns a reference to the element indexed by n. If the index is out of</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">range, throws an <i>out_of_range</i> exception.</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Note: Calling <i>front</i> or <i>back</i> on an empty container, like using a subscript that is out of range, is a serious
+programming error.
+</p>
+
+<p>
+The members that access elements in a container return <b>references</b>. If the container is a const object, the return
+is a reference to const. Otherwise, we can use the reference to change the value of the fetched element.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #fa8072;">if</span> ( !c.empty() ) {
+  c.front() = 43;          <span style="color: #add8e6;">// </span><span style="color: #add8e6;">assigns the frist element in c</span>
+  <span style="color: #fa8072;">auto</span> &amp;<span style="color: #7fffd4; font-weight: bold;">v</span> = c.back();      <span style="color: #add8e6;">// </span><span style="color: #add8e6;">get a reference to the last element</span>
+  v = 1024;                <span style="color: #add8e6;">// </span><span style="color: #add8e6;">changes the element in c</span>
+  <span style="color: #fa8072;">auto</span> <span style="color: #7fffd4; font-weight: bold;">v2</span> = c.back();      <span style="color: #add8e6;">// </span><span style="color: #add8e6;">v2 is a copy of c.back();</span>
+  v2 = 0;                  <span style="color: #add8e6;">// </span><span style="color: #add8e6;">no change to the element in c</span>
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org675fea1" class="outline-4">
+<h4 id="org675fea1"><span class="section-number-4">8.8.1</span> Subscripting and safe random access</h4>
+<div class="outline-text-4" id="text-8-8-1">
+<p>
+The subscript operator takes an index and returns a reference. The index must be "in range". It is up to the program
+to ensure that the index is valid. Using an out-of-range value for an index is a serious programming error, but one
+that the compiler will not detect.
+</p>
+
+<p>
+The <i>at</i> member acts like the subscript operator, but if the index is invalid, <i>at</i> throws an <i>out_of_range</i>
+exception:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #9acd32; font-weight: bold;">vector</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt; <span style="color: #7fffd4; font-weight: bold;">svec</span>;    <span style="color: #add8e6;">// </span><span style="color: #add8e6;">empty vector</span>
+cout &lt;&lt; svec[0];        <span style="color: #add8e6;">// </span><span style="color: #add8e6;">run-time error: no elements in svec</span>
+cout &lt;&lt; svec.at(0);     <span style="color: #add8e6;">// </span><span style="color: #add8e6;">throws an out_of_range exception</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org3ab3d8f" class="outline-2">
+<h2 id="org3ab3d8f"><span class="section-number-2">9</span> Associative Containers</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 Associative containers support efficient lookup and retrieval by a key. The two primary
@@ -3007,8 +3698,8 @@ p1 == p2
 </div>
 </div>
 
-<div id="outline-container-orgf090717" class="outline-3">
-<h3 id="orgf090717"><span class="section-number-3">9.1</span> Associative Containers</h3>
+<div id="outline-container-orgf0cc447" class="outline-3">
+<h3 id="orgf0cc447"><span class="section-number-3">9.1</span> Associative Containers</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 <b><b>Elements are ordered by key!</b></b> When we <b><b>iterate across</b></b> an associative container, we are guaranteed
@@ -4215,8 +4906,8 @@ code to call the function directly.</li>
 <h3 id="org9a2f7f1"><span class="section-number-3">13.1</span> Function Template</h3>
 <div class="outline-text-3" id="text-13-1">
 </div>
-<div id="outline-container-orgf56cbb9" class="outline-4">
-<h4 id="orgf56cbb9"><span class="section-number-4">13.1.1</span> Defining</h4>
+<div id="outline-container-org6f8e7a5" class="outline-4">
+<h4 id="org6f8e7a5"><span class="section-number-4">13.1.1</span> Defining</h4>
 <div class="outline-text-4" id="text-13-1-1">
 <p>
 A function template is a type-independent function that is used as formula for generating a
@@ -4235,8 +4926,8 @@ type-specific version of the function.
 </div>
 </div>
 
-<div id="outline-container-orgf465fe2" class="outline-4">
-<h4 id="orgf465fe2"><span class="section-number-4">13.1.2</span> Using</h4>
+<div id="outline-container-org4b1c544" class="outline-4">
+<h4 id="org4b1c544"><span class="section-number-4">13.1.2</span> Using</h4>
 <div class="outline-text-4" id="text-13-1-2">
 <p>
 int main() {
@@ -4268,8 +4959,8 @@ inline template &lt;typename T&gt; T min(const T&amp;, const T&amp;);
 <h3 id="org9ea3e5c"><span class="section-number-3">13.2</span> Class Template</h3>
 <div class="outline-text-3" id="text-13-2">
 </div>
-<div id="outline-container-org6f8e7a5" class="outline-4">
-<h4 id="org6f8e7a5"><span class="section-number-4">13.2.1</span> Defining</h4>
+<div id="outline-container-org12ff089" class="outline-4">
+<h4 id="org12ff089"><span class="section-number-4">13.2.1</span> Defining</h4>
 <div class="outline-text-4" id="text-13-2-1">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #fa8072;">template</span> &lt;<span style="color: #fa8072;">class</span> <span style="color: #9acd32; font-weight: bold;">Type</span>&gt; <span style="color: #fa8072;">class</span> <span style="color: #9acd32; font-weight: bold;">Queue</span> {
@@ -4291,8 +4982,8 @@ any other class.
 </div>
 </div>
 
-<div id="outline-container-org4b1c544" class="outline-4">
-<h4 id="org4b1c544"><span class="section-number-4">13.2.2</span> Using</h4>
+<div id="outline-container-org6e96fd5" class="outline-4">
+<h4 id="org6e96fd5"><span class="section-number-4">13.2.2</span> Using</h4>
 <div class="outline-text-4" id="text-13-2-2">
 <p>
 When we use a class template, we must explicitly specify arguments for the template
@@ -4714,7 +5405,8 @@ cout.precision();
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2021-07-04 Sun 10:20</p>
+<p class="author">Author: Lizhuo Chen</p>
+<p class="date">Created: 2021-07-10 Sat 00:26</p>
 </div>
 </body>
 </html>
