@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-10 Sat 00:26 -->
+<!-- 2021-07-11 Sun 20:34 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>C++</title>
@@ -193,7 +193,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" href="https://sandyuraz.com/styles/org.min.css">
+<link rel="stylesheet" href="./css/core.css">
 <script type="text/javascript">
 // @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
@@ -236,14 +236,14 @@
 <li><a href="#org69808cc">6. Functions</a></li>
 <li><a href="#org6a36cd4">7. The IO Library</a></li>
 <li><a href="#org456a700">8. Sequential Containers</a></li>
-<li><a href="#org3ab3d8f">9. Associative Containers</a></li>
-<li><a href="#org338a30b">10. Classes</a></li>
-<li><a href="#org37cbad4">11. Copy Control</a></li>
-<li><a href="#org9d445e4">12. Object-Oriented Programming</a></li>
-<li><a href="#org275e6f1">13. Template Definitions</a></li>
-<li><a href="#orga5ecc9a">14. Namespaces</a></li>
-<li><a href="#org36eafd0">15. update</a></li>
-<li><a href="#org3a9fe53">16. updated</a></li>
+<li><a href="#org2f0fb01">9. Associative Containers</a></li>
+<li><a href="#org0db9c46">10. Classes</a></li>
+<li><a href="#orgc8e6826">11. Copy Control</a></li>
+<li><a href="#orgcffd2cc">12. Object-Oriented Programming</a></li>
+<li><a href="#org92addfe">13. Template Definitions</a></li>
+<li><a href="#orgfee715f">14. Namespaces</a></li>
+<li><a href="#org8495684">15. update</a></li>
+<li><a href="#org7a72215">16. updated</a></li>
 </ul>
 </div>
 </div>
@@ -1210,8 +1210,8 @@ for the newly added elements.
 </div>
 </div>
 
-<div id="outline-container-orgb7480e6" class="outline-3">
-<h3 id="orgb7480e6"><span class="section-number-3">3.4</span> Iterators</h3>
+<div id="outline-container-org6ed2871" class="outline-3">
+<h3 id="org6ed2871"><span class="section-number-3">3.4</span> Iterators</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 An iterator is a type that <b><b>lets us examine the elements in a container</b></b> and <b><b>navigate from one</b></b>
@@ -2545,7 +2545,7 @@ The IO types are defined in three separate headers:
 </ul>
 
 
-<div id="org4adaaba" class="figure">
+<div id="org5802486" class="figure">
 <p><img src="./pic/iostream_inheritance_hierarchy.png" alt="iostream_inheritance_hierarchy.png" />
 </p>
 </div>
@@ -3256,8 +3256,8 @@ Almost any type can be used as the element type of a sequential container.
 </div>
 </div>
 
-<div id="outline-container-orgdfab94e" class="outline-3">
-<h3 id="orgdfab94e"><span class="section-number-3">8.3</span> Iterators</h3>
+<div id="outline-container-org8dc34f7" class="outline-3">
+<h3 id="org8dc34f7"><span class="section-number-3">8.3</span> Iterators</h3>
 <div class="outline-text-3" id="text-8-3">
 <p>
 The element range is called a <b>left-inclusive interval</b>: [begin, end) . Such ranges have three convenient properties
@@ -3630,7 +3630,6 @@ that the compiler will not detect.
 The <i>at</i> member acts like the subscript operator, but if the index is invalid, <i>at</i> throws an <i>out_of_range</i>
 exception:
 </p>
-
 <div class="org-src-container">
 <pre class="src src-C++"><span style="color: #9acd32; font-weight: bold;">vector</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt; <span style="color: #7fffd4; font-weight: bold;">svec</span>;    <span style="color: #add8e6;">// </span><span style="color: #add8e6;">empty vector</span>
 cout &lt;&lt; svec[0];        <span style="color: #add8e6;">// </span><span style="color: #add8e6;">run-time error: no elements in svec</span>
@@ -3640,12 +3639,385 @@ cout &lt;&lt; svec.at(0);     <span style="color: #add8e6;">// </span><span styl
 </div>
 </div>
 </div>
+
+<div id="outline-container-orgab8d967" class="outline-3">
+<h3 id="orgab8d967"><span class="section-number-3">8.9</span> Erasing Elements</h3>
+<div class="outline-text-3" id="text-8-9">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">erase operations</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">c.pop_back()</td>
+<td class="org-left">Removes last element in c. Undefined if c is empty. Return <i>void</i>.</td>
+</tr>
+
+<tr>
+<td class="org-left">c.pop_front()</td>
+<td class="org-left">Removes first element in c. Undefined if c is empty. Return <i>void</i>.</td>
+</tr>
+
+<tr>
+<td class="org-left">c.erase(p)</td>
+<td class="org-left">Removes the element denoted by iterator <i>p</i> and returns an iterator to</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">the element after the one deleted or the off-the-end iterator if <i>p</i></td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">denotes the last element. Undefined if <i>p</i> is the off-the-end iterator.</td>
+</tr>
+
+<tr>
+<td class="org-left">c.erase(beg, end)</td>
+<td class="org-left">Removes the range of elements denoted by the iterators <i>beg</i> and <i>end</i>.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Returns an iterator to the element after the last one that was deleted,</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">or an off-the-end iterator if <i>end</i> is itself an off-the-end iterator.</td>
+</tr>
+
+<tr>
+<td class="org-left">c.clear()</td>
+<td class="org-left">Removes all elements in c. Return <i>void</i>.</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-C++">elem1 = slist.erase(elem1, elem2);   <span style="color: #add8e6;">// </span><span style="color: #add8e6;">after the call elem1 == elem2</span>
+</pre>
 </div>
 
+<p>
+elem1 refers to the first element we want to erase, and elem2 refers to <b>one past the last element</b> we want to
+removed. (The iterator works like the cursor in Emacs)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgac7a49a" class="outline-3">
+<h3 id="orgac7a49a"><span class="section-number-3">8.10</span> Resizing a Container</h3>
+<div class="outline-text-3" id="text-8-10">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
-<div id="outline-container-org3ab3d8f" class="outline-2">
-<h2 id="org3ab3d8f"><span class="section-number-2">9</span> Associative Containers</h2>
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">c.resize(n)</td>
+<td class="org-left">Resize c so that it has n elements. If n &lt; c.size(), the excess elements are discarded.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">If new elements must be added, they are value initialized.</td>
+</tr>
+
+<tr>
+<td class="org-left">c.resize(n, t)</td>
+<td class="org-left">Resize c to have n elements. Any elements added have value t.</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Note: If <i>resize</i> shrinks the container, then iterators, references and pointers to the deleted elements are
+invalidated. Resize on a vector, string, or deque potentially invalidates all iterators, pointers and references.
+</p>
+
+<p>
+Advice: When you use an iterator ( or a reference or pointer to a container element), it is good idea to minimize the
+part of the program during which an iterator must stay valid. Because code that adds or removes elements to a
+container can invalidate iterators, you need to ensure that the iterator is re-positioned, as appropriate, after each
+operation chant changes the container. This advice is especially important for vector, string and deque.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3c7ae43" class="outline-3">
+<h3 id="org3c7ae43"><span class="section-number-3">8.11</span> How a Vector Grows</h3>
+<div class="outline-text-3" id="text-8-11">
+<p>
+<i>vector</i> and <i>string</i> implementations typically allocated capacity beyond what is immediately needed. The container
+holds this storage in reserve and uses it to allocate new elements as they are added. Thus, there is no need to
+reallocated the container for each new element. In practice a <i>vector</i> usually grows more efficiently than a list or
+a deque, even though the vector has to move all of its elements each time it reallocates memory.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Container Size Management</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">c.shrink_to_fit()</td>
+<td class="org-left">Request to reduce capacity() to equal size().</td>
+</tr>
+
+<tr>
+<td class="org-left">c.capacity()</td>
+<td class="org-left">Number of elements c can have before reallocation is necessary.</td>
+</tr>
+
+<tr>
+<td class="org-left">c.reserve()</td>
+<td class="org-left">Allocate space for at least n elements.</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+We can call shrink_to_fit to ask a deque, vector or string to return unneeded memory. However, the implementation is
+free to ignore this request.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4f1d661" class="outline-3">
+<h3 id="org4f1d661"><span class="section-number-3">8.12</span> Container Adaptors</h3>
+<div class="outline-text-3" id="text-8-12">
+<p>
+The library defines three sequential container adaptors: <b>stack, queue</b>, and <b>priority_queue</b>. A container adaptor
+takes an existing container type and makes it act like a different type.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Operations and Types Common to the Container Adaptors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">size_type</td>
+<td class="org-left">Type large enough to hold the size of the largest object of this type</td>
+</tr>
+
+<tr>
+<td class="org-left">value_type</td>
+<td class="org-left">Element type</td>
+</tr>
+
+<tr>
+<td class="org-left">container_type</td>
+<td class="org-left">Type of <b>underlying</b> container on which the adaptor is implemented.</td>
+</tr>
+
+<tr>
+<td class="org-left">A a;</td>
+<td class="org-left">Create a new empty adaptor named a</td>
+</tr>
+
+<tr>
+<td class="org-left">A a(c);</td>
+<td class="org-left">Create a new adaptor named a with a copy of the container c.</td>
+</tr>
+
+<tr>
+<td class="org-left">a.empty()</td>
+<td class="org-left">false if a has any elements, true otherwise.</td>
+</tr>
+
+<tr>
+<td class="org-left">a.size()</td>
+<td class="org-left">Number of elements in a</td>
+</tr>
+
+<tr>
+<td class="org-left">swap(a, b)</td>
+<td class="org-left">Swaps the content of a and b; a and b must have the same type, including</td>
+</tr>
+
+<tr>
+<td class="org-left">a.swap(b)</td>
+<td class="org-left">the type of the container on which they are implemented</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #9acd32; font-weight: bold;">stack</span>&lt;<span style="color: #9acd32; font-weight: bold;">int</span>&gt; <span style="color: #7fffd4; font-weight: bold;">stk</span>(deq);  <span style="color: #add8e6;">// </span><span style="color: #add8e6;">copies elements from deq into stk</span>
+</pre>
+</div>
+
+<p>
+By default both <b>stack</b> and <b>queue</b> are implemented in terms of <b>deque</b>, and a <b>priority_queue</b> is implemented on a
+<b>vector</b>. We can override the default container type by naming a sequential container as a second type argument when
+we create the adaptor:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #add8e6;">// </span><span style="color: #add8e6;">empty stack implemented on top of vector</span>
+<span style="color: #9acd32; font-weight: bold;">stack</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>, <span style="color: #9acd32; font-weight: bold;">vector</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt;&gt; <span style="color: #7fffd4; font-weight: bold;">str_stk</span>;
+<span style="color: #add8e6;">// </span><span style="color: #add8e6;">str_stk2 is implemented on top of vector and initially holds a copy of svec</span>
+<span style="color: #9acd32; font-weight: bold;">stack</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>, <span style="color: #9acd32; font-weight: bold;">vector</span>&lt;<span style="color: #9acd32; font-weight: bold;">string</span>&gt;&gt; <span style="color: #7fffd4; font-weight: bold;">str_stk2</span>(svec);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbdba4c4" class="outline-3">
+<h3 id="orgbdba4c4"><span class="section-number-3">8.13</span> Stack Adaptor</h3>
+<div class="outline-text-3" id="text-8-13">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Stack Operations</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">s.pop()</td>
+<td class="org-left">Removes, but does not return, the top element from the stack.</td>
+</tr>
+
+<tr>
+<td class="org-left">s.push(item)</td>
+<td class="org-left">Creates a new top element on the stack by copying or moving item</td>
+</tr>
+
+<tr>
+<td class="org-left">s.emplace(args)</td>
+<td class="org-left">or by constructing the element from <i>args</i></td>
+</tr>
+
+<tr>
+<td class="org-left">s.top()</td>
+<td class="org-left">Returns, but does not remove, the top element on the stack</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+We can use only the adaptor operations and <b>cannot</b> use the operations of the underlying container type.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd9fb6e3" class="outline-3">
+<h3 id="orgd9fb6e3"><span class="section-number-3">8.14</span> Queue Adaptors</h3>
+<div class="outline-text-3" id="text-8-14">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Queue, priotiry_queue Operations</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">q.pop()</td>
+<td class="org-left">Removes, but not return, the front element or highest-priority element from</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">the queue or priority_queue, respectively.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">q.front()</td>
+<td class="org-left">Returns, but does not remove, the front or back element of q</td>
+</tr>
+
+<tr>
+<td class="org-left">q.back()</td>
+<td class="org-left">Valid only for queue</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">q.top()</td>
+<td class="org-left">Returns, but does not remove, the highest-priority element.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Valid only for priority_queue</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">q.push(item)</td>
+<td class="org-left">Create an element with value item or constructed from args at the end</td>
+</tr>
+
+<tr>
+<td class="org-left">q.emplace(args)</td>
+<td class="org-left">of the queue or in its appropriate position in  priority_queue.</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Queue uses a first-in, first-out (FIFO) storage and retrieval policy.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2f0fb01" class="outline-2">
+<h2 id="org2f0fb01"><span class="section-number-2">9</span> Associative Containers</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 Associative containers support efficient lookup and retrieval by a key. The two primary
@@ -3698,8 +4070,8 @@ p1 == p2
 </div>
 </div>
 
-<div id="outline-container-orgf0cc447" class="outline-3">
-<h3 id="orgf0cc447"><span class="section-number-3">9.1</span> Associative Containers</h3>
+<div id="outline-container-orga5e4d8d" class="outline-3">
+<h3 id="orga5e4d8d"><span class="section-number-3">9.1</span> Associative Containers</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 <b><b>Elements are ordered by key!</b></b> When we <b><b>iterate across</b></b> an associative container, we are guaranteed
@@ -3708,16 +4080,16 @@ were placed in the container.
 </p>
 </div>
 
-<div id="outline-container-orga595651" class="outline-4">
-<h4 id="orga595651"><span class="section-number-4">9.1.1</span> The map Type</h4>
+<div id="outline-container-orge994446" class="outline-4">
+<h4 id="orge994446"><span class="section-number-4">9.1.1</span> The map Type</h4>
 <div class="outline-text-4" id="text-9-1-1">
 <p>
 To use a map, we must <b><b>include the map header</b></b>.
 </p>
 </div>
 
-<div id="outline-container-orgf31d43d" class="outline-5">
-<h5 id="orgf31d43d"><span class="section-number-5">9.1.1.1</span> Defining a map</h5>
+<div id="outline-container-org2b4beae" class="outline-5">
+<h5 id="org2b4beae"><span class="section-number-5">9.1.1.1</span> Defining a map</h5>
 <div class="outline-text-5" id="text-9-1-1-1">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #9acd32; font-weight: bold;">map</span>&lt;k, v&gt; <span style="color: #7fffd4; font-weight: bold;">m</span>;
@@ -3733,8 +4105,8 @@ requirement that it support the other relational or equality operators.
 </div>
 </div>
 
-<div id="outline-container-org66b015c" class="outline-5">
-<h5 id="org66b015c"><span class="section-number-5">9.1.1.2</span> Types Defined by map</h5>
+<div id="outline-container-org76fd343" class="outline-5">
+<h5 id="org76fd343"><span class="section-number-5">9.1.1.2</span> Types Defined by map</h5>
 <div class="outline-text-5" id="text-9-1-1-2">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #7fffd4;">map</span>&lt;K, V&gt;::key_type     <span style="color: #add8e6;">// </span><span style="color: #add8e6;">The type of the keys</span>
@@ -3749,8 +4121,8 @@ Remember that the <b><b>value_type</b></b> is a <b><b>pair</b></b> and we <b><b>
 </div>
 </div>
 
-<div id="outline-container-org34ec5b5" class="outline-5">
-<h5 id="org34ec5b5"><span class="section-number-5">9.1.1.3</span> Subscripting a map</h5>
+<div id="outline-container-orgb145967" class="outline-5">
+<h5 id="orgb145967"><span class="section-number-5">9.1.1.3</span> Subscripting a map</h5>
 <div class="outline-text-5" id="text-9-1-1-3">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #9acd32; font-weight: bold;">map</span> &lt;<span style="color: #9acd32; font-weight: bold;">string</span>, <span style="color: #9acd32; font-weight: bold;">int</span>&gt; <span style="color: #7fffd4; font-weight: bold;">word_count</span>;  <span style="color: #add8e6;">// </span><span style="color: #add8e6;">empty map</span>
@@ -3791,8 +4163,8 @@ The fact that subscript adds an element if it is not already in the map allows u
 </div>
 </div>
 
-<div id="outline-container-org7d461a0" class="outline-5">
-<h5 id="org7d461a0"><span class="section-number-5">9.1.1.4</span> Using map::insert</h5>
+<div id="outline-container-orgece23bd" class="outline-5">
+<h5 id="orgece23bd"><span class="section-number-5">9.1.1.4</span> Using map::insert</h5>
 <div class="outline-text-5" id="text-9-1-1-4">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #add8e6;">// </span><span style="color: #add8e6;">syntax:</span>
@@ -3813,8 +4185,8 @@ value e.second. <b><b>If the key is in m, then m is unchanged</b></b>.
 </div>
 </div>
 
-<div id="outline-container-org2373eb9" class="outline-5">
-<h5 id="org2373eb9"><span class="section-number-5">9.1.1.5</span> Finding and Retrieving a map Element</h5>
+<div id="outline-container-org2cc2d78" class="outline-5">
+<h5 id="org2cc2d78"><span class="section-number-5">9.1.1.5</span> Finding and Retrieving a map Element</h5>
 <div class="outline-text-5" id="text-9-1-1-5">
 <p>
 Using subscript operator:
@@ -3862,8 +4234,8 @@ If we want to use the element if it is present, we should use find:
 </div>
 </div>
 
-<div id="outline-container-org98ff5ca" class="outline-5">
-<h5 id="org98ff5ca"><span class="section-number-5">9.1.1.6</span> Erasing Elements from a map</h5>
+<div id="outline-container-orgd2f4425" class="outline-5">
+<h5 id="orgd2f4425"><span class="section-number-5">9.1.1.6</span> Erasing Elements from a map</h5>
 <div class="outline-text-5" id="text-9-1-1-6">
 <div class="org-src-container">
 <pre class="src src-c++">m.erase(k)     <span style="color: #add8e6;">// </span><span style="color: #add8e6;">Removes the element with key k from m. Return size_type indicating the number</span>
@@ -3876,8 +4248,8 @@ m.erase(b, e)  <span style="color: #add8e6;">// </span><span style="color: #add8
 </div>
 </div>
 
-<div id="outline-container-orgee47140" class="outline-5">
-<h5 id="orgee47140"><span class="section-number-5">9.1.1.7</span> Iterating across a map</h5>
+<div id="outline-container-org1a5ad43" class="outline-5">
+<h5 id="org1a5ad43"><span class="section-number-5">9.1.1.7</span> Iterating across a map</h5>
 <div class="outline-text-5" id="text-9-1-1-7">
 <p>
 Like any other container, map provides begin and end operations.
@@ -3903,8 +4275,8 @@ container.
 </div>
 </div>
 
-<div id="outline-container-orgb6e80df" class="outline-4">
-<h4 id="orgb6e80df"><span class="section-number-4">9.1.2</span> The set Type</h4>
+<div id="outline-container-orgc94e37f" class="outline-4">
+<h4 id="orgc94e37f"><span class="section-number-4">9.1.2</span> The set Type</h4>
 <div class="outline-text-4" id="text-9-1-2">
 <p>
 &lt;example&gt;
@@ -3935,8 +4307,8 @@ value_comp      returns the function that compares values
 </p>
 </div>
 
-<div id="outline-container-org10fd1d5" class="outline-5">
-<h5 id="org10fd1d5"><span class="section-number-5">9.1.2.1</span> Defining and Using sets</h5>
+<div id="outline-container-orgc3bd68c" class="outline-5">
+<h5 id="orgc3bd68c"><span class="section-number-5">9.1.2.1</span> Defining and Using sets</h5>
 <div class="outline-text-5" id="text-9-1-2-1">
 <p>
 As with map, there can be only one element with a given key in a set. When we initialize a set
@@ -3984,8 +4356,8 @@ iterate a set:
 </div>
 </div>
 
-<div id="outline-container-org4a1a9d9" class="outline-5">
-<h5 id="org4a1a9d9"><span class="section-number-5">9.1.2.2</span> Fetching an Element from a set</h5>
+<div id="outline-container-org4427e2c" class="outline-5">
+<h5 id="org4427e2c"><span class="section-number-5">9.1.2.2</span> Fetching an Element from a set</h5>
 <div class="outline-text-5" id="text-9-1-2-2">
 <div class="org-src-container">
 <pre class="src src-c++">iset.find(1)         <span style="color: #add8e6;">// </span><span style="color: #add8e6;">returns iterator that refers to the element with key == 1</span>
@@ -3998,8 +4370,8 @@ iset.count(11)       <span style="color: #add8e6;">// </span><span style="color:
 </div>
 </div>
 
-<div id="outline-container-org2da4d55" class="outline-4">
-<h4 id="org2da4d55"><span class="section-number-4">9.1.3</span> multimap and multiset Types</h4>
+<div id="outline-container-orgf3cb513" class="outline-4">
+<h4 id="orgf3cb513"><span class="section-number-4">9.1.3</span> multimap and multiset Types</h4>
 <div class="outline-text-4" id="text-9-1-3">
 <p>
 The types multiset and a multimap allow multiple instances of a key. The operations supported by
@@ -4009,8 +4381,8 @@ a given key.
 </p>
 </div>
 
-<div id="outline-container-orge5916cf" class="outline-5">
-<h5 id="orge5916cf"><span class="section-number-5">9.1.3.1</span> Adding and Removing Elements</h5>
+<div id="outline-container-org9eac5cc" class="outline-5">
+<h5 id="org9eac5cc"><span class="section-number-5">9.1.3.1</span> Adding and Removing Elements</h5>
 <div class="outline-text-5" id="text-9-1-3-1">
 <p>
 Because keys need not be unique, insert always adds an element.
@@ -4042,8 +4414,8 @@ only the indicated element(s). These versions return void.
 </div>
 </div>
 
-<div id="outline-container-org557e809" class="outline-5">
-<h5 id="org557e809"><span class="section-number-5">9.1.3.2</span> Finding Elements in a multimap or multiset</h5>
+<div id="outline-container-orgc73e94e" class="outline-5">
+<h5 id="orgc73e94e"><span class="section-number-5">9.1.3.2</span> Finding Elements in a multimap or multiset</h5>
 <div class="outline-text-5" id="text-9-1-3-2">
 <p>
 Like map ans set, the multimap and multiset store their elements in order.
@@ -4118,16 +4490,16 @@ m.lower_bound(search_item), and second is equivalent to m.upper_bound(search_ite
 </div>
 </div>
 
-<div id="outline-container-org338a30b" class="outline-2">
-<h2 id="org338a30b"><span class="section-number-2">10</span> Classes</h2>
+<div id="outline-container-org0db9c46" class="outline-2">
+<h2 id="org0db9c46"><span class="section-number-2">10</span> Classes</h2>
 <div class="outline-text-2" id="text-10">
 </div>
-<div id="outline-container-org26a49b6" class="outline-3">
-<h3 id="org26a49b6"><span class="section-number-3">10.1</span> Class Definitions and Declarations</h3>
+<div id="outline-container-org64ab17f" class="outline-3">
+<h3 id="org64ab17f"><span class="section-number-3">10.1</span> Class Definitions and Declarations</h3>
 <div class="outline-text-3" id="text-10-1">
 </div>
-<div id="outline-container-orgb64d35a" class="outline-4">
-<h4 id="orgb64d35a"><span class="section-number-4">10.1.1</span> Defining Objects of Class Type</h4>
+<div id="outline-container-org82370f1" class="outline-4">
+<h4 id="org82370f1"><span class="section-number-4">10.1.1</span> Defining Objects of Class Type</h4>
 <div class="outline-text-4" id="text-10-1-1">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #9acd32; font-weight: bold;">Sales_item</span> <span style="color: #7fffd4; font-weight: bold;">item1</span>;
@@ -4137,8 +4509,8 @@ m.lower_bound(search_item), and second is equivalent to m.upper_bound(search_ite
 </div>
 </div>
 
-<div id="outline-container-org9addefe" class="outline-4">
-<h4 id="org9addefe"><span class="section-number-4">10.1.2</span> Why a Class Definition Ends in a Semicolon</h4>
+<div id="outline-container-org7ce1ffa" class="outline-4">
+<h4 id="org7ce1ffa"><span class="section-number-4">10.1.2</span> Why a Class Definition Ends in a Semicolon</h4>
 <div class="outline-text-4" id="text-10-1-2">
 <p>
 A semicolon is required because we can follow a class definition by a list of object
@@ -4153,8 +4525,8 @@ definitions. But it is a bad idea to define an object as part of a class definit
 </div>
 </div>
 
-<div id="outline-container-orga8219e4" class="outline-4">
-<h4 id="orga8219e4"><span class="section-number-4">10.1.3</span> The Implicit 'this' Pointer</h4>
+<div id="outline-container-orgb3c0520" class="outline-4">
+<h4 id="orgb3c0520"><span class="section-number-4">10.1.3</span> The Implicit 'this' Pointer</h4>
 <div class="outline-text-4" id="text-10-1-3">
 <p>
 There is one case in which we must refer explicitly to 'this' inside a member function: when we
@@ -4185,8 +4557,8 @@ myScreen.set(<span style="color: #ffa07a;">'#'</span>);
 </div>
 </div>
 
-<div id="outline-container-org43bf1ac" class="outline-4">
-<h4 id="org43bf1ac"><span class="section-number-4">10.1.4</span> Mutable Data Members</h4>
+<div id="outline-container-orgd1a0c4b" class="outline-4">
+<h4 id="orgd1a0c4b"><span class="section-number-4">10.1.4</span> Mutable Data Members</h4>
 <div class="outline-text-4" id="text-10-1-4">
 <p>
 A <b><b>mutable data member</b></b> is a member that is never const, even when it is a member of a const
@@ -4204,8 +4576,8 @@ mutable, the keyword mutable must precede the declaration of the member:
 </div>
 </div>
 
-<div id="outline-container-org6bfb2ee" class="outline-4">
-<h4 id="org6bfb2ee"><span class="section-number-4">10.1.5</span> Scope and Member Definitions</h4>
+<div id="outline-container-org709acab" class="outline-4">
+<h4 id="org709acab"><span class="section-number-4">10.1.5</span> Scope and Member Definitions</h4>
 <div class="outline-text-4" id="text-10-1-5">
 <p>
 Member definitions that appear outside the class body must indicate the class in which the
@@ -4231,8 +4603,8 @@ for the 'avg_price' member in the scope of the 'Sales_item' class. <b><b>Once th
 </div>
 </div>
 
-<div id="outline-container-org05a0711" class="outline-4">
-<h4 id="org05a0711"><span class="section-number-4">10.1.6</span> Function Return Types Aren't Always in Class Scope</h4>
+<div id="outline-container-orga601a20" class="outline-4">
+<h4 id="orga601a20"><span class="section-number-4">10.1.6</span> Function Return Types Aren't Always in Class Scope</h4>
 <div class="outline-text-4" id="text-10-1-6">
 <p>
 If the <b><b>function</b></b> is defined <b><b>outside the class body</b></b>, then the name used for the return type is
@@ -4255,12 +4627,12 @@ outside the class scope. If the <b><b>return type</b></b> uses a type <b><b>defi
 </div>
 </div>
 
-<div id="outline-container-org9242b79" class="outline-3">
-<h3 id="org9242b79"><span class="section-number-3">10.2</span> Constructors</h3>
+<div id="outline-container-org271ec5c" class="outline-3">
+<h3 id="org271ec5c"><span class="section-number-3">10.2</span> Constructors</h3>
 <div class="outline-text-3" id="text-10-2">
 </div>
-<div id="outline-container-orgaaec681" class="outline-4">
-<h4 id="orgaaec681"><span class="section-number-4">10.2.1</span> Constructor Initializer</h4>
+<div id="outline-container-org6764cb4" class="outline-4">
+<h4 id="org6764cb4"><span class="section-number-4">10.2.1</span> Constructor Initializer</h4>
 <div class="outline-text-4" id="text-10-2-1">
 <p>
 Unlike other functions, a constructor may contain a constructor initializer list.
@@ -4312,8 +4684,8 @@ the same rules as those used to initialize variables.
 </div>
 </div>
 
-<div id="outline-container-org8239282" class="outline-4">
-<h4 id="org8239282"><span class="section-number-4">10.2.2</span> Constructor Initializers Are Sometimes Required</h4>
+<div id="outline-container-orgaca536b" class="outline-4">
+<h4 id="orgaca536b"><span class="section-number-4">10.2.2</span> Constructor Initializers Are Sometimes Required</h4>
 <div class="outline-text-4" id="text-10-2-2">
 <p>
 With two exceptions, using a initializer is equivalent to assigning to a nonclass data member
@@ -4359,8 +4731,8 @@ initializer:
 </div>
 </div>
 
-<div id="outline-container-org3adb28c" class="outline-4">
-<h4 id="org3adb28c"><span class="section-number-4">10.2.3</span> The Default Constructor</h4>
+<div id="outline-container-org948b419" class="outline-4">
+<h4 id="org948b419"><span class="section-number-4">10.2.3</span> The Default Constructor</h4>
 <div class="outline-text-4" id="text-10-2-3">
 <p>
 The compiler generates a default constructor (<b><b>synthesized default constructor</b></b>) automatically
@@ -4383,8 +4755,8 @@ should indicate that the object is "empty".
 </div>
 </div>
 
-<div id="outline-container-org64aa326" class="outline-4">
-<h4 id="org64aa326"><span class="section-number-4">10.2.4</span> Implicit Class-Type Conversions</h4>
+<div id="outline-container-orga65bdf7" class="outline-4">
+<h4 id="orga65bdf7"><span class="section-number-4">10.2.4</span> Implicit Class-Type Conversions</h4>
 <div class="outline-text-4" id="text-10-2-4">
 <p>
 A <b><b>constructor</b></b> that can be <b><b>called with a single argument</b></b> defines an <b>implicit conversion</b> from the
@@ -4445,8 +4817,8 @@ obvious reason to want to define an implicit conversion. Making constructors exp
 </div>
 </div>
 
-<div id="outline-container-org6fbe162" class="outline-3">
-<h3 id="org6fbe162"><span class="section-number-3">10.3</span> Friends</h3>
+<div id="outline-container-org0b3ee69" class="outline-3">
+<h3 id="org0b3ee69"><span class="section-number-3">10.3</span> Friends</h3>
 <div class="outline-text-3" id="text-10-3">
 <p>
 The <b><b>friend mechanism</b></b> allows a class to grant <b><b>access</b></b> to tis <b><b>nonpublic members</b></b> to specified
@@ -4485,8 +4857,8 @@ they had <b><b>been previouly declared</b></b>.
 </div>
 </div>
 
-<div id="outline-container-orga2104f5" class="outline-3">
-<h3 id="orga2104f5"><span class="section-number-3">10.4</span> static Class Members</h3>
+<div id="outline-container-orgfcc2124" class="outline-3">
+<h3 id="orgfcc2124"><span class="section-number-3">10.4</span> static Class Members</h3>
 <div class="outline-text-3" id="text-10-4">
 <p>
 <b><b>A static data member</b></b> exists independentyly of any object of its class, each <b><b>static data member</b></b>
@@ -4542,8 +4914,8 @@ of which the function is a member.
 </p>
 </div>
 
-<div id="outline-container-org29c611b" class="outline-4">
-<h4 id="org29c611b"><span class="section-number-4">10.4.1</span> static Data Members</h4>
+<div id="outline-container-org77b6e05" class="outline-4">
+<h4 id="org77b6e05"><span class="section-number-4">10.4.1</span> static Data Members</h4>
 <div class="outline-text-4" id="text-10-4-1">
 <p>
 static data members can be declared to be of any type, eg consts. They <b>must</b> be <b><b>defined</b></b> (<b>exactly</b>
@@ -4575,8 +4947,8 @@ to initialize 'interestRate'.
 </div>
 </div>
 
-<div id="outline-container-orgbd60fd4" class="outline-4">
-<h4 id="orgbd60fd4"><span class="section-number-4">10.4.2</span> Integral const static Members Are Special</h4>
+<div id="outline-container-org06e99d0" class="outline-4">
+<h4 id="org06e99d0"><span class="section-number-4">10.4.2</span> Integral const static Members Are Special</h4>
 <div class="outline-text-4" id="text-10-4-2">
 <p>
 static data members are normally initialized when they are defined. One <b><b>exception</b></b> to this rule
@@ -4603,8 +4975,8 @@ defined outside the class definition. But the definition must not specify an ini
 </div>
 </div>
 
-<div id="outline-container-org37cbad4" class="outline-2">
-<h2 id="org37cbad4"><span class="section-number-2">11</span> Copy Control</h2>
+<div id="outline-container-orgc8e6826" class="outline-2">
+<h2 id="orgc8e6826"><span class="section-number-2">11</span> Copy Control</h2>
 <div class="outline-text-2" id="text-11">
 <p>
 Copy constructor: the constructor that takes a single parameter that is a (usually const)
@@ -4612,8 +4984,8 @@ Copy constructor: the constructor that takes a single parameter that is a (usual
 </p>
 </div>
 
-<div id="outline-container-org813e39c" class="outline-4">
-<h4 id="org813e39c"><span class="section-number-4">11.0.1</span> The Synthesized Copy Constructor</h4>
+<div id="outline-container-orge0ae5f9" class="outline-4">
+<h4 id="orge0ae5f9"><span class="section-number-4">11.0.1</span> The Synthesized Copy Constructor</h4>
 <div class="outline-text-4" id="text-11-0-1">
 <p>
 A copy constructor is synthesized even if we define other constructors. The behavior of the
@@ -4629,8 +5001,8 @@ element.
 </div>
 </div>
 
-<div id="outline-container-org9d445e4" class="outline-2">
-<h2 id="org9d445e4"><span class="section-number-2">12</span> Object-Oriented Programming</h2>
+<div id="outline-container-orgcffd2cc" class="outline-2">
+<h2 id="orgcffd2cc"><span class="section-number-2">12</span> Object-Oriented Programming</h2>
 <div class="outline-text-2" id="text-12">
 <p>
 Object-oriented programming is based on three fundamental concepts: <b><b>data abstraction</b></b>,
@@ -4642,8 +5014,8 @@ The key idea behind OOP is <b><b>polymorphism</b></b>, which means "many forms".
 </p>
 </div>
 
-<div id="outline-container-org175d65b" class="outline-3">
-<h3 id="org175d65b"><span class="section-number-3">12.1</span> Base Class</h3>
+<div id="outline-container-org1df23f1" class="outline-3">
+<h3 id="org1df23f1"><span class="section-number-3">12.1</span> Base Class</h3>
 <div class="outline-text-3" id="text-12-1">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #fa8072;">class</span> <span style="color: #9acd32; font-weight: bold;">Item_base</span> {
@@ -4660,8 +5032,8 @@ The key idea behind OOP is <b><b>polymorphism</b></b>, which means "many forms".
 </div>
 </div>
 
-<div id="outline-container-orgb31e2d1" class="outline-4">
-<h4 id="orgb31e2d1"><span class="section-number-4">12.1.1</span> protected Members</h4>
+<div id="outline-container-org2e8b6ea" class="outline-4">
+<h4 id="org2e8b6ea"><span class="section-number-4">12.1.1</span> protected Members</h4>
 <div class="outline-text-4" id="text-12-1-1">
 <ul class="org-ul">
 <li>protected members are inaccessible to users of the class</li>
@@ -4674,8 +5046,8 @@ objects.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb7a09d6" class="outline-3">
-<h3 id="orgb7a09d6"><span class="section-number-3">12.2</span> Derived Class</h3>
+<div id="outline-container-org4d4d6bd" class="outline-3">
+<h3 id="org4d4d6bd"><span class="section-number-3">12.2</span> Derived Class</h3>
 <div class="outline-text-3" id="text-12-2">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #fa8072;">class</span> <span style="color: #9acd32; font-weight: bold;">classname</span>: <span style="color: #9acd32; font-weight: bold;">access</span>-label base-<span style="color: #fa8072;">class</span>
@@ -4710,8 +5082,8 @@ plus the subobjects made up of the members of its base class.
 </div>
 </div>
 
-<div id="outline-container-org94fa5fd" class="outline-3">
-<h3 id="org94fa5fd"><span class="section-number-3">12.3</span> virtual</h3>
+<div id="outline-container-org1fe8738" class="outline-3">
+<h3 id="org1fe8738"><span class="section-number-3">12.3</span> virtual</h3>
 <div class="outline-text-3" id="text-12-3">
 <p>
 To trigger dynamic binding, two conditions must be met:
@@ -4728,8 +5100,8 @@ base type object.
 </p>
 </div>
 
-<div id="outline-container-org59e2ff8" class="outline-5">
-<h5 id="org59e2ff8"><span class="section-number-5">12.3.0.1</span> Calls to virtual Functions May Be Resolved at Run time</h5>
+<div id="outline-container-orge6b9fb2" class="outline-5">
+<h5 id="orge6b9fb2"><span class="section-number-5">12.3.0.1</span> Calls to virtual Functions May Be Resolved at Run time</h5>
 <div class="outline-text-5" id="text-12-3-0-1">
 <p>
 When a virtual function is <b><b>called</b></b> <b><b>through</b></b> <b><b>a</b></b> <b><b>reference</b></b> <b><b>or</b></b> <b><b>pointer</b></b>, the compiler generates code to
@@ -4753,8 +5125,8 @@ Virtuals are resolved at run time <b>only</b> if the call is made through a refe
 </div>
 </div>
 
-<div id="outline-container-orgc4d8d6b" class="outline-5">
-<h5 id="orgc4d8d6b"><span class="section-number-5">12.3.0.2</span> Overriding the Virtual Mechanism</h5>
+<div id="outline-container-orge9580a7" class="outline-5">
+<h5 id="orge9580a7"><span class="section-number-5">12.3.0.2</span> Overriding the Virtual Mechanism</h5>
 <div class="outline-text-5" id="text-12-3-0-2">
 <p>
 If we want to override the virtual mechanism and force a call to use a particular version of a
@@ -4773,8 +5145,8 @@ The call will be resolved at compile time.
 </div>
 </div>
 
-<div id="outline-container-org0778c50" class="outline-4">
-<h4 id="org0778c50"><span class="section-number-4">12.3.1</span> Public, Private and Protected Inheritance</h4>
+<div id="outline-container-org80c15b0" class="outline-4">
+<h4 id="org80c15b0"><span class="section-number-4">12.3.1</span> Public, Private and Protected Inheritance</h4>
 <div class="outline-text-4" id="text-12-3-1">
 <p>
 Each class controls access to the members it defines. A derived class may further restrict but
@@ -4789,8 +5161,8 @@ members in the derived class.</li>
 </ul>
 </div>
 
-<div id="outline-container-org8c40031" class="outline-5">
-<h5 id="org8c40031"><span class="section-number-5">12.3.1.1</span> Exempting Individual Members</h5>
+<div id="outline-container-org65b6fcb" class="outline-5">
+<h5 id="org65b6fcb"><span class="section-number-5">12.3.1.1</span> Exempting Individual Members</h5>
 <div class="outline-text-5" id="text-12-3-1-1">
 <p>
 When inheritance is private or protected, the access level of members of the base may be more
@@ -4823,8 +5195,8 @@ Derived.
 </div>
 </div>
 
-<div id="outline-container-orgc161c8c" class="outline-4">
-<h4 id="orgc161c8c"><span class="section-number-4">12.3.2</span> Friendship and Inheritance</h4>
+<div id="outline-container-org54fd881" class="outline-4">
+<h4 id="org54fd881"><span class="section-number-4">12.3.2</span> Friendship and Inheritance</h4>
 <div class="outline-text-4" id="text-12-3-2">
 <p>
 <b><b>Friendship is not inherited</b></b>. Friends of the base have no special access to members of its
@@ -4833,8 +5205,8 @@ derived classes.
 </div>
 </div>
 
-<div id="outline-container-org3ac8298" class="outline-4">
-<h4 id="org3ac8298"><span class="section-number-4">12.3.3</span> Pure Virtual Functions</h4>
+<div id="outline-container-org54514d6" class="outline-4">
+<h4 id="org54514d6"><span class="section-number-4">12.3.3</span> Pure Virtual Functions</h4>
 <div class="outline-text-4" id="text-12-3-3">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #fa8072;">class</span> <span style="color: #9acd32; font-weight: bold;">Disc_item</span> : <span style="color: #fa8072;">public</span> <span style="color: #9acd32; font-weight: bold;">Item_base</span> { ... }
@@ -4878,8 +5250,8 @@ derived from the abstract base.
 </div>
 </div>
 
-<div id="outline-container-orgfbea7a5" class="outline-3">
-<h3 id="orgfbea7a5"><span class="section-number-3">12.4</span> Name Lookup and Inheritance</h3>
+<div id="outline-container-org717a01f" class="outline-3">
+<h3 id="org717a01f"><span class="section-number-3">12.4</span> Name Lookup and Inheritance</h3>
 <div class="outline-text-3" id="text-12-4">
 <ol class="org-ol">
 <li>Start by determining the static type of object, reference, or pointer through which the
@@ -4898,16 +5270,16 @@ code to call the function directly.</li>
 </div>
 </div>
 
-<div id="outline-container-org275e6f1" class="outline-2">
-<h2 id="org275e6f1"><span class="section-number-2">13</span> Template Definitions</h2>
+<div id="outline-container-org92addfe" class="outline-2">
+<h2 id="org92addfe"><span class="section-number-2">13</span> Template Definitions</h2>
 <div class="outline-text-2" id="text-13">
 </div>
-<div id="outline-container-org9a2f7f1" class="outline-3">
-<h3 id="org9a2f7f1"><span class="section-number-3">13.1</span> Function Template</h3>
+<div id="outline-container-orgf1643bf" class="outline-3">
+<h3 id="orgf1643bf"><span class="section-number-3">13.1</span> Function Template</h3>
 <div class="outline-text-3" id="text-13-1">
 </div>
-<div id="outline-container-org6f8e7a5" class="outline-4">
-<h4 id="org6f8e7a5"><span class="section-number-4">13.1.1</span> Defining</h4>
+<div id="outline-container-orgdb9cf7b" class="outline-4">
+<h4 id="orgdb9cf7b"><span class="section-number-4">13.1.1</span> Defining</h4>
 <div class="outline-text-4" id="text-13-1-1">
 <p>
 A function template is a type-independent function that is used as formula for generating a
@@ -4926,8 +5298,8 @@ type-specific version of the function.
 </div>
 </div>
 
-<div id="outline-container-org4b1c544" class="outline-4">
-<h4 id="org4b1c544"><span class="section-number-4">13.1.2</span> Using</h4>
+<div id="outline-container-org4fbf753" class="outline-4">
+<h4 id="org4fbf753"><span class="section-number-4">13.1.2</span> Using</h4>
 <div class="outline-text-4" id="text-13-1-2">
 <p>
 int main() {
@@ -4940,8 +5312,8 @@ return 0;
 </div>
 </div>
 
-<div id="outline-container-orgc65f9f9" class="outline-4">
-<h4 id="orgc65f9f9"><span class="section-number-4">13.1.3</span> inline Function Templates</h4>
+<div id="outline-container-org6447712" class="outline-4">
+<h4 id="org6447712"><span class="section-number-4">13.1.3</span> inline Function Templates</h4>
 <div class="outline-text-4" id="text-13-1-3">
 <p>
 &lt;src lang="emacs-lisp"&gt;
@@ -4955,12 +5327,12 @@ inline template &lt;typename T&gt; T min(const T&amp;, const T&amp;);
 </div>
 </div>
 
-<div id="outline-container-org9ea3e5c" class="outline-3">
-<h3 id="org9ea3e5c"><span class="section-number-3">13.2</span> Class Template</h3>
+<div id="outline-container-org9f3db4d" class="outline-3">
+<h3 id="org9f3db4d"><span class="section-number-3">13.2</span> Class Template</h3>
 <div class="outline-text-3" id="text-13-2">
 </div>
-<div id="outline-container-org12ff089" class="outline-4">
-<h4 id="org12ff089"><span class="section-number-4">13.2.1</span> Defining</h4>
+<div id="outline-container-org6b320dc" class="outline-4">
+<h4 id="org6b320dc"><span class="section-number-4">13.2.1</span> Defining</h4>
 <div class="outline-text-4" id="text-13-2-1">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #fa8072;">template</span> &lt;<span style="color: #fa8072;">class</span> <span style="color: #9acd32; font-weight: bold;">Type</span>&gt; <span style="color: #fa8072;">class</span> <span style="color: #9acd32; font-weight: bold;">Queue</span> {
@@ -4982,8 +5354,8 @@ any other class.
 </div>
 </div>
 
-<div id="outline-container-org6e96fd5" class="outline-4">
-<h4 id="org6e96fd5"><span class="section-number-4">13.2.2</span> Using</h4>
+<div id="outline-container-org629288a" class="outline-4">
+<h4 id="org629288a"><span class="section-number-4">13.2.2</span> Using</h4>
 <div class="outline-text-4" id="text-13-2-2">
 <p>
 When we use a class template, we must explicitly specify arguments for the template
@@ -4999,8 +5371,8 @@ parameters.
 </div>
 </div>
 
-<div id="outline-container-org4b9b4a9" class="outline-3">
-<h3 id="org4b9b4a9"><span class="section-number-3">13.3</span> Template Parameters</h3>
+<div id="outline-container-org2622ac9" class="outline-3">
+<h3 id="org2622ac9"><span class="section-number-3">13.3</span> Template Parameters</h3>
 <div class="outline-text-3" id="text-13-3">
 <ul class="org-ul">
 <li>A name used as a template parameter may not be reused within the template:</li>
@@ -5038,8 +5410,8 @@ of the same template.
 </div>
 </div>
 
-<div id="outline-container-org4a4749a" class="outline-4">
-<h4 id="org4a4749a"><span class="section-number-4">13.3.1</span> Nontype Template Parameters</h4>
+<div id="outline-container-orga84c59b" class="outline-4">
+<h4 id="orga84c59b"><span class="section-number-4">13.3.1</span> Nontype Template Parameters</h4>
 <div class="outline-text-4" id="text-13-3-1">
 <p>
 Nontype parameters are replaced by values when the function is called.
@@ -5061,12 +5433,12 @@ array_init(x);  <span style="color: #add8e6;">// </span><span style="color: #add
 </div>
 </div>
 
-<div id="outline-container-orga5ecc9a" class="outline-2">
-<h2 id="orga5ecc9a"><span class="section-number-2">14</span> Namespaces</h2>
+<div id="outline-container-orgfee715f" class="outline-2">
+<h2 id="orgfee715f"><span class="section-number-2">14</span> Namespaces</h2>
 <div class="outline-text-2" id="text-14">
 </div>
-<div id="outline-container-org5bf53a7" class="outline-3">
-<h3 id="org5bf53a7"><span class="section-number-3">14.1</span> Namespace Definitions</h3>
+<div id="outline-container-org4050c5d" class="outline-3">
+<h3 id="org4050c5d"><span class="section-number-3">14.1</span> Namespace Definitions</h3>
 <div class="outline-text-3" id="text-14-1">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #fa8072;">namespace</span> <span style="color: #7fffd4;">cplusplus</span> {
@@ -5090,12 +5462,12 @@ namespace.
 </div>
 </div>
 
-<div id="outline-container-org36eafd0" class="outline-2">
-<h2 id="org36eafd0"><span class="section-number-2">15</span> update</h2>
+<div id="outline-container-org8495684" class="outline-2">
+<h2 id="org8495684"><span class="section-number-2">15</span> update</h2>
 <div class="outline-text-2" id="text-15">
 </div>
-<div id="outline-container-orgc43492e" class="outline-3">
-<h3 id="orgc43492e"><span class="section-number-3">15.1</span> Virtuelle Funktionen</h3>
+<div id="outline-container-org522587c" class="outline-3">
+<h3 id="org522587c"><span class="section-number-3">15.1</span> Virtuelle Funktionen</h3>
 <div class="outline-text-3" id="text-15-1">
 <p>
 Denken Sie an ein Programm, das mit einfachen geometrischen Figuren, z. B. Kreisen und
@@ -5208,12 +5580,12 @@ Zeigerdereferenzierung.
 </div>
 </div>
 
-<div id="outline-container-org77a75ad" class="outline-3">
-<h3 id="org77a75ad"><span class="section-number-3">15.2</span> istream</h3>
+<div id="outline-container-orgefeedc4" class="outline-3">
+<h3 id="orgefeedc4"><span class="section-number-3">15.2</span> istream</h3>
 <div class="outline-text-3" id="text-15-2">
 </div>
-<div id="outline-container-org9a8238d" class="outline-4">
-<h4 id="org9a8238d"><span class="section-number-4">15.2.1</span> seekg</h4>
+<div id="outline-container-orgdb241dd" class="outline-4">
+<h4 id="orgdb241dd"><span class="section-number-4">15.2.1</span> seekg</h4>
 <div class="outline-text-4" id="text-15-2-1">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #9acd32; font-weight: bold;">istream</span>&amp; <span style="color: #7fffd4; font-weight: bold;">seekg</span> ( <span style="color: #9acd32; font-weight: bold;">streampos</span> <span style="color: #7fffd4; font-weight: bold;">pos</span> );
@@ -5281,8 +5653,8 @@ The function returns *this. Errors are signaled by modifying the internal state 
 </div>
 </div>
 
-<div id="outline-container-org08185e0" class="outline-4">
-<h4 id="org08185e0"><span class="section-number-4">15.2.2</span> tellg</h4>
+<div id="outline-container-org45e72a2" class="outline-4">
+<h4 id="org45e72a2"><span class="section-number-4">15.2.2</span> tellg</h4>
 <div class="outline-text-4" id="text-15-2-2">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #9acd32; font-weight: bold;">streampos</span> <span style="color: #7fffd4; font-weight: bold;">tellg</span> ( );
@@ -5309,12 +5681,12 @@ Failure is indicated by returning a value of -1.
 </div>
 </div>
 
-<div id="outline-container-orga97cf01" class="outline-3">
-<h3 id="orga97cf01"><span class="section-number-3">15.3</span> string</h3>
+<div id="outline-container-org183909d" class="outline-3">
+<h3 id="org183909d"><span class="section-number-3">15.3</span> string</h3>
 <div class="outline-text-3" id="text-15-3">
 </div>
-<div id="outline-container-orgd2a7e16" class="outline-4">
-<h4 id="orgd2a7e16"><span class="section-number-4">15.3.1</span> find</h4>
+<div id="outline-container-org496eab0" class="outline-4">
+<h4 id="org496eab0"><span class="section-number-4">15.3.1</span> find</h4>
 <div class="outline-text-4" id="text-15-3-1">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #9acd32; font-weight: bold;">size_t</span> <span style="color: #7fffd4; font-weight: bold;">find</span> ( <span style="color: #fa8072;">const</span> <span style="color: #9acd32; font-weight: bold;">string</span>&amp; <span style="color: #7fffd4; font-weight: bold;">str</span>, <span style="color: #9acd32; font-weight: bold;">size_t</span> <span style="color: #7fffd4; font-weight: bold;">pos</span> = 0 ) <span style="color: #fa8072;">const</span>;
@@ -5361,8 +5733,8 @@ not found, the member value <b><b>npos</b></b> is returned.
 </div>
 </div>
 
-<div id="outline-container-org3763a8f" class="outline-4">
-<h4 id="org3763a8f"><span class="section-number-4">15.3.2</span> npos</h4>
+<div id="outline-container-org8bef751" class="outline-4">
+<h4 id="org8bef751"><span class="section-number-4">15.3.2</span> npos</h4>
 <div class="outline-text-4" id="text-15-3-2">
 <div class="org-src-container">
 <pre class="src src-C++"><span style="color: #7fffd4;">string</span>::npos  <span style="color: #fa8072;">static</span> member constant
@@ -5389,8 +5761,8 @@ This constant is actually defined with a value of <b><b>-1</b></b>, which becaus
 
 
 
-<div id="outline-container-org3a9fe53" class="outline-2">
-<h2 id="org3a9fe53"><span class="section-number-2">16</span> updated</h2>
+<div id="outline-container-org7a72215" class="outline-2">
+<h2 id="org7a72215"><span class="section-number-2">16</span> updated</h2>
 <div class="outline-text-2" id="text-16">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #add8e6;">// </span><span style="color: #add8e6;">&#35774;&#32622;&#31934;&#24230;&#20026;2</span>
@@ -5406,7 +5778,7 @@ cout.precision();
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Lizhuo Chen</p>
-<p class="date">Created: 2021-07-10 Sat 00:26</p>
+<p class="date">Created: 2021-07-11 Sun 20:34</p>
 </div>
 </body>
 </html>
