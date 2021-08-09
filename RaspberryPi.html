@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-08-09 Mon 10:28 -->
+<!-- 2021-08-09 Mon 10:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>My Life</title>
+<title>Raspberry Pi</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Lizhuo Chen" />
 <style type="text/css">
@@ -223,38 +223,133 @@
  |
  <a accesskey="H" href="https://cheneymx.github.io/mylife/"> HOME </a>
 </div><div id="content">
-<h1 class="title">My Life</h1>
-
-
-<div id="outline-container-org304171f" class="outline-2">
-<h2 id="org304171f"><span class="section-number-2">1</span> A New Journey</h2>
-<div class="outline-text-2" id="text-1">
+<h1 class="title">Raspberry Pi</h1>
 <ol class="org-ol">
-<li><a href="C++.html">C++</a> &#x2013; for my Studiearbeit as well as my Work</li>
-
-<li><a href="csharp.html">C#</a> will be my way to IoT</li>
-
-<li><a href="org-mode.html">Org-Mode</a> 的一些凌乱记录</li>
-
-<li><a href="RaspberryPi.html">Raspberry Pi</a></li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-org5860a92" class="outline-2">
-<h2 id="org5860a92"><span class="section-number-2">2</span> My notes</h2>
-<div class="outline-text-2" id="text-2">
+<li>install Raspbian from raspberrypi.org</li>
+<li>setting of Raspbian:
 <ul class="org-ul">
-<li><a href="Scratch.html">Scratch</a>:        my scratch file</li>
-<li><a href="Notes.html">Notes</a>:          some notes</li>
-<li><a href="log2.html">My Log</a>:         这里可以记录一些平时遇到的怪现象, 小发现.</li>
-</ul>
+<li>user: pi ; password: 1234.</li>
+<li>English keyboard.</li>
+<li>connect to Wifi</li>
+<li>Enable ssh in: Preference / Raspberry Pi Config / Interface</li>
+</ul></li>
+<li>download .Net 5 SDK (only support ARM 32-bit software so far)
+
+<ul class="org-ul">
+<li>When the download completes, open a terminal and run the following commands to extract the SDK</li>
+</ul></li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-shell">mkdir -p $<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet &amp;&amp; tar zxf dotnet-sdk-5.0.302-linux-x64.tar.gz -C $<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet
+</pre>
 </div>
+
+<ul class="org-ul">
+<li>Add following code into ~/.bashrc</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #98fb98; font-weight: bold;">export</span> <span style="color: #7fffd4; font-weight: bold;">DOTNET_ROOT</span>=$<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet
+<span style="color: #98fb98; font-weight: bold;">export</span> <span style="color: #7fffd4; font-weight: bold;">PATH</span>=$<span style="color: #7fffd4; font-weight: bold;">PATH</span>:$<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>install <b>winscp</b> and <b>putty</b> at windows side (you can start putty in winscp by 'ctrl+p')</li>
+<li>Find out the IP address of wlan0 by using command 'ifconfig'.</li>
+<li>By default, only root can read / write USB device. The permission can be changed, so that all user in a specific
+group can use the a specific USB device.</li>
+
+<li>Step 1: Add user to the plugdev Group</li>
+</ol>
+
+<p>
+Check whether the user is part of the plugdev group by executing
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">groups USERNAME
+</pre>
+</div>
+
+<p>
+If not, then add user to plugdev
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo useradd -G plugdev USERNAME
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Step 2: Change Device Permission</li>
+</ul>
+
+<p>
+Execute <b>lsusb</b> to find out the <b>vendor id</b> and <b>product id</b> .
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ lsusb
+Bus 001 Device 006: ID 04b4:00f1 Cypress Semiconductor Corp.
+</pre>
+</div>
+
+<p>
+Make a new file with filename extension <b>.rules</b>, and copy it into /etc/udev/rules.d
+</p>
+
+<pre class="example" id="orgd4ee277">
+# file name: 50-usb-perms.rules
+# copy to /etc/udev/rules.d
+SUBSYSTEM=="usb", ATTRS{idVendor}=="04b4", ATTRS{idProduct}=="00f1", GROUP="plugdev", MODE="0666"
+</pre>
+
+<p>
+(NOTE: based on my experience, the setting does not work, if the number is written with cap, e.g., '00F1')
+</p>
+
+<p>
+and run
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo udevadm control --reload ; sudo udevadm trigger
+</pre>
+</div>
+
+<p>
+After plugging the device, the permission can be checked with
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ ls -l /dev/bus/usb/001/023
+crw-rw---- 1 root plugdev 189, 23 Aug 16 00:38 /dev/bus/usb/001/006
+</pre>
+</div>
+
+<p>
+The number can be found by executing <b>lsusb</b> too.
+</p>
+
+<ol class="org-ol">
+<li>Now you should be able to execute dotnet programs</li>
+</ol>
+
+<pre class="example" id="org9360481">
+dotnet PI_Test.dll
+</pre>
+
+<ol class="org-ol">
+<li>install libgdiplus</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo apt-get install libgdiplus
+</pre>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Lizhuo Chen</p>
-<p class="date">Created: 2021-08-09 Mon 10:28</p>
+<p class="date">Created: 2021-08-09 Mon 10:30</p>
 </div>
 </body>
 </html>
