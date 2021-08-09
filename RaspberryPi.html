@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-08-09 Mon 10:30 -->
+<!-- 2021-08-09 Mon 11:04 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Raspberry Pi</title>
@@ -236,33 +236,36 @@
 <li>download .Net 5 SDK (only support ARM 32-bit software so far)
 
 <ul class="org-ul">
-<li>When the download completes, open a terminal and run the following commands to extract the SDK</li>
-</ul></li>
-</ol>
+<li><p>
+When the download completes, open a terminal and run the following commands to extract the SDK
+</p>
 
 <div class="org-src-container">
 <pre class="src src-shell">mkdir -p $<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet &amp;&amp; tar zxf dotnet-sdk-5.0.302-linux-x64.tar.gz -C $<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet
 </pre>
-</div>
+</div></li>
 
-<ul class="org-ul">
-<li>Add following code into ~/.bashrc</li>
-</ul>
+<li><p>
+Add following code into ~/.bashrc
+</p>
 
 <div class="org-src-container">
 <pre class="src src-shell"><span style="color: #98fb98; font-weight: bold;">export</span> <span style="color: #7fffd4; font-weight: bold;">DOTNET_ROOT</span>=$<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet
 <span style="color: #98fb98; font-weight: bold;">export</span> <span style="color: #7fffd4; font-weight: bold;">PATH</span>=$<span style="color: #7fffd4; font-weight: bold;">PATH</span>:$<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet
 </pre>
-</div>
+</div></li>
+</ul></li>
 
-<ol class="org-ol">
 <li>install <b>winscp</b> and <b>putty</b> at windows side (you can start putty in winscp by 'ctrl+p')</li>
 <li>Find out the IP address of wlan0 by using command 'ifconfig'.</li>
-<li>By default, only root can read / write USB device. The permission can be changed, so that all user in a specific
-group can use the a specific USB device.</li>
+<li><p>
+By default, only root can read / write USB device. The permission can be changed, so that all user in a specific
+group can use the a specific USB device.
+</p>
 
+<ul class="org-ul">
 <li>Step 1: Add user to the plugdev Group</li>
-</ol>
+</ul>
 
 <p>
 Check whether the user is part of the plugdev group by executing
@@ -299,7 +302,7 @@ Bus 001 Device 006: ID 04b4:00f1 Cypress Semiconductor Corp.
 Make a new file with filename extension <b>.rules</b>, and copy it into /etc/udev/rules.d
 </p>
 
-<pre class="example" id="orgd4ee277">
+<pre class="example" id="org18f8007">
 # file name: 50-usb-perms.rules
 # copy to /etc/udev/rules.d
 SUBSYSTEM=="usb", ATTRS{idVendor}=="04b4", ATTRS{idProduct}=="00f1", GROUP="plugdev", MODE="0666"
@@ -328,28 +331,29 @@ crw-rw---- 1 root plugdev 189, 23 Aug 16 00:38 /dev/bus/usb/001/006
 
 <p>
 The number can be found by executing <b>lsusb</b> too.
+</p></li>
+
+<li><p>
+Now you should be able to execute dotnet programs
 </p>
 
-<ol class="org-ol">
-<li>Now you should be able to execute dotnet programs</li>
-</ol>
-
-<pre class="example" id="org9360481">
+<pre class="example" id="org932661b">
 dotnet PI_Test.dll
-</pre>
+</pre></li>
 
-<ol class="org-ol">
-<li>install libgdiplus</li>
-</ol>
+<li><p>
+install libgdiplus
+</p>
 
 <div class="org-src-container">
 <pre class="src src-shell">$ sudo apt-get install libgdiplus
 </pre>
-</div>
+</div></li>
+</ol>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Lizhuo Chen</p>
-<p class="date">Created: 2021-08-09 Mon 10:30</p>
+<p class="date">Created: 2021-08-09 Mon 11:04</p>
 </div>
 </body>
 </html>
