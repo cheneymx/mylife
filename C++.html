@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-11 Sun 20:34 -->
+<!-- 2021-11-22 Mon 22:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>C++</title>
@@ -236,7 +236,7 @@
 <li><a href="#org69808cc">6. Functions</a></li>
 <li><a href="#org6a36cd4">7. The IO Library</a></li>
 <li><a href="#org456a700">8. Sequential Containers</a></li>
-<li><a href="#org2f0fb01">9. Associative Containers</a></li>
+<li><a href="#org20fb476">9. Associative Containers</a></li>
 <li><a href="#org0db9c46">10. Classes</a></li>
 <li><a href="#orgc8e6826">11. Copy Control</a></li>
 <li><a href="#orgcffd2cc">12. Object-Oriented Programming</a></li>
@@ -1210,8 +1210,8 @@ for the newly added elements.
 </div>
 </div>
 
-<div id="outline-container-org6ed2871" class="outline-3">
-<h3 id="org6ed2871"><span class="section-number-3">3.4</span> Iterators</h3>
+<div id="outline-container-org8dc34f7" class="outline-3">
+<h3 id="org8dc34f7"><span class="section-number-3">3.4</span> Iterators</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 An iterator is a type that <b><b>lets us examine the elements in a container</b></b> and <b><b>navigate from one</b></b>
@@ -2545,7 +2545,7 @@ The IO types are defined in three separate headers:
 </ul>
 
 
-<div id="org5802486" class="figure">
+<div id="orga28807d" class="figure">
 <p><img src="./pic/iostream_inheritance_hierarchy.png" alt="iostream_inheritance_hierarchy.png" />
 </p>
 </div>
@@ -3256,8 +3256,8 @@ Almost any type can be used as the element type of a sequential container.
 </div>
 </div>
 
-<div id="outline-container-org8dc34f7" class="outline-3">
-<h3 id="org8dc34f7"><span class="section-number-3">8.3</span> Iterators</h3>
+<div id="outline-container-org13221f5" class="outline-3">
+<h3 id="org13221f5"><span class="section-number-3">8.3</span> Iterators</h3>
 <div class="outline-text-3" id="text-8-3">
 <p>
 The element range is called a <b>left-inclusive interval</b>: [begin, end) . Such ranges have three convenient properties
@@ -4016,8 +4016,8 @@ Queue uses a first-in, first-out (FIFO) storage and retrieval policy.
 </div>
 </div>
 
-<div id="outline-container-org2f0fb01" class="outline-2">
-<h2 id="org2f0fb01"><span class="section-number-2">9</span> Associative Containers</h2>
+<div id="outline-container-org20fb476" class="outline-2">
+<h2 id="org20fb476"><span class="section-number-2">9</span> Associative Containers</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 Associative containers support efficient lookup and retrieval by a key. The two primary
@@ -4070,8 +4070,8 @@ p1 == p2
 </div>
 </div>
 
-<div id="outline-container-orga5e4d8d" class="outline-3">
-<h3 id="orga5e4d8d"><span class="section-number-3">9.1</span> Associative Containers</h3>
+<div id="outline-container-org2f0fb01" class="outline-3">
+<h3 id="org2f0fb01"><span class="section-number-3">9.1</span> Associative Containers</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 <b><b>Elements are ordered by key!</b></b> When we <b><b>iterate across</b></b> an associative container, we are guaranteed
@@ -5278,8 +5278,8 @@ code to call the function directly.</li>
 <h3 id="orgf1643bf"><span class="section-number-3">13.1</span> Function Template</h3>
 <div class="outline-text-3" id="text-13-1">
 </div>
-<div id="outline-container-orgdb9cf7b" class="outline-4">
-<h4 id="orgdb9cf7b"><span class="section-number-4">13.1.1</span> Defining</h4>
+<div id="outline-container-org6b320dc" class="outline-4">
+<h4 id="org6b320dc"><span class="section-number-4">13.1.1</span> Defining</h4>
 <div class="outline-text-4" id="text-13-1-1">
 <p>
 A function template is a type-independent function that is used as formula for generating a
@@ -5298,8 +5298,8 @@ type-specific version of the function.
 </div>
 </div>
 
-<div id="outline-container-org4fbf753" class="outline-4">
-<h4 id="org4fbf753"><span class="section-number-4">13.1.2</span> Using</h4>
+<div id="outline-container-org629288a" class="outline-4">
+<h4 id="org629288a"><span class="section-number-4">13.1.2</span> Using</h4>
 <div class="outline-text-4" id="text-13-1-2">
 <p>
 int main() {
@@ -5331,8 +5331,8 @@ inline template &lt;typename T&gt; T min(const T&amp;, const T&amp;);
 <h3 id="org9f3db4d"><span class="section-number-3">13.2</span> Class Template</h3>
 <div class="outline-text-3" id="text-13-2">
 </div>
-<div id="outline-container-org6b320dc" class="outline-4">
-<h4 id="org6b320dc"><span class="section-number-4">13.2.1</span> Defining</h4>
+<div id="outline-container-org3f4e9ee" class="outline-4">
+<h4 id="org3f4e9ee"><span class="section-number-4">13.2.1</span> Defining</h4>
 <div class="outline-text-4" id="text-13-2-1">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #fa8072;">template</span> &lt;<span style="color: #fa8072;">class</span> <span style="color: #9acd32; font-weight: bold;">Type</span>&gt; <span style="color: #fa8072;">class</span> <span style="color: #9acd32; font-weight: bold;">Queue</span> {
@@ -5354,8 +5354,8 @@ any other class.
 </div>
 </div>
 
-<div id="outline-container-org629288a" class="outline-4">
-<h4 id="org629288a"><span class="section-number-4">13.2.2</span> Using</h4>
+<div id="outline-container-orgcf2bb81" class="outline-4">
+<h4 id="orgcf2bb81"><span class="section-number-4">13.2.2</span> Using</h4>
 <div class="outline-text-4" id="text-13-2-2">
 <p>
 When we use a class template, we must explicitly specify arguments for the template
@@ -5774,11 +5774,42 @@ cout.precision();
 </pre>
 </div>
 </div>
+
+
+<div id="outline-container-orgfeea261" class="outline-4">
+<h4 id="orgfeea261"><span class="section-number-4">16.0.1</span> scope resolution operator:   ::</h4>
+<div class="outline-text-4" id="text-16-0-1">
+<p>
+A scope resolution operator without a scope qualifier refers to the global namespace.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #fa8072;">namespace</span> <span style="color: #7fffd4;">NamespaceA</span>{
+  <span style="color: #9acd32; font-weight: bold;">int</span> <span style="color: #7fffd4; font-weight: bold;">x</span>;
+}
+
+<span style="color: #9acd32; font-weight: bold;">int</span> <span style="color: #7fffd4; font-weight: bold;">x</span>;
+
+<span style="color: #9acd32; font-weight: bold;">int</span> <span style="color: #7fffd4; font-weight: bold;">main</span>() {
+  <span style="color: #9acd32; font-weight: bold;">int</span> <span style="color: #7fffd4; font-weight: bold;">x</span>;
+
+  <span style="color: #add8e6;">// </span><span style="color: #add8e6;">the x in main()</span>
+  x = 0;
+  <span style="color: #add8e6;">// </span><span style="color: #add8e6;">The x in the global namespace</span>
+  ::x = 1;
+
+  <span style="color: #add8e6;">// </span><span style="color: #add8e6;">The x in the A namespace</span>
+  <span style="color: #7fffd4;">NamespaceA</span>::x = 2;
+}
+</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Lizhuo Chen</p>
-<p class="date">Created: 2021-07-11 Sun 20:34</p>
+<p class="date">Created: 2021-11-22 Mon 22:47</p>
 </div>
 </body>
 </html>

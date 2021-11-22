@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-10 Sat 00:26 -->
+<!-- 2021-11-22 Mon 22:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Log</title>
@@ -193,7 +193,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" href="https://sandyuraz.com/styles/org.min.css">
+<link rel="stylesheet" href="./css/core.css">
 <script type="text/javascript">
 // @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
@@ -247,7 +247,7 @@
 Config -&gt; Repository 中修改设置.
 </p>
 
-<div id="org6c4fbcb" class="figure">
+<div id="org5fd1121" class="figure">
 <p><img src="./img/smartGitSetting.png" alt="smartGitSetting.png" width="400px" />
 </p>
 </div>
@@ -256,7 +256,7 @@ Config -&gt; Repository 中修改设置.
 另外, windows下的 smartGit 喜欢自作聪明把 unix 的回车用 windows 回车替代. 要禁用各种替换可以
 </p>
 
-<pre class="example" id="org2def399">
+<pre class="example" id="orgcc0db11">
 [core]
     autocrlf = false
 </pre>
@@ -270,7 +270,7 @@ Config -&gt; Repository 中修改设置.
 Org中链接其他Org文件时候, 直接写
 </p>
 
-<pre class="example" id="org697933c">
+<pre class="example" id="org2c02a22">
 [[csharp.org][csharp]]
 </pre>
 
@@ -283,7 +283,7 @@ Org中链接其他Org文件时候, 直接写
 Org的table中文字显示难以辨认,解决方案就是在相关文字上执行
 </p>
 
-<pre class="example" id="org7714f21">
+<pre class="example" id="orga1b1444">
 M-x customize-face
 </pre>
 
@@ -308,7 +308,7 @@ M-x customize-face
 之后设置两个环境变量 第一个是hunspell 所在文件夹, 另一个是词典所在文件夹.
 </p>
 
-<pre class="example" id="orga42b910">
+<pre class="example" id="org8db82ad">
 PATH: "C:\Program Files (x86)\ErgoEmacs 1.8.1\hunspell\;%PATH%"
 DICPATH "C:\Program Files (x86)\ErgoEmacs 1.8.1\hunspell"
 </pre>
@@ -336,10 +336,48 @@ DICPATH "C:\Program Files (x86)\ErgoEmacs 1.8.1\hunspell"
 非常诡异的一点就是, 我必须将 en_US 复制为 default 文件, 这样 hunspell 才能找到词典. 否则系统不断提示找不到文件. 好像我的
 en_US 地址设置都是无效的. 而且就算是这样 hunspell -D 依然没有列举加载的词典.
 </p>
+
+<p>
+25.09.2021
+</p>
+
+<p>
+IPxx 防尘防水等级：防护等级采用国际电工委员会（IEC）推荐的IP**等级标准，不同的安装场所，等级是不一样的。具体可参照下面的
+说明选定。在等级标准中，“**”是两位数字，第一位表示对固体的防护等级，第二位表示对液体的防护等级。固体防护等级有7个等级，
+用0-6分别表示；液体防护等级有9个等级，用0-8分别表示。
+</p>
+
+<p>
+防尘等级 （第一个X表示）
+</p>
+<ul class="org-ul">
+<li>0 ：没有保护</li>
+<li>1 ：防止大的固体侵入</li>
+<li>2 ：防止中等大小的固体侵入</li>
+<li>3 ：防止小固体进入侵入</li>
+<li>4 ：防止物体大于 1mm 的固体进入</li>
+<li>5 ：防止有害的粉尘堆积</li>
+<li>6 ：完全防止粉尘进入</li>
+</ul>
+
+<p>
+防水等级 （第二个X表示）
+</p>
+<ul class="org-ul">
+<li>0 ：没有保护</li>
+<li>1 ：水滴滴入到外壳无影响</li>
+<li>2 ：当外壳倾斜到 15 度时，水滴滴入到外壳无影响</li>
+<li>3 ：水或雨水从 60 度角落到外壳上无影响</li>
+<li>4 ：液体由任何方向泼到外壳没有伤害影响</li>
+<li>5 ：用水冲洗无任何伤害</li>
+<li>6 ：可用于船舱内的环境</li>
+<li>7 ：可于短时间内耐浸水（1m）</li>
+<li>8 ：于一定压力下长时间浸水</li>
+</ul>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Lizhuo Chen</p>
-<p class="date">Created: 2021-07-10 Sat 00:26</p>
+<p class="date">Created: 2021-11-22 Mon 22:48</p>
 </div>
 </body>
 </html>

@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-11-22 Mon 22:47 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Acoustic Camera</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Lizhuo Chen" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" href="./css/core.css">
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="./index.html"> UP </a>
+ |
+ <a accesskey="H" href="https://cheneymx.github.io/mylife/"> HOME </a>
+</div><div id="content">
+<h1 class="title">Acoustic Camera</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org38224b2">1. System</a></li>
+<li><a href="#org47999c6">2. Raspberry Pi</a></li>
+<li><a href="#org5c281b3">3. FPGA</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org38224b2" class="outline-2">
+<h2 id="org38224b2"><span class="section-number-2">1</span> System</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgf8f1f0b" class="outline-3">
+<h3 id="orgf8f1f0b"><span class="section-number-3">1.1</span> 防尘防水等级</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+IPxx 防尘防水等级：防护等级采用国际电工委员会（IEC）推荐的IP**等级标准，不同的安装场所，等级是不一样的。具体可参照下面的
+说明选定。在等级标准中，“**”是两位数字，第一位表示对固体的防护等级，第二位表示对液体的防护等级。固体防护等级有7个等级，
+用0-6分别表示；液体防护等级有9个等级，用0-8分别表示。
+</p>
+
+<p>
+防尘等级 （第一个X表示）
+</p>
+<ul class="org-ul">
+<li>0 ：没有保护</li>
+<li>1 ：防止大的固体侵入</li>
+<li>2 ：防止中等大小的固体侵入</li>
+<li>3 ：防止小固体进入侵入</li>
+<li>4 ：防止物体大于 1mm 的固体进入</li>
+<li>5 ：防止有害的粉尘堆积</li>
+<li>6 ：完全防止粉尘进入</li>
+</ul>
+
+<p>
+防水等级 （第二个X表示）
+</p>
+<ul class="org-ul">
+<li>0 ：没有保护</li>
+<li>1 ：水滴滴入到外壳无影响</li>
+<li>2 ：当外壳倾斜到 15 度时，水滴滴入到外壳无影响</li>
+<li>3 ：水或雨水从 60 度角落到外壳上无影响</li>
+<li>4 ：液体由任何方向泼到外壳没有伤害影响</li>
+<li>5 ：用水冲洗无任何伤害</li>
+<li>6 ：可用于船舱内的环境</li>
+<li>7 ：可于短时间内耐浸水（1m）</li>
+<li>8 ：于一定压力下长时间浸水</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org47999c6" class="outline-2">
+<h2 id="org47999c6"><span class="section-number-2">2</span> Raspberry Pi</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org25edc80" class="outline-3">
+<h3 id="org25edc80"><span class="section-number-3">2.1</span> HDMI vs DSI</h3>
+<div class="outline-text-3" id="text-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">DSI</th>
+<th scope="col" class="org-left">HDMI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Handful of LCDs Supported</td>
+<td class="org-left">Wide Range of LCDs Supported</td>
+</tr>
+
+<tr>
+<td class="org-left">No Audio Support</td>
+<td class="org-left">Audio Support</td>
+</tr>
+
+<tr>
+<td class="org-left">Low Power consumption</td>
+<td class="org-left">Comparatively high-power consumption</td>
+</tr>
+
+<tr>
+<td class="org-left">Not very easy to connect the 15-pin FPC cable</td>
+<td class="org-left">Easy to connect the HDMI connector</td>
+</tr>
+
+<tr>
+<td class="org-left">Ability to power the display via DSI</td>
+<td class="org-left">Unable to power the display via HDMI</td>
+</tr>
+
+<tr>
+<td class="org-left">Cost-effective</td>
+<td class="org-left">Comparatively expensive</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orga48b917" class="outline-3">
+<h3 id="orga48b917"><span class="section-number-3">2.2</span> Desktop Entry for Shell</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+To run a script by double clicking on its icon, one needs to create a .desktop file for it:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">[Desktop Entry]
+<span style="color: #7fffd4; font-weight: bold;">Name</span>=My script
+<span style="color: #7fffd4; font-weight: bold;">Comment</span>=Test hello world script
+<span style="color: #7fffd4; font-weight: bold;">Exec</span>=/home/user/yourscript.sh
+<span style="color: #7fffd4; font-weight: bold;">Icon</span>=/home/user/youricon.gif
+<span style="color: #7fffd4; font-weight: bold;">Terminal</span>=false
+<span style="color: #7fffd4; font-weight: bold;">Type</span>=Application
+</pre>
+</div>
+
+<p>
+Save the above as a file on Desktop with a .desktop extension.
+</p>
+
+<p>
+You can verify your desktop entry with the following command.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">desktop-file-validate ~/Desktop/yourfilename.desktop
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcb89bd8" class="outline-3">
+<h3 id="orgcb89bd8"><span class="section-number-3">2.3</span> Bluetooth</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-org3079a44" class="outline-4">
+<h4 id="org3079a44"><span class="section-number-4">2.3.1</span> Rpi</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+Step 1: Fix the Bluetooth Service Issue
+</p>
+
+<p>
+Check the current status of Pi Bluetooth Service from the command line prompt
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo service bluetooth status
+</pre>
+</div>
+
+<p>
+Step 2 : Make the RPi Discoverable Using Bluetoothctl (Bluetooth Agent)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo bluetoothctl  <span style="color: #add8e6;"># </span><span style="color: #add8e6;">(This opens a new shell)</span>
+
+power on
+agent on
+default-agent
+discoverable on
+</pre>
+</div>
+
+
+<p>
+apt-get install obexftp bluetooth
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org55353b7" class="outline-3">
+<h3 id="org55353b7"><span class="section-number-3">2.4</span> USB output current</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+How much current can I draw from a Raspberry Pi USB port?
+</p>
+
+<p>
+If you're adding USB drives or other USB devices, please note that the maximum current the Raspberry Pi 4 USB ports
+(either combined or a single USB port) can pass through is 1.2A.
+</p>
+
+<p>
+To clarify, you cannot draw 1.2A from all four ports at the same time. You can draw this from one port only, or 1.2A
+across all 4 ports combined.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org9f0ce88" class="outline-3">
+<h3 id="org9f0ce88"><span class="section-number-3">2.5</span> installation</h3>
+<div class="outline-text-3" id="text-2-5">
+<ol class="org-ol">
+<li>install Raspbian from raspberrypi.org</li>
+<li>setting of Raspbian:
+<ul class="org-ul">
+<li>user: pi ; password: 1234.</li>
+<li>English keyboard.</li>
+<li>connect to Wifi</li>
+<li>Enable ssh in: Preference / Raspberry Pi Config / Interface</li>
+</ul></li>
+<li>download .Net 5 SDK (only support ARM 32-bit software so far)
+
+<ul class="org-ul">
+<li><p>
+When the download completes, open a terminal and run the following commands to extract the SDK
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">mkdir -p $<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet &amp;&amp; tar zxf dotnet-sdk-5.0.302-linux-x64.tar.gz -C $<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet
+</pre>
+</div></li>
+
+<li><p>
+Add following code into ~/.bashrc
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #98fb98; font-weight: bold;">export</span> <span style="color: #7fffd4; font-weight: bold;">DOTNET_ROOT</span>=$<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet
+<span style="color: #98fb98; font-weight: bold;">export</span> <span style="color: #7fffd4; font-weight: bold;">PATH</span>=$<span style="color: #7fffd4; font-weight: bold;">PATH</span>:$<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet
+</pre>
+</div></li>
+</ul></li>
+
+<li>install <b>winscp</b> and <b>putty</b> at windows side (you can start putty in winscp by 'ctrl+p')</li>
+<li>Find out the IP address of wlan0 by using command 'ifconfig'.</li>
+<li><p>
+By default, only root can read / write USB device. The permission can be changed, so that all user in a specific
+group can use the a specific USB device.
+</p>
+
+<ul class="org-ul">
+<li>Step 1: Add user to the plugdev Group</li>
+</ul>
+
+<p>
+Check whether the user is part of the plugdev group by executing
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">groups USERNAME
+</pre>
+</div>
+
+<p>
+If not, then add user to plugdev
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo useradd -G plugdev USERNAME
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Step 2: Change Device Permission</li>
+</ul>
+
+<p>
+Execute <b>lsusb</b> to find out the <b>vendor id</b> and <b>product id</b> .
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ lsusb
+Bus 001 Device 006: ID 04b4:00f1 Cypress Semiconductor Corp.
+</pre>
+</div>
+
+<p>
+Make a new file with filename extension <b>.rules</b>, and copy it into /etc/udev/rules.d
+</p>
+
+<pre class="example" id="org1e7173e">
+# file name: 50-usb-perms.rules
+# copy to /etc/udev/rules.d
+SUBSYSTEM=="usb", ATTRS{idVendor}=="04b4", ATTRS{idProduct}=="00f1", GROUP="plugdev", MODE="0666"
+</pre>
+
+<p>
+(NOTE: based on my experience, the setting does not work, if the number is written with cap, e.g., '00F1')
+</p>
+
+<p>
+and run
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo udevadm control --reload ; sudo udevadm trigger
+</pre>
+</div>
+
+<p>
+After plugging the device, the permission can be checked with
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ ls -l /dev/bus/usb/001/023
+crw-rw---- 1 root plugdev 189, 23 Aug 16 00:38 /dev/bus/usb/001/006
+</pre>
+</div>
+
+<p>
+The number can be found by executing <b>lsusb</b> too.
+</p></li>
+
+<li><p>
+Now you should be able to execute dotnet programs
+</p>
+
+<pre class="example" id="org66d4e0f">
+dotnet PI_Test.dll
+</pre></li>
+
+<li><p>
+install libgdiplus
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo apt-get install libgdiplus
+</pre>
+</div></li>
+
+<li>Chrome settings:   disable 'Use system title bar and borders'</li>
+
+<li>install unclutter</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo apt-get install unclutter
+</pre>
+</div>
+
+<p>
+add following command to the auto-run, in order to hide the mouse cursor
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">unclutter -idle 0
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org39ef5af" class="outline-3">
+<h3 id="org39ef5af"><span class="section-number-3">2.6</span> install OpenCv / OpenCvSharp</h3>
+<div class="outline-text-3" id="text-2-6">
+<ol class="org-ol">
+<li>install packages</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo apt update &amp;&amp; sudo apt upgrade
+
+sudo apt install cmake build-essential pkg-config git libjpeg-dev libtiff-dev libjasper-dev libpng-dev libwebp-dev
+sudo apt install libopenexr-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libdc1394-22-dev
+sudo apt install libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libgtk-3-dev libqtgui4 libqtwebkit4 libqt4-test python3-pyqt5
+sudo apt install libatlas-base-dev liblapacke-dev gfortran libhdf5-dev libhdf5-103 python3-dev python3-pip python3-numpy
+</pre>
+</div>
+
+<ol class="org-ol">
+<li><p>
+open the swapfile
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo vim /etc/dphys-swapfile
+</pre>
+</div>
+
+<p>
+Change 'CONF_SWAPSIZE=100' in the file to 'CONF_SWAPSIZE=2048'.
+</p>
+
+<p>
+Restart swapfile service by executing
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo systemctl restart dphys-swapfile
+</pre>
+</div></li>
+
+<li><p>
+clone OpenCV respositories
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">git clone https://github.com/opencv/opencv.git
+git clone https://github.com/opencv/opencv_contrib.git
+</pre>
+</div></li>
+
+<li><p>
+compile OpenCV
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">mkdir ~/opencv/build
+<span style="color: #98fb98; font-weight: bold;">cd</span> ~/opencv/build
+
+cmake -D <span style="color: #7fffd4; font-weight: bold;">CMAKE_BUILD_TYPE</span>=RELEASE <span style="color: #ffa07a;">\</span>
+      -D <span style="color: #7fffd4; font-weight: bold;">CMAKE_INSTALL_PREFIX</span>=/usr/local <span style="color: #ffa07a;">\</span>
+      -D <span style="color: #7fffd4; font-weight: bold;">OPENCV_EXTRA_MODULES_PATH</span>=~/opencv_contrib/modules <span style="color: #ffa07a;">\</span>
+      -D <span style="color: #7fffd4; font-weight: bold;">ENABLE_NEON</span>=ON <span style="color: #ffa07a;">\</span>
+      -D <span style="color: #7fffd4; font-weight: bold;">ENABLE_VFPV3</span>=ON <span style="color: #ffa07a;">\</span>
+      -D <span style="color: #7fffd4; font-weight: bold;">BUILD_TESTS</span>=OFF <span style="color: #ffa07a;">\</span>
+      -D <span style="color: #7fffd4; font-weight: bold;">INSTALL_PYTHON_EXAMPLES</span>=OFF <span style="color: #ffa07a;">\</span>
+      -D <span style="color: #7fffd4; font-weight: bold;">OPENCV_ENABLE_NONFREE</span>=ON <span style="color: #ffa07a;">\</span>
+      -D <span style="color: #7fffd4; font-weight: bold;">CMAKE_SHARED_LINKER_FLAGS</span>=-latomic <span style="color: #ffa07a;">\</span>
+      -D <span style="color: #7fffd4; font-weight: bold;">BUILD_EXAMPLES</span>=OFF ..
+
+make -j$(nproc) &amp;&amp; sudo make install
+
+sudo ldconfig
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Cleaning up after Compilation</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo vim /etc/dphys-swapfile
+</pre>
+</div>
+
+<p>
+Change 'CONF_SWAPSIZE=2048' in the file to 'CONF_SWAPSIZE=100'.
+</p>
+
+<p>
+Restart swapfile service by executing
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo systemctl restart dphys-swapfile
+</pre>
+</div>
+
+<ol class="org-ol">
+<li><p>
+install OpenCvSharp
+</p>
+<div class="org-src-container">
+<pre class="src src-nillangnilswitchesnilflags">nilbody
+</pre>
+</div>
+
+<p>
+This is probably not necessary, we only need the libOpenCvSharpExtern.so from the compilation. And that .so
+file is now delivered during publishing.
+</p></li>
+</ol></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org702b5f3" class="outline-3">
+<h3 id="org702b5f3"><span class="section-number-3">2.7</span> Get Core Temperature</h3>
+<div class="outline-text-3" id="text-2-7">
+<ul class="org-ul">
+<li>Show Raspberry Pi GPU temperature</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-shell">vcgencmd measure_temp
+OR
+/opt/vc/bin/vcgencmd measure_temp
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><p>
+Display Raspberry Pi ARM CPU temperature
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">cat /sys/class/thermal/thermal_zone0/temp
+</pre>
+</div>
+
+<p>
+unit: milli-degree
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb5c1cc0" class="outline-3">
+<h3 id="orgb5c1cc0"><span class="section-number-3">2.8</span> 树莓派使用实验室用电压源时出现的低压警告</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+现象: 在使用电压源 Dr. Meter DC Power Supply PS-3010DF 给树莓派通过 GPIO 的插针进行供电时候, 树莓派提示电压过低.
+</p>
+
+<p>
+原因: 电压源每 15ms 有一个极短时间的大幅度 (幅值达到0.5V)高频电压波动, 这个只能通过示波器检测到. 而树莓派的电压检测系统是
+通过二极管检测瞬间电压, 只要电压低于 4.65V, 就会出现低压提示.  该电压源的滤波系统应该使用了较为廉价的滤波系统, 不能有效
+地滤去纹波. 对于 220V 输入电压来说, 0.35V 的偏差是很小的, 但是在我们产品中, 本来降压系统的输入就是 10.8V, 保证输出电压偏
+差在0.35V 以内应该是完全没有任何技术难度.
+</p>
+
+<p>
+如果将电流通过树莓派的 type-c 接口接入, 则报警消失, 因为树莓派的 gpio 输入后没有任何进一步稳压系统, 而type c后有稳压系统.
+最后, 产品的低压警告时可以设置为不显示.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfacee26" class="outline-3">
+<h3 id="orgfacee26"><span class="section-number-3">2.9</span> Autorun in raspbian</h3>
+<div class="outline-text-3" id="text-2-9">
+<ol class="org-ol">
+<li>create a script with following code with the name e.g., start_AcServer.sh</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #add8e6;">#</span><span style="color: #add8e6;">! /bin/</span><span style="color: #fa8072;">bash</span>
+<span style="color: #98fb98; font-weight: bold;">export</span> <span style="color: #7fffd4; font-weight: bold;">DOTNET_ROOT</span>=$<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet
+<span style="color: #98fb98; font-weight: bold;">export</span> <span style="color: #7fffd4; font-weight: bold;">PATH</span>=$<span style="color: #7fffd4; font-weight: bold;">PATH</span>:$<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet
+<span style="color: #98fb98; font-weight: bold;">cd</span> $<span style="color: #7fffd4; font-weight: bold;">HOME</span>/publish
+<span style="color: #fa8072;">if</span> pgrep -x <span style="color: #ffa07a;">"dotnet"</span> &gt; /dev/null
+<span style="color: #fa8072;">then</span>
+    <span style="color: #98fb98; font-weight: bold;">echo</span> <span style="color: #ffa07a;">"dotnet is running"</span>
+<span style="color: #fa8072;">else</span>
+    dotnet AudioImageApp.dll &gt;&gt; acLog
+<span style="color: #fa8072;">fi</span>
+</pre>
+</div>
+
+<ol class="org-ol">
+<li><p>
+create a script with the name 'autostart' under ~/.config/lxsession/LXDE-pi
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+@xscreensaver -no-splash
+
+/home/pi/start_AcServer.sh
+@chromium-browser --start-fullscreen --app=http://localhost:5000
+</pre>
+</div>
+
+<p>
+Do not touch the first two lines. @ is optional, it means the system should try to execute the commander for 5
+times, before it skip the commander.
+</p>
+
+<p>
+We can put other commander, e.g., unclutter to this autostart file too.
+NOTE: do not use variables like $HOME in the autorun file, it doesnot work.
+</p>
+
+<p>
+BTW, all *.desktop files under <i>home/{user}</i>.config/autostart/ will also be executed.
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org4a20256" class="outline-3">
+<h3 id="org4a20256"><span class="section-number-3">2.10</span> How to Back Up Your Raspberry Pi as a Disk Image</h3>
+<div class="outline-text-3" id="text-2-10">
+<ol class="org-ol">
+<li>Format a USB Flash or hard drive as either NTFS (if you are using Windows on your PC and plan to read this drive
+on a PC) or EXT4 (for Linux).</li>
+<li>Connect the USB drive to your Raspberry Pi.</li>
+<li><p>
+Download pishrink.sh to your Raspberry Pi:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">wget https://raw.githubusercontent.com/Drewsif/PiShrink/master/pishrink.sh
+sudo chmod +x pishrink.sh
+</pre>
+</div></li>
+<li><p>
+Check the mount point path of your USB drive by entering
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">lsblk
+</pre>
+</div></li>
+<li><p>
+Copy all your data to an img file by using the dd command.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo dd <span style="color: #7fffd4; font-weight: bold;">if</span>=/dev/mmcblk0 <span style="color: #7fffd4; font-weight: bold;">of</span>=[mount point]/myimg.img <span style="color: #7fffd4; font-weight: bold;">bs</span>=1M
+</pre>
+</div></li>
+<li><p>
+Navigate to the USB drive's root directory
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #98fb98; font-weight: bold;">cd</span> /media/pi/pickup
+</pre>
+</div></li>
+<li><p>
+Use pishrink with the -z parameter, which zips your image up with gzip.
+(copy pishrink to the usb stick first)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo ./pishrink.sh -z myimg.img
+</pre>
+</div></li>
+</ol>
+
+<p>
+This process will also take several minutes. But, when it is done, you will end up with a reasonably sized image file
+called myimg.img.gz. You can copy this file to your PC, upload it to the cloud or send it to a friend.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0058cbc" class="outline-3">
+<h3 id="org0058cbc"><span class="section-number-3">2.11</span> Writing Your Raspberry Pi Disk Image to a Card</h3>
+<div class="outline-text-3" id="text-2-11">
+<ol class="org-ol">
+<li>Launch Raspberry Pi Imager on your PC. You can download Raspberry Pi Imager if you don’t have it already: <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></li>
+<li>select : 'Choose OS' -&gt; 'Use custom'</li>
+<li>Select your .img.gz file.</li>
+<li>Click 'Choose SD card' and select the microSD card you wish to burn it to.</li>
+<li>Click Write.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5c281b3" class="outline-2">
+<h2 id="org5c281b3"><span class="section-number-2">3</span> FPGA</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Lizhuo Chen</p>
+<p class="date">Created: 2021-11-22 Mon 22:47</p>
+</div>
+</body>
+</html>
