@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-22 Mon 22:48 -->
+<!-- 2022-04-18 Mon 19:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Scratch</title>
@@ -248,163 +248,13 @@ eff_amp = [ 0.8104 0.8080 1.0930 0.8608 1.0784 0.9942 0.6921 0.8106 0.5986 0.972
 </p>
 
 
-
 <p>
-CK_IO38 PD5
-CK_IO12 PD6
-CK_IO37 PD7
-GND GND
-NC CLK
-NC GND
-CK_IO36 RDY0
-CK_IO11 RDY1
-NC GND
-NC GND
-NC GND
-CK_IO10 FCLK
-NC SCL
-NC SDA
-CK_IO35 PB0
-CK_IO9 PB1
-CK_IO34 PB2
-CK_IO8 PB3
-NC 3.3V
-NC 3.3V
-CK_IO39 PA0
-CK_IO13 Clk of
-MicArray
-</p>
-
-
-
-
-<p>
-CK_IO38 PD5
-CK_IO12 PD6
-CK_IO37 PD7
-GND GND
-NC CLK
-NC GND
-CK_IO36 RDY0
-CK_IO11 RDY1
-NC GND
-NC GND
-NC GND
-CK_IO10 FCLK
-NC SCL
-NC SDA
-CK_IO35 PB0
-CK_IO9 PB1
-CK_IO34 PB2
-CK_IO8 PB3
-NC 3.3V
-NC 3.3V
-CK_IO39 PA0
-CK_IO13 Clk of
-MicArray
-</p>
-
-
-
-<p>
-CK_IO0 PB4
-CK_IO26 PB5
-CK_IO1 PB6
-CK_IO27 PB7
-NC CTL0
-CK_IO28 CTL1
-CK_IO2 CTL2
-NC PA0
-CK_IO3 PA1
-CK_IO29 PA2
-NC PA3
-CK_IO30 PA4
-CK_IO4 PA5
-CK_IO31 PA6
-NC PA7
-CK_IO32 PD0
-CK_IO5 PD1
-CK_IO33 PD2
-CK_IO6 PD3
-CK_IO7 PD4
-</p>
-
-
-
-
-<p>
-## ChipKit Outer Digital Header
-set_property -dict {PACKAGE_PIN V15 IOSTANDARD LVCMOS33} [get_ports {fx_d[4]}];  #IO_L16P_T2_CSI_B_14 Sch=ck_io[0]
-set_property -dict {PACKAGE_PIN U16 IOSTANDARD LVCMOS33} [get_ports {fx_d[6]}];  #IO_L18P_T2_A12_D28_14 Sch=ck_io[1]
-set_property -dict { PACKAGE_PIN P14   IOSTANDARD LVCMOS33 } [get_ports fx_flagc ]; #IO_L8N_T1_D12_14 Sch=ck_io[2]
-set_property -dict {PACKAGE_PIN T11 IOSTANDARD LVCMOS33} [get_ports fx_pa1];      #IO_L19P_T3_A10_D26_14 Sch=ck_io[3]
-set_property -dict {PACKAGE_PIN R12 IOSTANDARD LVCMOS33} [get_ports {fx_a[1]}];   #IO_L5P_T0_D06_14 Sch=ck_io[4]
-set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS33} [get_ports {fx_d[9]}];   #IO_L14P_T2_SRCC_14 Sch=ck_io[5]
-set_property -dict {PACKAGE_PIN T15 IOSTANDARD LVCMOS33} [get_ports {fx_d[11]}];
-set_property -dict {PACKAGE_PIN T16 IOSTANDARD LVCMOS33} [get_ports {fx_d[12]}];
-set_property -dict {PACKAGE_PIN N15 IOSTANDARD LVCMOS33} [get_ports {fx_d[3]}];
-set_property -dict {PACKAGE_PIN M16 IOSTANDARD LVCMOS33} [get_ports {fx_d[1]}];
-set_property -dict {PACKAGE_PIN V17 IOSTANDARD LVCMOS33} [get_ports fx_clk];
-set_property -dict {PACKAGE_PIN U18 IOSTANDARD LVCMOS33} [get_ports fx_slwr];
-set_property -dict {PACKAGE_PIN R17 IOSTANDARD LVCMOS33} [get_ports {fx_d[14]}];  #IO_L12N_T1_MRCC_14 Sch=ck_io[12]
-</p>
-
-<p>
-## ChipKit Inner Digital Header
- U11 {fx_d[5]}];   #IO_L19N_T3_A09_D25_VREF_14 Sch=ck_io[26]
- V16 {fx_d[7]}];    27
- M13 fx_flagb];     28
- R10 fx_sloe];      29
- R11 {fx_a[0]}];    30
- R13 fx_pktend];   #IO_L5N_T0_D07_14 Sch=ck_io[31]
- R15 {fx_d[8]}];   #IO_L13N_T2_MRCC_14 Sch=ck_io[32]
- P15 {fx_d[10]}];  #IO_L13P_T2_MRCC_14 Sch=ck_io[33]
- R16 {fx_d[2]}];   #IO_L15P_T2_DQS_RDWR_B_14 Sch=ck_io[34]
- N16 {fx_d[0]}];   #IO_L11N_T1_SRCC_14 Sch=ck_io[35]
- N14 fx_slrd];     #IO_L8P_T1_D11_14 Sch=ck_io[36]
- U17 {fx_d[15]}];  #IO_L17P_T2_A14_D30_14 Sch=ck_io[37]
- T18 {fx_d[13]}];  #IO_L7N_T1_D10_14 Sch=ck_io[38]
- R18 fx_pa0];      #IO_L7P_T1_D09_14 Sch=ck_io[39]
- P18 mic_clk];   #IO_L9N_T1_DQS_D13_14 Sch=ck_io[40]
-</p>
-
-
-
-
-<p>
-V15  [get_ports {fx_d[4]}];  #IO_L16P_T2_CSI_B_14 Sch=ck_io[0]
-U16  [get_ports {fx_d[6]}];  #IO_L18P_T2_A12_D28_14 Sch=ck_io[1]
-P14  [get_ports fx_flagc ]; #IO_L8N_T1_D12_14 Sch=ck_io[2]
-T11  [get_ports fx_pa1];      #IO_L19P_T3_A10_D26_14 Sch=ck_io[3]
-R12  [get_ports {fx_a[1]}];   #IO_L5P_T0_D06_14 Sch=ck_io[4]
-T14  [get_ports {fx_d[9]}];   #IO_L14P_T2_SRCC_14 Sch=ck_io[5]
-T15  [get_ports {fx_d[11]}];
-T16  [get_ports {fx_d[12]}];
-N15  [get_ports {fx_d[3]}];
-M16  [get_ports {fx_d[1]}];
-V17  [get_ports fx_clk];
-U18  [get_ports fx_slwr];
-R17  [get_ports {fx_d[14]}];  #IO_L12N_T1_MRCC_14 Sch=ck_io[12]
-</p>
-
-
-
-<p>
-%%%%%%%%%%%%%%%%%%%%%%%%%
-</p>
-
-
-<p>
-## ChipKit Inner Digital Header
-</p>
-
-<p>
-P18 mic_clk];   #IO_L9N_T1_DQS_D13_14 Sch=ck_io[40]
+已修改地址:   dkb ; ing-diab; bosch; comos-direct; RVI; sparkasse böblingen
 </p>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Lizhuo Chen</p>
-<p class="date">Created: 2021-11-22 Mon 22:48</p>
+<p class="date">Created: 2022-04-18 Mon 19:20</p>
 </div>
 </body>
 </html>

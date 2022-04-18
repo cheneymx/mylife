@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-22 Mon 22:47 -->
+<!-- 2022-04-18 Mon 19:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Acoustic Camera</title>
@@ -336,46 +336,13 @@ IPxx 防尘防水等级：防护等级采用国际电工委员会（IEC）推荐
 </div>
 </div>
 
-<div id="outline-container-orga48b917" class="outline-3">
-<h3 id="orga48b917"><span class="section-number-3">2.2</span> Desktop Entry for Shell</h3>
-<div class="outline-text-3" id="text-2-2">
-<p>
-To run a script by double clicking on its icon, one needs to create a .desktop file for it:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-shell">[Desktop Entry]
-<span style="color: #7fffd4; font-weight: bold;">Name</span>=My script
-<span style="color: #7fffd4; font-weight: bold;">Comment</span>=Test hello world script
-<span style="color: #7fffd4; font-weight: bold;">Exec</span>=/home/user/yourscript.sh
-<span style="color: #7fffd4; font-weight: bold;">Icon</span>=/home/user/youricon.gif
-<span style="color: #7fffd4; font-weight: bold;">Terminal</span>=false
-<span style="color: #7fffd4; font-weight: bold;">Type</span>=Application
-</pre>
-</div>
-
-<p>
-Save the above as a file on Desktop with a .desktop extension.
-</p>
-
-<p>
-You can verify your desktop entry with the following command.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-shell">desktop-file-validate ~/Desktop/yourfilename.desktop
-</pre>
-</div>
-</div>
-</div>
-
 <div id="outline-container-orgcb89bd8" class="outline-3">
-<h3 id="orgcb89bd8"><span class="section-number-3">2.3</span> Bluetooth</h3>
-<div class="outline-text-3" id="text-2-3">
+<h3 id="orgcb89bd8"><span class="section-number-3">2.2</span> Bluetooth</h3>
+<div class="outline-text-3" id="text-2-2">
 </div>
 <div id="outline-container-org3079a44" class="outline-4">
-<h4 id="org3079a44"><span class="section-number-4">2.3.1</span> Rpi</h4>
-<div class="outline-text-4" id="text-2-3-1">
+<h4 id="org3079a44"><span class="section-number-4">2.2.1</span> Rpi</h4>
+<div class="outline-text-4" id="text-2-2-1">
 <p>
 Step 1: Fix the Bluetooth Service Issue
 </p>
@@ -412,8 +379,8 @@ apt-get install obexftp bluetooth
 </div>
 
 <div id="outline-container-org55353b7" class="outline-3">
-<h3 id="org55353b7"><span class="section-number-3">2.4</span> USB output current</h3>
-<div class="outline-text-3" id="text-2-4">
+<h3 id="org55353b7"><span class="section-number-3">2.3</span> USB output current</h3>
+<div class="outline-text-3" id="text-2-3">
 <p>
 How much current can I draw from a Raspberry Pi USB port?
 </p>
@@ -431,9 +398,9 @@ across all 4 ports combined.
 </div>
 
 
-<div id="outline-container-org9f0ce88" class="outline-3">
-<h3 id="org9f0ce88"><span class="section-number-3">2.5</span> installation</h3>
-<div class="outline-text-3" id="text-2-5">
+<div id="outline-container-org0d6e892" class="outline-3">
+<h3 id="org0d6e892"><span class="section-number-3">2.4</span> Installation</h3>
+<div class="outline-text-3" id="text-2-4">
 <ol class="org-ol">
 <li>install Raspbian from raspberrypi.org</li>
 <li>setting of Raspbian:
@@ -441,19 +408,34 @@ across all 4 ports combined.
 <li>user: pi ; password: 1234.</li>
 <li>English keyboard.</li>
 <li>connect to Wifi</li>
-<li>Enable ssh in: Preference / Raspberry Pi Config / Interface</li>
+<li>Enable ssh and I2C in: Preference / Raspberry Pi Config / Interface</li>
+<li>Disable 'Splansh Screen' and Screen Blanking in : Preference / Raspberry Pi Config</li>
 </ul></li>
-<li>download .Net 5 SDK (only support ARM 32-bit software so far)
-
-<ul class="org-ul">
 <li><p>
-When the download completes, open a terminal and run the following commands to extract the SDK
+install .Net 6 SDK
 </p>
 
+<p>
+(official website: <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script">https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script</a>)
+</p>
+
+<ul class="org-ul">
+<li>download install script for linux from:  <a href="https://dot.net/v1/dotnet-install.sh">https://dot.net/v1/dotnet-install.sh</a> . The dotnet-install scripts are
+used for automation and non-admin installs of the SDK and Runtime.</li>
+<li><p>
+Add executable flag to the script by
+</p>
 <div class="org-src-container">
-<pre class="src src-shell">mkdir -p $<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet &amp;&amp; tar zxf dotnet-sdk-5.0.302-linux-x64.tar.gz -C $<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet
+<pre class="src src-shell">chmod +x ~/dotnet-install.sh
+./dotnet-install.sh -InstallDir ~/dotnet
 </pre>
-</div></li>
+</div>
+
+<p>
+The script defaults to installing the latest SDK long term support (LTS) version, which is .NET 6 for now. To
+install the current release, which may not be an (LTS) version, use the -c Current parameter.
+</p></li>
+</ul></li>
 
 <li><p>
 Add following code into ~/.bashrc
@@ -463,9 +445,22 @@ Add following code into ~/.bashrc
 <pre class="src src-shell"><span style="color: #98fb98; font-weight: bold;">export</span> <span style="color: #7fffd4; font-weight: bold;">DOTNET_ROOT</span>=$<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet
 <span style="color: #98fb98; font-weight: bold;">export</span> <span style="color: #7fffd4; font-weight: bold;">PATH</span>=$<span style="color: #7fffd4; font-weight: bold;">PATH</span>:$<span style="color: #7fffd4; font-weight: bold;">HOME</span>/dotnet
 </pre>
+</div>
+
+<ul class="org-ul">
+<li><p>
+execute dotnet command to check the success of the installation
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">. .bashrc
+dotnet --version
+</pre>
 </div></li>
 </ul></li>
+</ol>
 
+
+<ol class="org-ol">
 <li>install <b>winscp</b> and <b>putty</b> at windows side (you can start putty in winscp by 'ctrl+p')</li>
 <li>Find out the IP address of wlan0 by using command 'ifconfig'.</li>
 <li><p>
@@ -512,7 +507,7 @@ Bus 001 Device 006: ID 04b4:00f1 Cypress Semiconductor Corp.
 Make a new file with filename extension <b>.rules</b>, and copy it into /etc/udev/rules.d
 </p>
 
-<pre class="example" id="org1e7173e">
+<pre class="example" id="orgeaffc2f">
 # file name: 50-usb-perms.rules
 # copy to /etc/udev/rules.d
 SUBSYSTEM=="usb", ATTRS{idVendor}=="04b4", ATTRS{idProduct}=="00f1", GROUP="plugdev", MODE="0666"
@@ -547,7 +542,7 @@ The number can be found by executing <b>lsusb</b> too.
 Now you should be able to execute dotnet programs
 </p>
 
-<pre class="example" id="org66d4e0f">
+<pre class="example" id="orgf4aa351">
 dotnet PI_Test.dll
 </pre></li>
 
@@ -560,10 +555,9 @@ install libgdiplus
 </pre>
 </div></li>
 
-<li>Chrome settings:   disable 'Use system title bar and borders'</li>
-
-<li>install unclutter</li>
-</ol>
+<li><p>
+install unclutter
+</p>
 
 <div class="org-src-container">
 <pre class="src src-shell">$ sudo apt-get install unclutter
@@ -577,6 +571,79 @@ add following command to the auto-run, in order to hide the mouse cursor
 <div class="org-src-container">
 <pre class="src src-shell">unclutter -idle 0
 </pre>
+</div></li>
+
+<li><p>
+generate link of AcousticCamera.desktop to ~/Desktop and ~/.config/auto by
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">ln -s ~/AcousticCamera/SysMics/AcousticCamera.desktop
+</pre>
+</div></li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+install dependencies for LibVLCSharp
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo apt install libvlc-dev libx11-dev
+</pre>
+</div></li>
+
+<li>enable I2C in Raspberry Pi.</li>
+<li>enable camera in Raspberry Pi by</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo raspi-config
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>disable touchscreen when the system starts.</li>
+</ol>
+
+<p>
+add following command to /etc/profile
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">xinput disable <span style="color: #fa8072;">`xinput --list | grep -i 'touch ' | sed 's/id=//g' | cut -f2`</span>
+</pre>
+</div>
+
+<p>
+in order to enable the touchscreen again, one needs to execute
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">xinput enable <span style="color: #fa8072;">`xinput --list | grep -i 'touch ' | sed 's/id=//g' | cut -f2`</span>
+</pre>
+</div>
+
+<p>
+Furthermore, put following text to .bashrc
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">disable-touchscreen=<span style="color: #ffa07a;">"xinput disable \`xinput --list | grep -i 'touch ' | sed 's/id=//g' | cut -f2\`"</span>
+enable-touchscreen=<span style="color: #ffa07a;">"xinput enable \`xinput --list | grep -i 'touch ' | sed 's/id=//g' | cut -f2\`"</span>
+</pre>
+</div>
+
+<p>
+last step: disable linux upgrade  (how?)
+</p>
+
+<ol class="org-ol">
+<li>install onboard (virtual keyboard)</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-shell">sudo apt-get install onboard
+</pre>
 </div>
 </div>
 </div>
@@ -584,8 +651,8 @@ add following command to the auto-run, in order to hide the mouse cursor
 
 
 <div id="outline-container-org39ef5af" class="outline-3">
-<h3 id="org39ef5af"><span class="section-number-3">2.6</span> install OpenCv / OpenCvSharp</h3>
-<div class="outline-text-3" id="text-2-6">
+<h3 id="org39ef5af"><span class="section-number-3">2.5</span> install OpenCv / OpenCvSharp</h3>
+<div class="outline-text-3" id="text-2-5">
 <ol class="org-ol">
 <li>install packages</li>
 </ol>
@@ -593,9 +660,9 @@ add following command to the auto-run, in order to hide the mouse cursor
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt update &amp;&amp; sudo apt upgrade
 
-sudo apt install cmake build-essential pkg-config git libjpeg-dev libtiff-dev libjasper-dev libpng-dev libwebp-dev
+sudo apt install cmake build-essential pkg-config git libjpeg-dev libtiff-dev  libpng-dev libwebp-dev libjasper-dev
 sudo apt install libopenexr-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libdc1394-22-dev
-sudo apt install libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libgtk-3-dev libqtgui4 libqtwebkit4 libqt4-test python3-pyqt5
+sudo apt install libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libgtk-3-dev  python3-pyqt5  libqtgui4 libqtwebkit4 libqt4-test
 sudo apt install libatlas-base-dev liblapacke-dev gfortran libhdf5-dev libhdf5-103 python3-dev python3-pip python3-numpy
 </pre>
 </div>
@@ -654,11 +721,11 @@ make -j$(nproc) &amp;&amp; sudo make install
 
 sudo ldconfig
 </pre>
-</div>
+</div></li>
 
-<ol class="org-ol">
-<li>Cleaning up after Compilation</li>
-</ol>
+<li><p>
+Cleaning up after Compilation
+</p>
 
 <div class="org-src-container">
 <pre class="src src-shell">sudo vim /etc/dphys-swapfile
@@ -676,29 +743,29 @@ Restart swapfile service by executing
 <div class="org-src-container">
 <pre class="src src-shell">sudo systemctl restart dphys-swapfile
 </pre>
-</div>
+</div></li>
 
-<ol class="org-ol">
 <li><p>
 install OpenCvSharp
 </p>
+
+<p>
+(This is probably not necessary, we only need the libOpenCvSharpExtern.so from the compilation. And that .so
+file is now delivered during publishing.)
+</p>
+
 <div class="org-src-container">
 <pre class="src src-nillangnilswitchesnilflags">nilbody
 </pre>
-</div>
-
-<p>
-This is probably not necessary, we only need the libOpenCvSharpExtern.so from the compilation. And that .so
-file is now delivered during publishing.
-</p></li>
-</ol></li>
+</div></li>
 </ol>
 </div>
 </div>
 
+
 <div id="outline-container-org702b5f3" class="outline-3">
-<h3 id="org702b5f3"><span class="section-number-3">2.7</span> Get Core Temperature</h3>
-<div class="outline-text-3" id="text-2-7">
+<h3 id="org702b5f3"><span class="section-number-3">2.6</span> Get Core Temperature</h3>
+<div class="outline-text-3" id="text-2-6">
 <ul class="org-ul">
 <li>Show Raspberry Pi GPU temperature</li>
 </ul>
@@ -728,8 +795,8 @@ unit: milli-degree
 </div>
 
 <div id="outline-container-orgb5c1cc0" class="outline-3">
-<h3 id="orgb5c1cc0"><span class="section-number-3">2.8</span> 树莓派使用实验室用电压源时出现的低压警告</h3>
-<div class="outline-text-3" id="text-2-8">
+<h3 id="orgb5c1cc0"><span class="section-number-3">2.7</span> 树莓派使用实验室用电压源时出现的低压警告</h3>
+<div class="outline-text-3" id="text-2-7">
 <p>
 现象: 在使用电压源 Dr. Meter DC Power Supply PS-3010DF 给树莓派通过 GPIO 的插针进行供电时候, 树莓派提示电压过低.
 </p>
@@ -748,9 +815,9 @@ unit: milli-degree
 </div>
 </div>
 
-<div id="outline-container-orgfacee26" class="outline-3">
-<h3 id="orgfacee26"><span class="section-number-3">2.9</span> Autorun in raspbian</h3>
-<div class="outline-text-3" id="text-2-9">
+<div id="outline-container-org7d7f6fa" class="outline-3">
+<h3 id="org7d7f6fa"><span class="section-number-3">2.8</span> Autorun in Raspbian</h3>
+<div class="outline-text-3" id="text-2-8">
 <ol class="org-ol">
 <li>create a script with following code with the name e.g., start_AcServer.sh</li>
 </ol>
@@ -764,7 +831,7 @@ unit: milli-degree
 <span style="color: #fa8072;">then</span>
     <span style="color: #98fb98; font-weight: bold;">echo</span> <span style="color: #ffa07a;">"dotnet is running"</span>
 <span style="color: #fa8072;">else</span>
-    dotnet AudioImageApp.dll &gt;&gt; acLog
+    dotnet AudioImageApp.dll
 <span style="color: #fa8072;">fi</span>
 </pre>
 </div>
@@ -779,8 +846,7 @@ create a script with the name 'autostart' under ~/.config/lxsession/LXDE-pi
 @pcmanfm --desktop --profile LXDE-pi
 @xscreensaver -no-splash
 
-/home/pi/start_AcServer.sh
-@chromium-browser --start-fullscreen --app=http://localhost:5000
+bash /home/pi/ac.sh
 </pre>
 </div>
 
@@ -800,6 +866,45 @@ BTW, all *.desktop files under <i>home/{user}</i>.config/autostart/ will also be
 </ol>
 </div>
 </div>
+
+
+<div id="outline-container-orga48b917" class="outline-3">
+<h3 id="orga48b917"><span class="section-number-3">2.9</span> Desktop Entry for Shell</h3>
+<div class="outline-text-3" id="text-2-9">
+<p>
+To run a script by double clicking on its icon, one needs to create a .desktop file for it:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">[Desktop Entry]
+<span style="color: #7fffd4; font-weight: bold;">Name</span>=AcousticCamera
+<span style="color: #7fffd4; font-weight: bold;">Comment</span>=Execute AcousticCamera
+<span style="color: #7fffd4; font-weight: bold;">Exec</span>=/home/pi/Ac.sh
+<span style="color: #7fffd4; font-weight: bold;">Icon</span>=/home/pi/Ac.sh
+<span style="color: #7fffd4; font-weight: bold;">Terminal</span>=false
+<span style="color: #7fffd4; font-weight: bold;">Type</span>=Application
+</pre>
+</div>
+
+<p>
+Save the above as a file on Desktop with a .desktop extension.
+</p>
+
+<p>
+You can verify your desktop entry with the following command.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">desktop-file-validate ~/Desktop/yourfilename.desktop
+</pre>
+</div>
+
+<p>
+NOTE: Do not forget to add the executable flag to the script.
+</p>
+</div>
+</div>
+
 
 <div id="outline-container-org4a20256" class="outline-3">
 <h3 id="org4a20256"><span class="section-number-3">2.10</span> How to Back Up Your Raspberry Pi as a Disk Image</h3>
@@ -867,6 +972,255 @@ called myimg.img.gz. You can copy this file to your PC, upload it to the cloud o
 </ol>
 </div>
 </div>
+
+<div id="outline-container-orgf796e3d" class="outline-3">
+<h3 id="orgf796e3d"><span class="section-number-3">2.12</span> Language Problem with Avalonia in Chinese Region</h3>
+<div class="outline-text-3" id="text-2-12">
+<p>
+start the program with LC_ALL=C
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #7fffd4; font-weight: bold;">LC_ALL</span>=C dotnet AcousticImageApp.Avalonia.dll
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org3bd32a9" class="outline-3">
+<h3 id="org3bd32a9"><span class="section-number-3">2.13</span> Bluetooth</h3>
+<div class="outline-text-3" id="text-2-13">
+<p>
+<b>*</b> A comparison of the requirements that would lead us to choose certain protocols
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Requirement</th>
+<th scope="col" class="org-left">Internet</th>
+<th scope="col" class="org-left">Bluetooth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Reliable, streams-based</td>
+<td class="org-left">TCP</td>
+<td class="org-left">RFCOMM</td>
+</tr>
+
+<tr>
+<td class="org-left">Reliable, datagram</td>
+<td class="org-left">TCP</td>
+<td class="org-left">RFCOMM or L2CAP with infinite retransmit</td>
+</tr>
+
+<tr>
+<td class="org-left">Best-effort, datagram</td>
+<td class="org-left">UDP</td>
+<td class="org-left">L2CAP (0-1279 ms retransmit)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<b>*</b> Port numbers and their terminology for various protocols
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">protocol</th>
+<th scope="col" class="org-left">terminology</th>
+<th scope="col" class="org-left">reserved/well-known ports</th>
+<th scope="col" class="org-right">dynamically assigned ports</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">TCP</td>
+<td class="org-left">port</td>
+<td class="org-left">1-1024</td>
+<td class="org-right">1025-65535</td>
+</tr>
+
+<tr>
+<td class="org-left">UDP</td>
+<td class="org-left">port</td>
+<td class="org-left">1-1024</td>
+<td class="org-right">1025-65535</td>
+</tr>
+
+<tr>
+<td class="org-left">RFCOMM</td>
+<td class="org-left">channel</td>
+<td class="org-left">none</td>
+<td class="org-right">1-30</td>
+</tr>
+
+<tr>
+<td class="org-left">L2CAP</td>
+<td class="org-left">PSM</td>
+<td class="org-left">odd numbered 1-4095</td>
+<td class="org-right">odd numbered 4097 - 32765</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The Bluetooth transport protocols were designed with a few available port numbers, which means we cannot choose an
+arbitrary port number at design time. RFCOMM has only 30 different port numbers. A consequence of this is that there is
+a greater than 50% chance of port number collision with just 7 server applications. In this case, the application
+designer clearly should not arbitrarily choose port numbers. The Bluetooth answer to this problem is the Service
+Discovery Protocol (SDP).
+</p>
+
+<p>
+Instead of agreeing upon a port to use at application design time, the Bluetooth approach is to assign ports at runtime
+and follow a publish-subscribe model. The host machine operates a server application, called the SDP server, that uses
+one of the few L2CAP reserved port numbers. Other server applications are dynamically assigned port numbers at runtime
+and register a description of themselves and the services they provide (along with the port numbers they are assigned)
+with the SDP server. Client applications will then query the SDP server (using the well defined port number) on a
+particular machine to obtain the information they need.
+</p>
+
+<p>
+This raises the question of how do clients know which description is the one they are looking for. The standard way of
+doing this in Bluetooth is to assign a 128-bit number, called the Universally Unique Identifier (UUID), at design
+time. Following a standard method (RFC 4122) of choosing this number guarantees choosing a UUID unique from those chosen by
+anyone else following the same method. Thus, a client and server application both designed with the same UUID can
+provide this number to the SDP server as a search term.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc66f238" class="outline-3">
+<h3 id="orgc66f238"><span class="section-number-3">2.14</span> Connect to Wlan/Hotspot</h3>
+<div class="outline-text-3" id="text-2-14">
+<ol class="org-ol">
+<li>set ssid and password in the /etc/wpa_supplicant/wpa_supplicant.conf; Need sudo to do this.</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #7fffd4; font-weight: bold;">ctrl_interface</span>=<span style="color: #7fffd4; font-weight: bold;">DIR</span>=/var/run/wpa_supplicant <span style="color: #7fffd4; font-weight: bold;">GROUP</span>=netdev
+<span style="color: #7fffd4; font-weight: bold;">update_config</span>=1
+<span style="color: #7fffd4; font-weight: bold;">country</span>=DE
+
+<span style="color: #7fffd4; font-weight: bold;">network</span>={
+    <span style="color: #7fffd4; font-weight: bold;">ssid</span>=<span style="color: #ffa07a;">"Olis_iPhone"</span>
+    <span style="color: #7fffd4; font-weight: bold;">psk</span>=<span style="color: #ffa07a;">"chenqwer1234"</span>
+    <span style="color: #7fffd4; font-weight: bold;">key_mgmt</span>=WPA-PSK
+}
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>execute following command to force wpa to reload configure</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-shell">wpa_cli -i wlan0 reconfigure
+</pre>
+</div>
+
+<p>
+If the hotspot is on, the wpa will connect to the network automatically.
+</p>
+
+<ol class="org-ol">
+<li>in our app, we can use</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-shell">iwlist wlan0 scan | grep ESSID
+</pre>
+</div>
+
+<p>
+to get the list of all available ssid, and show these APs in a list. User only need to pick up the wished hotspot and
+input the corresponding password with a virtual keyboard.
+</p>
+
+<ol class="org-ol">
+<li>onboard is a good program for virtual keyboard. DO NOT activate the 'Auto-show when editing text' in the Onboard
+settings, it does not work under Raspbian. We can activate the 'start Onboard hidden', and then start onboard on
+boot. When we need to input text, just call 'onboard', which will bring the keyboard to front ground.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org0c7cb0e" class="outline-3">
+<h3 id="org0c7cb0e"><span class="section-number-3">2.15</span> Bluetooth programming with Python - PyBluez</h3>
+<div class="outline-text-3" id="text-2-15">
+<p>
+PyBluez is a Python extension module written in C that provides access to system Bluetooth resources in an object
+oriented, modular manner. It is written for the Windows XP (Microsoft Bluetooth stack) and GNU/Linux (BlueZ stack).
+</p>
+</div>
+
+<div id="outline-container-orga26df58" class="outline-4">
+<h4 id="orga26df58"><span class="section-number-4">2.15.1</span> Choosing a communication partner</h4>
+<div class="outline-text-4" id="text-2-15-1">
+<p>
+The following example shows a Python program that looks for a nearby device with the user-friendly name "My Phone". An explanation of the program follows.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #add8e6;"># </span><span style="color: #add8e6;">findmyphone.py</span>
+<span style="color: #fa8072;">import</span> bluetooth
+
+<span style="color: #7fffd4; font-weight: bold;">target_name</span> = <span style="color: #ffa07a;">"My Phone"</span>
+<span style="color: #7fffd4; font-weight: bold;">target_address</span> = <span style="color: #7fffd4;">None</span>
+
+<span style="color: #7fffd4; font-weight: bold;">nearby_devices</span> = bluetooth.discover_devices()
+
+<span style="color: #fa8072;">for</span> bdaddr <span style="color: #fa8072;">in</span> nearby_devices:
+    <span style="color: #fa8072;">if</span> target_name == bluetooth.lookup_name( bdaddr ):
+        <span style="color: #7fffd4; font-weight: bold;">target_address</span> = bdaddr
+        <span style="color: #fa8072;">break</span>
+
+<span style="color: #fa8072;">if</span> target_address <span style="color: #fa8072;">is</span> <span style="color: #fa8072;">not</span> <span style="color: #7fffd4;">None</span>:
+    <span style="color: #fa8072;">print</span> <span style="color: #ffa07a;">"found target bluetooth device with address "</span>, target_address
+<span style="color: #fa8072;">else</span>:
+    <span style="color: #fa8072;">print</span> <span style="color: #ffa07a;">"could not find target bluetooth device nearby"</span>
+</pre>
+</div>
+
+<p>
+PyBluez represents a bluetooth address as a string of the form "xx:xx:xx:xx:xx"Bluetooth devices in PyBluez will
+always be identified using an address string of this form.
+</p>
+
+<p>
+Choosing a device really means choosing a bluetooth address. If only the user-friendly name of the target device is
+known, then two steps must be taken to find the correct address. First, the program must scan for nearby Bluetooth
+devices. The routine discover_devices() scans for approximately 10 seconds and returns a list of addresses of
+detected devices. Next, the program uses the routine lookup_name() to connect to each detected device, requests its
+user-friendly name, and compares the result to the target name.
+</p>
+</div>
+</div>
+</div>
 </div>
 
 <div id="outline-container-org5c281b3" class="outline-2">
@@ -875,7 +1229,7 @@ called myimg.img.gz. You can copy this file to your PC, upload it to the cloud o
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Lizhuo Chen</p>
-<p class="date">Created: 2021-11-22 Mon 22:47</p>
+<p class="date">Created: 2022-04-18 Mon 19:20</p>
 </div>
 </body>
 </html>
